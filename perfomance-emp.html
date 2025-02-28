@@ -407,12 +407,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0 font-size-18">Recruitment Rejections</h4>
+                                <h4 class="mb-sm-0 font-size-18">Perfomance Management</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                        <li class="breadcrumb-item active">Rejected Recruitments</li>
+                                        <li class="breadcrumb-item active">Perfomance Management</li>
                                     </ol>
                                 </div>
 
@@ -422,69 +422,7 @@
                     <!-- end page title -->
 
                     <!-- stats cards -->
-                    <div class="row">
-                        <!-- Rejections This Month -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card mini-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Rejections (This Month)</p>
-                                            <h5 class="mb-0">24 / 150 Applications</h5>
-                                            <p class="text-muted mt-1">Total Salary Impact: KSh 3.6M</p>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-calendar-remove"></i> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Total Rejected Applications -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Total Rejected Applications</p>
-                                            <h5 class="mb-0">256 / 1,380 Applications</h5>
-                                            <p class="text-muted mt-1">Total Salary Impact: KSh 38.4M</p>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-dark rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-account-cancel"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Rejection Rate -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Rejection Rate</p>
-                                            <h5 class="mb-0">18.5%</h5>
-                                            <p class="text-muted mt-1">Avg Salary Per Rejected: KSh 150K</p>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-warning rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-percent"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
+                   
                      <!-- end of stats -->
                     <div class="row">
                         <div class="col-12">
@@ -525,22 +463,26 @@
                                                             </select>
                                                         </div>
         
-                                                        <div class="input-group fw-semibold text-uppercase">
-                                                            <label class="input-group-text text-uppercase">FROM:</label>
-                                                            <input class="form-control form-control-sm" type="date" value="2019-08-19" id="example-date-input">
-                                                        </div>
-        
-                                                        <div class="input-group fw-semibold text-uppercase">
-                                                            <label class="input-group-text text-uppercase">TO:</label>
-                                                            <input class="form-control form-control-sm" type="date" value="2019-08-19" id="example-date-input">
-                                                        </div>
+                                                      
+                                                        
+                                                       
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
                                             <button data-bs-toggle="modal" data-bs-target=".download-modal" type="button" class="btn btn-primary dropdown-toggle option-selector me-3 text-capitalize">
-                                                <i class="bx bxs-download  font-size-16"></i> <span class="pl-1 d-md-inline">Download Report</span>
+                                                <i class="bx bxs-download "></i> <span class="pl-1 d-md-inline">Download Report</span>
                                             </button>
 
+                                           <!-- Add Asset Button -->
+                                        <button data-bs-toggle="modal" data-bs-target="#modal-assesment" type="button" class="btn btn-success dropdown-toggle option-selector me-3 text-capitalize">
+                                            <i class="bx bx-plus"></i> <span class="pl-1 d-md-inline">Add Assessment</span>
+                                        </button>
+
+
+
+
+                                          
                                         </div>
         
         
@@ -554,83 +496,179 @@
                                     <div class="table-responsive ">
                                         <table class="table align-middle table-hover contacts-table table-striped text-nowrap" id="datatable-buttons">
                                             <thead class="table-light">
-                                                <tr class="table-danger"> <!-- Highlight rejection -->
-                                                    <th scope="col">App No.</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">ID No.</th>
-                                                    <th scope="col">Contract Type</th>
-                                                    <th scope="col">Rejected Salary</th>
+                                                <tr class="table-dark">
+                                                    <th scope="col">Emp NO.</th>
+                                                    <th scope="col">Employee</th>
                                                     <th scope="col">Department</th>
-                                                    <th scope="col">Designation</th>
-                                                    <th scope="col">Date Rejected</th>
-                                                    <th scope="col">Rejected By</th>
-                                                    <th scope="col">Rejection Reason</th>
-                                                    <th scope="col" class="text-right">Actions</th>
+                                                    <th scope="col">Assessment Period</th>
+                                                    <th scope="col">Assessment Document</th>
+                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <th>2011</th>
-                                                    <td><a href="application-details.html">Anne Wairimu</a></td>
-                                                    <td>5544332</td>
-                                                    <td>Permanent</td>
-                                                    <td>KES 85,000</td>
-                                                    <td>Finance</td>
-                                                    <td>Accountant</td>
-                                                    <td>3rd Feb 2025</td>
-                                                    <td>Peter Njuguna</td>
-                                                    <td>Budget constraints</td>
-                                                    <td class="text-right">
-                                                        <a href="employee-approvals-rejected-details.html?app=2011" class="btn btn-sm btn-secondary mx-2">Review</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>2012</th>
-                                                    <td><a href="application-details.html">David Mutiso</a></td>
-                                                    <td>6677889</td>
-                                                    <td>Temporary</td>
-                                                    <td>KES 42,000</td>
-                                                    <td>Security</td>
-                                                    <td>Security Officer</td>
-                                                    <td>3rd Feb 2025</td>
-                                                    <td>Samuel Otieno</td>
-                                                    <td>Insufficient qualifications</td>
-                                                    <td class="text-right">
-                                                        <a href="employee-approvals-rejected-details.html?app=2012" class="btn btn-sm btn-secondary mx-2">Review</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>2013</th>
-                                                    <td><a href="application-details.html">Sophia Nduku</a></td>
-                                                    <td>9988553</td>
-                                                    <td>Contract</td>
-                                                    <td>KES 73,000</td>
-                                                    <td>Customer Service</td>
-                                                    <td>Customer Relations Manager</td>
-                                                    <td>2nd Feb 2025</td>
-                                                    <td>Grace Wambui</td>
-                                                    <td>Position no longer available</td>
-                                                    <td class="text-right">
-                                                        <a href="employee-approvals-rejected-details.html?app=2013" class="btn btn-sm btn-secondary mx-2">Review</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>2014</th>
-                                                    <td><a href="application-details.html">Brian Muriuki</a></td>
-                                                    <td>4455667</td>
-                                                    <td>Permanent</td>
-                                                    <td>KES 97,000</td>
+                                                    <th>12345</th>
+                                                    <td>Dennis Chura</td>
                                                     <td>IT</td>
-                                                    <td>Systems Analyst</td>
-                                                    <td>1st Feb 2025</td>
-                                                    <td>Kevin Otieno</td>
-                                                    <td>Salary expectations too high</td>
-                                                    <td class="text-right">
-                                                        <a href="employee-approvals-rejected-details.html" class="btn btn-sm btn-secondary mx-2">Review</a>
-                                                    </td>
+                                                    <td>1 Jan 2025 to 31 Mar 2025</td>
+                                                    <td><a href="#" target="new">Google Sheet</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12346</th>
+                                                    <td>Jane Wanjiru</td>
+                                                    <td>Finance</td>
+                                                    <td>1 Jan 2025 to 31 Mar 2025</td>
+                                                    <td><a href="#" target="new">Excel File</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12347</th>
+                                                    <td>Mark Otieno</td>
+                                                    <td>HR</td>
+                                                    <td>1 Jan 2025 to 31 Mar 2025</td>
+                                                    <td><a href="#" target="new">Google Doc</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12348</th>
+                                                    <td>Lucy Mwangi</td>
+                                                    <td>Procurement</td>
+                                                    <td>1 Jan 2025 to 31 Mar 2025</td>
+                                                    <td><a href="#" target="new">PDF Report</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12349</th>
+                                                    <td>John Kimani</td>
+                                                    <td>Operations</td>
+                                                    <td>1 Jan 2025 to 31 Mar 2025</td>
+                                                    <td><a href="#" target="new">Google Sheet</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12350</th>
+                                                    <td>Esther Njoki</td>
+                                                    <td>IT</td>
+                                                    <td>1 Apr 2025 to 30 Jun 2025</td>
+                                                    <td><a href="#" target="new">Word Document</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12351</th>
+                                                    <td>Samson Wanyama</td>
+                                                    <td>Logistics</td>
+                                                    <td>1 Apr 2025 to 30 Jun 2025</td>
+                                                    <td><a href="#" target="new">Excel File</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12352</th>
+                                                    <td>Grace Akinyi</td>
+                                                    <td>HR</td>
+                                                    <td>1 Apr 2025 to 30 Jun 2025</td>
+                                                    <td><a href="#" target="new">Google Doc</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12353</th>
+                                                    <td>Michael Ouma</td>
+                                                    <td>Finance</td>
+                                                    <td>1 Apr 2025 to 30 Jun 2025</td>
+                                                    <td><a href="#" target="new">PDF Report</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12354</th>
+                                                    <td>Beatrice Muthoni</td>
+                                                    <td>Procurement</td>
+                                                    <td>1 Apr 2025 to 30 Jun 2025</td>
+                                                    <td><a href="#" target="new">Google Sheet</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12355</th>
+                                                    <td>Collins Njoroge</td>
+                                                    <td>Marketing</td>
+                                                    <td>1 Jul 2025 to 30 Sep 2025</td>
+                                                    <td><a href="#" target="new">Google Sheet</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12356</th>
+                                                    <td>Ann Wekesa</td>
+                                                    <td>Customer Service</td>
+                                                    <td>1 Jul 2025 to 30 Sep 2025</td>
+                                                    <td><a href="#" target="new">Excel File</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12357</th>
+                                                    <td>David Omondi</td>
+                                                    <td>IT</td>
+                                                    <td>1 Jul 2025 to 30 Sep 2025</td>
+                                                    <td><a href="#" target="new">Google Doc</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12358</th>
+                                                    <td>Rose Atieno</td>
+                                                    <td>HR</td>
+                                                    <td>1 Jul 2025 to 30 Sep 2025</td>
+                                                    <td><a href="#" target="new">PDF Report</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12359</th>
+                                                    <td>Kevin Obiero</td>
+                                                    <td>Finance</td>
+                                                    <td>1 Jul 2025 to 30 Sep 2025</td>
+                                                    <td><a href="#" target="new">Google Sheet</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12360</th>
+                                                    <td>Pauline Ndegwa</td>
+                                                    <td>Operations</td>
+                                                    <td>1 Oct 2025 to 31 Dec 2025</td>
+                                                    <td><a href="#" target="new">Word Document</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12361</th>
+                                                    <td>Victor Kibet</td>
+                                                    <td>Logistics</td>
+                                                    <td>1 Oct 2025 to 31 Dec 2025</td>
+                                                    <td><a href="#" target="new">Excel File</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12362</th>
+                                                    <td>Christine Mwenda</td>
+                                                    <td>IT</td>
+                                                    <td>1 Oct 2025 to 31 Dec 2025</td>
+                                                    <td><a href="#" target="new">Google Doc</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12363</th>
+                                                    <td>Patrick Mutua</td>
+                                                    <td>HR</td>
+                                                    <td>1 Oct 2025 to 31 Dec 2025</td>
+                                                    <td><a href="#" target="new">PDF Report</a></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>12364</th>
+                                                    <td>Naomi Kirui</td>
+                                                    <td>Finance</td>
+                                                    <td>1 Oct 2025 to 31 Dec 2025</td>
+                                                    <td><a href="#" target="new">Google Sheet</a></td>
+                                                    <td></td>
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        
                                         
                                     </div>
                                 </div>
@@ -1751,6 +1789,114 @@
         </div>
         <!-- Patient registration -->
 
+        <!-- the modal -->
+         <!-- Add Asset Modal -->
+        <div class="modal fade" id="modal-add-asset" tabindex="-1" aria-labelledby="addAssetModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addAssetModalLabel">Add New Asset</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addAssetForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="assetIdentifier" class="form-label">Identifier</label>
+                                    <input type="text" class="form-control" id="assetIdentifier" placeholder="Enter Asset ID" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="assetItem" class="form-label">Item Name</label>
+                                    <input type="text" class="form-control" id="assetItem" placeholder="Enter Item Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="employee" class="form-label">Assigned Employee</label>
+                                    <input type="text" class="form-control" id="employee" placeholder="Employee Name">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="purchaseDate" class="form-label">Purchase Date</label>
+                                    <input type="date" class="form-control" id="purchaseDate" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="warrantyEnd" class="form-label">Warranty End</label>
+                                    <input type="date" class="form-control" id="warrantyEnd">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="purchasePrice" class="form-label">Purchase Price (KES)</label>
+                                    <input type="number" class="form-control" id="purchasePrice" placeholder="Enter Price" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="assetDescription" class="form-label">Description</label>
+                                    <input type="text" class="form-control" id="assetDescription" placeholder="Brief Description">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="assetCondition" class="form-label">Condition</label>
+                                    <select class="form-select" id="assetCondition">
+                                        <option value="New">New</option>
+                                        <option value="Good">Good</option>
+                                        <option value="Needs Repair">Needs Repair</option>
+                                        <option value="Out of Service">Out of Service</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="department" class="form-label">Department</label>
+                                    <input type="text" class="form-control" id="department" placeholder="Enter Department Name" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Save Asset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+<div class="modal fade" id="modal-assesment" tabindex="-1" aria-labelledby="modal-assesment-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-assesment-label">Add Assessment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="assessment-form">
+                    <div class="mb-3">
+                        <label for="employee-name" class="form-label">Employee Name</label>
+                        <input type="text" class="form-control" id="employee-name" placeholder="Enter employee name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="department" class="form-label">Department</label>
+                        <select class="form-control" id="department" required>
+                            <option value="">Select Department</option>
+                            <option value="IT">IT</option>
+                            <option value="Finance">Finance</option>
+                            <option value="HR">HR</option>
+                            <option value="Operations">Operations</option>
+                            <option value="Procurement">Procurement</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="assessment-period" class="form-label">Assessment Period</label>
+                        <input type="text" class="form-control" id="assessment-period" placeholder="e.g., 1 Jan 2025 - 31 Mar 2025" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="assessment-document" class="form-label">Upload Document</label>
+                        <input type="file" class="form-control" id="assessment-document" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-success" form="assessment-form">Save Assessment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
             <footer class="footer ">
                 <div class="container-fluid ">
                     <div class="row ">
@@ -1822,6 +1968,14 @@
     <!-- App js -->
     <script src="assets/js/app.js "></script>
     <script src="assets/js/custom.js "></script>
+    <script>
+            // Get today's date in YYYY-MM-DD format
+            let today = new Date().toISOString().split('T')[0];
+        
+            // Set the default value to today's date
+            document.getElementById('from-date').value = today;
+            document.getElementById('to-date').value = today;
+    </script>
 </body>
 
 
