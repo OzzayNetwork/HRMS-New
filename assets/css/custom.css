@@ -1510,3 +1510,37 @@ padding: 0px;
     .h-calc-22{
         height: calc(100% - 22px);
     }
+    .portal-title h4 {
+        font-size: 13px;
+        font-weight: 700;
+    }
+    .portal-title {
+        height: 70px;
+        display: flex;
+        flex-flow: column;
+        padding-top: 15px;
+    }
+    .navbar-brand-box .logo-sm {
+        padding-left: 8px;
+        padding-right: 16px;
+        margin-left: -20px;
+    }
+    .navbar-brand-box {
+        padding: 0 1.5rem;
+        text-align: left;
+        width: 250px;
+    }
+    .navbar-brand-box {
+        padding: 0 1.5rem;
+        text-align: left;
+        width: 250px;
+    }
+    .navbar-brand-box .logo-sm {
+        padding-left: 8px;
+        padding-right: 16px;
+        margin-left: -20px;
+    }
+
+    .logo-lg img {
+        margin-right: 12px;
+    }
