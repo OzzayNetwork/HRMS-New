@@ -429,18 +429,18 @@
 
                     <!-- stats cards -->
                     <div class="row">
-                        <!-- Total Employees on Leave -->
+                        <!-- Total Working Days in Month -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card mini-stats-wid">
                                 <div class="card-body">
                                     <div class="d-flex flex-wrap">
                                         <div class="me-3">
-                                            <p class="text-muted mb-2">Total Employees on Leave</p>
-                                            <h5 class="mb-0">28</h5>
+                                            <p class="text-muted mb-2">Total Working Days</p>
+                                            <h5 class="mb-0">22</h5>
                                         </div>
                                         <div class="avatar-sm ms-auto">
                                             <div class="avatar-title bg-primary rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-airplane"></i> 
+                                                <i class="mdi mdi-calendar"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -448,37 +448,18 @@
                             </div>
                         </div>
                     
-                        <!-- Total Pending Leave Requests -->
+                        <!-- Present Employees -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card blog-stats-wid">
                                 <div class="card-body">
                                     <div class="d-flex flex-wrap">
                                         <div class="me-3">
-                                            <p class="text-muted mb-2">Pending Leave Requests</p>
-                                            <h5 class="mb-0">6</h5>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-warning rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-clock-alert"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Approved Leave Requests -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Approved Leave Requests</p>
-                                            <h5 class="mb-0">15</h5>
+                                            <p class="text-muted mb-2">Total Days Present</p>
+                                            <h5 class="mb-0">420</h5> <!-- (e.g., sum of employee attendance days) -->
                                         </div>
                                         <div class="avatar-sm ms-auto">
                                             <div class="avatar-title bg-success rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-check-circle"></i>
+                                                <i class="mdi mdi-account-group"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -486,18 +467,113 @@
                             </div>
                         </div>
                     
-                        <!-- Rejected Leave Requests -->
+                        <!-- Absent Employees -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card blog-stats-wid">
                                 <div class="card-body">
                                     <div class="d-flex flex-wrap">
                                         <div class="me-3">
-                                            <p class="text-muted mb-2">Rejected Leave Requests</p>
-                                            <h5 class="mb-0">3</h5>
+                                            <p class="text-muted mb-2">Total Absences</p>
+                                            <h5 class="mb-0">38</h5> <!-- (Total days employees were absent) -->
                                         </div>
                                         <div class="avatar-sm ms-auto">
                                             <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-close-circle"></i>
+                                                <i class="mdi mdi-account-off"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Late Arrivals -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card blog-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Late Arrivals</p>
+                                            <h5 class="mb-0">14</h5> <!-- (Count of employees arriving late) -->
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-warning rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-timer-sand"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Early Departures -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card blog-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Early Departures</p>
+                                            <h5 class="mb-0">9</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-info rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-clock-out"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Overtime Hours -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card blog-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Overtime Hours</p>
+                                            <h5 class="mb-0">86 hrs</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-dark rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-clock-plus"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Sick Leave -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card blog-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Sick Leave Taken</p>
+                                            <h5 class="mb-0">12</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-secondary rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-hospital"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Unexcused Absences -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card blog-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Unexcused Absences</p>
+                                            <h5 class="mb-0">5</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-alert-circle"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -505,6 +581,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     
                     
                      <!-- end of stats -->
@@ -529,12 +606,21 @@
                                                 <div>
                                                     <div class="float-end d-flex ">
                                                         <div class="input-group fw-semibold text-uppercase me-3">
-                                                            <label class="input-group-text text-uppercase">Filter By</label>
+                                                            <label class="input-group-text text-uppercase">Department</label>
                                                             <select class="form-select " style="width: 200px;">
-                                                                    <option selected="selected" value="">All Applications</option>
-                                                                    <option value="65">Approved</option>
-                                                                    <option value="67">Ongoing</option>
-                                                                    <option value="73">Rejected</option>                                                                    
+                                                                    <option selected="selected" value="">All Departments</option>
+                                                                    <option value="65">Finance &amp; Economic Planning</option>
+                                                                    <option value="67">Governance, Administration, Communication &amp; Devolution</option>
+                                                                    <option value="73">Education, Human Capital Development &amp; Vocational Training</option>
+                                                                    <option value="62">Blue Economy, Fisheries, Mining &amp; Digital Economy</option>
+                                                                    <option value="66">Roads, Public Works, Transport &amp; Infrastructure</option>
+                                                                    <option value="61">Youth, Sports, Talent Development, Gender Inclusivity, Cultural Heritage &amp; Social Services</option>
+                                                                    <option value="63">Water, Irrigation, Sanitation, Environment, Energy, Forestry &amp; Climate Change</option>
+                                                                    <option value="68">Public Health &amp; Medical Services</option>
+                                                                    <option value="64">Lands, Physical Planning, Housing &amp; Urban Development</option>
+                                                                    <option value="69">Trade, Industry, Tourism, Co-Operative Development and Marketing</option>
+                                                                    <option value="70">Agriculture and Livestock Production</option>
+                                                                    <option value="72">Office of the County Secretary and Head of Public Service</option>
                                                             </select>
                                                         </div>
         
@@ -562,142 +648,519 @@
                                 
                                 <div class="card-body">
                                     <div class="table-responsive ">
-                                        <table class="table align-middle table-hover contacts-table table-striped text-nowrap" id="datatable-buttons">
+                                        <table class="table align-middle contacts-table text-nowrap" id="datatable-buttons">
                                             <thead class="table-light">
                                                 <tr class="table-dark">
                                                     <th scope="col">Employee</th>
-                                                    <th scope="col">Leave Type</th>
-                                                    <th scope="col">Application Date</th>
-                                                    <th scope="col">From Date</th>
-                                                    <th scope="col">To Date</th>
-                                                    <th scope="col">No. of Days</th>
-                                                    <th scope="col">Leave Reason</th>
-                                                    <th scope="col">Status</th>
-                                                    <th class="">Actions</th>
+                                                    <!-- Dynamic Date Headers with Day of the Week -->
+                                                    <th scope="col">01 Feb (Sat)</th>
+                                                    <th scope="col">02 Feb (Sun)</th>
+                                                    <th scope="col">03 Feb (Mon)</th>
+                                                    <th scope="col">04 Feb (Tue)</th>
+                                                    <th scope="col">05 Feb (Wed)</th>
+                                                    <th scope="col">06 Feb (Thu)</th>
+                                                    <th scope="col">07 Feb (Fri)</th>
+                                                    <th scope="col">08 Feb (Sat)</th>
+                                                    <th scope="col">09 Feb (Sun)</th>
+                                                    <th scope="col">10 Feb (Mon)</th>
+                                                    <th scope="col">11 Feb (Tue)</th>
+                                                    <th scope="col">12 Feb (Wed)</th>
+                                                    <th scope="col">13 Feb (Thu)</th>
+                                                    <th scope="col">14 Feb (Fri)</th>
+                                                    <th scope="col">15 Feb (Sat)</th>
+                                                    <th scope="col">16 Feb (Sun)</th>
+                                                    <th scope="col">17 Feb (Mon)</th>
+                                                    <th scope="col">18 Feb (Tue)</th>
+                                                    <th scope="col">19 Feb (Wed)</th>
+                                                    <th scope="col">20 Feb (Thu)</th>
+                                                    <th scope="col">21 Feb (Fri)</th>
+                                                    <th scope="col">22 Feb (Sat)</th>
+                                                    <th scope="col">23 Feb (Sun)</th>
+                                                    <th scope="col">24 Feb (Mon)</th>
+                                                    <th scope="col">25 Feb (Tue)</th>
+                                                    <th scope="col">26 Feb (Wed)</th>
+                                                    <th scope="col">27 Feb (Thu)</th>
+                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Odongo Juma</td>
-                                                    <td>Annual Leave</td>
-                                                    <td>10 Feb 2025 09:15 AM</td>
-                                                    <td>15 Feb 2025</td>
-                                                    <td>28 Feb 2025</td>
-                                                    <td>14 Days</td>
-                                                    <td>Family Vacation</td>
-                                                    <td><span class="badge rounded-pill bg-success text-uppercase">Approved</span></td>
-                                                    <td><button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Akinyi Otieno</td>
-                                                    <td>Sick Leave</td>
-                                                    <td>05 Mar 2025 02:30 PM</td>
-                                                    <td>06 Mar 2025</td>
-                                                    <td>10 Mar 2025</td>
-                                                    <td>5 Days</td>
-                                                    <td>Medical Treatment</td>
-                                                    <td><span class="badge rounded-pill bg-warning text-uppercase">Pending</span></td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
-                                                            <div>Approve</div> 
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-
-                                                        <button class="btn btn-sm btn-danger btn-leave">
-                                                            <div>Decline</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Ouma Abok</td>
-                                                    <td>Casual Leave</td>
-                                                    <td>01 Apr 2025 11:00 AM</td>
-                                                    <td>02 Apr 2025</td>
-                                                    <td>03 Apr 2025</td>
-                                                    <td>2 Days</td>
-                                                    <td>Personal Matters</td>
-                                                    <td><span class="badge rounded-pill bg-danger text-uppercase">Declined</span></td>
-                                                    <td><button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button></td>
-                                                </tr>
+                                                <!-- Employee 1: On Leave -->
                                                 <tr>
                                                     <td>Anyango Odhiambo</td>
-                                                    <td>Maternity Leave</td>
-                                                    <td>20 Jan 2025 10:45 AM</td>
-                                                    <td>01 Feb 2025</td>
-                                                    <td>01 May 2025</td>
-                                                    <td>90 Days</td>
-                                                    <td>Childbirth</td>
-                                                    <td><span class="badge rounded-pill bg-success text-uppercase">Approved</span></td>
-                                                    <td><button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button></td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-info text-center fw-bold">L</td>
+                                                    <td class="bg-info text-center fw-bold">L</td>
+                                                    <td class="bg-info text-center fw-bold">L</td>
+                                                    <td class="bg-info text-center fw-bold">L</td>
+                                                    <td class="bg-info text-center fw-bold">L</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
                                                 </tr>
+                                                <!-- Employee 2: Regular Attendance -->
                                                 <tr>
-                                                    <td>Odhiambo Ochieng</td>
-                                                    <td>Paternity Leave</td>
-                                                    <td>08 May 2025 03:20 PM</td>
-                                                    <td>10 May 2025</td>
-                                                    <td>17 May 2025</td>
-                                                    <td>7 Days</td>
-                                                    <td>Newborn Care</td>
-                                                    <td><span class="badge rounded-pill bg-success text-uppercase">Approved</span></td>
-                                                    <td><button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button></td>
+                                                    <td>Odongo Juma</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
                                                 </tr>
-                                                <!-- Add more rows to reach 20 -->
+                                                <!-- Employee 3: Absent on Some Days -->
+                                                <tr>
+                                                    <td>Akinyi Otieno</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                </tr>
+                                                <!-- Employee 4: Mostly Present -->
+                                                <tr>
+                                                    <td>Ouma Abok</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                </tr>
+                                                <!-- Employee 5: On Leave for a Few Days -->
+                                                <tr>
+                                                    <td>Ochieng Otieno</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-info text-center fw-bold">L</td>
+                                                    <td class="bg-info text-center fw-bold">L</td>
+                                                    <td class="bg-info text-center fw-bold">L</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                </tr>
+                                                <!-- Add more employees (up to 20) similarly -->
+                                                 <!-- Employee 6 -->
+                                                <tr>
+                                                    <td>Nyambura Achieng</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                </tr>
+
+                                                <!-- Employee 7 -->
                                                 <tr>
                                                     <td>Omondi Okoth</td>
-                                                    <td>Sick Leave</td>
-                                                    <td>12 Jun 2025 09:40 AM</td>
-                                                    <td>14 Jun 2025</td>
-                                                    <td>19 Jun 2025</td>
-                                                    <td>5 Days</td>
-                                                    <td>Flu Recovery</td>
-                                                    <td><span class="badge rounded-pill bg-warning text-uppercase">Pending</span></td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
-                                                            <div>Approve</div> 
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger btn-leave">
-                                                            <div>Decline</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button>
-                                                    </td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
                                                 </tr>
+
+                                                <!-- Employee 8 -->
                                                 <tr>
                                                     <td>Wanjala Otieno</td>
-                                                    <td>Casual Leave</td>
-                                                    <td>18 Jul 2025 01:10 PM</td>
-                                                    <td>20 Jul 2025</td>
-                                                    <td>21 Jul 2025</td>
-                                                    <td>2 Days</td>
-                                                    <td>Wedding Attendance</td>
-                                                    <td><span class="badge rounded-pill bg-success text-uppercase">Approved</span></td>
-                                                    <td><button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button></td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
                                                 </tr>
+
+                                                <!-- Employee 9 -->
                                                 <tr>
                                                     <td>Akoth Nyambura</td>
-                                                    <td>Maternity Leave</td>
-                                                    <td>30 Aug 2025 10:25 AM</td>
-                                                    <td>10 Sep 2025</td>
-                                                    <td>10 Dec 2025</td>
-                                                    <td>90 Days</td>
-                                                    <td>Pregnancy Recovery</td>
-                                                    <td><span class="badge rounded-pill bg-success text-uppercase">Approved</span></td>
-                                                    <td><button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button></td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                </tr>
+
+                                                <!-- Employee 10 -->
+                                                <tr>
+                                                    <td>Ochieng Abok</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                </tr>
+
+                                                <!-- Employee 11 -->
+                                                <tr>
+                                                    <td>Atieno Adhiambo</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                </tr>
+
+                                                <!-- Employee 12 -->
+                                                <tr>
+                                                    <td>Onyango Otieno</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                </tr>
+
+                                                <!-- Employee 13 -->
+                                                <tr>
+                                                    <td>Adhiambo Anyango</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                </tr>
+
+                                                <!-- Employee 14 -->
+                                                <tr>
+                                                    <td>Otieno Ochieng</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                </tr>
+
+                                                <!-- Employee 15 -->
+                                                <tr>
+                                                    <td>Nyambura Otieno</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
+                                                    <td class="bg-success text-center fw-bold">P</td>
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        
                                     </div>
                                 </div>
                             </div>
