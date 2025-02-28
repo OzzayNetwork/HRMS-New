@@ -397,8 +397,8 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                        <li class="breadcrumb-item active"><a href="employee-register.html">Employees</a></li>
-                                        <li class="breadcrumb-item active">New Employee</li>
+                                        <li class="breadcrumb-item active"><a href="employee-register.html">Employee Approval</a></li>
+                                        <li class="breadcrumb-item active">John Doe</li>
                                     </ol>
                                 </div>
 
@@ -422,1484 +422,448 @@
                                     </div>
                                    
                                 </div>
+
                                 <div class="card-body">
-                                    <div class="row">
-                                        <!-- Personal Details -->
-                                        <div class="col-12">
-                                            <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                                <p class="fw-semibold mb-0 pb-0 text-uppercase">Personal Details</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-8 col-lg-6">
-                                            <div class="row">
-                                                <div class="col-4 mb-3">
-                                                    <label for="title-input" class="form-label">Title <strong class="text-danger fw-bold">*</strong></label>
-                                                    <select class="form-control" id="title-input" required title="Select your title">
-                                                        <option value="">Select Title</option>
-                                                        <option value="Mr" selected>Mr</option> <!-- Selected -->
-                                                        <option value="Mrs">Mrs</option>
-                                                        <option value="Miss">Miss</option>
-                                                        <option value="Ms">Ms</option>
-                                                        <option value="Dr">Dr</option>
-                                                        <option value="Prof">Prof</option>
-                                                        <option value="Mx">Mx</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-8 mb-3">
-                                                    <label for="first-name-input" class="form-label">First Name <strong class="text-danger fw-bold">*</strong></label>
-                                                    <input type="text" class="form-control" id="first-name-input" placeholder="Enter First Name" spellcheck="false" required title="Enter your first name" value="John"> <!-- Filled -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="middle-name-input" class="form-label">Middle Name</label>
-                                            <input type="text" class="form-control" id="middle-name-input" placeholder="Enter Middle Name (optional)" spellcheck="false" title="Enter your middle name (if applicable)" value="Michael"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="last-name-input" class="form-label">Last Name <strong class="text-danger fw-bold">*</strong></label>
-                                            <input type="text" class="form-control" id="last-name-input" placeholder="Enter Last Name" spellcheck="false" required title="Enter your last name" value="Doe"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="dob-input" class="form-label">Date Of Birth</label>
-                                            <input class="form-control" type="date" id="dob-input" title="Select your date of birth" value="1990-05-15"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="email-input" class="form-label">Email Address <strong class="text-danger fw-bold">*</strong></label>
-                                            <input type="email" class="form-control" id="email-input" placeholder="Enter Email Address" spellcheck="false" required title="Enter your valid email address" value="john.doe@example.com"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="phone-input" class="form-label">Phone Number <strong class="text-danger fw-bold">*</strong></label>
-                                            <input type="tel" class="form-control" id="phone-input" placeholder="Enter Phone Number" spellcheck="false" required title="Enter your mobile phone number" value="0712345678"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="id-number-input" class="form-label">National ID <strong class="text-danger fw-bold">*</strong></label>
-                                            <input type="number" class="form-control" id="id-number-input" placeholder="Enter National ID Number" required title="Enter your National ID number" value="12345678"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-3 mb-3">
-                                            <label for="gender-input" class="form-label">Gender <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="gender-input" class="form-select" required title="Select your gender">
-                                                <option value="">Select Gender</option>
-                                                <option value="Male" selected>Male</option> <!-- Selected -->
-                                                <option value="Female">Female</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3 mb-3">
-                                            <label for="disability-status-input" class="form-label">Person with Disability? <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="disability-status-input" class="form-select" required title="Select disability status">
-                                                <option value="">Select Option</option>
-                                                <option value="Yes">Yes</option>
-                                                <option value="No" selected>No</option> <!-- Selected -->
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3 mb-3">
-                                            <label for="disability-id-input" class="form-label">Disability ID</label>
-                                            <input type="text" class="form-control" id="disability-id-input" placeholder="Enter Disability ID" spellcheck="false" value=""> <!-- Empty -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="postal-code-input" class="form-label">Postal Code <strong class="text-danger fw-bold">*</strong></label>
-                                            <input type="text" class="form-control" id="postal-code-input" placeholder="Enter Postal Code" required title="Enter your area postal code" value="00100"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="postal-town-input" class="form-label">Postal Town <strong class="text-danger fw-bold">*</strong></label>
-                                            <input type="text" class="form-control" id="postal-town-input" placeholder="Enter Postal Town" required title="Enter your postal town" value="Nairobi"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="row">
-                                                <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                                    <label for="physical-address-input" class="form-label">Physical Address <strong class="text-danger fw-bold">*</strong></label>
-                                                    <textarea class="form-control" id="physical-address-input" placeholder="Enter Address details" required title="Enter your residential or business address">123 Main Street, Nairobi</textarea> <!-- Filled -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                
-                                        <!-- Extra Details -->
-                                        <div class="col-12">
-                                            <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                                <p class="fw-semibold mb-0 pb-0 text-uppercase">Extra Details</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3 mb-3">
-                                            <label for="employment-type-input" class="form-label">Employment Type <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="employment-type-input" class="form-select" required title="Select your employment type">
-                                                <option value="">Select Employment Type</option>
-                                                <option value="Permanent" selected>Permanent</option> <!-- Selected -->
-                                                <option value="Contract">Contract</option>
-                                                <option value="Temporary">Temporary</option>
-                                                <option value="Internship">Internship</option>
-                                                <option value="Casual">Casual</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3 mb-3">
-                                            <label for="education-level-input" class="form-label">Education Level <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="education-level-input" class="form-select" required title="Select your education level">
-                                                <option value="">Select Education Level</option>
-                                                <option value="Primary">Primary</option>
-                                                <option value="Secondary">Secondary</option>
-                                                <option value="Diploma">Diploma</option>
-                                                <option value="Undergraduate" selected>Undergraduate</option> <!-- Selected -->
-                                                <option value="Postgraduate">Postgraduate</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3 mb-3">
-                                            <label for="sub-county-input" class="form-label">Sub County <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="sub-county-input" class="form-select" required title="Select your sub county">
-                                                <option value="">Select Sub County</option>
-                                                <option value="Homa Bay Town" selected>Homa Bay Town</option> <!-- Selected -->
-                                                <option value="Rachuonyo North">Rachuonyo North</option>
-                                                <option value="Rachuonyo East">Rachuonyo East</option>
-                                                <option value="Rachuonyo South">Rachuonyo South</option>
-                                                <option value="Ndhiwa">Ndhiwa</option>
-                                                <option value="Rangwe">Rangwe</option>
-                                                <option value="Suba North">Suba North</option>
-                                                <option value="Suba South">Suba South</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3 mb-3">
-                                            <label for="ward-input" class="form-label">Ward <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="ward-input" class="form-select" required title="Select your ward">
-                                                <option value="">Select Ward</option>
-                                                <option value="Homa Bay Central" selected>Homa Bay Central</option> <!-- Selected -->
-                                                <option value="Homa Bay Arujo">Homa Bay Arujo</option>
-                                                <option value="Homa Bay West">Homa Bay West</option>
-                                                <option value="Homa Bay East">Homa Bay East</option>
-                                                <option value="Kendu Bay Town">Kendu Bay Town</option>
-                                                <option value="Karachuonyo">Karachuonyo</option>
-                                                <option value="Kanyaluo">Kanyaluo</option>
-                                                <option value="Kasipul">Kasipul</option>
-                                                <option value="Kabondo Kasipul">Kabondo Kasipul</option>
-                                                <option value="Ndhiwa">Ndhiwa</option>
-                                                <option value="Kabuoch North">Kabuoch North</option>
-                                                <option value="Kabuoch South">Kabuoch South</option>
-                                                <option value="Kanyikela">Kanyikela</option>
-                                                <option value="Rangwe">Rangwe</option>
-                                                <option value="Gem East">Gem East</option>
-                                                <option value="Gem West">Gem West</option>
-                                                <option value="Suba North">Suba North</option>
-                                                <option value="Suba South">Suba South</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-3 mb-3">
-                                            <label for="marital-status-input" class="form-label">Marital Status <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="marital-status-input" class="form-select" required title="Select your marital status">
-                                                <option value="">Select Marital Status</option>
-                                                <option value="Single" selected>Single</option> <!-- Selected -->
-                                                <option value="Married">Married</option>
-                                                <option value="Divorced">Divorced</option>
-                                                <option value="Widowed">Widowed</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="driving-license-input" class="form-label">Driving License <strong class="text-danger fw-bold">*</strong></label>
-                                            <input type="text" class="form-control" id="driving-license-input" placeholder="Enter Driving License Number" required value="DL123456"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="blood-group-input" class="form-label">Blood Group <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="blood-group-input" class="form-select" required title="Select your blood group">
-                                                <option value="">Select Blood Group</option>
-                                                <option value="A+" selected>A+</option> <!-- Selected -->
-                                                <option value="A-">A-</option>
-                                                <option value="B+">B+</option>
-                                                <option value="B-">B-</option>
-                                                <option value="AB+">AB+</option>
-                                                <option value="AB-">AB-</option>
-                                                <option value="O+">O+</option>
-                                                <option value="O-">O-</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="spouse-name-input" class="form-label">Spouse Name <strong class="text-danger fw-bold">*</strong></label>
-                                            <input type="text" class="form-control" id="spouse-name-input" placeholder="Enter Spouse Name" required value=""> <!-- Empty -->
-                                        </div>
-                                
-                                        <!-- Employment Details -->
-                                        <div class="col-12">
-                                            <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                                <p class="fw-semibold mb-0 pb-0 text-uppercase">Employment Details</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="department-input" class="form-label">Department <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="department-input" class="form-select" required title="Select Department">
-                                                <option value="">Select Department</option>
-                                                <option value="65" selected>65 - Finance &amp; Economic Planning</option> <!-- Selected -->
-                                                <option value="67">67 - Governance, Administration, Communication &amp; Devolution</option>
-                                                <option value="73">73 - Education, Human Capital Development &amp; Vocational Training</option>
-                                                <option value="62">62 - Blue Economy, Fisheries, Mining &amp; Digital Economy</option>
-                                                <option value="66">66 - Roads, Public Works, Transport &amp; Infrastructure</option>
-                                                <option value="61">61 - Youth, Sports, Talent Development, Gender Inclusivity, Cultural Heritage &amp; Social Services</option>
-                                                <option value="63">63 - Water, Irrigation, Sanitation, Environment, Energy, Forestry &amp; Climate Change</option>
-                                                <option value="68">68 - Public Health &amp; Medical Services</option>
-                                                <option value="64">64 - Lands, Physical Planning, Housing &amp; Urban Development</option>
-                                                <option value="69">69 - Trade, Industry, Tourism, Co-Operative Development and Marketing</option>
-                                                <option value="70">70 - Agriculture and Livestock Production</option>
-                                                <option value="72">72 - Office of the County Secretary and Head of Public Service</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="section-input" class="form-label">Section/Sub-vote <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="section-input" class="form-select" required title="Select Section/Sub-vote">
-                                                <option value="">Select Section/Sub-Vote</option>
-                                                <option value="1" selected>Medical Services</option> <!-- Selected -->
-                                                <option value="2">Public Health</option>
-                                                <option value="3">Roads and Transport</option>
-                                                <option value="4">Public Works</option>
-                                                <option value="5">Education and Vocational Training</option>
-                                                <option value="6">Human Capital Development</option>
-                                                <option value="7">Economic Planning</option>
-                                                <option value="8">Revenue Collection</option>
-                                                <option value="9">Water and Sanitation</option>
-                                                <option value="10">Environment and Climate Change</option>
-                                                <option value="11">Trade and Cooperatives</option>
-                                                <option value="12">Tourism and Marketing</option>
-                                                <option value="13">Lands and Housing</option>
-                                                <option value="14">Urban Development</option>
-                                                <option value="15">Governance and Administration</option>
-                                                <option value="16">Communication and Public Relations</option>
-                                                <option value="17">Fisheries and Blue Economy</option>
-                                                <option value="18">Mining and Digital Economy</option>
-                                                <option value="19">Youth and Sports</option>
-                                                <option value="20">Talent Development</option>
-                                                <option value="21">Gender Inclusivity</option>
-                                                <option value="22">Cultural Heritage</option>
-                                                <option value="23">Social Services</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="unit-input" class="form-label">Unit/Directorate (Sub Head) <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="unit-input" class="form-select" required title="Select Unit/Directorate">
-                                                <option value="">Select Unit/Directorate</option>
-                                                <option value="651" selected>651 - Accounts</option> <!-- Selected -->
-                                                <option value="652">652 - Audit</option>
-                                                <option value="653">653 - Project Finance</option>
-                                                <option value="654">654 - Revenue</option>
-                                                <option value="655">655 - Procurement</option>
-                                                <option value="656">656 - Economic Planning and Budgets</option>
-                                                <option value="671">671 - Administration</option>
-                                                <option value="672">672 - Inspectorate and Security Services</option>
-                                                <option value="673">673 - Public Communication</option>
-                                                <option value="674">674 - Stakeholder Management and Public Participation</option>
-                                                <option value="675">675 - Special Projects and Disaster Management</option>
-                                                <option value="731">731 - Early Years Education</option>
-                                                <option value="732">732 - Vocational Training and Human Capital</option>
-                                                <option value="621">621 - Blue Economy and Fisheries</option>
-                                                <option value="622">622 - Mining and Excavation of Mineral Resources</option>
-                                                <option value="623">623 - Digital Economy</option>
-                                                <option value="661">661 - Roads</option>
-                                                <option value="662">662 - Public Works</option>
-                                                <option value="611">611 - Sports and Talent Development</option>
-                                                <option value="612">612 - Youth</option>
-                                                <option value="613">613 - Cultural Heritage</option>
-                                                <option value="614">614 - Gender Inclusivity and Women Empowerment</option>
-                                                <option value="615">615 - Social Services</option>
-                                                <option value="631">631 - Water and Sanitation</option>
-                                                <option value="632">632 - Environment and Forestry</option>
-                                                <option value="633">633 - Energy</option>
-                                                <option value="634">634 - Climate Change</option>
-                                                <option value="635">635 - Irrigation Service</option>
-                                                <option value="681">681 - Medical Services</option>
-                                                <option value="682">682 - Public Health</option>
-                                                <option value="641">641 - Lands and Physical Planning</option>
-                                                <option value="642">642 - Housing and Urban Development</option>
-                                                <option value="643">643 - Municipalities</option>
-                                                <option value="691">691 - Trade, Industry and Tourism</option>
-                                                <option value="692">692 - Cooperative and Marketing</option>
-                                                <option value="701">701 - Agriculture</option>
-                                                <option value="702">702 - Livestock Production</option>
-                                                <option value="721">721 - Human Resource Management and Development</option>
-                                                <option value="722">722 - Inter-Governmental Relations</option>
-                                                <option value="723">723 - Cabinet Affairs</option>
-                                                <option value="724">724 - Office of the Ombudsman</option>
-                                                <option value="725">725 - Office of the County Secretary</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="subunit-input" class="form-label">Sub Unit <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="subunit-input" class="form-select" required title="Select Sub Unit">
-                                                <option value="">Select Sub-Unit</option>
-                                                <option value="1" selected>Emergency and Referral Services</option> <!-- Selected -->
-                                                <option value="2">Health Promotion and Disease Prevention</option>
-                                                <option value="3">Primary Healthcare Services</option>
-                                                <option value="4">Roads Maintenance</option>
-                                                <option value="5">Traffic Management</option>
-                                                <option value="6">Public Infrastructure Development</option>
-                                                <option value="7">Technical and Vocational Training Centers</option>
-                                                <option value="8">Human Resource Training and Capacity Building</option>
-                                                <option value="9">Budget Implementation and Monitoring</option>
-                                                <option value="10">Revenue Compliance and Enforcement</option>
-                                                <option value="11">Water Resource Management</option>
-                                                <option value="12">Sanitation and Waste Management</option>
-                                                <option value="13">Climate Change Adaptation</option>
-                                                <option value="14">Small Business Support</option>
-                                                <option value="15">Cooperative Societies Regulation</option>
-                                                <option value="16">Tourism Promotion</option>
-                                                <option value="17">Urban Planning and Development</option>
-                                                <option value="18">Public Housing Projects</option>
-                                                <option value="19">Administrative Reforms and Policy</option>
-                                                <option value="20">Media and Public Communication</option>
-                                                <option value="21">Aquaculture Development</option>
-                                                <option value="22">Mining Operations Management</option>
-                                                <option value="23">Youth Skills Development</option>
-                                                <option value="24">Sports Infrastructure Development</option>
-                                                <option value="25">Women Empowerment Programs</option>
-                                                <option value="26">Cultural Events and Heritage Conservation</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="designation-input" class="form-label">Designation <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="designation-input" class="form-select" required title="Select Designation">
-                                                <option value="">Select Designation</option>
-                                                <option value="director" selected>Director</option> <!-- Selected -->
-                                                <option value="governor">Governor</option>
-                                                <option value="deputy_governor">Deputy Governor</option>
-                                                <option value="county_secretary">County Secretary</option>
-                                                <option value="c_ec_member">County Executive Committee (CEC) Member</option>
-                                                <option value="chief_officer">Chief Officer</option>
-                                                <option value="county_attorney">County Attorney</option>
-                                                <option value="sub_county_administrator">Sub-County Administrator</option>
-                                                <option value="ward_administrator">Ward Administrator</option>
-                                                <option value="chief_finance_officer">Chief Finance Officer</option>
-                                                <option value="chief_hr_officer">Chief Human Resource Officer</option>
-                                                <option value="procurement_officer">Procurement Officer</option>
-                                                <option value="revenue_officer">Revenue Officer</option>
-                                                <option value="planning_officer">Planning Officer</option>
-                                                <option value="public_health_officer">Public Health Officer</option>
-                                                <option value="medical_officer">Medical Officer</option>
-                                                <option value="agriculture_officer">Agriculture Officer</option>
-                                                <option value="livestock_officer">Livestock Officer</option>
-                                                <option value="environment_officer">Environment Officer</option>
-                                                <option value="education_officer">Education Officer</option>
-                                                <option value="ict_officer">ICT Officer</option>
-                                                <option value="social_services_officer">Social Services Officer</option>
-                                                <option value="youth_officer">Youth Affairs Officer</option>
-                                                <option value="gender_officer">Gender &amp; Social Development Officer</option>
-                                                <option value="legal_officer">Legal Officer</option>
-                                                <option value="town_administrator">Town Administrator</option>
-                                                <option value="public_relations_officer">Public Relations Officer</option>
-                                                <option value="county_engineer">County Engineer</option>
-                                                <option value="road_supervisor">Road Supervisor</option>
-                                                <option value="water_officer">Water and Sanitation Officer</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="employment-date-input" class="form-label">Employment Date</label>
-                                            <input class="form-control" type="date" id="employment-date-input" title="Select your employment start date" value="2018-06-01"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="reporting-input" class="form-label">Reporting To <strong class="text-danger fw-bold">*</strong></label>
-                                            <select id="reporting-input" class="form-select" required title="Select Reporting To">
-                                                <option value="">Select Reporting To</option>
-                                                <option value="R001" selected>Chief Officer</option> <!-- Selected -->
-                                                <option value="R002">Director</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="salary-input" class="form-label">Net Salary</label>
-                                            <input class="form-control" type="text" id="salary-input" title="Enter Net Salary" placeholder="Enter Amount" value="150,000"> <!-- Filled -->
-                                        </div>
-                                
-                                        <!-- Employment Documents -->
-                                        <div class="col-12">
-                                            <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                                <p class="fw-semibold mb-0 pb-0 text-uppercase">Employment Documents</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <table class="table table-editable-1 align-middle table-edits">
-                                                <thead class="table-light">
-                                                    <tr class="text-uppercase table-dark">
-                                                        <th>#</th>
-                                                        <th>Document</th>
-                                                        <th class="">File</th>
-                                                        <th class="">Document Number</th>
-                                                        <th>valid Till</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr data-id="1">
-                                                        <td style="width: 80px">1.</td>
-                                                        <td>ID Card</td>
-                                                        <td><input class="form-control" type="file" id="formFile"></td>
-                                                        <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false" value="12345678"></td>
-                                                        <td><input class="form-control" type="date" value="2025-12-31"></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr data-id="2">
-                                                        <td style="width: 80px">2.</td>
-                                                        <td>SHIF</td>
-                                                        <td><input class="form-control" type="file" id="formFile"></td>
-                                                        <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false" value="SHIF12345"></td>
-                                                        <td><input class="form-control" type="date" value="2025-12-31"></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr data-id="3">
-                                                        <td style="width: 80px">3.</td>
-                                                        <td>NSSF</td>
-                                                        <td><input class="form-control" type="file" id="formFile"></td>
-                                                        <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false" value="NSSF12345"></td>
-                                                        <td><input class="form-control" type="date" value="2025-12-31"></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr data-id="4">
-                                                        <td style="width: 80px">4.</td>
-                                                        <td>KRA PIN</td>
-                                                        <td><input class="form-control" type="file" id="formFile"></td>
-                                                        <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false" value="A123456789X"></td>
-                                                        <td><input class="form-control" type="date" value="2025-12-31"></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr data-id="5">
-                                                        <td style="width: 80px">5.</td>
-                                                        <td>Deployment Letter</td>
-                                                        <td><input class="form-control" type="file" id="formFile"></td>
-                                                        <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false" value="DL12345"></td>
-                                                        <td><input class="form-control" type="date" value="2025-12-31"></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr data-id="6">
-                                                        <td style="width: 80px">6.</td>
-                                                        <td>Appointment Letter</td>
-                                                        <td><input class="form-control" type="file" id="formFile"></td>
-                                                        <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false" value="AL12345"></td>
-                                                        <td><input class="form-control" type="date" value="2025-12-31"></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr data-id="7">
-                                                        <td style="width: 80px">7.</td>
-                                                        <td>Birth Certificate</td>
-                                                        <td><input class="form-control" type="file" id="formFile"></td>
-                                                        <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false" value="BC12345"></td>
-                                                        <td><input class="form-control" type="date" value="2025-12-31"></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr data-id="8">
-                                                        <td style="width: 80px">8.</td>
-                                                        <td>Transfer Letter</td>
-                                                        <td><input class="form-control" type="file" id="formFile"></td>
-                                                        <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false" value="TL12345"></td>
-                                                        <td><input class="form-control" type="date" value="2025-12-31"></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr class="cloneCharges d-none">
-                                                        <td style="width: 80px " class="categoryIndex ">#</td>
-                                                        <td class=""> <input type="text " class="form-control " placeholder="Document Name" spellcheck="false" data-ms-editor="true"></td>
-                                                        <td>
-                                                            <input class="form-control" type="file" id="formFile">
-                                                        </td>
-                                                        <td class="">
-                                                            <input type="text " class="form-control " placeholder="Owner's Name" spellcheck="false" data-ms-editor="true">
-                                                        </td>
-                                                        <td class="">
-                                                            <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
-                                                        </td>
-                                                        <td class="text-right cell-change d-flex align-items-center justify-content-end">
-                                                            <a class="btn btn-light btn-rounded waves-effect btn-circle btn-transparent cancel-new-category-2 " title="Cancel "><i class="bx bx-x "></i></a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <td colspan="7" class="bg-light add-field-1 cursor-pointer">
-                                                            <span class="d-flex align-items-center "><i class="dripicons-plus mr-5 d-flex justify-content-center align-items-center font-21 "></i><span class="pl-5 ">Upload Other Documetnts</span></span>
-                                                        </td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
-                                        </div>
-                                
-                                        <!-- Bank Details -->
-                                        <div class="col-12">
-                                            <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                                <p class="fw-semibold mb-0 pb-0 text-uppercase">Bank Details</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="salary-input" class="form-label">Net Salary</label>
-                                            <input class="form-control" type="text" id="salary-input" title="Enter Net Salary" placeholder="Enter Amount" value="150,000"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="account-holder" class="form-label">Account Holder Name</label>
-                                            <input class="form-control" type="text" id="account-holder" title="Enter Account Holder Name" placeholder="Enter Name" value="John Doe"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="account-number" class="form-label">Account Number</label>
-                                            <input class="form-control" type="text" id="account-number" title="Enter Account Number" placeholder="Enter Account Number" value="1234567890"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="bank-country" class="form-label">Country of The Bank</label>
-                                            <input class="form-control" type="text" id="bank-country" title="Enter Country of The Bank" placeholder="Enter Country" value="Kenya"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="bank-name" class="form-label">Bank Name</label>
-                                            <input class="form-control" type="text" id="bank-name" title="Enter Bank Name" placeholder="Enter Bank Name" value="Equity Bank"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="branch-location" class="form-label">Branch Location</label>
-                                            <input class="form-control" type="text" id="branch-location" title="Enter Branch Location" placeholder="Enter Branch Location" value="Nairobi CBD"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="shif-number" class="form-label">SHIF Number</label>
-                                            <input class="form-control" type="text" id="shif-number" title="Enter SHIF Number" placeholder="Enter SHIF Number" value="SHIF12345"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                            <label for="nssf-number" class="form-label">NSSF Number</label>
-                                            <input class="form-control" type="text" id="nssf-number" title="Enter NSSF Number" placeholder="Enter NSSF Number" value="NSSF12345"> <!-- Filled -->
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                                <p class="fw-semibold mb-0 pb-0 text-uppercase">Emergency Contact Details</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <table class="table table-editable-1 align-middle table-edits">
-                                                <thead class="table-light">
-                                                    <tr class="text-uppercase table-dark">
-                                                        <th>#</th>
-                                                        <th>Name</th>
-                                                        <th>Email</th>
-                                                        <th>Phone Number</th>
-                                                        <th>Relationship</th>   
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr data-id="1">
-                                                        <td style="width: 80px">1.</td>
-                                                        <td>
-                                                            <input type="text" class="form-control" placeholder="Enter full name" title="Enter the contact's full name" spellcheck="false" value="Jane Doe"> <!-- Filled -->
-                                                        </td>
-                                                        <td>
-                                                            <input type="email" class="form-control" placeholder="example@email.com" title="Enter a valid email address" spellcheck="false" value="jane.doe@example.com"> <!-- Filled -->
-                                                        </td>
-                                                        <td>
-                                                            <input type="text" class="form-control" placeholder="Enter phone number" title="Enter a valid phone number" spellcheck="false" value="0712345678"> <!-- Filled -->
-                                                        </td>
-                                                        <td>
-                                                            <select class="form-control" data-live-search="true" title="Select relationship">
-                                                                <option value="" disabled>-- Select Relationship --</option>
-                                                                <option value="Spouse" selected>Spouse</option> <!-- Selected -->
-                                                                <option value="Father">Father</option>
-                                                                <option value="Mother">Mother</option>
-                                                                <option value="Sister">Sister</option>
-                                                                <option value="Child">Child</option>
-                                                                <option value="Friend">Friend</option>
-                                                                <option value="Guardian">Guardian</option>
-                                                            </select>
-                                                        </td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr class="cloneCharges d-none">
-                                                        <td style="width: 80px" class="categoryIndex">#</td>
-                                                        <td>
-                                                            <input type="text" class="form-control" placeholder="Enter full name" title="Enter the contact's full name" spellcheck="false">
-                                                        </td>
-                                                        <td>
-                                                            <input type="email" class="form-control" placeholder="example@email.com" title="Enter a valid email address" spellcheck="false">
-                                                        </td>
-                                                        <td>
-                                                            <input type="text" class="form-control" placeholder="Enter phone number" title="Enter a valid phone number" spellcheck="false">
-                                                        </td>
-                                                        <td>
-                                                            <select class="form-control" data-live-search="true" title="Select relationship">
-                                                                <option value="" disabled>-- Select Relationship --</option>
-                                                                <option value="Father">Father</option>
-                                                                <option value="Mother">Mother</option>
-                                                                <option value="Sister">Sister</option>
-                                                                <option value="Spouse">Spouse</option>
-                                                                <option value="Child">Child</option>
-                                                                <option value="Friend">Friend</option>
-                                                                <option value="Guardian">Guardian</option>
-                                                            </select>
-                                                        </td>
-                                                        <td class="text-right cell-change d-flex align-items-center justify-content-end">
-                                                            <a class="btn btn-light btn-rounded waves-effect btn-circle btn-transparent cancel-new-category-2" title="Remove contact">
-                                                                <i class="bx bx-x"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <td colspan="7" class="bg-light add-field-1 cursor-pointer">
-                                                            <span class="d-flex align-items-center text-uppercase">
-                                                                <i class="dripicons-plus mr-5 d-flex justify-content-center align-items-center font-21"></i>
-                                                                <span class="pl-5">Add Contact</span>
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                                <p class="fw-semibold mb-0 pb-0 text-uppercase">Next Of Kin</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <table class="table table-editable-1 align-middle table-edits">
-                                                <thead class="table-light">
-                                                    <tr class="text-uppercase table-dark">
-                                                        <th>#</th>
-                                                        <th>Name</th>
-                                                        <th>Email</th>
-                                                        <th>Phone Number</th>
-                                                        <th>Relationship</th>   
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr data-id="1">
-                                                        <td style="width: 80px">1.</td>
-                                                        <td>
-                                                            <input type="text" class="form-control" placeholder="Enter full name" title="Enter the contact's full name" spellcheck="false" value="Mary Doe"> <!-- Filled -->
-                                                        </td>
-                                                        <td>
-                                                            <input type="email" class="form-control" placeholder="example@email.com" title="Enter a valid email address" spellcheck="false" value="mary.doe@example.com"> <!-- Filled -->
-                                                        </td>
-                                                        <td>
-                                                            <input type="text" class="form-control" placeholder="Enter phone number" title="Enter a valid phone number" spellcheck="false" value="0723456789"> <!-- Filled -->
-                                                        </td>
-                                                        <td>
-                                                            <select class="form-control" data-live-search="true" title="Select relationship">
-                                                                <option value="" disabled>-- Select Relationship --</option>
-                                                                <option value="Mother" selected>Mother</option> <!-- Selected -->
-                                                                <option value="Father">Father</option>
-                                                                <option value="Sister">Sister</option>
-                                                                <option value="Spouse">Spouse</option>
-                                                                <option value="Child">Child</option>
-                                                                <option value="Friend">Friend</option>
-                                                                <option value="Guardian">Guardian</option>
-                                                            </select>
-                                                        </td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr class="cloneCharges d-none">
-                                                        <td style="width: 80px" class="categoryIndex">#</td>
-                                                        <td>
-                                                            <input type="text" class="form-control" placeholder="Enter full name" title="Enter the contact's full name" spellcheck="false">
-                                                        </td>
-                                                        <td>
-                                                            <input type="email" class="form-control" placeholder="example@email.com" title="Enter a valid email address" spellcheck="false">
-                                                        </td>
-                                                        <td>
-                                                            <input type="text" class="form-control" placeholder="Enter phone number" title="Enter a valid phone number" spellcheck="false">
-                                                        </td>
-                                                        <td>
-                                                            <select class="form-control" data-live-search="true" title="Select relationship">
-                                                                <option value="" disabled>-- Select Relationship --</option>
-                                                                <option value="Father">Father</option>
-                                                                <option value="Mother">Mother</option>
-                                                                <option value="Sister">Sister</option>
-                                                                <option value="Spouse">Spouse</option>
-                                                                <option value="Child">Child</option>
-                                                                <option value="Friend">Friend</option>
-                                                                <option value="Guardian">Guardian</option>
-                                                            </select>
-                                                        </td>
-                                                        <td class="text-right cell-change d-flex align-items-center justify-content-end">
-                                                            <a class="btn btn-light btn-rounded waves-effect btn-circle btn-transparent cancel-new-category-2" title="Remove contact">
-                                                                <i class="bx bx-x"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <td colspan="7" class="bg-light add-field-1 cursor-pointer">
-                                                            <span class="d-flex align-items-center text-uppercase">
-                                                                <i class="dripicons-plus mr-5 d-flex justify-content-center align-items-center font-21"></i>
-                                                                <span class="pl-5">Add Kin</span>
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
-                                        </div>
-                                    </div>
-                               <div class="card-body d-none">
-                                <div class="row">
+                                    <!-- Personal Details -->
                                     <div class="col-12">
                                         <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
                                             <p class="fw-semibold mb-0 pb-0 text-uppercase">Personal Details</p>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-md-8 col-lg-6">
-                                        <div class="row">
-                                            <div class="col-4 mb-3">
-                                                <label for="title-input" class="form-label">Title <strong class="text-danger fw-bold">*</strong></label>
-                                                <select class="form-control" id="title-input" required title="Select your title">
-                                                    <option value="">Select Title</option>
-                                                    <option value="Mr">Mr</option>
-                                                    <option value="Mrs">Mrs</option>
-                                                    <option value="Miss">Miss</option>
-                                                    <option value="Ms">Ms</option>
-                                                    <option value="Dr">Dr</option>
-                                                    <option value="Prof">Prof</option>
-                                                    <option value="Mx">Mx</option> <!-- Gender-neutral title -->
-                                                </select>
-                                            </div>
-                                            <div class="col-8 mb-3">
-                                                <label for="first-name-input" class="form-label">First Name <strong class="text-danger fw-bold">*</strong></label>
-                                                <input type="text" class="form-control" id="first-name-input" placeholder="Enter First Name" spellcheck="false" required title="Enter your first name">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="middle-name-input" class="form-label">Middle Name</label>
-                                        <input type="text" class="form-control" id="middle-name-input" placeholder="Enter Middle Name (optional)" spellcheck="false" title="Enter your middle name (if applicable)">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="last-name-input" class="form-label">Last Name <strong class="text-danger fw-bold">*</strong></label>
-                                        <input type="text" class="form-control" id="last-name-input" placeholder="Enter Last Name" spellcheck="false" required title="Enter your last name">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="dob-input" class="form-label">Date Of Birth</label>
-                                        <input class="form-control" type="date" id="dob-input" title="Select your date of birth">
-                                    </div>
-                                    
-                                    
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="email-input" class="form-label">Email Address <strong class="text-danger fw-bold">*</strong></label>
-                                        <input type="email" class="form-control" id="email-input" placeholder="Enter Email Address" spellcheck="false" required title="Enter your valid email address">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="phone-input" class="form-label">Phone Number <strong class="text-danger fw-bold">*</strong></label>
-                                        <input type="tel" class="form-control" id="phone-input" placeholder="Enter Phone Number" spellcheck="false" required title="Enter your mobile phone number">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="id-number-input" class="form-label">National ID <strong class="text-danger fw-bold">*</strong></label>
-                                        <input type="number" class="form-control" id="id-number-input" placeholder="Enter National ID Number" required title="Enter your National ID number">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-3 mb-3">
-                                        <label for="gender-input" class="form-label">Gender <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="gender-input" class="form-select" required title="Select your gender">
-                                            <option value="">Select Gender</option>
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-sm-6 col-md-3 mb-3">
-                                        <label for="disability-status-input" class="form-label">Person with Disability? <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="disability-status-input" class="form-select" required title="Select disability status">
-                                            <option value="">Select Option</option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-3 mb-3">
-                                        <label for="disability-id-input" class="form-label">Disability ID</label>
-                                        <input type="text" class="form-control" id="disability-id-input" placeholder="Enter Disability ID" spellcheck="false">
-                                    </div>
-                                    
-                                  
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="postal-code-input" class="form-label">Postal Code <strong class="text-danger fw-bold">*</strong></label>
-                                        <input type="text" class="form-control" id="postal-code-input" placeholder="Enter Postal Code" required title="Enter your area postal code">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="postal-town-input" class="form-label">Postal Town <strong class="text-danger fw-bold">*</strong></label>
-                                        <input type="text" class="form-control" id="postal-town-input" placeholder="Enter Postal Town" required title="Enter your postal town">
-                                    </div>
-                                    
                                     <div class="col-12">
-                                        <div class="row">
-                                            <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                                <label for="physical-address-input" class="form-label">Physical Address <strong class="text-danger fw-bold">*</strong></label>
-                                                <textarea class="form-control" id="physical-address-input" placeholder="Enter Address details" required title="Enter your residential or business address"></textarea>
-                                            </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Title:</th>
+                                                        <td>Mr</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>First Name:</th>
+                                                        <td>John</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Middle Name:</th>
+                                                        <td>Michael</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Last Name:</th>
+                                                        <td>Doe</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Date of Birth:</th>
+                                                        <td>1990-05-15</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Email Address:</th>
+                                                        <td>john.doe@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Phone Number:</th>
+                                                        <td>0712345678</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>National ID:</th>
+                                                        <td>12345678</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Gender:</th>
+                                                        <td>Male</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Person with Disability:</th>
+                                                        <td>No</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Postal Code:</th>
+                                                        <td>00100</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Postal Town:</th>
+                                                        <td>Nairobi</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Physical Address:</th>
+                                                        <td>123 Main Street, Nairobi</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
-                                    
 
-                                    
-
+                                    <!-- Extra Details -->
                                     <div class="col-12">
                                         <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
                                             <p class="fw-semibold mb-0 pb-0 text-uppercase">Extra Details</p>
                                         </div>
                                     </div>
-
-                                    <div class="col-sm-6 col-md-3 mb-3">
-                                        <label for="employment-type-input" class="form-label">Employment Type <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="employment-type-input" class="form-select" required title="Select your employment type">
-                                            <option value="">Select Employment Type</option>
-                                            <option value="Permanent">Permanent</option>
-                                            <option value="Contract">Contract</option>
-                                            <option value="Temporary">Temporary</option>
-                                            <option value="Internship">Internship</option>
-                                            <option value="Casual">Casual</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-3 mb-3">
-                                        <label for="education-level-input" class="form-label">Education Level <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="education-level-input" class="form-select" required title="Select your education level">
-                                            <option value="">Select Education Level</option>
-                                            <option value="Primary">Primary</option>
-                                            <option value="Secondary">Secondary</option>
-                                            <option value="Diploma">Diploma</option>
-                                            <option value="Undergraduate">Undergraduate</option>
-                                            <option value="Postgraduate">Postgraduate</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-3 mb-3">
-                                        <label for="sub-county-input" class="form-label">Sub County <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="sub-county-input" class="form-select" required title="Select your sub county">
-                                            <option value="">Select Sub County</option>
-                                            <option value="Homa Bay Town">Homa Bay Town</option>
-                                            <option value="Rachuonyo North">Rachuonyo North</option>
-                                            <option value="Rachuonyo East">Rachuonyo East</option>
-                                            <option value="Rachuonyo South">Rachuonyo South</option>
-                                            <option value="Ndhiwa">Ndhiwa</option>
-                                            <option value="Rangwe">Rangwe</option>
-                                            <option value="Suba North">Suba North</option>
-                                            <option value="Suba South">Suba South</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-3 mb-3">
-                                        <label for="ward-input" class="form-label">Ward <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="ward-input" class="form-select" required title="Select your ward">
-                                            <option value="">Select Ward</option>
-                                            <option value="Homa Bay Central">Homa Bay Central</option>
-                                            <option value="Homa Bay Arujo">Homa Bay Arujo</option>
-                                            <option value="Homa Bay West">Homa Bay West</option>
-                                            <option value="Homa Bay East">Homa Bay East</option>
-                                            <option value="Kendu Bay Town">Kendu Bay Town</option>
-                                            <option value="Karachuonyo">Karachuonyo</option>
-                                            <option value="Kanyaluo">Kanyaluo</option>
-                                            <option value="Kasipul">Kasipul</option>
-                                            <option value="Kabondo Kasipul">Kabondo Kasipul</option>
-                                            <option value="Ndhiwa">Ndhiwa</option>
-                                            <option value="Kabuoch North">Kabuoch North</option>
-                                            <option value="Kabuoch South">Kabuoch South</option>
-                                            <option value="Kanyikela">Kanyikela</option>
-                                            <option value="Rangwe">Rangwe</option>
-                                            <option value="Gem East">Gem East</option>
-                                            <option value="Gem West">Gem West</option>
-                                            <option value="Suba North">Suba North</option>
-                                            <option value="Suba South">Suba South</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-3 mb-3">
-                                        <label for="marital-status-input" class="form-label">Marital Status <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="marital-status-input" class="form-select" required title="Select your marital status">
-                                            <option value="">Select Marital Status</option>
-                                            <option value="Single">Single</option>
-                                            <option value="Married">Married</option>
-                                            <option value="Divorced">Divorced</option>
-                                            <option value="Widowed">Widowed</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="driving-license-input" class="form-label">Driving License <strong class="text-danger fw-bold">*</strong></label>
-                                        <input type="text" class="form-control" id="driving-license-input" placeholder="Enter Driving License Number" required>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="blood-group-input" class="form-label">Blood Group <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="blood-group-input" class="form-select" required title="Select your blood group">
-                                            <option value="">Select Blood Group</option>
-                                            <option value="A+">A+</option>
-                                            <option value="A-">A-</option>
-                                            <option value="B+">B+</option>
-                                            <option value="B-">B-</option>
-                                            <option value="AB+">AB+</option>
-                                            <option value="AB-">AB-</option>
-                                            <option value="O+">O+</option>
-                                            <option value="O-">O-</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="spouse-name-input" class="form-label">Spouse Name <strong class="text-danger fw-bold">*</strong></label>
-                                        <input type="text" class="form-control" id="spouse-name-input" placeholder="Enter Spouse Name" required>
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Employment Type:</th>
+                                                        <td>Permanent</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Education Level:</th>
+                                                        <td>Undergraduate</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Sub County:</th>
+                                                        <td>Homa Bay Town</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Ward:</th>
+                                                        <td>Homa Bay Central</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Marital Status:</th>
+                                                        <td>Single</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Driving License:</th>
+                                                        <td>DL123456</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Blood Group:</th>
+                                                        <td>A+</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Spouse Name:</th>
+                                                        <td>-</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
 
+                                    <!-- Employment Details -->
                                     <div class="col-12">
                                         <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
                                             <p class="fw-semibold mb-0 pb-0 text-uppercase">Employment Details</p>
                                         </div>
                                     </div>
-
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="department-input" class="form-label">Department <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="department-input" class="form-select" required title="Select Department">
-                                                <option selected="selected" value="">Department</option>
-                                                <option value="65">65 - Finance &amp; Economic Planning</option>
-                                                <option value="67">67 - Governance, Administration, Communication &amp; Devolution</option>
-                                                <option value="73">73 - Education, Human Capital Development &amp; Vocational Training</option>
-                                                <option value="62">62 - Blue Economy, Fisheries, Mining &amp; Digital Economy</option>
-                                                <option value="66">66 - Roads, Public Works, Transport &amp; Infrastructure</option>
-                                                <option value="61">61 - Youth, Sports, Talent Development, Gender Inclusivity, Cultural Heritage &amp; Social Services</option>
-                                                <option value="63">63 - Water, Irrigation, Sanitation, Environment, Energy, Forestry &amp; Climate Change</option>
-                                                <option value="68">68 - Public Health &amp; Medical Services</option>
-                                                <option value="64">64 - Lands, Physical Planning, Housing &amp; Urban Development</option>
-                                                <option value="69">69 - Trade, Industry, Tourism, Co-Operative Development and Marketing</option>
-                                                <option value="70">70 - Agriculture and Livestock Production</option>
-                                                <option value="72">72 - Office of the County Secretary and Head of Public Service</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="section-input" class="form-label">Section/Sub-vote <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="section-input" class="form-select" required title="Select Section/Sub-vote">
-                                                <option selected="selected" value="">Select Section/Sub-Vote</option>
-                                                <option value="1">Medical Services</option>
-                                                <option value="2">Public Health</option>
-                                                <option value="3">Roads and Transport</option>
-                                                <option value="4">Public Works</option>
-                                                <option value="5">Education and Vocational Training</option>
-                                                <option value="6">Human Capital Development</option>
-                                                <option value="7">Economic Planning</option>
-                                                <option value="8">Revenue Collection</option>
-                                                <option value="9">Water and Sanitation</option>
-                                                <option value="10">Environment and Climate Change</option>
-                                                <option value="11">Trade and Cooperatives</option>
-                                                <option value="12">Tourism and Marketing</option>
-                                                <option value="13">Lands and Housing</option>
-                                                <option value="14">Urban Development</option>
-                                                <option value="15">Governance and Administration</option>
-                                                <option value="16">Communication and Public Relations</option>
-                                                <option value="17">Fisheries and Blue Economy</option>
-                                                <option value="18">Mining and Digital Economy</option>
-                                                <option value="19">Youth and Sports</option>
-                                                <option value="20">Talent Development</option>
-                                                <option value="21">Gender Inclusivity</option>
-                                                <option value="22">Cultural Heritage</option>
-                                                <option value="23">Social Services</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="unit-input" class="form-label">Unit/Directorate (Sub Head) <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="unit-input" class="form-select" required title="Select Unit/Directorate">
-                                                <option selected="selected" value="">Select Unit/Directorate</option>
-                                                <option value="651">651 - Accounts</option>
-                                                <option value="652">652 - Audit</option>
-                                                <option value="653">653 - Project Finance</option>
-                                                <option value="654">654 - Revenue</option>
-                                                <option value="655">655 - Procurement</option>
-                                                <option value="656">656 - Economic Planning and Budgets</option>
-                                                <option value="671">671 - Administration</option>
-                                                <option value="672">672 - Inspectorate and Security Services</option>
-                                                <option value="673">673 - Public Communication</option>
-                                                <option value="674">674 - Stakeholder Management and Public Participation</option>
-                                                <option value="675">675 - Special Projects and Disaster Management</option>
-                                                <option value="731">731 - Early Years Education</option>
-                                                <option value="732">732 - Vocational Training and Human Capital</option>
-                                                <option value="621">621 - Blue Economy and Fisheries</option>
-                                                <option value="622">622 - Mining and Excavation of Mineral Resources</option>
-                                                <option value="623">623 - Digital Economy</option>
-                                                <option value="661">661 - Roads</option>
-                                                <option value="662">662 - Public Works</option>
-                                                <option value="611">611 - Sports and Talent Development</option>
-                                                <option value="612">612 - Youth</option>
-                                                <option value="613">613 - Cultural Heritage</option>
-                                                <option value="614">614 - Gender Inclusivity and Women Empowerment</option>
-                                                <option value="615">615 - Social Services</option>
-                                                <option value="631">631 - Water and Sanitation</option>
-                                                <option value="632">632 - Environment and Forestry</option>
-                                                <option value="633">633 - Energy</option>
-                                                <option value="634">634 - Climate Change</option>
-                                                <option value="635">635 - Irrigation Service</option>
-                                                <option value="681">681 - Medical Services</option>
-                                                <option value="682">682 - Public Health</option>
-                                                <option value="641">641 - Lands and Physical Planning</option>
-                                                <option value="642">642 - Housing and Urban Development</option>
-                                                <option value="643">643 - Municipalities</option>
-                                                <option value="691">691 - Trade, Industry and Tourism</option>
-                                                <option value="692">692 - Cooperative and Marketing</option>
-                                                <option value="701">701 - Agriculture</option>
-                                                <option value="702">702 - Livestock Production</option>
-                                                <option value="721">721 - Human Resource Management and Development</option>
-                                                <option value="722">722 - Inter-Governmental Relations</option>
-                                                <option value="723">723 - Cabinet Affairs</option>
-                                                <option value="724">724 - Office of the Ombudsman</option>
-                                                <option value="725">725 - Office of the County Secretary</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="subunit-input" class="form-label">Sub Unit <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="subunit-input" class="form-select" required title="Select Sub Unit">
-                                                <option selected="selected" value="">Select Sub-Unit</option>
-                                                <option value="1">Emergency and Referral Services</option>
-                                                <option value="2">Health Promotion and Disease Prevention</option>
-                                                <option value="3">Primary Healthcare Services</option>
-                                                <option value="4">Roads Maintenance</option>
-                                                <option value="5">Traffic Management</option>
-                                                <option value="6">Public Infrastructure Development</option>
-                                                <option value="7">Technical and Vocational Training Centers</option>
-                                                <option value="8">Human Resource Training and Capacity Building</option>
-                                                <option value="9">Budget Implementation and Monitoring</option>
-                                                <option value="10">Revenue Compliance and Enforcement</option>
-                                                <option value="11">Water Resource Management</option>
-                                                <option value="12">Sanitation and Waste Management</option>
-                                                <option value="13">Climate Change Adaptation</option>
-                                                <option value="14">Small Business Support</option>
-                                                <option value="15">Cooperative Societies Regulation</option>
-                                                <option value="16">Tourism Promotion</option>
-                                                <option value="17">Urban Planning and Development</option>
-                                                <option value="18">Public Housing Projects</option>
-                                                <option value="19">Administrative Reforms and Policy</option>
-                                                <option value="20">Media and Public Communication</option>
-                                                <option value="21">Aquaculture Development</option>
-                                                <option value="22">Mining Operations Management</option>
-                                                <option value="23">Youth Skills Development</option>
-                                                <option value="24">Sports Infrastructure Development</option>
-                                                <option value="25">Women Empowerment Programs</option>
-                                                <option value="26">Cultural Events and Heritage Conservation</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="designation-input" class="form-label">Designation <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="designation-input" class="form-select" required title="Select Designation">
-                                                <option value="">Select Designation</option>
-                                                <option value="governor">Governor</option>
-                                                <option value="deputy_governor">Deputy Governor</option>
-                                                <option value="county_secretary">County Secretary</option>
-                                                <option value="c_ec_member">County Executive Committee (CEC) Member</option>
-                                                <option value="chief_officer">Chief Officer</option>
-                                                <option value="county_attorney">County Attorney</option>
-                                                <option value="director">Director</option>
-                                                <option value="sub_county_administrator">Sub-County Administrator</option>
-                                                <option value="ward_administrator">Ward Administrator</option>
-                                                <option value="chief_finance_officer">Chief Finance Officer</option>
-                                                <option value="chief_hr_officer">Chief Human Resource Officer</option>
-                                                <option value="procurement_officer">Procurement Officer</option>
-                                                <option value="revenue_officer">Revenue Officer</option>
-                                                <option value="planning_officer">Planning Officer</option>
-                                                <option value="public_health_officer">Public Health Officer</option>
-                                                <option value="medical_officer">Medical Officer</option>
-                                                <option value="agriculture_officer">Agriculture Officer</option>
-                                                <option value="livestock_officer">Livestock Officer</option>
-                                                <option value="environment_officer">Environment Officer</option>
-                                                <option value="education_officer">Education Officer</option>
-                                                <option value="ict_officer">ICT Officer</option>
-                                                <option value="social_services_officer">Social Services Officer</option>
-                                                <option value="youth_officer">Youth Affairs Officer</option>
-                                                <option value="gender_officer">Gender &amp; Social Development Officer</option>
-                                                <option value="legal_officer">Legal Officer</option>
-                                                <option value="town_administrator">Town Administrator</option>
-                                                <option value="public_relations_officer">Public Relations Officer</option>
-                                                <option value="county_engineer">County Engineer</option>
-                                                <option value="road_supervisor">Road Supervisor</option>
-                                                <option value="water_officer">Water and Sanitation Officer</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="employment-date-input" class="form-label">Employment Date</label>
-                                        <input class="form-control" type="date" id="employment-date-input" title="Select your employment start date">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="reporting-input" class="form-label">Reporting To <strong class="text-danger fw-bold">*</strong></label>
-                                        <select id="reporting-input" class="form-select" required title="Select Reporting To">
-                                            <option value="">Select Reporting To</option>
-                                            <option value="R001">Chief Officer</option>
-                                            <option value="R002">Director</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="salary-input" class="form-label">Net Salary</label>
-                                        <input class="form-control" type="text" id="salary-input" title="Enter Net Salary" placeholder="Enter Amount">
-                                    </div>
-
                                     <div class="col-12">
-                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Employment Documents</p>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Department:</th>
+                                                        <td>Finance & Economic Planning</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Section/Sub-vote:</th>
+                                                        <td>Medical Services</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Unit/Directorate:</th>
+                                                        <td>Accounts</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Sub Unit:</th>
+                                                        <td>Emergency and Referral Services</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Designation:</th>
+                                                        <td>Director</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Employment Date:</th>
+                                                        <td>2018-06-01</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Reporting To:</th>
+                                                        <td>Chief Officer</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Net Salary:</th>
+                                                        <td>KES 150,000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
 
-                                    <div class="col-12">
-                                        <table class="table table-editable-1 align-middle table-edits">
-                                            <thead class="table-light">
-                                                <tr class="text-uppercase table-dark">
-                                                    <th>#</th>
-                                                    <th>Document</th>
-                                                    <th class="">File</th>
-                                                    <th class="">Document Number</th>
-                                                    <th>valid Till</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr data-id="1">
-                                                    <td style="width: 80px">1.</td>
-                                                    <td>ID Card</td>
-                                                    <td><input class="form-control" type="file" id="formFile"></td>
-                                                    <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false"></td>
-                                                    <td><input class="form-control" type="date" value="2019-08-19"></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr data-id="2">
-                                                    <td style="width: 80px">2.</td>
-                                                    <td>SHIF</td>
-                                                    <td><input class="form-control" type="file" id="formFile"></td>
-                                                    <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false"></td>
-                                                    <td><input class="form-control" type="date" value="2019-08-19"></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr data-id="3">
-                                                    <td style="width: 80px">3.</td>
-                                                    <td>NSSF</td>
-                                                    <td><input class="form-control" type="file" id="formFile"></td>
-                                                    <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false"></td>
-                                                    <td><input class="form-control" type="date" value="2019-08-19"></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr data-id="4">
-                                                    <td style="width: 80px">4.</td>
-                                                    <td>KRA PIN</td>
-                                                    <td><input class="form-control" type="file" id="formFile"></td>
-                                                    <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false"></td>
-                                                    <td><input class="form-control" type="date" value="2019-08-19"></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr data-id="5">
-                                                    <td style="width: 80px">5.</td>
-                                                    <td>Deployment Letter</td>
-                                                    <td><input class="form-control" type="file" id="formFile"></td>
-                                                    <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false"></td>
-                                                    <td><input class="form-control" type="date" value="2019-08-19"></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr data-id="6">
-                                                    <td style="width: 80px">6.</td>
-                                                    <td>Appointment Letter</td>
-                                                    <td><input class="form-control" type="file" id="formFile"></td>
-                                                    <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false"></td>
-                                                    <td><input class="form-control" type="date" value="2019-08-19"></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr data-id="7">
-                                                    <td style="width: 80px">7.</td>
-                                                    <td>Birth Certificate</td>
-                                                    <td><input class="form-control" type="file" id="formFile"></td>
-                                                    <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false"></td>
-                                                    <td><input class="form-control" type="date" value="2019-08-19"></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr data-id="8">
-                                                    <td style="width: 80px">8.</td>
-                                                    <td>Transfer Letter</td>
-                                                    <td><input class="form-control" type="file" id="formFile"></td>
-                                                    <td><input type="text" class="form-control" placeholder="Owner's Name" spellcheck="false"></td>
-                                                    <td><input class="form-control" type="date" value="2019-08-19"></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="cloneCharges d-none">
-                                                    <td style="width: 80px " class="categoryIndex ">#</td>
-
-                                                    <td class=""> <input type="text " class="form-control " placeholder="Document Name" spellcheck="false" data-ms-editor="true"></td>
-                                                    <td>
-                                                        <input class="form-control" type="file" id="formFile">
-                                                    </td>
-                                                    <td class="">
-                                                        <input type="text " class="form-control " placeholder="Owner's Name" spellcheck="false" data-ms-editor="true">
-                                                    </td>
-                                                    <td class="">
-                                                        <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
-                                                    </td>
-                                                    <td class="text-right cell-change d-flex align-items-center justify-content-end">
-                                                        <a class="btn btn-light btn-rounded waves-effect btn-circle btn-transparent cancel-new-category-2 " title="Cancel "><i class="bx bx-x "></i></a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                            
-                                            <tfoot>
-                                                <tr>
-                                                    <td colspan="7" class="bg-light add-field-1 cursor-pointer">
-                                                        <span class="d-flex align-items-center "><i class="dripicons-plus mr-5 d-flex justify-content-center align-items-center font-21 "></i><span class="pl-5 ">Upload Other Documetnts</span></span>
-                                                    </td>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                                    </div>
-
+                                    <!-- Bank Details -->
                                     <div class="col-12">
                                         <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
                                             <p class="fw-semibold mb-0 pb-0 text-uppercase">Bank Details</p>
                                         </div>
                                     </div>
-
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="salary-input" class="form-label">Net Salary</label>
-                                        <input class="form-control" type="text" id="salary-input" title="Enter Net Salary" placeholder="Enter Amount">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="account-holder" class="form-label">Account Holder Name</label>
-                                        <input class="form-control" type="text" id="account-holder" title="Enter Account Holder Name" placeholder="Enter Name">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="account-number" class="form-label">Account Number</label>
-                                        <input class="form-control" type="text" id="account-number" title="Enter Account Number" placeholder="Enter Account Number">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="bank-country" class="form-label">Country of The Bank</label>
-                                        <input class="form-control" type="text" id="bank-country" title="Enter Country of The Bank" placeholder="Enter Country">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="bank-name" class="form-label">Bank Name</label>
-                                        <input class="form-control" type="text" id="bank-name" title="Enter Bank Name" placeholder="Enter Bank Name">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="branch-location" class="form-label">Branch Location</label>
-                                        <input class="form-control" type="text" id="branch-location" title="Enter Branch Location" placeholder="Enter Branch Location">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="shif-number" class="form-label">SHIF Number</label>
-                                        <input class="form-control" type="text" id="shif-number" title="Enter SHIF Number" placeholder="Enter SHIF Number">
-                                    </div>
-                                    
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                        <label for="nssf-number" class="form-label">NSSF Number</label>
-                                        <input class="form-control" type="text" id="nssf-number" title="Enter NSSF Number" placeholder="Enter NSSF Number">
-                                    </div>
-
                                     <div class="col-12">
-                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Emergency Conatct Details</p>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Account Holder Name:</th>
+                                                        <td>John Doe</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Account Number:</th>
+                                                        <td>1234567890</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Bank Country:</th>
+                                                        <td>Kenya</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Bank Name:</th>
+                                                        <td>Equity Bank</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Branch Location:</th>
+                                                        <td>Nairobi CBD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>SHIF Number:</th>
+                                                        <td>SHIF12345</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>NSSF Number:</th>
+                                                        <td>NSSF12345</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
 
+                                    <!-- Emergency Contact Details -->
                                     <div class="col-12">
-                                        <table class="table table-editable-1 align-middle table-edits">
-                                            <thead class="table-light">
-                                                <tr class="text-uppercase table-dark">
-                                                    <th>#</th>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Phone Number</th>
-                                                    <th>Relationship</th>   
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr data-id="1">
-                                                    <td style="width: 80px">1.</td>
-                                                    <td>
-                                                        <input type="text" class="form-control" placeholder="Enter full name" title="Enter the contact's full name" spellcheck="false">
-                                                    </td>
-                                                    <td>
-                                                        <input type="email" class="form-control" placeholder="example@email.com" title="Enter a valid email address" spellcheck="false">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control" placeholder="Enter phone number" title="Enter a valid phone number" spellcheck="false">
-                                                    </td>
-                                                    <td>
-                                                        <select class="form-control" data-live-search="true" title="Select relationship">
-                                                            <option value="" disabled selected>-- Select Relationship --</option>
-                                                            <option value="Father">Father</option>
-                                                            <option value="Mother">Mother</option>
-                                                            <option value="Sister">Sister</option>
-                                                            <option value="Spouse">Spouse</option>
-                                                            <option value="Child">Child</option>
-                                                            <option value="Grandchild">Grandchild</option>
-                                                            <option value="Niece/Nephew">Niece/Nephew</option>
-                                                            <option value="Cousin">Cousin</option>
-                                                            <option value="Aunt/Uncle">Aunt/Uncle</option>
-                                                            <option value="Parent-in-law">Parent-in-law</option>
-                                                            <option value="Sibling-in-law">Sibling-in-law</option>
-                                                            <option value="Friend">Friend</option>
-                                                            <option value="Guardian">Guardian</option>
-                                                        </select>
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
-                                        
-                                                <tr class="cloneCharges d-none">
-                                                    <td style="width: 80px" class="categoryIndex">#</td>
-                                                    <td>
-                                                        <input type="text" class="form-control" placeholder="Enter full name" title="Enter the contact's full name" spellcheck="false">
-                                                    </td>
-                                                    <td>
-                                                        <input type="email" class="form-control" placeholder="example@email.com" title="Enter a valid email address" spellcheck="false">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control" placeholder="Enter phone number" title="Enter a valid phone number" spellcheck="false">
-                                                    </td>
-                                                    <td>
-                                                        <select class="form-control" data-live-search="true" title="Select relationship">
-                                                            <option value="" disabled selected>-- Select Relationship --</option>
-                                                            <option value="Father">Father</option>
-                                                            <option value="Mother">Mother</option>
-                                                            <option value="Sister">Sister</option>
-                                                            <option value="Spouse">Spouse</option>
-                                                            <option value="Child">Child</option>
-                                                            <option value="Grandchild">Grandchild</option>
-                                                            <option value="Niece/Nephew">Niece/Nephew</option>
-                                                            <option value="Cousin">Cousin</option>
-                                                            <option value="Aunt/Uncle">Aunt/Uncle</option>
-                                                            <option value="Parent-in-law">Parent-in-law</option>
-                                                            <option value="Sibling-in-law">Sibling-in-law</option>
-                                                            <option value="Friend">Friend</option>
-                                                            <option value="Guardian">Guardian</option>
-                                                        </select>
-                                                    </td>
-                                                    <td class="text-right cell-change d-flex align-items-center justify-content-end">
-                                                        <a class="btn btn-light btn-rounded waves-effect btn-circle btn-transparent cancel-new-category-2" title="Remove contact">
-                                                            <i class="bx bx-x"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <td colspan="7" class="bg-light add-field-1 cursor-pointer">
-                                                        <span class="d-flex align-items-center text-uppercase">
-                                                            <i class="dripicons-plus mr-5 d-flex justify-content-center align-items-center font-21"></i>
-                                                            <span class="pl-5">Add Contact</span>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                                        
+                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
+                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Emergency Contact Details</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Name:</th>
+                                                        <td>Jane Doe</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Email:</th>
+                                                        <td>jane.doe@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Phone Number:</th>
+                                                        <td>0712345678</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Relationship:</th>
+                                                        <td>Spouse</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
 
+                                                                        <!-- Next of Kin -->
                                     <div class="col-12">
                                         <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
                                             <p class="fw-semibold mb-0 pb-0 text-uppercase">Next Of Kin</p>
                                         </div>
                                     </div>
-
                                     <div class="col-12">
-                                        <table class="table table-editable-1 align-middle table-edits">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Name:</th>
+                                                        <td>Mary Doe</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Email:</th>
+                                                        <td>mary.doe@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Phone Number:</th>
+                                                        <td>0723456789</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Relationship:</th>
+                                                        <td>Mother</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- Employment Documents -->
+                                    <div class="col-12">
+                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
+                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Employment Documents</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <table class="table table-editable-1 align-middle table-edits table-hover">
                                             <thead class="table-light">
-                                                <tr class="text-uppercase table-dark">
+                                                <tr class="text-uppercase table-dark ">
                                                     <th>#</th>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Phone Number</th>
-                                                    <th>Relationship</th>   
+                                                    <th>Document</th>
+                                                    <th>File</th>
+                                                    <th>Document Number</th>
+                                                    <th>Valid Till</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <!-- ID Card -->
                                                 <tr data-id="1">
                                                     <td style="width: 80px">1.</td>
+                                                    <td>ID Card</td>
                                                     <td>
-                                                        <input type="text" class="form-control" placeholder="Enter full name" title="Enter the contact's full name" spellcheck="false">
+                                                        <a href="path/to/id_card.pdf" target="_blank" class="btn btn-link">View ID Card</a>
                                                     </td>
-                                                    <td>
-                                                        <input type="email" class="form-control" placeholder="example@email.com" title="Enter a valid email address" spellcheck="false">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control" placeholder="Enter phone number" title="Enter a valid phone number" spellcheck="false">
-                                                    </td>
-                                                    <td>
-                                                        <select class="form-control" data-live-search="true" title="Select relationship">
-                                                            <option value="" disabled selected>-- Select Relationship --</option>
-                                                            <option value="Father">Father</option>
-                                                            <option value="Mother">Mother</option>
-                                                            <option value="Sister">Sister</option>
-                                                            <option value="Spouse">Spouse</option>
-                                                            <option value="Child">Child</option>
-                                                            <option value="Grandchild">Grandchild</option>
-                                                            <option value="Niece/Nephew">Niece/Nephew</option>
-                                                            <option value="Cousin">Cousin</option>
-                                                            <option value="Aunt/Uncle">Aunt/Uncle</option>
-                                                            <option value="Parent-in-law">Parent-in-law</option>
-                                                            <option value="Sibling-in-law">Sibling-in-law</option>
-                                                            <option value="Friend">Friend</option>
-                                                            <option value="Guardian">Guardian</option>
-                                                        </select>
-                                                    </td>
+                                                    <td>12345678</td>
+                                                    <td>2025-12-31</td>
                                                     <td></td>
                                                 </tr>
-                                        
+                                                <!-- SHIF -->
+                                                <tr data-id="2">
+                                                    <td style="width: 80px">2.</td>
+                                                    <td>SHIF</td>
+                                                    <td>
+                                                        <a href="path/to/shif.pdf" target="_blank" class="btn btn-link">View SHIF</a>
+                                                    </td>
+                                                    <td>SHIF12345</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-- NSSF -->
+                                                <tr data-id="3">
+                                                    <td style="width: 80px">3.</td>
+                                                    <td>NSSF</td>
+                                                    <td>
+                                                        <a href="path/to/nssf.pdf" target="_blank" class="btn btn-link">View NSSF</a>
+                                                    </td>
+                                                    <td>NSSF12345</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-- KRA PIN -->
+                                                <tr data-id="4">
+                                                    <td style="width: 80px">4.</td>
+                                                    <td>KRA PIN</td>
+                                                    <td>
+                                                        <a href="path/to/kra_pin.pdf" target="_blank" class="btn btn-link">View KRA PIN</a>
+                                                    </td>
+                                                    <td>A123456789X</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-- Deployment Letter -->
+                                                <tr data-id="5">
+                                                    <td style="width: 80px">5.</td>
+                                                    <td>Deployment Letter</td>
+                                                    <td>
+                                                        <a href="path/to/deployment_letter.pdf" target="_blank" class="btn btn-link">View Deployment Letter</a>
+                                                    </td>
+                                                    <td>DL12345</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-- Appointment Letter -->
+                                                <tr data-id="6">
+                                                    <td style="width: 80px">6.</td>
+                                                    <td>Appointment Letter</td>
+                                                    <td>
+                                                        <a href="path/to/appointment_letter.pdf" target="_blank" class="btn btn-link">View Appointment Letter</a>
+                                                    </td>
+                                                    <td>AL12345</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-- Birth Certificate -->
+                                                <tr data-id="7">
+                                                    <td style="width: 80px">7.</td>
+                                                    <td>Birth Certificate</td>
+                                                    <td>
+                                                        <a href="path/to/birth_certificate.pdf" target="_blank" class="btn btn-link">View Birth Certificate</a>
+                                                    </td>
+                                                    <td>BC12345</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-- Transfer Letter -->
+                                                <tr data-id="8">
+                                                    <td style="width: 80px">8.</td>
+                                                    <td>Transfer Letter</td>
+                                                    <td>
+                                                        <a href="path/to/transfer_letter.pdf" target="_blank" class="btn btn-link">View Transfer Letter</a>
+                                                    </td>
+                                                    <td>TL12345</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-- Clone Row (Hidden) -->
                                                 <tr class="cloneCharges d-none">
                                                     <td style="width: 80px" class="categoryIndex">#</td>
                                                     <td>
-                                                        <input type="text" class="form-control" placeholder="Enter full name" title="Enter the contact's full name" spellcheck="false">
+                                                        <input type="text" class="form-control" placeholder="Document Name" spellcheck="false">
                                                     </td>
                                                     <td>
-                                                        <input type="email" class="form-control" placeholder="example@email.com" title="Enter a valid email address" spellcheck="false">
+                                                        <a href="#" target="_blank" class="btn btn-link">View Document</a>
                                                     </td>
                                                     <td>
-                                                        <input type="text" class="form-control" placeholder="Enter phone number" title="Enter a valid phone number" spellcheck="false">
+                                                        <input type="text" class="form-control" placeholder="Document Number" spellcheck="false">
                                                     </td>
                                                     <td>
-                                                        <select class="form-control" data-live-search="true" title="Select relationship">
-                                                            <option value="" disabled selected>-- Select Relationship --</option>
-                                                            <option value="Father">Father</option>
-                                                            <option value="Mother">Mother</option>
-                                                            <option value="Sister">Sister</option>
-                                                            <option value="Spouse">Spouse</option>
-                                                            <option value="Child">Child</option>
-                                                            <option value="Grandchild">Grandchild</option>
-                                                            <option value="Niece/Nephew">Niece/Nephew</option>
-                                                            <option value="Cousin">Cousin</option>
-                                                            <option value="Aunt/Uncle">Aunt/Uncle</option>
-                                                            <option value="Parent-in-law">Parent-in-law</option>
-                                                            <option value="Sibling-in-law">Sibling-in-law</option>
-                                                            <option value="Friend">Friend</option>
-                                                            <option value="Guardian">Guardian</option>
-                                                        </select>
+                                                        <input class="form-control" type="date">
                                                     </td>
                                                     <td class="text-right cell-change d-flex align-items-center justify-content-end">
-                                                        <a class="btn btn-light btn-rounded waves-effect btn-circle btn-transparent cancel-new-category-2" title="Remove contact">
+                                                        <a class="btn btn-light btn-rounded waves-effect btn-circle btn-transparent cancel-new-category-2" title="Cancel">
                                                             <i class="bx bx-x"></i>
                                                         </a>
                                                     </td>
                                                 </tr>
                                             </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <td colspan="7" class="bg-light add-field-1 cursor-pointer">
-                                                        <span class="d-flex align-items-center text-uppercase">
-                                                            <i class="dripicons-plus mr-5 d-flex justify-content-center align-items-center font-21"></i>
-                                                            <span class="pl-5">Add Kin</span>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                            </tfoot>
+                                           
                                         </table>
-                                        
                                     </div>
-                                    
 
-                                    
-                                    
-                                    
+                                    <div class="col-12">
+                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
+                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Submission Details</p>
+                                        </div>
+                                    </div>
 
+                                    <div class="col-12">
+                                        <div class="table-responsive table-hover">
+                                            <table class="table table-striped table-bordered table-hover table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Submited By</th>
+                                                        <td>Chris Otieno</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Date Submited</th>
+                                                        <td>10 Mar 2025 12:45 AM</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Submiting Officer Role</th>
+                                                        <td>Director Of Human Resource</td>
+                                                    </tr>
+                                                   
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
-                                
-                               </div>
+                                <div class="card-body">
+                                   
+                              
                                <div class="card-footer bg-white border-top py-3">
                                 <div class="col-12">
-                                    <button type="button" class="btn btn-primary waves-effect waves-light text-uppercase" data-bs-target="#otpConfirmation" data-bs-toggle="modal">
-                                        <i class="mdi mdi-content-save-outline font-size-16 align-middle me-2"></i>
-                                        save Changes
+                                    <button type="button" class="btn btn-success waves-effect waves-light text-uppercase" data-bs-target="#otpConfirmation" data-bs-toggle="modal">
+                                        <i class="mdi mdi-check-circle-outline font-size-16 align-middle me-2"></i>
+                                        Approve Recruitment
                                     </button>
-                                    <button type="button" class="btn btn-outline-secondary waves-effect text-uppercase mx-3">
-                                        <i class="mdi mdi-close font-size-16 align-middle me-2"></i> Clear
+                                    <button type="button" class="btn btn-danger waves-effect text-uppercase mx-3" data-bs-target="#declineApplicationModal" data-bs-toggle="modal" >
+                                        <i class="mdi mdi-cancel font-size-16 align-middle me-2"></i> Decline
                                     </button>
+                                    
                                 </div>
                                </div>
                             </div>
@@ -1922,16 +886,16 @@
                 
                     <div class="modal-dialog  w-100 modal-md modal-dialog-centered modal-full">
                         <div class="modal-content w-100 bg-light-blue border-info">
-                            <div class="modal-header text-black text-uppercase border-0" >
-                                <h4 class="modal-title">Confirm Submison of Record</h4>
+                            <div class="modal-header text-black text-uppercase border-0">
+                                <h4 class="modal-title">Confirm Recruitment Approval</h4>
                                 <button type="button" class="btn-close d-non" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body waiver-inputers">
-        
+                    
                                 <div class="otp-entry">
                                     <div class="alert alert-info border-info border-2" role="alert">
                                         <h4 class="alert-heading text-black text-uppercase">OTP Verification</h4>
-                                        <p>An OTP (One-Time Password) has been sent to your phone: <strong>+254 7XX XXX 123</strong>. Please enter the OTP to verify and submit the employee recruitment details. Once submitted, the entry will be pending final approval.</p>
+                                        <p>An OTP (One-Time Password) has been sent to your phone: <strong>+254 7XX XXX 123</strong>. Please enter the OTP to verify and approve the recruitment record. Once approved, the employee will be officially added to the system.</p>
                                 
                                         <div class="hstack gap-3">
                                             <input class="form-control me-auto border-black otp-input" type="text" placeholder="Enter OTP" aria-label="Enter OTP here..." spellcheck="false">
@@ -1939,13 +903,13 @@
                                         </div>
                                 
                                         <!-- message sent to employee -->
-                                        <p class="d-none">"Dear [Employee Name], your recruitment details have been submitted for verification. Your OTP for confirming the entry is [OTP]. If you did not initiate this request, please report it immediately. Thank you!" 
+                                        <p class="d-none">"Dear [Employee Name], your recruitment record has been successfully approved. Welcome aboard! You will receive further instructions shortly. If you have any questions, contact HR. Thank you!" 
                                             <!-- This message is not displayed but will be sent to the employee -->
                                         </p>
                                     </div>
                                 
-                                    <button disabled class="btn btn-success fw-bold mt-4 text-uppercase w-100 d-flex justify-content-center align-items-center text-center otp-btn" title="Submit Employee Data">
-                                        <div>Confirm</div>
+                                    <button disabled class="btn btn-success fw-bold mt-4 text-uppercase w-100 d-flex justify-content-center align-items-center text-center otp-btn" title="Approve Recruitment">
+                                        <div>Confirm Approval</div>
                                         <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
                                             <span class="sr-only">Loading...</span>
                                         </div>
@@ -1953,20 +917,20 @@
                                 </div>
                                 
                             </div>
-                            <div class="modal-body  d-none waiver-succesfull">
-                                  <!-- show this for succesfully archived record-->
-        
+                            <div class="modal-body d-none waiver-succesfull">
+                                  <!-- show this for successfully approved recruitment -->
+                    
                                   <div class="p-4 pb-1 category-change-submitted px-1 d-flex align-items-center justify-content-center flex-column pt-1">
                                     <div class="flex-shrink-0 align-self-center mb-4">
-                                        <div class="avatar-md rounded-circle bg-success mini-stat-icon" title="Recruit Data Submitted">
+                                        <div class="avatar-md rounded-circle bg-success mini-stat-icon" title="Recruitment Approved">
                                             <span class="avatar-title rounded-circle bg-info">
-                                                <i class="bx bx-check-circle fs-1" title="Recruit Submission"></i>
+                                                <i class="bx bx-check-circle fs-1" title="Recruitment Success"></i>
                                             </span>
                                         </div>
                                     </div>
-                                    <h4 class="text-uppercase text-dark modal-title fw-bold" title="Recruit Data Submitted">Recruit Data Submission Successful</h4>
-                                    <p class="text-center px-5" title="Recruit Data Submission Confirmation">
-                                        The new recruit data has been submitted successfully. It is now pending final approval.
+                                    <h4 class="text-uppercase text-dark modal-title fw-bold" title="Recruitment Approved">Recruitment Approved Successfully</h4>
+                                    <p class="text-center px-5" title="Recruitment Approval Confirmation">
+                                        The recruitment record has been successfully approved. The employee is now officially added to the system.
                                     </p>
                                     <div class="w-100 mt-2">
                                         <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-outline-success waves-effect w-100 btn-close-btn-otp text-uppercase fw-bold">
@@ -1980,15 +944,15 @@
                             <div class="modal-body waiver-fail d-none">
                                 <div class="p-4 pb-1  px-1 d-flex align-items-center justify-content-center flex-column pt-1">
                                     <div class="flex-shrink-0 align-self-center mb-4">
-                                        <div class="avatar-md rounded-circle bg-danger mini-stat-icon" title="Waiver Failed">
+                                        <div class="avatar-md rounded-circle bg-danger mini-stat-icon" title="Recruitment Approval Failed">
                                             <span class="avatar-title rounded-circle bg-danger">
-                                                <i class="mdi mdi-alert-circle fs-1" title="Waiver Attempt Failed"></i>
+                                                <i class="mdi mdi-alert-circle fs-1" title="Recruitment Failed"></i>
                                             </span>
                                         </div>
                                     </div>
-                                    <h4 class="text-uppercase text-danger modal-title fw-bold" title="Waiver Failed">Waiver Submission Failed</h4>
-                                    <p class="text-center px-5" title="Waiver Failure Reason">
-                                        Unfortunately, the waiver request against invoice number <strong>#X</strong> was unsuccessful because the invoice has already been paid in full. Waivers can only be applied to unpaid balances.
+                                    <h4 class="text-uppercase text-danger modal-title fw-bold" title="Recruitment Approval Failed">Recruitment Approval Failed</h4>
+                                    <p class="text-center px-5" title="Recruitment Failure Reason">
+                                        Unfortunately, the approval of this recruitment record was unsuccessful. Please ensure the details are correct and try again.
                                     </p>
                                 
                                     <div class="w-100 mt-2">
@@ -2001,12 +965,91 @@
                         </div>
                         <!-- /.modal-content -->
                     </div>
+                    
                     <!-- /.modal-dialog -->
                 </div>
              <!-- invoice item waiver end -->
             <!-- end of modals -->
-
-
+            <div class="modal fade" id="declineApplicationModal" tabindex="-1" role="dialog" aria-labelledby="declineModalLabel" aria-hidden="true">
+                <div class="modal-dialog w-100 modal-md modal-dialog-centered modal-full">
+                    <div class="modal-content w-100 bg-light border-danger">
+                        <div class="modal-header text-black text-uppercase border-0">
+                            <h4 class="modal-title">Confirm Application Decline</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body waiver-inputers">
+                            <div class="otp-entry">
+                                <div class="alert alert-danger border-danger border-2" role="alert">
+                                    <h4 class="alert-heading text-black text-uppercase">OTP Verification</h4>
+                                    <p>An OTP has been sent to your phone: <strong>+254 7XX XXX 123</strong>. Please enter the OTP to verify and proceed with declining this application.</p>
+                                    
+                                    <div class="hstack gap-3">
+                                        <input class="form-control me-auto border-black otp-input" type="text" placeholder="Enter OTP" aria-label="Enter OTP here..." spellcheck="false">
+                                        <button type="button" class="btn btn-warning text-dark fw-bold text-nowrap text-uppercase">Resend OTP</button>
+                                    </div>
+                                </div>
+            
+                                <div class="mb-3">
+                                    <label for="declineReason" class="form-label fw-bold text-danger">Reason for Decline</label>
+                                    <textarea class="form-control border-danger" id="declineReason" rows="3" placeholder="Enter reason for declining..."></textarea>
+                                </div>
+            
+                                <button disabled class="btn btn-danger fw-bold mt-4 text-uppercase w-100 d-flex justify-content-center align-items-center text-center otp-btn" title="Decline Application">
+                                    <div>Confirm Decline</div>
+                                    <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+            
+                        <!-- Success message for declined application -->
+                        <div class="modal-body d-none waiver-succesfull">
+                            <div class="p-4 pb-1 d-flex align-items-center justify-content-center flex-column">
+                                <div class="flex-shrink-0 align-self-center mb-4">
+                                    <div class="avatar-md rounded-circle bg-danger mini-stat-icon" title="Application Declined">
+                                        <span class="avatar-title rounded-circle bg-danger">
+                                            <i class="bx bx-x-circle fs-1" title="Decline Success"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <h4 class="text-uppercase text-dark modal-title fw-bold" title="Application Declined">Application Declined Successfully</h4>
+                                <p class="text-center px-5">
+                                    The application has been successfully declined. The applicant will be notified accordingly.
+                                </p>
+                                <div class="w-100 mt-2">
+                                    <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-outline-danger waves-effect w-100 text-uppercase fw-bold">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Failure message for decline attempt -->
+                        <div class="modal-body waiver-fail d-none">
+                            <div class="p-4 pb-1 d-flex align-items-center justify-content-center flex-column">
+                                <div class="flex-shrink-0 align-self-center mb-4">
+                                    <div class="avatar-md rounded-circle bg-warning mini-stat-icon" title="Decline Failed">
+                                        <span class="avatar-title rounded-circle bg-warning">
+                                            <i class="mdi mdi-alert-circle fs-1" title="Decline Failed"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <h4 class="text-uppercase text-warning modal-title fw-bold" title="Decline Failed">Application Decline Failed</h4>
+                                <p class="text-center px-5">
+                                    Unfortunately, the decline attempt was unsuccessful. Please ensure the details are correct and try again.
+                                </p>
+                                <div class="w-100 mt-2">
+                                    <button type="button" class="btn btn-info waves-effect w-100 text-uppercase fw-bold">Retry</button>
+                                    <h6 class="text-center my-2">- OR -</h6>
+                                    <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-outline-secondary waves-effect w-100 text-uppercase fw-bold">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
 
 
             <footer class="footer ">
@@ -2139,6 +1182,11 @@
 
         // closing the modal
         $('#otpConfirmation').on('hidden.bs.modal', function () {
+            $('.waiver-inputers').removeClass('d-none');
+            $('.waiver-succesfull').addClass('d-none');
+        });
+
+        $('#declineApplicationModal').on('hidden.bs.modal', function () {
             $('.waiver-inputers').removeClass('d-none');
             $('.waiver-succesfull').addClass('d-none');
         });
