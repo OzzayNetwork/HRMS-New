@@ -407,7 +407,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0 font-size-18">Perfomance Management</h4>
+                                <h4 class="mb-sm-0 font-size-18">Manage Document</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
@@ -475,9 +475,43 @@
                                             </button>
 
                                            <!-- Add Asset Button -->
-                                        <button data-bs-toggle="modal" data-bs-target="#modal-assesment" type="button" class="btn btn-success dropdown-toggle option-selector me-3 text-capitalize">
-                                            <i class="bx bx-plus"></i> <span class="pl-1 d-md-inline">Add Assessment</span>
-                                        </button>
+                                        <!-- Add Document Button -->
+<button data-bs-toggle="modal" data-bs-target="#modal-document" type="button" class="btn btn-success dropdown-toggle option-selector me-3 text-capitalize">
+    <i class="bx bx-plus"></i> <span class="pl-1 d-md-inline">Add Document</span>
+</button>
+
+<!-- Add Document Modal -->
+<div class="modal fade" id="modal-document" tabindex="-1" aria-labelledby="modal-document-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-document-label">Add New Document</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="document-form">
+                    <div class="mb-3">
+                        <label for="document-name" class="form-label">Document Name</label>
+                        <input type="text" class="form-control" id="document-name" placeholder="Enter document name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="document-description" class="form-label">Description</label>
+                        <textarea class="form-control" id="document-description" rows="3" placeholder="Enter document description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="document-file" class="form-label">Upload Document</label>
+                        <input type="file" class="form-control" id="document-file" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" form="document-form">Save Document</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 
@@ -497,177 +531,216 @@
                                         <table class="table align-middle table-hover contacts-table table-striped text-nowrap" id="datatable-buttons">
                                             <thead class="table-light">
                                                 <tr class="table-dark">
-                                                    <th scope="col">Emp NO.</th>
-                                                    <th scope="col">Employee</th>
-                                                    <th scope="col">Department</th>
-                                                    <th scope="col">Assessment Period</th>
-                                                    <th scope="col">Assessment Document</th>
+                                                    <th>#</th>
+                                                    <th scope="col">Document Name</th>
+                                                    <th scope="col">Description</th>
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <th>12345</th>
-                                                    <td>Dennis Chura</td>
-                                                    <td>IT</td>
-                                                    <td>1 Jan 2025 to 31 Mar 2025</td>
-                                                    <td><a href="#" target="new">Google Sheet</a></td>
-                                                    <td></td>
+                                                    <td>1.</td>
+                                                    <td>Circular on Priority Allowances for Other Public Officers</td>
+                                                    <td>Downloaded from SRC website</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12346</th>
-                                                    <td>Jane Wanjiru</td>
-                                                    <td>Finance</td>
-                                                    <td>1 Jan 2025 to 31 Mar 2025</td>
-                                                    <td><a href="#" target="new">Excel File</a></td>
-                                                    <td></td>
+                                                    <td>2.</td>
+                                                    <td>Annual Budget Policy Statement</td>
+                                                    <td>Official government release</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12347</th>
-                                                    <td>Mark Otieno</td>
-                                                    <td>HR</td>
-                                                    <td>1 Jan 2025 to 31 Mar 2025</td>
-                                                    <td><a href="#" target="new">Google Doc</a></td>
-                                                    <td></td>
+                                                    <td>3.</td>
+                                                    <td>Public Finance Management Guidelines</td>
+                                                    <td>Ministry of Finance publication</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12348</th>
-                                                    <td>Lucy Mwangi</td>
-                                                    <td>Procurement</td>
-                                                    <td>1 Jan 2025 to 31 Mar 2025</td>
-                                                    <td><a href="#" target="new">PDF Report</a></td>
-                                                    <td></td>
+                                                    <td>4.</td>
+                                                    <td>Ethics and Integrity in Public Service</td>
+                                                    <td>HR policy document</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12349</th>
-                                                    <td>John Kimani</td>
-                                                    <td>Operations</td>
-                                                    <td>1 Jan 2025 to 31 Mar 2025</td>
-                                                    <td><a href="#" target="new">Google Sheet</a></td>
-                                                    <td></td>
+                                                    <td>5.</td>
+                                                    <td>Salary Structure for Civil Servants</td>
+                                                    <td>Updated pay scale for 2025</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12350</th>
-                                                    <td>Esther Njoki</td>
-                                                    <td>IT</td>
-                                                    <td>1 Apr 2025 to 30 Jun 2025</td>
-                                                    <td><a href="#" target="new">Word Document</a></td>
-                                                    <td></td>
+                                                    <td>6.</td>
+                                                    <td>Procurement Guidelines 2025</td>
+                                                    <td>Government procurement policies</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12351</th>
-                                                    <td>Samson Wanyama</td>
-                                                    <td>Logistics</td>
-                                                    <td>1 Apr 2025 to 30 Jun 2025</td>
-                                                    <td><a href="#" target="new">Excel File</a></td>
-                                                    <td></td>
+                                                    <td>7.</td>
+                                                    <td>Audit Report for FY 2024</td>
+                                                    <td>Office of Auditor General</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12352</th>
-                                                    <td>Grace Akinyi</td>
-                                                    <td>HR</td>
-                                                    <td>1 Apr 2025 to 30 Jun 2025</td>
-                                                    <td><a href="#" target="new">Google Doc</a></td>
-                                                    <td></td>
+                                                    <td>8.</td>
+                                                    <td>County Revenue Allocation Report</td>
+                                                    <td>Analysis of revenue sharing</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12353</th>
-                                                    <td>Michael Ouma</td>
-                                                    <td>Finance</td>
-                                                    <td>1 Apr 2025 to 30 Jun 2025</td>
-                                                    <td><a href="#" target="new">PDF Report</a></td>
-                                                    <td></td>
+                                                    <td>9.</td>
+                                                    <td>Labour Laws & Employment Act</td>
+                                                    <td>Updated labour regulations</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12354</th>
-                                                    <td>Beatrice Muthoni</td>
-                                                    <td>Procurement</td>
-                                                    <td>1 Apr 2025 to 30 Jun 2025</td>
-                                                    <td><a href="#" target="new">Google Sheet</a></td>
-                                                    <td></td>
+                                                    <td>10.</td>
+                                                    <td>Internal Audit Manual</td>
+                                                    <td>Best practices for internal audit</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12355</th>
-                                                    <td>Collins Njoroge</td>
-                                                    <td>Marketing</td>
-                                                    <td>1 Jul 2025 to 30 Sep 2025</td>
-                                                    <td><a href="#" target="new">Google Sheet</a></td>
-                                                    <td></td>
+                                                    <td>11.</td>
+                                                    <td>Financial Risk Management Framework</td>
+                                                    <td>Government risk management strategy</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12356</th>
-                                                    <td>Ann Wekesa</td>
-                                                    <td>Customer Service</td>
-                                                    <td>1 Jul 2025 to 30 Sep 2025</td>
-                                                    <td><a href="#" target="new">Excel File</a></td>
-                                                    <td></td>
+                                                    <td>12.</td>
+                                                    <td>Public Service Pension Guidelines</td>
+                                                    <td>Retirement benefits structure</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12357</th>
-                                                    <td>David Omondi</td>
-                                                    <td>IT</td>
-                                                    <td>1 Jul 2025 to 30 Sep 2025</td>
-                                                    <td><a href="#" target="new">Google Doc</a></td>
-                                                    <td></td>
+                                                    <td>13.</td>
+                                                    <td>Health and Safety Policy</td>
+                                                    <td>Workplace safety regulations</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12358</th>
-                                                    <td>Rose Atieno</td>
-                                                    <td>HR</td>
-                                                    <td>1 Jul 2025 to 30 Sep 2025</td>
-                                                    <td><a href="#" target="new">PDF Report</a></td>
-                                                    <td></td>
+                                                    <td>14.</td>
+                                                    <td>Taxation Policy 2025</td>
+                                                    <td>Updated tax policies</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12359</th>
-                                                    <td>Kevin Obiero</td>
-                                                    <td>Finance</td>
-                                                    <td>1 Jul 2025 to 30 Sep 2025</td>
-                                                    <td><a href="#" target="new">Google Sheet</a></td>
-                                                    <td></td>
+                                                    <td>15.</td>
+                                                    <td>HR Code of Conduct</td>
+                                                    <td>Ethical guidelines for employees</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12360</th>
-                                                    <td>Pauline Ndegwa</td>
-                                                    <td>Operations</td>
-                                                    <td>1 Oct 2025 to 31 Dec 2025</td>
-                                                    <td><a href="#" target="new">Word Document</a></td>
-                                                    <td></td>
+                                                    <td>16.</td>
+                                                    <td>Annual Performance Report</td>
+                                                    <td>Summary of key achievements</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12361</th>
-                                                    <td>Victor Kibet</td>
-                                                    <td>Logistics</td>
-                                                    <td>1 Oct 2025 to 31 Dec 2025</td>
-                                                    <td><a href="#" target="new">Excel File</a></td>
-                                                    <td></td>
+                                                    <td>17.</td>
+                                                    <td>Official Salary Scales</td>
+                                                    <td>Government pay structure</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12362</th>
-                                                    <td>Christine Mwenda</td>
-                                                    <td>IT</td>
-                                                    <td>1 Oct 2025 to 31 Dec 2025</td>
-                                                    <td><a href="#" target="new">Google Doc</a></td>
-                                                    <td></td>
+                                                    <td>18.</td>
+                                                    <td>Economic Growth Report</td>
+                                                    <td>GDP trends and projections</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12363</th>
-                                                    <td>Patrick Mutua</td>
-                                                    <td>HR</td>
-                                                    <td>1 Oct 2025 to 31 Dec 2025</td>
-                                                    <td><a href="#" target="new">PDF Report</a></td>
-                                                    <td></td>
+                                                    <td>19.</td>
+                                                    <td>New Procurement Guidelines</td>
+                                                    <td>Updated procurement policies</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>12364</th>
-                                                    <td>Naomi Kirui</td>
-                                                    <td>Finance</td>
-                                                    <td>1 Oct 2025 to 31 Dec 2025</td>
-                                                    <td><a href="#" target="new">Google Sheet</a></td>
-                                                    <td></td>
+                                                    <td>20.</td>
+                                                    <td>Government Expenditure Report</td>
+                                                    <td>Breakdown of public spending</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Edit</button>
+                                                        <a href="#" target="_blank" class="btn btn-sm btn-primary">View</a>
+                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        
                                         
                                         
                                     </div>
