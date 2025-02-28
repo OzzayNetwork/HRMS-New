@@ -491,6 +491,20 @@
                                             <option value="Female">Female</option>
                                         </select>
                                     </div>
+
+                                    <div class="col-sm-6 col-md-3 mb-3">
+                                        <label for="disability-status-input" class="form-label">Person with Disability? <strong class="text-danger fw-bold">*</strong></label>
+                                        <select id="disability-status-input" class="form-select" required title="Select disability status">
+                                            <option value="">Select Option</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-sm-6 col-md-3 mb-3">
+                                        <label for="disability-id-input" class="form-label">Disability ID</label>
+                                        <input type="text" class="form-control" id="disability-id-input" placeholder="Enter Disability ID" spellcheck="false">
+                                    </div>
                                     
                                   
                                     
@@ -1185,7 +1199,7 @@
                                </div>
                                <div class="card-footer bg-white border-top py-3">
                                 <div class="col-12">
-                                    <button type="button" class="btn btn-primary waves-effect waves-light text-uppercase">
+                                    <button type="button" class="btn btn-primary waves-effect waves-light text-uppercase" data-bs-target="#otpConfirmation" data-bs-toggle="modal">
                                         <i class="mdi mdi-content-save-outline font-size-16 align-middle me-2"></i>
                                         save
                                     </button>
@@ -1204,6 +1218,99 @@
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
+
+            <!-- modals go here -->
+              <!-- initiating invoice item waiver -->
+            <div class="modal fade" id="otpConfirmation" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <!-- <div class="modal fade otp-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false"> -->
+                    <!-- Modal content here -->
+                
+                
+                    <div class="modal-dialog  w-100 modal-md modal-dialog-centered modal-full">
+                        <div class="modal-content w-100 bg-light-blue border-info">
+                            <div class="modal-header text-black text-uppercase border-0" >
+                                <h4 class="modal-title">Confirm Submison of Record</h4>
+                                <button type="button" class="btn-close d-non" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body waiver-inputers">
+        
+                                <div class="otp-entry">
+                                    <div class="alert alert-info border-info border-2" role="alert">
+                                        <h4 class="alert-heading text-black text-uppercase">OTP Verification</h4>
+                                        <p>An OTP (One-Time Password) has been sent to your phone: <strong>+254 7XX XXX 123</strong>. Please enter the OTP to verify and submit the employee recruitment details. Once submitted, the entry will be pending final approval.</p>
+                                
+                                        <div class="hstack gap-3">
+                                            <input class="form-control me-auto border-black otp-input" type="text" placeholder="Enter OTP" aria-label="Enter OTP here..." spellcheck="false">
+                                            <button type="button" class="btn btn-warning text-dark fw-bold text-nowrap text-uppercase">Resend OTP</button>
+                                        </div>
+                                
+                                        <!-- message sent to employee -->
+                                        <p class="d-none">"Dear [Employee Name], your recruitment details have been submitted for verification. Your OTP for confirming the entry is [OTP]. If you did not initiate this request, please report it immediately. Thank you!" 
+                                            <!-- This message is not displayed but will be sent to the employee -->
+                                        </p>
+                                    </div>
+                                
+                                    <button disabled class="btn btn-success fw-bold mt-4 text-uppercase w-100 d-flex justify-content-center align-items-center text-center otp-btn" title="Submit Employee Data">
+                                        <div>Confirm</div>
+                                        <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                            <div class="modal-body  d-none waiver-succesfull">
+                                  <!-- show this for succesfully archived record-->
+        
+                                  <div class="p-4 pb-1 category-change-submitted px-1 d-flex align-items-center justify-content-center flex-column pt-1">
+                                    <div class="flex-shrink-0 align-self-center mb-4">
+                                        <div class="avatar-md rounded-circle bg-success mini-stat-icon" title="Recruit Data Submitted">
+                                            <span class="avatar-title rounded-circle bg-info">
+                                                <i class="bx bx-check-circle fs-1" title="Recruit Submission"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <h4 class="text-uppercase text-dark modal-title fw-bold" title="Recruit Data Submitted">Recruit Data Submission Successful</h4>
+                                    <p class="text-center px-5" title="Recruit Data Submission Confirmation">
+                                        The new recruit data has been submitted successfully. It is now pending final approval.
+                                    </p>
+                                    <div class="w-100 mt-2">
+                                        <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-outline-success waves-effect w-100 btn-close-btn-otp text-uppercase fw-bold">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                             <!-- show this for a failed attempt -->
+                            <div class="modal-body waiver-fail d-none">
+                                <div class="p-4 pb-1  px-1 d-flex align-items-center justify-content-center flex-column pt-1">
+                                    <div class="flex-shrink-0 align-self-center mb-4">
+                                        <div class="avatar-md rounded-circle bg-danger mini-stat-icon" title="Waiver Failed">
+                                            <span class="avatar-title rounded-circle bg-danger">
+                                                <i class="mdi mdi-alert-circle fs-1" title="Waiver Attempt Failed"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <h4 class="text-uppercase text-danger modal-title fw-bold" title="Waiver Failed">Waiver Submission Failed</h4>
+                                    <p class="text-center px-5" title="Waiver Failure Reason">
+                                        Unfortunately, the waiver request against invoice number <strong>#X</strong> was unsuccessful because the invoice has already been paid in full. Waivers can only be applied to unpaid balances.
+                                    </p>
+                                
+                                    <div class="w-100 mt-2">
+                                        <button type="button" class="btn btn-info waves-effect w-100 btn-close-btn text-uppercase fw-bold">Retry</button>
+                                        <h6 class="text-center my-2">- OR -</h6>                                
+                                        <button type="button" data-bs-dismiss="modal" aria-label="Close" class="btn btn-outline-secondary waves-effect w-100 btn-close-btn text-uppercase fw-bold">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+             <!-- invoice item waiver end -->
+            <!-- end of modals -->
 
 
 
@@ -1308,6 +1415,40 @@
     <script src="assets/libs/slick/slick.min.js"></script>
 
     <!-- //rentals vs other income sources for housing department -->
+
+    <!-- the otp scripts start here -->
+     <script>
+        $(document).ready(function() {
+            $('.otp-input').on('input', function() {
+                if ($(this).val().length >= 4) {
+                    $('.otp-btn').prop('disabled', false);
+                } else {
+                    $('.otp-btn').prop('disabled', true);
+                }
+            });
+
+            $('.otp-btn').on('click', function() {
+                let confirmDiv = $(this).find('div:first');
+                let spinnerDiv = $(this).find('.spinner-border');
+
+                confirmDiv.addClass('d-none');
+                spinnerDiv.removeClass('d-none');
+
+                setTimeout(function() {
+                    confirmDiv.removeClass('d-none');
+                    spinnerDiv.addClass('d-none');
+                    $('.waiver-inputers').addClass('d-none');
+                    $('.waiver-succesfull').removeClass('d-none');
+                }, 3000);
+            });
+        });
+
+        // closing the modal
+        $('#otpConfirmation').on('hidden.bs.modal', function () {
+            $('.waiver-inputers').removeClass('d-none');
+            $('.waiver-succesfull').addClass('d-none');
+        });
+     </script>
 </body>
 
 
