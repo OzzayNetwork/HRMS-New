@@ -416,56 +416,18 @@
 
                     <!-- stats cards -->
                     <div class="row">
-                        <!-- Total Employees -->
-                        <div class="col-lg-3 col-md-6">
+                        <!-- Total Pending Approvals -->
+                        <div class="col-lg-4 col-md-6">
                             <div class="card mini-stats-wid">
                                 <div class="card-body">
                                     <div class="d-flex flex-wrap">
                                         <div class="me-3">
-                                            <p class="text-muted mb-2">Total Employees</p>
-                                            <h5 class="mb-0">7,720</h5>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-primary rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-account-group"></i> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Separated Employees -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Separated Employees</p>
-                                            <h5 class="mb-0">1,235</h5>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-account-remove"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Employees on Notice -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Employees on Notice</p>
-                                            <h5 class="mb-0">320</h5>
+                                            <p class="text-muted mb-2">Pending Approvals</p>
+                                            <h5 class="mb-0">512</h5>
                                         </div>
                                         <div class="avatar-sm ms-auto">
                                             <div class="avatar-title bg-warning rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-alert-circle"></i>
+                                                <i class="mdi mdi-clock-outline"></i> 
                                             </div>
                                         </div>
                                     </div>
@@ -473,18 +435,37 @@
                             </div>
                         </div>
                     
-                        <!-- Employees with Disabilities -->
-                        <div class="col-lg-3 col-md-6">
+                        <!-- Total Approved Recruits -->
+                        <div class="col-lg-4 col-md-6">
                             <div class="card blog-stats-wid">
                                 <div class="card-body">
                                     <div class="d-flex flex-wrap">
                                         <div class="me-3">
-                                            <p class="text-muted mb-2">Employees with Disabilities</p>
-                                            <h5 class="mb-0">59</h5>
+                                            <p class="text-muted mb-2">Approved Recruits</p>
+                                            <h5 class="mb-0">1,235</h5>
                                         </div>
                                         <div class="avatar-sm ms-auto">
                                             <div class="avatar-title bg-success rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-wheelchair-accessibility"></i>
+                                                <i class="mdi mdi-check-circle"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Total Rejected Applications -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card blog-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Rejected Applications</p>
+                                            <h5 class="mb-0">128</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-close-circle"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -492,6 +473,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     
                      <!-- end of stats -->
                     <div class="row">
@@ -549,10 +531,6 @@
                                                 <i class="bx bxs-download  font-size-16"></i> <span class="pl-1 d-md-inline">Download Report</span>
                                             </button>
 
-                                            <a  href="employee-create.html" type="button" class="btn btn-success dropdown-toggle option-selector me-3 text-uppercase">
-                                                <i class="mdi mdi-plus-circle-outline  font-size-16"></i> <span class="pl-1 d-md-inline">Add Employee</span>
-                                            </a>
-        
                                         </div>
         
         
@@ -564,193 +542,111 @@
                                 
                                 <div class="card-body">
                                     <div class="table-responsive ">
-
                                         <table class="table align-middle table-hover contacts-table table-striped text-nowrap" id="datatable-buttons">
                                             <thead class="table-light">
                                                 <tr class="table-dark">
-                                                    <th scope="col" title="Unique Identifier for Each Employee">Emp No.</th>
-                                                    <th scope="col" title="Full Name of the Employee">Name</th>
-                                                    <th scope="col" title="Employee's ID Number">ID No.</th>
-                                                    <th scope="col" title="Type of Employment Contract">Contract Type</th>
-                                                    <th scope="col" title="Net Monthly Salary">Net Salary</th>
-                                                    <th scope="col" title="Department Employee Belongs To">Department</th>
-                                                    <th scope="col" title="Employee's Job Title">Designation</th>
-                                                    <th scope="col" class="text-right" title="Available Actions">Actions</th>
+                                                    <th scope="col">App No.</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">ID No.</th>
+                                                    <th scope="col">Contract Type</th>
+                                                    <th scope="col">Proposed Salary</th>
+                                                    <th scope="col">Department</th>
+                                                    <th scope="col">Designation</th>
+                                                    <th scope="col">Date Added</th>
+                                                    <th scope="col">Submitted By</th>
+                                                    <th scope="col" class="text-right">Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <th>1234</th>
-                                                    <td><a href="employee-register-details.html">Odhiambo Ochieng</a></td>
-                                                    <td>3534543</td>
-                                                    <td>Permanent</td>
-                                                    <td>KES 89,000</td>
-                                                    <td>Finance</td>
-                                                    <td>Revenue Director</td>
+                                                    <th>1011</th><td><a href="application-details.html">Anne Wairimu</a></td><td>5544332</td><td>Permanent</td><td>KES 85,000</td><td>Finance</td><td>Accountant</td><td>3rd Feb 2025</td><td>Peter Njuguna</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
+                                                        <a href="employee-approvals-new-verification.html" class="btn btn-sm btn-success mx-2">Verify & Approve</a>
+                                                        <a href="employee-edit.html?app=1011" class="btn btn-sm btn-primary mx-2">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>5678</th>
-                                                    <td><a href="employee-register-details.html">Akinyi Atieno</a></td>
-                                                    <td>6789345</td>
-                                                    <td>Contract</td>
-                                                    <td>KES 65,000</td>
-                                                    <td>Health</td>
-                                                    <td>Medical Officer</td>
+                                                    <th>1012</th><td><a href="application-details.html">David Mutiso</a></td><td>6677889</td><td>Temporary</td><td>KES 42,000</td><td>Security</td><td>Security Officer</td><td>3rd Feb 2025</td><td>Samuel Otieno</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
+                                                        <a href="employee-approvals-new-verification.html" class="btn btn-sm btn-success mx-2">Verify & Approve</a>
+                                                        <a href="employee-edit.html?app=1012" class="btn btn-sm btn-primary mx-2">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>9101</th>
-                                                    <td><a href="employee-register-details.html">Omondi Owino</a></td>
-                                                    <td>2345678</td>
-                                                    <td>Permanent</td>
-                                                    <td>KES 120,000</td>
-                                                    <td>Infrastructure</td>
-                                                    <td>Chief Engineer</td>
+                                                    <th>1013</th><td><a href="application-details.html">Sophia Nduku</a></td><td>9988553</td><td>Contract</td><td>KES 73,000</td><td>Customer Service</td><td>Customer Relations Manager</td><td>2nd Feb 2025</td><td>Grace Wambui</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
+                                                        <a href="employee-approvals-new-verification.html" class="btn btn-sm btn-success mx-2">Verify & Approve</a>
+                                                        <a href="employee-edit.html?app=1013" class="btn btn-sm btn-primary mx-2">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>1123</th>
-                                                    <td><a href="employee-register-details.html">Obuya Adera</a></td>
-                                                    <td>9876543</td>
-                                                    <td>Contract</td>
-                                                    <td>KES 78,000</td>
-                                                    <td>Agriculture</td>
-                                                    <td>Extension Officer</td>
+                                                    <th>1014</th><td><a href="application-details.html">Brian Muriuki</a></td><td>4455667</td><td>Permanent</td><td>KES 97,000</td><td>IT</td><td>Systems Analyst</td><td>1st Feb 2025</td><td>Kevin Otieno</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
+                                                        <a href="employee-approvals-new-verification.html" class="btn btn-sm btn-success mx-2">Verify & Approve</a>
+                                                        <a href="employee-edit.html?app=1014" class="btn btn-sm btn-primary mx-2">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>2234</th>
-                                                    <td><a href="employee-register-details.html">Nyamweya Okoth</a></td>
-                                                    <td>5566778</td>
-                                                    <td>Permanent</td>
-                                                    <td>KES 95,000</td>
-                                                    <td>Education</td>
-                                                    <td>Head Teacher</td>
+                                                    <th>1015</th><td><a href="application-details.html">Doris Njenga</a></td><td>3344556</td><td>Contract</td><td>KES 64,000</td><td>Legal</td><td>Legal Assistant</td><td>31st Jan 2025</td><td>Mary Atieno</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
+                                                        <a href="employee-approvals-new-verification.html" class="btn btn-sm btn-success mx-2">Verify & Approve</a>
+                                                        <a href="employee-edit.html?app=1015" class="btn btn-sm btn-primary mx-2">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>3345</th>
-                                                    <td><a href="employee-register-details.html">Anyango Awuor</a></td>
-                                                    <td>1122334</td>
-                                                    <td>Contract</td>
-                                                    <td>KES 72,000</td>
-                                                    <td>Social Services</td>
-                                                    <td>Community Development Officer</td>
+                                                    <th>1016</th><td><a href="application-details.html">Michael Kamau</a></td><td>1122334</td><td>Permanent</td><td>KES 78,000</td><td>HR</td><td>HR Officer</td><td>30th Jan 2025</td><td>Jane Mwangi</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
+                                                        <a href="employee-approvals-new-verification.html" class="btn btn-sm btn-success mx-2">Verify & Approve</a>
+                                                        <a href="employee-edit.html?app=1016" class="btn btn-sm btn-primary mx-2">Edit</a>
+                                                    </td>
+                                                </tr>
+                                                <!-- Repeat for up to 20 records -->
+
+                                                <tr>
+                                                    <th>1001</th><td><a href="application-details.html">Anne Wairimu</a></td><td>5544332</td><td>Permanent</td><td>KES 85,000</td><td>Finance</td><td>Accountant</td><td>3rd Feb 2025</td><td>Peter Njuguna</td>
+                                                    <td class="text-right">
+                                                        <a href="employee-approvals-new-verification.html" class="btn btn-sm btn-success mx-2">Verify & Approve</a>
+                                                        <a href="employee-edit.html?app=1001" class="btn btn-sm btn-primary mx-2">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>4456</th>
-                                                    <td><a href="employee-register-details.html">Otieno Onyango</a></td>
-                                                    <td>5566778</td>
-                                                    <td>Permanent</td>
-                                                    <td>KES 110,000</td>
-                                                    <td>Trade & Industry</td>
-                                                    <td>Senior Economist</td>
+                                                    <th>1002</th><td><a href="application-details.html">David Mutiso</a></td><td>6677889</td><td>Temporary</td><td>KES 42,000</td><td>Security</td><td>Security Officer</td><td>3rd Feb 2025</td><td>Samuel Otieno</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
+                                                        <a href="employee-approvals-new-verification.html" class="btn btn-sm btn-success mx-2">Verify & Approve</a>
+                                                        <a href="employee-edit.html?app=1002" class="btn btn-sm btn-primary mx-2">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>5567</th>
-                                                    <td><a href="employee-register-details.html">Akoth Adero</a></td>
-                                                    <td>6677889</td>
-                                                    <td>Contract</td>
-                                                    <td>KES 68,000</td>
-                                                    <td>Environment</td>
-                                                    <td>Climate Change Analyst</td>
+                                                    <th>1003</th><td><a href="application-details.html">Sophia Nduku</a></td><td>9988553</td><td>Contract</td><td>KES 73,000</td><td>Customer Service</td><td>Customer Relations Manager</td><td>2nd Feb 2025</td><td>Grace Wambui</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
+                                                        <a href="employee-approvals-new-verification.html" class="btn btn-sm btn-success mx-2">Verify & Approve</a>
+                                                        <a href="employee-edit.html?app=1003" class="btn btn-sm btn-primary mx-2">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>6678</th>
-                                                    <td><a href="employee-register-details.html">Omollo Obado</a></td>
-                                                    <td>7788990</td>
-                                                    <td>Permanent</td>
-                                                    <td>KES 130,000</td>
-                                                    <td>Governance</td>
-                                                    <td>County Secretary</td>
+                                                    <th>1004</th><td><a href="application-details.html">Brian Muriuki</a></td><td>4455667</td><td>Permanent</td><td>KES 97,000</td><td>IT</td><td>Systems Analyst</td><td>1st Feb 2025</td><td>Kevin Otieno</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
+                                                        <a href="employee-approvals-new-verification.html" class="btn btn-sm btn-success mx-2">Verify & Approve</a>
+                                                        <a href="employee-edit.html?app=1004" class="btn btn-sm btn-primary mx-2">Edit</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>7789</th>
-                                                    <td><a href="employee-register-details.html">Atieno Owiti</a></td>
-                                                    <td>8899001</td>
-                                                    <td>Contract</td>
-                                                    <td>KES 74,000</td>
-                                                    <td>Housing & Urban Development</td>
-                                                    <td>Architect</td>
+                                                    <th>1005</th><td><a href="application-details.html">Doris Njenga</a></td><td>3344556</td><td>Contract</td><td>KES 64,000</td><td>Legal</td><td>Legal Assistant</td><td>31st Jan 2025</td><td>Mary Atieno</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
+                                                        <a href="employee-approvals-new-verification.html" class="btn btn-sm btn-success mx-2">Verify & Approve</a>
+                                                        <a href="employee-edit.html?app=1005" class="btn btn-sm btn-primary mx-2">Edit</a>
                                                     </td>
                                                 </tr>
+
                                                 <tr>
-                                                    <th>8890</th>
-                                                    <td><a href="employee-register-details.html">Jalang'o Oburu</a></td>
-                                                    <td>9900112</td>
-                                                    <td>Permanent</td>
-                                                    <td>KES 105,000</td>
-                                                    <td>Roads & Transport</td>
-                                                    <td>Senior Engineer</td>
+                                                    <th>1006</th><td><a href="application-details.html">Michael Kamau</a></td><td>1122334</td><td>Permanent</td><td>KES 78,000</td><td>HR</td><td>HR Officer</td><td>30th Jan 2025</td><td>Jane Mwangi</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>9901</th>
-                                                    <td><a href="employee-register-details.html">Nyagweno Oketch</a></td>
-                                                    <td>1112233</td>
-                                                    <td>Contract</td>
-                                                    <td>KES 62,000</td>
-                                                    <td>Blue Economy</td>
-                                                    <td>Fisheries Officer</td>
-                                                    <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>1122</th>
-                                                    <td><a href="employee-register-details.html">Okeyo Owuor</a></td>
-                                                    <td>2233445</td>
-                                                    <td>Permanent</td>
-                                                    <td>KES 98,000</td>
-                                                    <td>Public Health</td>
-                                                    <td>County Health Officer</td>
-                                                    <td class="text-right">
-                                                        <button class="btn btn-sm btn-info">Edit</button>
-                                                        <button class="btn btn-sm btn-secondary">Modification Logs</button>
+                                                        <a href="employee-approvals-new-verification.html" class="btn btn-sm btn-success mx-2">Verify & Approve</a>
+                                                        <a href="employee-edit.html?app=1006" class="btn btn-sm btn-primary mx-2">Edit</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        
                                         
                                     </div>
                                 </div>
