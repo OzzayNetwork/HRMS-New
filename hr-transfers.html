@@ -517,7 +517,7 @@
                                                     <td>12 Feb 2025</td>
                                                     <td>Transfer to a new project</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
+                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
                                                                 <span class="sr-only">Loading...</span>
@@ -533,7 +533,7 @@
                                                     <td>25 Apr 2023</td>
                                                     <td>New role in administration</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
+                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
                                                                 <span class="sr-only">Loading...</span>
@@ -549,7 +549,7 @@
                                                     <td>15 Jun 2021</td>
                                                     <td>Relocation due to health policy change</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
+                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
                                                                 <span class="sr-only">Loading...</span>
@@ -565,7 +565,7 @@
                                                     <td>10 Sep 2022</td>
                                                     <td>Promotion within department</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
+                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
                                                                 <span class="sr-only">Loading...</span>
@@ -581,7 +581,7 @@
                                                     <td>5 Dec 2023</td>
                                                     <td>New cooperative initiative</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
+                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
                                                                 <span class="sr-only">Loading...</span>
@@ -689,6 +689,74 @@
       </div>
     </div>
   </div>
+
+
+  <!-- Modal for editing employee transfer details (including documents) -->
+<div class="modal fade" id="editEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="editEmployeeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editEmployeeModalLabel">Edit Employee Transfer Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Form for editing employee details -->
+          <form id="editEmployeeForm">
+            <div class="row">
+              <!-- Left Column: Personal Information -->
+              <div class="col-md-6">
+                <h6 class="text-uppercase fw-bold">Edit Personal Information</h6>
+                <div class="mb-3">
+                  <label for="editEmployeeName" class="form-label">Employee Name</label>
+                  <input type="text" class="form-control" id="editEmployeeName" placeholder="Enter Employee Name" value="Ann Akinyi">
+                </div>
+                <div class="mb-3">
+                  <label for="editDepartment" class="form-label">Department</label>
+                  <input type="text" class="form-control" id="editDepartment" placeholder="Enter Department" value="Finance">
+                </div>
+                <div class="mb-3">
+                  <label for="editDirectorate" class="form-label">Directorate</label>
+                  <input type="text" class="form-control" id="editDirectorate" placeholder="Enter Directorate" value="Economic Planning">
+                </div>
+              </div>
+  
+              <!-- Right Column: Transfer Information -->
+              <div class="col-md-6">
+                <h6 class="text-uppercase fw-bold">Edit Transfer Information</h6>
+                <div class="mb-3">
+                  <label for="editTransferDate" class="form-label">Transfer Date</label>
+                  <input type="date" class="form-control" id="editTransferDate" value="2025-04-25">
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="editDescription" class="form-label">Description</label>
+                  <textarea class="form-control" id="editDescription" rows="3" value="">Relocation due to health policy change</textarea>
+                </div>
+  
+                <!-- File Upload Section -->
+                <div class="mb-3">
+                  <h6 class="text-uppercase fw-bold">Uploaded Documents</h6>
+                  <!-- Display existing uploaded documents -->
+                  <ul id="uploadedDocumentsList" class="list-group">
+                    <!-- Documents will be populated dynamically -->
+                  </ul>
+  
+                  <!-- File upload input for replacing or uploading new documents -->
+                  <label for="editDocuments" class="form-label mt-3">Upload New Document</label>
+                  <input type="file" class="form-control" id="editDocuments" accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="saveEditButton">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
 
 <!-- JavaScript for handling the modal functionality  for  view details -->
@@ -2025,8 +2093,95 @@
         </div>
     </div>
 </div>
-
-        
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const uploadedDocumentsList = document.getElementById('uploadedDocumentsList');
+    const editDocumentsInput = document.getElementById('editDocuments');
+    const saveEditButton = document.getElementById('saveEditButton');
+  
+    // Example of existing uploaded documents (these would typically be fetched from the server)
+    let uploadedDocuments = [
+      { name: 'TransferPolicy.pdf', url: 'path/to/TransferPolicy.pdf' },
+      { name: 'ContractDetails.docx', url: 'path/to/ContractDetails.docx' }
+    ];
+  
+    // Function to display uploaded documents in the modal
+    function displayUploadedDocuments() {
+      uploadedDocumentsList.innerHTML = ''; // Clear the list first
+      uploadedDocuments.forEach((doc, index) => {
+        const li = document.createElement('li');
+        li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+        li.innerHTML = `
+          <a href="${doc.url}" target="_blank">${doc.name}</a>
+          <div>
+            <button class="btn btn-sm btn-warning me-2" data-index="${index}">Replace</button>
+            <button class="btn btn-sm btn-danger" data-index="${index}">Delete</button>
+          </div>
+        `;
+        uploadedDocumentsList.appendChild(li);
+      });
+    }
+  
+    // Display existing uploaded documents when the modal opens
+    displayUploadedDocuments();
+  
+    // Handle document deletion
+    uploadedDocumentsList.addEventListener('click', function (event) {
+      if (event.target.classList.contains('btn-danger')) {
+        const index = event.target.getAttribute('data-index');
+        uploadedDocuments.splice(index, 1); // Remove the document from the array
+        displayUploadedDocuments(); // Refresh the document list
+      }
+    });
+  
+    // Handle document replacement
+    uploadedDocumentsList.addEventListener('click', function (event) {
+      if (event.target.classList.contains('btn-warning')) {
+        const index = event.target.getAttribute('data-index');
+        editDocumentsInput.click(); // Open the file input when "Replace" is clicked
+        editDocumentsInput.onchange = function () {
+          if (editDocumentsInput.files.length > 0) {
+            const newDocument = editDocumentsInput.files[0];
+            uploadedDocuments[index] = {
+              name: newDocument.name,
+              url: URL.createObjectURL(newDocument) // In real-world scenarios, you'd upload to the server
+            };
+            displayUploadedDocuments(); // Refresh the document list after replacement
+            editDocumentsInput.value = ''; // Clear the input after file selection
+          }
+        };
+      }
+    });
+  
+    // Save the uploaded document (when adding a new document)
+    saveEditButton.addEventListener('click', function () {
+      if (editDocumentsInput.files.length > 0) {
+        const newDocument = editDocumentsInput.files[0];
+        // Add new document to the uploadedDocuments array
+        uploadedDocuments.push({
+          name: newDocument.name,
+          url: URL.createObjectURL(newDocument) // In real-world scenarios, you'd upload to the server
+        });
+        displayUploadedDocuments(); // Refresh the document list
+        editDocumentsInput.value = ''; // Clear the file input after upload
+      }
+  
+      // Save other employee details (in real-world cases, you'd send this to the server)
+      const employeeData = {
+        name: document.getElementById('editEmployeeName').value,
+        department: document.getElementById('editDepartment').value,
+        directorate: document.getElementById('editDirectorate').value,
+        transferDate: document.getElementById('editTransferDate').value,
+        description: document.getElementById('editDescription').value,
+        documents: uploadedDocuments // Attach the uploaded documents
+      };
+  
+      console.log("Employee Data:", employeeData); // Log the data for demonstration
+  
+      // In a real application, here you'd send the `employeeData` object to the server via an AJAX call.
+    });
+  });
+</script>
     <!-- END layout-wrapper -->
 
     <!-- Right bar overlay-->
