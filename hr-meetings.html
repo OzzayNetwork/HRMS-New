@@ -592,7 +592,7 @@
                                                     <td>12 Feb 2025</td>
                                                     <td>10:00 AM</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
+                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editMeetingModal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
                                                                 <span class="sr-only">Loading...</span>
@@ -601,7 +601,7 @@
                                                         <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Project Kickoff">
                                                             <div>Delete Details</div>
                                                         </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">
+                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMeetingModal">
                                                             View Details
                                                         </button>
                                                     </td>
@@ -611,7 +611,7 @@
                                                     <td>25 Apr 2023</td>
                                                     <td>2:00 PM</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
+                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editMeetingModal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
                                                                 <span class="sr-only">Loading...</span>
@@ -620,7 +620,7 @@
                                                         <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Team Sync">
                                                             <div>Delete Details</div>
                                                         </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">
+                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMeetingModal">
                                                             View Details
                                                         </button>
                                                     </td>
@@ -630,7 +630,7 @@
                                                     <td>15 Jun 2021</td>
                                                     <td>11:00 AM</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
+                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editMeetingModal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
                                                                 <span class="sr-only">Loading...</span>
@@ -638,9 +638,8 @@
                                                         </button>
                                                         <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Client Meeting">
                                                             <div>Delete Details</div>
-
                                                         </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">
+                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMeetingModal">
                                                             View Details
                                                         </button>
                                                     </td>
@@ -650,7 +649,7 @@
                                                     <td>10 Sep 2022</td>
                                                     <td>4:00 PM</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
+                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editMeetingModal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
                                                                 <span class="sr-only">Loading...</span>
@@ -659,7 +658,7 @@
                                                         <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Strategy Session">
                                                             <div>Delete Details</div>
                                                         </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">
+                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMeetingModal">
                                                             View Details
                                                         </button>
                                                     </td>
@@ -669,7 +668,7 @@
                                                     <td>5 Dec 2023</td>
                                                     <td>9:30 AM</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
+                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editMeetingModal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
                                                                 <span class="sr-only">Loading...</span>
@@ -678,7 +677,7 @@
                                                         <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Marketing Review">
                                                             <div>Delete Details</div>
                                                         </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">
+                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMeetingModal">
                                                             View Details
                                                         </button>
                                                     </td>
@@ -688,7 +687,7 @@
                                     </div>
                                 </div>
                                 
-                              >
+                              
                                 
                             </div>
                         </div>
@@ -1836,6 +1835,81 @@
 
 
         <!-- the modal -->
+
+<!-- View Meeting Modal -->
+<div class="modal fade" id="viewMeetingModal" tabindex="-1" aria-labelledby="viewMeetingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewMeetingModalLabel">View Meeting Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Department:</strong> <span id="viewDepartment">Administration</span></p>
+                <p><strong>Employee:</strong> <span id="viewEmployee">Omondi Ochieng</span></p>
+                <p><strong>Meeting Title:</strong> <span id="viewMeetingTitle">Team Sync</span></p>
+                <p><strong>Meeting Date:</strong> <span id="viewMeetingDate">15 Mar 2025</span></p>
+                <p><strong>Venue:</strong> <span id="viewVenue">Boardroom B</span></p>
+                <p><strong>Meeting Time:</strong> <span id="viewMeetingTime">11:30 AM</span></p>
+                <p><strong>Meeting Note:</strong> <span id="viewMeetingNote">Discuss team updates and goals.</span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Meeting Modal -->
+<div class="modal fade" id="editMeetingModal" tabindex="-1" aria-labelledby="editMeetingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editMeetingModalLabel">Edit Meeting Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="department" class="form-label">Department</label>
+                        <input type="text" class="form-control" id="department" value="Administration">
+                    </div>
+                    <div class="mb-3">
+                        <label for="employee" class="form-label">Employee</label>
+                        <input type="text" class="form-control" id="employee" value="Achieng Okoth">
+                    </div>
+                    <div class="mb-3">
+                        <label for="meetingTitle" class="form-label">Meeting Title</label>
+                        <input type="text" class="form-control" id="meetingTitle" value="Team Sync">
+                    </div>
+                    <div class="mb-3">
+                        <label for="meetingDate" class="form-label">Meeting Date</label>
+                        <input type="date" class="form-control" id="meetingDate" value="2025-03-15">
+                    </div>
+                    <div class="mb-3">
+                        <label for="venue" class="form-label">Venue</label>
+                        <input type="text" class="form-control" id="venue" value="Boardroom B">
+                    </div>
+                    <div class="mb-3">
+                        <label for="meetingTime" class="form-label">Meeting Time</label>
+                        <input type="time" class="form-control" id="meetingTime" value="11:30">
+                    </div>
+                    <div class="mb-3">
+                        <label for="meetingNote" class="form-label">Meeting Note</label>
+                        <textarea class="form-control" id="meetingNote" rows="3">Discuss team updates and goals.</textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
          <!-- Add New Meeting  Modal -->
          <div class="modal fade" id="modal-add-meeting" tabindex="-1" aria-labelledby="addMeetingModalLabel" aria-hidden="true"> 
             <div class="modal-dialog modal-lg modal-dialog-centered">

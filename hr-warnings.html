@@ -509,88 +509,75 @@
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody> 
                                                 <tr>
                                                     <th>HR Manager</th>
-                                                    <td>John Doe</td>
+                                                    <td>Odhiambo Ochieng</td>
                                                     <td>Attendance Issues</td>
                                                     <td>15 Mar 2023</td>
                                                     <td>Issued due to frequent tardiness</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
-                                                            <div>Edit Details</div> 
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
+                                                        <button class="btn btn-sm btn-success" data-bs-target="#editWarningModal" data-bs-toggle="modal">
+                                                            Edit Details
                                                         </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button>
+                                                        <button class="btn btn-primary btn-sm" data-bs-target="#viewWarningModal" data-bs-toggle="modal">View Details</button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th>Supervisor</th>
-                                                    <td>Jane Smith</td>
+                                                    <td>Akoth Auma</td>
                                                     <td>Work Performance</td>
                                                     <td>10 Jan 2022</td>
                                                     <td>Low performance metrics</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
-                                                            <div>Edit Details</div> 
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
+                                                        <button class="btn btn-sm btn-success" data-bs-target="#editWarningModal" data-bs-toggle="modal">
+                                                            Edit Details
                                                         </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button>
+                                                        <button class="btn btn-primary btn-sm" data-bs-target="#viewWarningModal" data-bs-toggle="modal">View Details</button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th>Operations Head</th>
-                                                    <td>Mark Johnson</td>
+                                                    <td>Okoth Otieno</td>
                                                     <td>Policy Violation</td>
                                                     <td>5 Jul 2024</td>
                                                     <td>Non-compliance with company policies</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
-                                                            <div>Edit Details</div> 
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
+                                                        <button class="btn btn-sm btn-success" data-bs-target="#editWarningModal" data-bs-toggle="modal">
+                                                            Edit Details
                                                         </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button>
+                                                        <button class="btn btn-primary btn-sm" data-bs-target="#viewWarningModal" data-bs-toggle="modal">View Details</button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th>CEO</th>
-                                                    <td>Lucy Adams</td>
+                                                    <td>Akinyi Anyango</td>
                                                     <td>Unprofessional Conduct</td>
                                                     <td>21 Nov 2023</td>
                                                     <td>Behavioral issues with clients</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
-                                                            <div>Edit Details</div> 
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
+                                                        <button class="btn btn-sm btn-success" data-bs-target="#editWarningModal" data-bs-toggle="modal">
+                                                            Edit Details
                                                         </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button>
+                                                        <button class="btn btn-primary btn-sm" data-bs-target="#viewWarningModal" data-bs-toggle="modal">View Details</button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th>Team Lead</th>
-                                                    <td>Michael Brown</td>
+                                                    <td>Omollo Odongo</td>
                                                     <td>Missed Deadlines</td>
                                                     <td>18 Sep 2025</td>
                                                     <td>Missed multiple project deadlines</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-success approve-leave">
-                                                            <div>Edit Details</div> 
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
+                                                        <button class="btn btn-sm btn-success" data-bs-target="#editWarningModal" data-bs-toggle="modal">
+                                                            Edit Details
                                                         </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button>
+                                                        <button class="btn btn-primary btn-sm" data-bs-target="#viewWarningModal" data-bs-toggle="modal">View Details</button>
                                                     </td>
                                                 </tr>
                                             </tbody>
+                                            
+                                            
                                         </table>
                                     </div>
                                 </div>
@@ -607,6 +594,101 @@
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
+
+            <!-- Modal for Viewing Warning Details -->
+<div class="modal fade" id="viewWarningModal" tabindex="-1" aria-labelledby="viewWarningModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewWarningModalLabel">Warning Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="warningBy" class="form-label"><strong>Warning By:</strong></label>
+                    <p id="warningBy">Odhiambo Ochieng</p>
+                </div>
+                <div class="mb-3">
+                    <label for="warningTo" class="form-label"><strong>Warning To:</strong></label>
+                    <p id="warningTo">Achieng Nyong'o</p>
+                </div>
+                <div class="mb-3">
+                    <label for="department" class="form-label"><strong>Department:</strong></label>
+                    <p id="department">Human Resources</p>
+                </div>
+                <div class="mb-3">
+                    <label for="directorate" class="form-label"><strong>Directorate:</strong></label>
+                    <p id="directorate">Administration</p>
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label"><strong>Subject:</strong></label>
+                    <p id="subject">Late Submission of Reports</p>
+                </div>
+                <div class="mb-3">
+                    <label for="warningDate" class="form-label"><strong>Warning Date:</strong></label>
+                    <p id="warningDate">3rd March 2025</p>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label"><strong>Description:</strong></label>
+                    <p id="description">The employee failed to submit the required monthly reports on time, despite multiple reminders.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal for Editing Warning Details -->
+<div class="modal fade" id="editWarningModal" tabindex="-1" aria-labelledby="editWarningModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editWarningModalLabel">Edit Warning Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="editWarningBy" class="form-label"><strong>Warning By:</strong></label>
+                        <input type="text" class="form-control" id="editWarningBy" value="Odhiambo Ochieng">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editWarningTo" class="form-label"><strong>Warning To:</strong></label>
+                        <input type="text" class="form-control" id="editWarningTo" value="Achieng Nyong'o">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editDepartment" class="form-label"><strong>Department:</strong></label>
+                        <input type="text" class="form-control" id="editDepartment" value="Human Resources">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editDirectorate" class="form-label"><strong>Directorate:</strong></label>
+                        <input type="text" class="form-control" id="editDirectorate" value="Administration">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editSubject" class="form-label"><strong>Subject:</strong></label>
+                        <input type="text" class="form-control" id="editSubject" value="Late Submission of Reports">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editWarningDate" class="form-label"><strong>Warning Date:</strong></label>
+                        <input type="date" class="form-control" id="editWarningDate" value="2025-03-03">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editDescription" class="form-label"><strong>Description:</strong></label>
+                        <textarea class="form-control" id="editDescription" rows="3">The employee failed to submit the required monthly reports on time, despite multiple reminders.</textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
             <!-- receipting modal -->
             <div class="modal fade receipting-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
