@@ -409,44 +409,148 @@
                         </div>
                     </div>
 
+                    <!-- some stats -->
+                    <div class="row">
+                        <!-- Total Employees -->
+                        <div class="col-md-3">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium">Total Employees</p>
+                                            <h4 class="mb-0">7,720</h4>
+                                        </div>
+                                        <div class="flex-shrink-0 align-self-center">
+                                            <div class="avatar-sm rounded-circle bg-success mini-stat-icon">
+                                                <span class="avatar-title rounded-circle bg-success">
+                                                    <i class="bx bx-group font-size-24"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Employees Added This Month -->
+                        <div class="col-md-3">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium">Employees Added (This Month)</p>
+                                            <h4 class="mb-0">152</h4>
+                                        </div>
+                                        <div class="flex-shrink-0 align-self-center">
+                                            <div class="avatar-sm rounded-circle bg-info mini-stat-icon">
+                                                <span class="avatar-title rounded-circle bg-info">
+                                                    <i class="bx bx-user-plus font-size-24"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Wage Bill Percentage -->
+                        <div class="col-md-3">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium">Wage Bill Percentage</p>
+                                            <h4 class="mb-0">65% <span class="text-muted font-size-14">(Annual)</span> | 68% <span class="text-muted font-size-14">(This Month)</span></h4>
+                                        </div>
+                                        <div class="flex-shrink-0 align-self-center">
+                                            <div class="avatar-sm rounded-circle bg-warning mini-stat-icon">
+                                                <span class="avatar-title rounded-circle bg-warning">
+                                                    <i class="bx bx-money font-size-24"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Employees Absent Without Permission -->
+                        <div class="col-md-3">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium">Absent Without Permission</p>
+                                            <h4 class="mb-0">34</h4>
+                                        </div>
+                                        <div class="flex-shrink-0 align-self-center">
+                                            <div class="avatar-sm rounded-circle bg-danger mini-stat-icon">
+                                                <span class="avatar-title rounded-circle bg-danger">
+                                                    <i class="bx bx-user-x font-size-24"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <!-- end of stats -->
+
+
+
                     <!-- quick stats -->
                     <div class="row">
-                        <div class="col-xl-4 px-sm-30px">
+
+                        <div class="col-sm-12 col-md-7 col-lg-8">
+                            <div class="card">
+                                <div class="card-header bg-transparent border-bottom border-succes">
+                                    <div class="d-sm-flex flex-wrap">
+                                        <h4 class="card-title text-black text-uppercase">Attendance Summary for This Year</h4>
+                                        <div class="ms-auto">
+                                            <ul class="nav nav-pills text-uppercase d-none">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" href="javascript:void(0);">Week</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="javascript:void(0);">Month</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="javascript:void(0);">Year</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card-body">
+                                    <div id="AttendanceContainer"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+
+
+                        <div class="col-xl-4 col-md-5 col-lg-4 px-sm-30px">
                             <div class="card  member-wedges-card">
                                 <div class="card-body">
                                     <div class="d-flex">
                                         <div class="d-flex flex-wrap align-items-start">
-                                            <h5 class="mb-3 me-2 text-black">Today's Overview</h5>
+                                            <h5 class="mb-3 me-2 text-black">Employee atendance for Today</h5>
                                         </div>
                                         <div class="ms-auto align-self-end position-absolute d-none">
                                             <i class="mdi mdi-block-helper display-4  opacity-50"></i>
                                         </div>
                                     </div>
+                                    <div id="TodayAttendanceContainer">
 
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-8 col-lg-6 align-self-center">
-                                            
-
-                                            <div class="mt-0 pt-2 text-capitalize">
-                                                <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-black text-capitalize"></i>Collected Revenue</p>
-                                                <h5 class="text-blac">KES 632,230 <small class="text-muted font-size-14">+2,876</small></h5>
-                                            </div> 
-
-                                            <div class="mt-4 pt-2">
-                                                <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-primary"></i>Pending Bills</p>
-                                                <h3 class="text-black mb-0">KES 22,562  <small class="text-muted font-size-14">+1,000</small></h3>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12 col-md-4 col-lg-6">
-                                            <div class="mt-4 mt-sm-0">
-                                                <div id="radialBar-chart" data-colors='["--bs-primary"]' class="apex-charts"></div>
-                                            </div>
-                                        </div>
                                     </div>
 
+
                                 </div>
-                                <div class="card-footer bg-primary p-4">
+                                <div class="card-footer bg-primary p-4 d-none">
                                     <div class="row">
                                         <div class="col-6">
                                             <p class="text-light mb-0 opacity-75">Inpatient</p>
@@ -461,929 +565,76 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-8 px-sm-30px">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="d-flex mb-3 flex-column">
-                                                <div class="avatar-xs-2 me-3 mb-3">
-                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-success  font-size-18">
-                                                        <i class="mdi mdi-calendar-text-outline h2 mb-0 pb-0 text-black"></i>
-                                                    </span>
-                                                </div>
-                                                <div class="d-flex flex-column">
-                                                    <h5 class="font-size-14 mb-0 mt-3 text-black fw-semibold">Weekly Transactions</h5>
-                                                    <p class="text-grey">From Mar 13th 2023</p>
-                                                </div>
-                                            </div>
-                                            <div class="text-muted mt-4">
-                                                <div class="d-flex flex-column">
-                                                    <p class="mb-0">Collected Revenue</p>
-                                                    <h4 class="text-black fw-semibold">KES 34,790</h4>
-                                                    <div><p class="text-muted mb-0 comparison-txt"><span class="text-success me-2 fw-semibold"><i class="mdi mdi-arrow-up"></i> + 1,329 </span> Since Last Week</p></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer bg-black p-4">
-                                            <p class="text-light mb-0 opacity-75">Served Patients</p>
-                                            <div>
-                                                <h5 class="text-white mb-0">345<small class="text-light opacity-75 pl-2">+5</small></h5>
-                                            </div>
 
-                                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="d-flex flex-wrap align-items-start">
+                                        <h5 class="mb-3 me-2 text-black">Staff Turnover by Department Feb 2025</h5>
                                     </div>
                                 </div>
-
-                                <div class="col-sm-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="d-flex mb-3 flex-column">
-                                                <div class="avatar-xs-2 me-3 mb-3">
-                                                    <span class="avatar-title rounded-circle bg-success bg-soft text-success  font-size-18">
-                                                        <i class="mdi mdi-calendar-month-outline h2 mb-0 pb-0 text-success"></i>
-                                                    </span>
-                                                </div>
-                                                <div class="d-flex flex-column">
-                                                    <h5 class="font-size-14 mb-0 mt-3 text-black fw-semibold">Monthly Transactions</h5>
-                                                    <p class="text-grey">March 2023</p>
-                                                </div>
-                                            </div>
-                                            <div class="text-muted mt-4">
-                                                <div class="d-flex flex-column">
-                                                    <p class="mb-0">Collected Revenue</p>
-                                                    <h4 class="text-black fw-semibold">KES 456,789</h4>
-                                                    <div><p class="text-muted mb-0 comparison-txt"><span class="text-success me-2 fw-semibold"><i class="mdi mdi-arrow-up"></i> +56 41,678 </span> Since Last Month</p></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer bg-primary p-4">
-                                            <p class="text-light mb-0 opacity-75">Served Patients</p>
-                                            <div>
-                                                <h5 class="text-white mb-0">923<small class="text-light opacity-75 pl-2">+56</small></h5>
-                                            </div>
-
-                                        </div>
-                                    </div>
+                                <div class="card-body">
+                                    <div id="NewContainer"></div>
                                 </div>
-
-                                <div class="col-sm-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="d-flex mb-3 flex-column">
-                                                <div class="avatar-xs-2 me-3 mb-3">
-                                                    <span class="avatar-title rounded-circle bg-dark bg-soft text-success  font-size-18">
-                                                        <i class="mdi  mdi-calendar-check-outline h2 mb-0 pb-0 text-black"></i>
-                                                    </span>
-                                                </div>
-                                                <div class="d-flex flex-column">
-                                                    <h5 class="font-size-14 mb-0 mt-3 text-black fw-semibold">This Year</h5>
-                                                    <p class="text-grey">2023</p>
-                                                </div>
-                                            </div>
-                                            <div class="text-muted mt-4">
-                                                <div class="d-flex flex-column">
-                                                    <p class="mb-0">Collected Revenue</p>
-                                                    <h4 class="text-black fw-semibold">KES 1,934,230</h4>
-                                                    <div><p class="text-muted mb-0 comparison-txt"><span class="text-danger me-2 fw-semibold"><i class="mdi mdi-arrow-down"></i> - 234,890 </span> Since Last Year</p></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer bg-black p-4">
-                                            <p class="text-light mb-0 opacity-75">Served Patients</p>
-                                            <div>
-                                                <h5 class="text-white mb-0">1,657<small class="text-light opacity-75 pl-2">-56</small></h5>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                               
                             </div>
-                            <!-- end row -->
                         </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="d-flex flex-wrap align-items-start">
+                                        <h5 class="mb-3 me-2 text-black">Nature Of Exits</h5>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div id="ExitChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="d-flex flex-wrap align-items-start">
+                                        <h5 class="mb-3 me-2 text-black">Nature of Entries</h5>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div id="EntryChart"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="d-flex flex-wrap align-items-start">
+                                        <h5 class="mb-3 me-2 text-black">Gender Comparissons</h5>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div id="GenderContainer"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="d-flex flex-wrap align-items-start">
+                                        <h5 class="mb-3 me-2 text-black">Distribution of Employees with Disabilities</h5>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div id="disabilityChart"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
                     </div>
                     <!-- end of quick stats -->
                    
                     <!-- quick stats -->
 
-                    <div class="row">
-                        <div class="col-xl-4 px-sm-30px">
-                            <div class="card  text-white member-wedges-card index-live-stats">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-12 mb-3">
-                                            <h6 class="text-white text-uppercase">Live Stats</h6>
-                                        </div>
-                                        <div class="col-sm-12 mb-3">
-                                            <div class="live-data-card">
-                                                <div class="">
-                                                    <div class="me-3">
-                                                        <img src="assets/images/index-icons/intensive-care-unit.png" alt="">
-                                                    </div>
-                                                    <span class="avatar-title rounded-circle bg-warning font-size-16 d-none">
-                                                        <!-- <i class="mdi mdi-sticker-alert text-white"></i> -->
-                                                        <img src="assets/images/index-icons/offline.png" alt="">
-                                                    </span>
-                                                </div>
-                                                <div>
-                                                    <p class="text-muted mb-1">Inpatients
-                                                    </p>
-                                                    <h5 class="mb-0">2,900</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        
-                                        <div class="col-sm-12 mb-3">
-                                            <div class="live-data-card">
-                                                <div class="">
-                                                    <div class="me-3">
-                                                        <img src="assets/images/index-icons/flask.png" alt="">
-                                                    </div>
-                                                    <span class="avatar-title rounded-circle bg-warning font-size-16 d-none">
-                                                        <!-- <i class="mdi mdi-sticker-alert text-white"></i> -->
-                                                        <img src="assets/images/index-icons/monitor.png" alt="">
-                                                    </span>
-                                                </div>
-                                                <div>
-                                                    <p class="text-muted mb-1">Lab Tests</p>
-                                                    <h5 class="mb-0">945</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 mb-3">
-                                            <div class="live-data-card">
-                                                <div class="">
-                                                    <div class="me-3">
-                                                        <img src="assets/images/index-icons/radiology.png" alt="">
-                                                    </div>
-                                                    <span class="avatar-title rounded-circle bg-warning font-size-16 d-none">
-                                                        <!-- <i class="mdi mdi-sticker-alert text-white"></i> -->
-                                                        <img src="assets/images/index-icons/radiology.png" alt="">
-                                                    </span>
-                                                </div>
-                                                <div>
-                                                    <p class="text-muted mb-1">Radiology Exams
-                                                    </p>
-                                                    <h5 class="mb-0">945</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 mb-3">
-                                            <div class="live-data-card">
-                                                <div class="">
-                                                    <div class="me-3">
-                                                        <img src="assets/images/index-icons/hospital (2).png" alt="">
-                                                    </div>
-                                                    <span class="avatar-title rounded-circle bg-warning font-size-16 d-none">
-                                                        <!-- <i class="mdi mdi-sticker-alert text-white"></i> -->
-                                                        <img src="assets/images/index-icons/offline.png" alt="">
-                                                    </span>
-                                                </div>
-                                                <div>
-                                                    <p class="text-muted mb-1">Discharged patient
-                                                    </p>
-                                                    <h5 class="mb-0">945</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                       
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 px-sm-30px text-capitalize">
-                            <div class="row">
-                                <div class="col-xl-12 px-sm-30px">
-                                    <div class="card">
-                                        <div class="card-header d-flex align-items-center justify-content-between bg-white">
-                                            <div class="d-non">
-                                                <h4 class="card-title mb-0 text-capitalize">Revenue Collections against patients served</h4>
-                                            </div>
-                                            <div class="d-flex">
-                                                <select class="form-control selectpicker bg-white select-department" title="Filter By Department" data-live-search="true">
-                                                    <optgroup label="Primary Care">
-                                                      <option value="OPD Department">OPD Department</option>
-                                                      <option value="Casualty">Casualty</option>
-                                                    </optgroup>
-                                                    <optgroup label="Speciality Care">
-                                                      <option value="MCH">MCH</option>
-                                                      <option value="Dental Clinic">Dental Clinic </option>
-                                                      <option value="Physiotherapy">Physiotherapy</option>
-
-                                                      <option value="Occupational Therapy ">Occupational Therapy </option>
-                                                      <option value="Oncology Module">Oncology Module</option>
-                                                      <option value="Renal Unit">Renal Unit</option>
-
-                                                      <option value="Eye Clinic">Eye Clinic</option>
-                                                      <option value="Chest Clinic Module">Chest Clinic Module</option>
-                                                      <option value="Renal Unit">Renal Unit</option>
-                                                    </optgroup>
-                                                    <optgroup label="">
-                                                        <option value="Lab tests">Lab tests</option>
-                                                        <option value="Radio tests">Radiology</option>
-                                                      </optgroup>
-                                                  </select>
-        
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <div>
-                                                <div id="annual-sales" class="high-chart-cont" dir="ltr"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-        
-                                </div>
-                            </div>
-                            <!-- end row -->
-                        </div>
-                    </div>
-
-                    <!-- more charts -->
-                    <div class="row d-non">
-                        <div class="col-xl-6 col-lg-7 col-sm-12 px-sm-30px">
-                            <div class="card calc-23">
-                                <div class="card-body">
-                                    <div class="clearfix">
-                                        <div class="float-end d-flex ">
-                                            <div class="input-group input-group-sm mx-3 d-non">
-                                                <select class="form-select form-select-sm filter-by-county">
-                                                    <option value="Kenya" selected>Whole Country</option>
-                                                    <option value="kisii">Kisii</option>
-                                                    <option value="kericho">Kericho</option>
-                                                    <option value="Laikipia">Laikipia</option>
-                                                    <option value="Nairobi">Nairobi</option>
-
-                                                    <option value="Nakuru">Nakuru</option>
-                                                    <option value="Mombasa">Mombasa</option>
-                                                    <option value="Busia">Busia</option>
-                                                    <option value="Meru">Meru</option>
-
-                                                    <option value="Laikipia">Laikipia</option>
-                                                    <option value="Nandi">Nandi</option>
-                                                    <option value="Kirinyaga">Kirinyaga</option>
-                                                    <option value="Homabay">Homa Bay</option>
-
-                                                    <option value="Siaya">Siaya</option>
-                                                    <option value="Kisumu">Kisumu</option>
-                                                    <option value="Kirinyaga">Kirinyaga</option>
-                                                    <option value="Homabay">Homa Bay</option>
-                                                    <option value="Elgeyo Marakwet">Elgeyo Marakwet</option>
-                                                    
-                                                </select>
-                                                <label class="input-group-text">County</label>
-                                            </div>
-                                            
-                                            <div class="input-group input-group-sm mx-3 d-non">
-                                                <select class="form-select form-select-sm filter-by">
-                                                    <option value="Violations">Expired Certificates</option>
-                                                    <option value="Revenue" selected>Revenue</option>
-                                                </select>
-                                                <label class="input-group-text">Filter By</label>
-                                            </div>
-
-                                            <div class="input-group input-group-sm">
-                                                <select class="form-select form-select-sm filter-by-month">
-                                                    <option value="May" selected>May 2023</option>
-                                                    <option value="Jan">Jan 2023</option>
-                                                    <option value="Dec">Dec 2022</option>
-                                                    <option value="Nov">Nov 2022</option>
-                                                    <option value="Oct">Oct 2022</option>
-                                                </select>
-                                                <label class="input-group-text">Month</label>
-                                            </div>
-
-                                            
-                                        </div>
-                                        <h4 class="card-title mb-4 text-capitalize d-none">Remittance Collection By County</h4>
-                                    </div>
-                                    
-
-                                    <div id="Map-data" class="h-80" dir="ltr"></div>
-                                </div>
-                               
-                                <div class="card-body border-top px-4 pt-4 d-none">
-                                    <h4 class="card-title mb-4">Inactive Certificates</h4>
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="text-muted">Inactive Certificates</p>
-                                            <h3>945</h3>
-                                            <p class="text-muted"><span class="text-success me-2"> 12% <i class="mdi mdi-arrow-up"></i> </span> Renewed This Month</p>
-
-                                            <div class="mt-4">
-                                                <a href="cert-inactive.html" class="btn btn-primary waves-effect waves-light btn-sm">Inactive Certificates <i class="mdi mdi-arrow-right ms-1"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="mt-4 mt-sm-0">
-                                                <div id="radialBar-chart" data-colors='["--bs-primary"]' class="apex-charts"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--end card-->
-                        </div>
-                        
-                        <div class="col-xl-6 col-lg-5 col-sm-12">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="card">
-                                        <div class="card-header bg-white border-bottom">
-                                            <div class="float-end">
-                                                <select class="form-select form-select-sm ms-2">
-                                                    <option value="MA" selected>All Sub Counties</option>
-                                                    <option value="FE">Westlands</option>
-                                                    <option value="JA">Roysambu</option>
-                                                    <option value="DE">Kibra</option>
-                                                    <option value="DE">Langata</option>
-                                                </select>
-                                            </div>
-                                            <h4 class="card-title mb-3">Revenue By Patient Type</h4>
-                                        </div>
-                                        <div class="card-body">
-                                           
-        
-                                            <div class="row py-2">
-                                                <div class="col-lg-4 d-none">
-                                                    <div class="mt-4">
-                                                        <p>Total Revenue Collected</p>
-                                                        <h4>KES 567,900</h4>
-        
-                                                        <p class="text-muted mb-4"> + 3,850 ( 0.2 % ) <i class="mdi mdi-arrow-up ms-1 text-success"></i></p>
-        
-                                                        <div class="row">
-                                                            <div class="col-12">
-                                                                <div>
-                                                                    <p class="mb-2">value Of Bills Created</p>
-                                                                    <h5>KES 789,000</h5>
-                                                                </div>
-                                                            </div>
-                                                            
-                                                        </div>
-        
-                                                        <div class="mt-4">
-                                                            <a href="bills-receipted.html" class="btn btn-primary btn-sm">Receipted Bills <i class="mdi mdi-arrow-right ms-1"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-        
-                                                <div class="col-lg-8">
-                                                    <div>
-                                                        <div id="wallet-balance-chart" class="apex-charts"></div>
-                                                    </div>
-                                                </div>
-        
-                                                <div class="col-lg-4 align-self-center">
-                                                    <div>
-                                                        <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-warning"></i>Inpatient</p>
-                                                        <h5>KES 200,655 <span class="text-muted font-size-14"> </span></h5>
-                                                    </div>
-        
-                                                    <div class="mt-4 pt-2">
-                                                        <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-info"></i>Outpatient</p>
-                                                        <h5>KES 345,900<span class="text-muted font-size-14"> </span></h5>
-                                                    </div>
-        
-                                                    
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer bg-transparent border-top d-none">
-                                            <div class="text-center">
-                                                <a href="reports-revenue-streams.html" class="btn btn-dark waves-effect waves-light"> View Applications</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-12">
-                                    <div class="card">
-                                        <div class="card-header bg-white border-bottom">
-                                            <div class="float-end d-non">
-                                                <select class="form-select form-select-sm ms-2">
-                                                    <option value="MA" selected>March</option>
-                                                    <option value="FE">February</option>
-                                                    <option value="JA">January</option>
-                                                    <option value="DE">December</option>
-                                                </select>
-                                            </div>
-                                            <h4 class="card-title mb-3">Revenue collection by Department</h4>
-                                        </div>
-                                        <div class="card-body">
-    
-                                            <ul class="nav nav-pills bg-light rounded d-none" role="tablist">
-                                                <li class="nav-item" role="presentation">
-                                                    <a class="nav-link active" data-bs-toggle="tab" href="#transactions-all-tab" role="tab" aria-selected="true">Bottom 7</a>
-                                                </li>
-                                                <li class="nav-item" role="presentation">
-                                                    <a class="nav-link" data-bs-toggle="tab" href="#transactions-buy-tab" role="tab" aria-selected="false" tabindex="-1">Top 7</a>
-                                                </li>
-                                                <li class="nav-item d-none" role="presentation">
-                                                    <a class="nav-link" data-bs-toggle="tab" href="#transactions-sell-tab" role="tab" aria-selected="false" tabindex="-1">Sell</a>
-                                                </li>
-                                            </ul>
-                                            <div class="tab-content mt-">
-                                                <div class="tab-pane active" id="transactions-all-tab" role="tabpanel">
-                                                    <div class="table-responsive" data-simplebar="init" style="max-height: 330px;"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: -15px; bottom: -15px;"><div class="simplebar-content-wrapper" style="height: auto; overflow: scroll;"><div class="simplebar-content" style="padding: 0px;">
-                                                        <table class="table align-middle table-nowrap">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td style="width: 50px;">
-                                                                        <div class="font-size-22 text-success">
-                                                                            <i class="bx bx-up-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Dental</h5>
-                                                                            <p class="text-muted mb-0 d-none">39 Appointments</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">KES 45,908</h5>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-    
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-22 text-success">
-                                                                            <i class="bx bx-up-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Pharmecey Department</h5>
-                                                                            <p class="text-muted mb-0 d-none">KES 532,900</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0 text-right">KES 532,900</h5>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-    
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-22 text-danger">
-                                                                            <i class="bx bx-down-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Casualty department</h5>
-                                                                            <p class="text-muted mb-0 d-none">324 Cars</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">KES 452,900</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    
-                                                                </tr>
-    
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-22 text-danger">
-                                                                            <i class="bx bx-down-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Occupational Therapy </h5>
-                                                                            <p class="text-muted mb-0 d-none">1,020 Cars</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">KES 762,900</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                   
-                                                                </tr>
-    
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-12 text-dark opacity-50">
-                                                                            <i class="mdi mdi-checkbox-blank-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Renal Unit </h5>
-                                                                            <p class="text-muted mb-0 d-none">56 Appoint</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">KES 764,900</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    
-                                                                </tr>
-    
-                                                               
-                                                            </tbody>
-                                                        </table>
-                                                    </div></div></div></div><div class="simplebar-placeholder" style="width: auto; height: 473px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: visible;"><div class="simplebar-scrollbar" style="transform: translate3d(0px, 0px, 0px); display: block; width: 196px;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 230px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
-                                                </div>
-                                                <div class="tab-pane" id="transactions-buy-tab" role="tabpanel">
-                                                    <div class="table-responsive" data-simplebar="init" style="max-height: 330px;"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
-                                                        <table class="table align-middle table-nowrap">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td style="width: 50px;">
-                                                                        <div class="font-size-22 text-danger">
-                                                                            <i class="bx bx-down-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Kenya Commercial bank</h5>
-                                                                            <p class="text-muted mb-0 d-none">345 Member sacco Cars</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">90% Compliance</h5>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-    
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-22 text-success">
-                                                                            <i class="bx bx-up-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Kenya Revenue Authority</h5>
-                                                                            <p class="text-muted mb-0 d-none">450 Cars</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0 text-right">90% Compliance</h5>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-    
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-12 text-dark opacity-50">
-                                                                            <i class="mdi mdi-checkbox-blank-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Kenyatta National Hospital</h5>
-                                                                            <p class="text-muted mb-0 d-none">324 Cars</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">88% Compliance</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    
-                                                                </tr>
-    
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-22 text-danger">
-                                                                            <i class="bx bx-down-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Kenya Red Cross Society </h5>
-                                                                            <p class="text-muted mb-0 d-none">1,020 Cars</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">87% Compliance</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                   
-                                                                </tr>
-    
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-22 text-success">
-                                                                            <i class="bx bx-up-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Oxfam</h5>
-                                                                            <p class="text-muted mb-0 d-none">560 Cars</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">81% Compliance</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    
-                                                                </tr>
-    
-                                                                <tr>
-                                                                    <td style="width: 50px;">
-                                                                        <div class="font-size-22 text-danger">
-                                                                            <i class="bx bx-down-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">KCB Group </h5>
-                                                                            <p class="text-muted mb-0 d-none">32 Cars</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">76% Compliance</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    
-                                                                </tr>
-    
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-22 text-success">
-                                                                            <i class="bx bx-up-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">United Nations</h5>
-                                                                            <p class="text-muted mb-0 d-none">15 Mar, 2020</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">76% Compliance</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div></div></div></div><div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="transform: translate3d(0px, 0px, 0px); display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
-                                                </div>
-    
-                                                <div class="tab-pane" id="transactions-sell-tab" role="tabpanel">
-                                                    <div class="table-responsive" data-simplebar="init" style="max-height: 330px;"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
-                                                        <table class="table align-middle table-nowrap">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td style="width: 50px;">
-                                                                        <div class="font-size-22 text-danger">
-                                                                            <i class="bx bx-down-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Buy BTC</h5>
-                                                                            <p class="text-muted mb-0 d-none">14 Mar, 2020</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">0.016 BTC</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 text-muted mb-0">$125.20</h5>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-    
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-22 text-danger">
-                                                                            <i class="bx bx-down-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Buy LTC</h5>
-                                                                            <p class="text-muted mb-0 d-none">16 Mar, 2020</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">1.88 LTC</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 text-muted mb-0">$94.22</h5>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-    
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-22 text-danger">
-                                                                            <i class="bx bx-down-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Buy ETH</h5>
-                                                                            <p class="text-muted mb-0 d-none">17 Mar, 2020</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">0.42 ETH</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 text-muted mb-0">$84.32</h5>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-22 text-success">
-                                                                            <i class="bx bx-up-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Sell ETH</h5>
-                                                                            <p class="text-muted mb-0 d-none">15 Mar, 2020</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">0.56 ETH</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 text-muted mb-0">$112.34</h5>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-12 text-dark opacity-50">
-                                                                            <i class="mdi mdi-checkbox-blank-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Sell BTC</h5>
-                                                                            <p class="text-muted mb-0 d-none">18 Mar, 2020</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">0.018 BTC</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 text-muted mb-0">$145.80</h5>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-22 text-success">
-                                                                            <i class="bx bx-up-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Sell ETH</h5>
-                                                                            <p class="text-muted mb-0 d-none">15 Mar, 2020</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">0.56 ETH</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 text-muted mb-0">$112.34</h5>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                                
-    
-                                                                
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="font-size-22 text-danger">
-                                                                            <i class="bx bx-down-arrow-circle"></i>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div>
-                                                                            <h5 class="font-size-14 mb-1">Buy BTC</h5>
-                                                                            <p class="text-muted mb-0 d-none">14 Mar, 2020</p>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 mb-0">0.016 BTC</h5>
-                                                                        </div>
-                                                                    </td>
-    
-                                                                    <td>
-                                                                        <div class="text-end">
-                                                                            <h5 class="font-size-14 text-muted mb-0">$125.20</h5>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div></div></div></div><div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="transform: translate3d(0px, 0px, 0px); display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        <div class="card-footer bg-transparent border-top">
-                                            <div class="text-center">
-                                                <a href="reports-clinic.html" class="btn btn-primary waves-effect waves-light"> View More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of more charts -->
                 </div>
                 <!-- container-fluid -->
             </div>
@@ -1458,12 +709,892 @@
 
   <script src="assets/js/dataMap.js "></script>
 
+  <!-- highcharts cdn -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+
 
 
 
     <!-- App js -->
     <script src="assets/js/app.js "></script>
     <script src="assets/js/custom.js "></script>
+
+    <!-- end of CDNs -->
+<script>
+    Highcharts.chart('AttendanceContainer', {
+     chart: {
+         type: 'column'
+     },
+     title: {
+         text: null
+     },
+     xAxis: {
+         type: 'category',
+         labels: {
+             rotation: -90, // Rotate labels vertically
+             align: 'right',
+             style: {
+                 fontSize: '10px',
+                 fontFamily: 'Verdana, sans-serif'
+             }
+         }
+     },
+     yAxis: {
+         min: 0,
+         title: {
+             text: 'Total Days'
+         },
+         stackLabels: {
+             enabled: true,
+             style: {
+                 fontWeight: 'bold',
+                 color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+             }
+         }
+     },
+     legend: {
+         align: 'center',
+         
+         verticalAlign: 'bottom',
+         floating: false,
+         backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || 'white',
+         borderColor: '#CCC',
+         borderWidth: 1,
+         shadow: false
+     },
+     tooltip: {
+         headerFormat: '<b>Attendance Report For {point.key}</b><br/> ',
+         pointFormatter: function () {
+             const present = this.series.chart.series[0].data[this.index].y;
+             const absent = this.series.chart.series[1].data[this.index].y;
+             const total = present + absent;
+             return '<span style="font-weight: 600; color: #0caf60;">Present:</span> ' + present +
+                 '<br/>' +
+                 '<span style="font-weight: 600; color: #ff3a6e;">Absent:</span> ' + absent + '<br/>' +
+                 '<span style="font-weight: 600;">Total:</span> ' + total;
+         }
+     },
+     plotOptions: {
+         column: {
+             stacking: 'normal',
+             pointPadding: 0.2,
+            borderWidth: 0,
+             dataLabels: {
+                 enabled: true,
+                 rotation: -90, // Rotate data labels vertically
+                 align: 'right',
+                 verticalAlign: 'middle',
+                 y: 10, // Adjust vertical position
+                
+             }
+         },
+        
+     },
+     series: [
+    {
+        name: 'Present',
+        color: '#0caf60',
+        data: [
+            { name: 'JAN', y: 6200, drilldown: 'January-Attendance' },
+            { name: 'FEB', y: 7480, drilldown: 'February-Attendance' },
+            { name: 'MAR', y: 7450, drilldown: 'March-Attendance' },
+            { name: 'APR', y: 7400, drilldown: 'April-Attendance' },
+            { name: 'MAY', y: 7350, drilldown: 'May-Attendance' },
+            { name: 'JUN', y: 7300, drilldown: 'June-Attendance' },
+            { name: 'JUL', y: 7200, drilldown: 'July-Attendance' },
+            { name: 'AUG', y: 7100, drilldown: 'August-Attendance' },
+            { name: 'SEP', y: 6950, drilldown: 'September-Attendance' },
+            { name: 'OCT', y: 6700, drilldown: 'October-Attendance' },
+            { name: 'NOV', y: 6400, drilldown: 'November-Attendance' },
+            { name: 'DEC', y: 6000, drilldown: 'December-Attendance' }
+        ]
+    },
+    {
+        name: 'Absent',
+        color: '#ff3a6e',
+        data: [
+            { name: 'JAN', y: 1820, drilldown: 'January-Absenteeism' },
+            { name: 'FEB', y: 240, drilldown: 'February-Absenteeism' },
+            { name: 'MAR', y: 270, drilldown: 'March-Absenteeism' },
+            { name: 'APR', y: 320, drilldown: 'April-Absenteeism' },
+            { name: 'MAY', y: 370, drilldown: 'May-Absenteeism' },
+            { name: 'JUN', y: 420, drilldown: 'June-Absenteeism' },
+            { name: 'JUL', y: 520, drilldown: 'July-Absenteeism' },
+            { name: 'AUG', y: 620, drilldown: 'August-Absenteeism' },
+            { name: 'SEP', y: 770, drilldown: 'September-Absenteeism' },
+            { name: 'OCT', y: 1020, drilldown: 'October-Absenteeism' },
+            { name: 'NOV', y: 1320, drilldown: 'November-Absenteeism' },
+            { name: 'DEC', y: 1720, drilldown: 'December-Absenteeism' }
+        ]
+    }
+],
+     drilldown: {
+         series: [
+             // January
+             {
+                 id: 'January-Attendance',
+                 name: 'Attendance Data for January',
+                 data: generateDailyData(31, 0.95) // 31 days in January
+             },
+             {
+                 id: 'January-Absenteeism',
+                 name: 'Absenteeism Data for January',
+                 data: generateDailyData(31, 0.05) // 31 days in January
+             },
+             // February
+             {
+                 id: 'February-Attendance',
+                 name: 'Attendance Data for February',
+                 data: generateDailyData(28, 0.65) // 28 days in February
+             },
+             {
+                 id: 'February-Absenteeism',
+                 name: 'Absenteeism Data for February',
+                 data: generateDailyData(28, 0.35) // 28 days in February
+             },
+             // March
+             {
+                 id: 'March-Attendance',
+                 name: 'Attendance Data for March',
+                 data: generateDailyData(31, 0.25) // 31 days in March
+             },
+             {
+                 id: 'March-Absenteeism',
+                 name: 'Absenteeism Data for March',
+                 data: generateDailyData(31, 0.75) // 31 days in March
+             },
+             // April
+             {
+                 id: 'April-Attendance',
+                 name: 'Attendance Data for April',
+                 data: generateDailyData(30, 0.85) // 30 days in April
+             },
+             {
+                 id: 'April-Absenteeism',
+                 name: 'Absenteeism Data for April',
+                 data: generateDailyData(30, 0.15) // 30 days in April
+             },
+             // May
+             {
+                 id: 'May-Attendance',
+                 name: 'Attendance Data for May',
+                 data: generateDailyData(31, 0.95) // 31 days in May
+             },
+             {
+                 id: 'May-Absenteeism',
+                 name: 'Absenteeism Data for May',
+                 data: generateDailyData(31, 0.05) // 31 days in May
+             },
+             // June
+             {
+                 id: 'June-Attendance',
+                 name: 'Attendance Data for June',
+                 data: generateDailyData(30, 0.5) // 30 days in June
+             },
+             {
+                 id: 'June-Absenteeism',
+                 name: 'Absenteeism Data for June',
+                 data: generateDailyData(30, 0.50) // 30 days in June
+             },
+             // July
+             {
+                 id: 'July-Attendance',
+                 name: 'Attendance Data for July',
+                 data: generateDailyData(31, 0.95) // 31 days in July
+             },
+             {
+                 id: 'July-Absenteeism',
+                 name: 'Absenteeism Data for July',
+                 data: generateDailyData(31, 0.05) // 31 days in July
+             },
+             // August
+             {
+                 id: 'August-Attendance',
+                 name: 'Attendance Data for August',
+                 data: generateDailyData(31, 0.95) // 31 days in August
+             },
+             {
+                 id: 'August-Absenteeism',
+                 name: 'Absenteeism Data for August',
+                 data: generateDailyData(31, 0.05) // 31 days in August
+             },
+             // September
+             {
+                 id: 'September-Attendance',
+                 name: 'Attendance Data for September',
+                 data: generateDailyData(30, 0.95) // 30 days in September
+             },
+             {
+                 id: 'September-Absenteeism',
+                 name: 'Absenteeism Data for September',
+                 data: generateDailyData(30, 0.05) // 30 days in September
+             },
+             // October
+             {
+                 id: 'October-Attendance',
+                 name: 'Attendance Data for October',
+                 data: generateDailyData(31, 0.95) // 31 days in October
+             },
+             {
+                 id: 'October-Absenteeism',
+                 name: 'Absenteeism Data for October',
+                 data: generateDailyData(31, 0.05) // 31 days in October
+             },
+             // November
+             {
+                 id: 'November-Attendance',
+                 name: 'Attendance Data for November',
+                 data: generateDailyData(30, 0.95) // 30 days in November
+             },
+             {
+                 id: 'November-Absenteeism',
+                 name: 'Absenteeism Data for November',
+                 data: generateDailyData(30, 0.05) // 30 days in November
+             },
+             // December
+             {
+                 id: 'December-Attendance',
+                 name: 'Attendance Data for December',
+                 data: generateDailyData(31, 0.95) // 31 days in December
+             },
+             {
+                 id: 'December-Absenteeism',
+                 name: 'Absenteeism Data for December',
+                 data: generateDailyData(31, 0.05) // 31 days in December
+             }
+         ]
+     }
+ });
+ 
+ // Helper function to generate daily data
+ function generateDailyData(daysInMonth, ratio) {
+     const data = [];
+     for (let day = 1; day <= daysInMonth; day++) {
+         data.push([`${day}`, Math.round(7720 * ratio)]);
+     }
+     return data;
+ }
+ </script>
+
+ <script>
+    
+ </script>
+
+<!-- gender comparrisons -->
+ <script>
+  Highcharts.chart('GenderContainer', {
+    chart: {
+        type: 'pie'
+    },
+    title: {
+        text: null
+    },
+    subtitle: {
+        text: 'Click the slices to view department distribution.'
+    },
+
+    accessibility: {
+        announceNewData: {
+            enabled: true
+        },
+        point: {
+        }
+    },
+
+    plotOptions: {
+        series: {
+            borderRadius: 5,
+            dataLabels: [
+                {
+                    enabled: true,
+                    distance: 15,
+                    format: '{point.name}: {point.y}',
+                },
+                {
+                    enabled: true,
+                    distance: '-30%',
+                    filter: {
+                        property: 'percentage',
+                        operator: '>',
+                        value: 5
+                    },
+                    format: '{point.y}',
+                    style: {
+                        fontSize: '0.9em',
+                        textOutline: 'none'
+                    }
+                }
+            ]
+        }
+    },
+
+    tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: ' +
+            '<b>{point.y} of {point.total}</b><br/>'
+    },
+
+    series: [
+        {
+            name: 'Gender',
+            colorByPoint: true,
+            data: [
+                {
+                    name: 'Male',
+                    y: 4620,
+                    drilldown: 'Male',
+                    total: 4620
+                },
+                {
+                    name: 'Female',
+                    y: 3100,
+                    drilldown: 'Female',
+                    total: 3100
+                }
+            ]
+        }
+    ],
+    
+    drilldown: {
+        series: [
+            {
+                name: 'Male Employees',
+                id: 'Male',
+                data: [
+                    ['Health Services', 1500],
+                    ['Education & ICT', 1200],
+                    ['Finance & Economic Planning', 650],
+                    ['Agriculture, Livestock & Fisheries', 500],
+                    ['Transport & Infrastructure', 420],
+                    ['Trade, Industry & Cooperatives', 250],
+                    ['Other', 100]
+                ]
+            },
+            {
+                name: 'Female Employees',
+                id: 'Female',
+                data: [
+                    ['Health Services', 1250],
+                    ['Education & ICT', 950],
+                    ['Finance & Economic Planning', 500],
+                    ['Agriculture, Livestock & Fisheries', 200],
+                    ['Transport & Infrastructure', 150],
+                    ['Trade, Industry & Cooperatives', 50],
+                    ['Other', 100]
+                ]
+            }
+        ]
+    }
+});
+
+ </script>
+<!-- end of gender comparissons -->
+
+<!-- todays attendance chart -->
+ <script>
+    Highcharts.chart('TodayAttendanceContainer', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: null
+    },
+    subtitle: {
+        text: 'Click the columns to view department-wise attendance.'
+    },
+
+    accessibility: {
+        announceNewData: {
+            enabled: true
+        },
+        point: {
+            valueSuffix: '%'
+        }
+    },
+
+    xAxis: {
+        type: 'category',
+        title: {
+            text: 'Attendance Status'
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Number of Employees'
+        }
+    },
+
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true,
+                formatter: function() {
+                    let percentage = (this.y / 7689 * 100).toFixed(1);
+                    return `${this.y} (${percentage}%)`;
+                }
+            }
+        }
+    },
+
+    plotOptions: {
+         column: {
+             stacking: 'normal',
+             pointPadding: 0.2,
+            borderWidth: 0,
+             dataLabels: {
+                 enabled: true,
+                 rotation: -90, // Rotate data labels vertically
+                 align: 'right',
+                 verticalAlign: 'middle',
+                 y: 10, // Adjust vertical position
+                
+             }
+         },
+        
+     },
+
+    tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: ' +
+            '<b>{point.y} ({(point.y / 7689 * 100).toFixed(1)}%)</b> of total<br/>'
+    },
+
+    series: [
+        {
+            name: 'Attendance',
+            colorByPoint: true,
+            data: [
+                {
+                    name: 'Present',
+                    y: 6500,
+                    drilldown: 'Present'
+                },
+                {
+                    name: 'Absent',
+                    y: 1189,
+                    drilldown: 'Absent'
+                }
+            ]
+        }
+    ],
+    
+    drilldown: {
+        series: [
+            {
+                name: 'Present Employees',
+                id: 'Present',
+                type: 'column',
+                data: [
+                    ['Health Services', 2200],
+                    ['Education & ICT', 1500],
+                    ['Finance & Economic Planning', 900],
+                    ['Agriculture, Livestock & Fisheries', 600],
+                    ['Transport & Infrastructure', 300],
+                    ['Trade, Industry & Cooperatives', 800],
+                    ['Other', 200]
+                ]
+            },
+            {
+                name: 'Absent Employees',
+                id: 'Absent',
+                type: 'column',
+                data: [
+                    ['Health Services', 200],
+                    ['Education & ICT', 300],
+                    ['Finance & Economic Planning', 100],
+                    ['Agriculture, Livestock & Fisheries', 50],
+                    ['Transport & Infrastructure', 50],
+                    ['Trade, Industry & Cooperatives', 400],
+                    ['Other', 89]
+                ]
+            }
+        ]
+    }
+});
+
+ </script>
+ <!-- end of attendance -->
+
+ <!-- newley hired staff distribution bey department start -->
+ <script>
+    Highcharts.chart('NewContainer', {
+     chart: {
+         type: 'bar'
+     },
+     title: {
+         text: null
+     },
+     subtitle: {
+         text: 'Comparison of new hires and exits across departments'
+     },
+     xAxis: {
+         categories: [
+             'Health Services',
+             'Education & ICT',
+             'Finance & Economic Planning',
+             'Agriculture, Livestock & Fisheries',
+             'Transport & Infrastructure',
+             'Trade, Industry & Cooperatives',
+             'Other'
+         ],
+         title: {
+             text: 'Departments'
+         }
+     },
+     yAxis: {
+         min: 0,
+         title: {
+             text: 'Number of Employees'
+         }
+     },
+     legend: {
+         enabled: true
+     },
+     tooltip: {
+         shared: true,
+         pointFormat: '<b>{series.name}: {point.y}</b>'
+     },
+     plotOptions: {
+         bar: {
+             dataLabels: {
+                 enabled: true
+             },
+             stacking: 'normal'
+         }
+     },
+     series: [{
+         name: 'New Hires',
+         data: [12, 10, 8, 7, 6, 5, 5], // Adjusted new hires to sum up to 53
+         color: '#33FF57'
+     }, {
+         name: 'Exits',
+         data: [3, 2, 2, 2, 2, 1, 1], // Total exits remain 13
+         color: '#FF5733'
+     }],
+     
+     // Display total hires and exits at the bottom in bold, visible, and right-aligned
+     caption: {
+         text: '<div style="text-align: right; font-size: 16px; font-weight: bold; color: #000;">Total New Hires: 53 | Total Exits: 13</div>',
+         useHTML: true
+     }
+ });
+ </script>
+ 
+ 
+
+ <!-- newley hired staff distribution bey department End -->
+
+
+
+ <script>
+    Highcharts.chart('ExitChart', {
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: 'Nature of Exits'
+        },
+        subtitle: {
+            text: 'Click on a category to view department-wise breakdown'
+        },
+        accessibility: {
+            announceNewData: {
+                enabled: true
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.y}'
+                }
+            }
+        },
+        series: [{
+            name: 'Exits',
+            colorByPoint: true,
+            data: [
+                {
+                    name: 'Death',
+                    y: 1,
+                    drilldown: 'death'
+                },
+                {
+                    name: 'Dismissal',
+                    y: 4,
+                    drilldown: 'dismissal'
+                },
+                {
+                    name: 'Resignation',
+                    y: 5,
+                    drilldown: 'resignation'
+                },
+                {
+                    name: 'Transfers',
+                    y: 2,
+                    drilldown: 'transfers'
+                },
+                {
+                    name: 'Other',
+                    y: 1,
+                    drilldown: 'other'
+                }
+            ]
+        }],
+        drilldown: {
+            series: [
+                {
+                    id: 'death',
+                    name: 'Death - Department Breakdown',
+                    data: [
+                        ['Health Services', 1]
+                    ]
+                },
+                {
+                    id: 'dismissal',
+                    name: 'Dismissal - Department Breakdown',
+                    data: [
+                        ['Health Services', 1],
+                        ['Education & ICT', 1],
+                        ['Finance & Economic Planning', 1],
+                        ['Agriculture, Livestock & Fisheries', 1]
+                    ]
+                },
+                {
+                    id: 'resignation',
+                    name: 'Resignation - Department Breakdown',
+                    data: [
+                        ['Health Services', 2],
+                        ['Education & ICT', 1],
+                        ['Finance & Economic Planning', 1],
+                        ['Agriculture, Livestock & Fisheries', 1]
+                    ]
+                },
+                {
+                    id: 'transfers',
+                    name: 'Transfers - Department Breakdown',
+                    data: [
+                        ['Health Services', 1],
+                        ['Education & ICT', 1]
+                    ]
+                },
+                {
+                    id: 'other',
+                    name: 'Other - Department Breakdown',
+                    data: [
+                        ['Health Services', 1]
+                    ]
+                }
+            ]
+        }
+    });
+</script>
+
+<script>
+    Highcharts.chart('EntryChart', {
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: 'Nature of New Hires'
+        },
+        subtitle: {
+            text: 'Click on a category to view department-wise breakdown'
+        },
+        accessibility: {
+            announceNewData: {
+                enabled: true
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.y}'
+                }
+            }
+        },
+        series: [{
+            name: 'New Hires',
+            colorByPoint: true,
+            data: [
+                {
+                    name: 'Direct Recruitment',
+                    y: 30,
+                    drilldown: 'direct'
+                },
+                {
+                    name: 'Transfers In',
+                    y: 10,
+                    drilldown: 'transfers_in'
+                },
+                {
+                    name: 'Rehired',
+                    y: 8,
+                    drilldown: 'rehired'
+                },
+                {
+                    name: 'Other',
+                    y: 5,
+                    drilldown: 'other'
+                }
+            ]
+        }],
+        drilldown: {
+            series: [
+                {
+                    id: 'direct',
+                    name: 'Direct Recruitment - Department Breakdown',
+                    data: [
+                        ['Health Services', 10],
+                        ['Education & ICT', 8],
+                        ['Finance & Economic Planning', 5],
+                        ['Agriculture, Livestock & Fisheries', 3],
+                        ['Transport & Infrastructure', 2],
+                        ['Trade, Industry & Cooperatives', 1],
+                        ['Other', 1]
+                    ]
+                },
+                {
+                    id: 'transfers_in',
+                    name: 'Transfers In - Department Breakdown',
+                    data: [
+                        ['Health Services', 3],
+                        ['Education & ICT', 2],
+                        ['Finance & Economic Planning', 2],
+                        ['Agriculture, Livestock & Fisheries', 1],
+                        ['Transport & Infrastructure', 1],
+                        ['Trade, Industry & Cooperatives', 1]
+                    ]
+                },
+                {
+                    id: 'rehired',
+                    name: 'Rehired - Department Breakdown',
+                    data: [
+                        ['Health Services', 3],
+                        ['Education & ICT', 2],
+                        ['Finance & Economic Planning', 2],
+                        ['Agriculture, Livestock & Fisheries', 1]
+                    ]
+                },
+                {
+                    id: 'other',
+                    name: 'Other - Department Breakdown',
+                    data: [
+                        ['Health Services', 2],
+                        ['Education & ICT', 1],
+                        ['Finance & Economic Planning', 1],
+                        ['Agriculture, Livestock & Fisheries', 1]
+                    ]
+                }
+            ]
+        }
+    });
+</script>
+
+
+
+
+
+
+
+<script>
+    Highcharts.chart('disabilityChart', {
+        chart: {
+            type: 'pie',
+            backgroundColor: 'transparent',
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: null
+        },
+        subtitle: {
+            text: 'Click to see department-wise distribution'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: ''
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.y} ({point.percentage:.1f}%)' // Shows count + percentage
+                },
+                startAngle: -90,
+                endAngle: 90,
+                center: ['50%', '75%'],
+                size: '110%'
+            }
+        },
+        series: [{
+            name: 'Gender',
+            colorByPoint: true,
+            innerSize: '50%', // Donut effect
+            data: [
+                {
+                    name: 'Male',
+                    y: 35,
+                    drilldown: 'male'
+                },
+                {
+                    name: 'Female',
+                    y: 24,
+                    drilldown: 'female'
+                }
+            ]
+        }],
+        drilldown: {
+            series: [
+                {
+                    id: 'male',
+                    name: 'Male Employees with Disabilities - Department Breakdown',
+                    dataLabels: {
+                        format: '{point.name}: {point.y} ({point.percentage:.1f}%)' // Percentage for drilldown
+                    },
+                    data: [
+                        ['Health Services', 10],
+                        ['Education & ICT', 6],
+                        ['Finance & Economic Planning', 5],
+                        ['Agriculture, Livestock & Fisheries', 4],
+                        ['Transport & Infrastructure', 4],
+                        ['Trade, Industry & Cooperatives', 3],
+                        ['Other', 3]
+                    ]
+                },
+                {
+                    id: 'female',
+                    name: 'Female Employees with Disabilities - Department Breakdown',
+                    dataLabels: {
+                        format: '{point.name}: {point.y} ({point.percentage:.1f}%)'
+                    },
+                    data: [
+                        ['Health Services', 8],
+                        ['Education & ICT', 4],
+                        ['Finance & Economic Planning', 3],
+                        ['Agriculture, Livestock & Fisheries', 2],
+                        ['Transport & Infrastructure', 3],
+                        ['Trade, Industry & Cooperatives', 2],
+                        ['Other', 2]
+                    ]
+                }
+            ]
+        }
+    });
+</script>
+
+
+
+
 </body>
 
 
