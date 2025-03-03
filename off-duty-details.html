@@ -407,7 +407,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0 font-size-18">Manage Attendance</h4>
+                                <h4 class="mb-sm-0 font-size-18">Employees Off Duty within 15 Days</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
@@ -415,7 +415,12 @@
                                         <li class="breadcrumb-item active">Reports
                                           
                                         </li>
-                                        <li class="breadcrumb-item active">  Monthly Attendance </li>
+                                        
+                                        <li class="breadcrumb-item active"> <a href="report-monthly.html">
+                                            Manage Attendance
+                                        </a></li>
+                                        <li class="breadcrumb-item active"> Off Duty within 15 days in one Month
+                                            </li>
                                     </ol>
                                 </div>
 
@@ -424,160 +429,7 @@
                     </div>
                     <!-- end page title -->
 
-                    <!-- stats cards -->
-                    <div class="row">
-                        <!-- Total Working Days in Month -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card mini-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Total Working Days</p>
-                                            <h5 class="mb-0">22</h5>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-primary rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-calendar"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Present Employees -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Total Days Present</p>
-                                            <h5 class="mb-0">420</h5> <!-- (e.g., sum of employee attendance days) -->
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-success rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-account-group"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Absent Employees -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Total Absences</p>
-                                            <h5 class="mb-0">38</h5> <!-- (Total days employees were absent) -->
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-account-off"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Late Arrivals -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Late Arrivals</p>
-                                            <h5 class="mb-0">14</h5> <!-- (Count of employees arriving late) -->
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-warning rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-timer-sand"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Early Departures -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Early Departures</p>
-                                            <h5 class="mb-0">9</h5>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-info rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-clock-out"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-  
-  <!-- Off Duty within 15 days of the month -->
-<div class="col-lg-3 col-md-6">
-    <div class="card blog-stats-wid" onclick="window.location.href='off-duty-details.html';" style="cursor: pointer;">
-        <div class="card-body">
-            <div class="d-flex flex-wrap">
-                <div class="me-3">
-                    <p class="text-muted mb-2">Off Duty within 15 days in one Month</p>
-                    <h5 class="mb-0">15 days</h5>
-                </div>
-                <div class="avatar-sm ms-auto">
-                    <div class="avatar-title bg-dark rounded-circle text-white font-size-20">
-                        <i class="mdi mdi-calendar-remove"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Sick Leave Taken</p>
-                                            <h5 class="mb-0">12</h5>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-secondary rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-hospital"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Unexcused Absences -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Unexcused Absences</p>
-                                            <h5 class="mb-0">5</h5>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-alert-circle"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
+                  
                     
                     
                      <!-- end of stats -->
@@ -682,6 +534,7 @@
                                                     <th scope="col">25 Feb (Tue)</th>
                                                     <th scope="col">26 Feb (Wed)</th>
                                                     <th scope="col">27 Feb (Thu)</th>
+                                                    <th scope="col">28 Feb (Fri)</th>
                                                     
                                                 </tr>
                                             </thead>
