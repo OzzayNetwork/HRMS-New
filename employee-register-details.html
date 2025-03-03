@@ -422,70 +422,34 @@
                     </div>
                     <!-- end page title -->
 
-                    <!-- stats cards -->
-                    <div class="row">
-                        <!-- Rejections This Month -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card mini-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Rejections (This Month)</p>
-                                            <h5 class="mb-0">24 / 150 Applications</h5>
-                                            <p class="text-muted mt-1">Total Salary Impact: KSh 3.6M</p>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-calendar-remove"></i> 
+                     <!-- navigation bar -->
+                     <div class="row">
+                        <div class="col-12 active">
+                            <div class="card active">
+                                <div class="card-body mini-nav bg-primary pt-2 pb-3 active">
+                                   <nav class="navbar navbar-expand-md navbar navbar-dark bg-primary py-2 active">
+                                        <button class="navbar-toggler btn btn-sm px-3 font-size-16 header-item waves-effect h-auto text-primary" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                            <span class="mdi mdi-menu"></span>
+                                        </button>
+                                        <div class="collapse navbar-collapse justify-content-between active" id="navbarNavAltMarkup">
+                                            <div class="navbar-nav active">
+                                                <a class="nav-item nav-link" href="employee-register-details.html">Details</a>
+                                                <a class="nav-item nav-link" href="employee-register-documents.html">Documents</a>
+                                                <a class="nav-item nav-link" href="patient-history.html">Attendance History</a>
+                                                <a class="nav-item nav-link" href="patient-payments.html">Edit History</a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </nav>
+
                                 </div>
                             </div>
-                        </div>
-                    
-                        <!-- Total Rejected Applications -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Total Rejected Applications</p>
-                                            <h5 class="mb-0">256 / 1,380 Applications</h5>
-                                            <p class="text-muted mt-1">Total Salary Impact: KSh 38.4M</p>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-dark rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-account-cancel"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Rejection Rate -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="card blog-stats-wid">
-                                <div class="card-body">
-                                    <div class="d-flex flex-wrap">
-                                        <div class="me-3">
-                                            <p class="text-muted mb-2">Rejection Rate</p>
-                                            <h5 class="mb-0">18.5%</h5>
-                                            <p class="text-muted mt-1">Avg Salary Per Rejected: KSh 150K</p>
-                                        </div>
-                                        <div class="avatar-sm ms-auto">
-                                            <div class="avatar-title bg-warning rounded-circle text-white font-size-20">
-                                                <i class="mdi mdi-percent"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
-                    
-                    
+                    <!-- navigation bar end -->
+
+                    <!-- stats cards -->
+                  
                      <!-- end of stats -->
                     <div class="row">
                         <div class="col-12">
@@ -494,145 +458,456 @@
                                 <div class="card-header bg-white pt-0 pr-0 p-0 d-flex justify-content-between align-items-center w-100 border-bottom">
 
                                     <div class="btn-toolbar p-3 d-flex justify-content-between align-items-center w-100" role="toolbar">
-                                      <div class="flex-grow-1">
-                                        <div class="search-box mb-0 me-3">
-                                            <div class="position-relative">
-                                                <input type="text" class="form-control bg-light border-light rounded" placeholder="Search..." fdprocessedid="husj3l" spellcheck="false" data-ms-editor="true">
-                                                <i class="bx bx-search-alt search-icon"></i>
-                                            </div>
-                                        </div>
-                                      </div>
-        
-                                        <div class="d-flex">
-                                            <div class="d-flex align-items-center me-3 pe-3">
-                                                <div>
-                                                    <div class="float-end d-flex ">
-                                                        <div class="input-group fw-semibold text-uppercase me-3">
-                                                            <label class="input-group-text text-uppercase">Department</label>
-                                                            <select class="form-select " style="width: 200px;">
-                                                                    <option selected="selected" value="">All Departments</option>
-                                                                    <option value="65">Finance &amp; Economic Planning</option>
-                                                                    <option value="67">Governance, Administration, Communication &amp; Devolution</option>
-                                                                    <option value="73">Education, Human Capital Development &amp; Vocational Training</option>
-                                                                    <option value="62">Blue Economy, Fisheries, Mining &amp; Digital Economy</option>
-                                                                    <option value="66">Roads, Public Works, Transport &amp; Infrastructure</option>
-                                                                    <option value="61">Youth, Sports, Talent Development, Gender Inclusivity, Cultural Heritage &amp; Social Services</option>
-                                                                    <option value="63">Water, Irrigation, Sanitation, Environment, Energy, Forestry &amp; Climate Change</option>
-                                                                    <option value="68">Public Health &amp; Medical Services</option>
-                                                                    <option value="64">Lands, Physical Planning, Housing &amp; Urban Development</option>
-                                                                    <option value="69">Trade, Industry, Tourism, Co-Operative Development and Marketing</option>
-                                                                    <option value="70">Agriculture and Livestock Production</option>
-                                                                    <option value="72">Office of the County Secretary and Head of Public Service</option>
-                                                            </select>
-                                                        </div>
-        
-                                                        <div class="input-group fw-semibold text-uppercase">
-                                                            <label class="input-group-text text-uppercase">FROM:</label>
-                                                            <input class="form-control form-control-sm" type="date" value="2019-08-19" id="example-date-input">
-                                                        </div>
-        
-                                                        <div class="input-group fw-semibold text-uppercase">
-                                                            <label class="input-group-text text-uppercase">TO:</label>
-                                                            <input class="form-control form-control-sm" type="date" value="2019-08-19" id="example-date-input">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button data-bs-toggle="modal" data-bs-target=".download-modal" type="button" class="btn btn-primary dropdown-toggle option-selector me-3 text-capitalize">
-                                                <i class="bx bxs-download  font-size-16"></i> <span class="pl-1 d-md-inline">Download Report</span>
-                                            </button>
-
-                                        </div>
+                                     <h4 class="card-title">Employe Details</h4>
         
         
                                     </div>
-                                    <div class="btn-toolbar p-3 align-items-center d-none animated delete-tool-bar" role="toolbar">
-                                        <button type="button" data-bs-toggle="modal" data-bs-target=".download-modal" class="btn btn-primary waves-effect btn-label waves-light me-3"><i class="mdi mdi-printer label-icon"></i> Print Selected Invoices</button>
+                                    <div class="btn-toolbar p-3 align-items-center animated delete-tool-bar" role="toolbar">
+                                        <a type="button" href="employee-edit.html" class="btn btn-primary waves-effect btn-label waves-light me-3"><i class="mdi mdi-printer label-icon"></i> Edit Details</a>
                                     </div>
                                 </div>
                                 
                                 <div class="card-body">
-                                    <div class="table-responsive ">
-                                        <table class="table align-middle table-hover contacts-table table-striped text-nowrap" id="datatable-buttons">
+                                    <!-- Personal Details -->
+                                    <div class="col-12">
+                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
+                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Personal Details</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Title:</th>
+                                                        <td>Mr</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>First Name:</th>
+                                                        <td>John</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Middle Name:</th>
+                                                        <td>Michael</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Last Name:</th>
+                                                        <td>Doe</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Date of Birth:</th>
+                                                        <td>1990-05-15</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Email Address:</th>
+                                                        <td>john.doe@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Phone Number:</th>
+                                                        <td>0712345678</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>National ID:</th>
+                                                        <td>12345678</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Gender:</th>
+                                                        <td>Male</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Person with Disability:</th>
+                                                        <td>No</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Postal Code:</th>
+                                                        <td>00100</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Postal Town:</th>
+                                                        <td>Nairobi</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Physical Address:</th>
+                                                        <td>123 Main Street, Nairobi</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- Extra Details -->
+                                    <div class="col-12">
+                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
+                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Extra Details</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Employment Type:</th>
+                                                        <td>Permanent</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Education Level:</th>
+                                                        <td>Undergraduate</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Sub County:</th>
+                                                        <td>Homa Bay Town</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Ward:</th>
+                                                        <td>Homa Bay Central</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Marital Status:</th>
+                                                        <td>Single</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Driving License:</th>
+                                                        <td>DL123456</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Blood Group:</th>
+                                                        <td>A+</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Spouse Name:</th>
+                                                        <td>-</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- Employment Details -->
+                                    <div class="col-12">
+                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
+                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Employment Details</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Department:</th>
+                                                        <td>Finance & Economic Planning</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Section/Sub-vote:</th>
+                                                        <td>Medical Services</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Unit/Directorate:</th>
+                                                        <td>Accounts</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Sub Unit:</th>
+                                                        <td>Emergency and Referral Services</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Designation:</th>
+                                                        <td>Director</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Employment Date:</th>
+                                                        <td>2018-06-01</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Reporting To:</th>
+                                                        <td>Chief Officer</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Net Salary:</th>
+                                                        <td>KES 150,000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bank Details -->
+                                    <div class="col-12">
+                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
+                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Bank Details</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Account Holder Name:</th>
+                                                        <td>John Doe</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Account Number:</th>
+                                                        <td>1234567890</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Bank Country:</th>
+                                                        <td>Kenya</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Bank Name:</th>
+                                                        <td>Equity Bank</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Branch Location:</th>
+                                                        <td>Nairobi CBD</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>SHIF Number:</th>
+                                                        <td>SHIF12345</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>NSSF Number:</th>
+                                                        <td>NSSF12345</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- Emergency Contact Details -->
+                                    <div class="col-12">
+                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
+                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Emergency Contact Details</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Name:</th>
+                                                        <td>Jane Doe</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Email:</th>
+                                                        <td>jane.doe@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Phone Number:</th>
+                                                        <td>0712345678</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Relationship:</th>
+                                                        <td>Spouse</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                                                        <!-- Next of Kin -->
+                                    <div class="col-12">
+                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
+                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Next Of Kin</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Name:</th>
+                                                        <td>Mary Doe</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Email:</th>
+                                                        <td>mary.doe@example.com</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Phone Number:</th>
+                                                        <td>0723456789</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Relationship:</th>
+                                                        <td>Mother</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- Employment Documents -->
+                                    <div class="col-12">
+                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
+                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Employment Documents</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <table class="table table-editable-1 align-middle table-edits table-hover">
                                             <thead class="table-light">
-                                                <tr class="table-danger"> <!-- Highlight rejection -->
-                                                    <th scope="col">App No.</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">ID No.</th>
-                                                    <th scope="col">Contract Type</th>
-                                                    <th scope="col">Rejected Salary</th>
-                                                    <th scope="col">Department</th>
-                                                    <th scope="col">Designation</th>
-                                                    <th scope="col">Date Rejected</th>
-                                                    <th scope="col">Rejected By</th>
-                                                    <th scope="col">Rejection Reason</th>
-                                                    <th scope="col" class="text-right">Actions</th>
+                                                <tr class="text-uppercase table-dark ">
+                                                    <th>#</th>
+                                                    <th>Document</th>
+                                                    <th>File</th>
+                                                    <th>Document Number</th>
+                                                    <th>Valid Till</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th>2011</th>
-                                                    <td><a href="application-details.html">Anne Wairimu</a></td>
-                                                    <td>5544332</td>
-                                                    <td>Permanent</td>
-                                                    <td>KES 85,000</td>
-                                                    <td>Finance</td>
-                                                    <td>Accountant</td>
-                                                    <td>3rd Feb 2025</td>
-                                                    <td>Peter Njuguna</td>
-                                                    <td>Budget constraints</td>
-                                                    <td class="text-right">
-                                                        <a href="employee-approvals-rejected-details.html?app=2011" class="btn btn-sm btn-secondary mx-2">Review</a>
+                                                <!-- ID Card -->
+                                                <tr data-id="1">
+                                                    <td style="width: 80px">1.</td>
+                                                    <td>ID Card</td>
+                                                    <td>
+                                                        <a href="assets/storage/files/national_id.pdf" target="_blank" class="btn btn-link">View ID Card</a>
                                                     </td>
+                                                    <td>12345678</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
                                                 </tr>
-                                                <tr>
-                                                    <th>2012</th>
-                                                    <td><a href="application-details.html">David Mutiso</a></td>
-                                                    <td>6677889</td>
-                                                    <td>Temporary</td>
-                                                    <td>KES 42,000</td>
-                                                    <td>Security</td>
-                                                    <td>Security Officer</td>
-                                                    <td>3rd Feb 2025</td>
-                                                    <td>Samuel Otieno</td>
-                                                    <td>Insufficient qualifications</td>
-                                                    <td class="text-right">
-                                                        <a href="employee-approvals-rejected-details.html?app=2012" class="btn btn-sm btn-secondary mx-2">Review</a>
+                                                <!-- SHIF -->
+                                                <tr data-id="2">
+                                                    <td style="width: 80px">2.</td>
+                                                    <td>SHIF</td>
+                                                    <td>
+                                                        <a href="assets/storage/files/shif_document.pdf" target="_blank" class="btn btn-link">View SHIF</a>
                                                     </td>
+                                                    <td>SHIF12345</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
                                                 </tr>
-                                                <tr>
-                                                    <th>2013</th>
-                                                    <td><a href="application-details.html">Sophia Nduku</a></td>
-                                                    <td>9988553</td>
-                                                    <td>Contract</td>
-                                                    <td>KES 73,000</td>
-                                                    <td>Customer Service</td>
-                                                    <td>Customer Relations Manager</td>
-                                                    <td>2nd Feb 2025</td>
-                                                    <td>Grace Wambui</td>
-                                                    <td>Position no longer available</td>
-                                                    <td class="text-right">
-                                                        <a href="employee-approvals-rejected-details.html?app=2013" class="btn btn-sm btn-secondary mx-2">Review</a>
+                                                <!-- NSSF -->
+                                                <tr data-id="3">
+                                                    <td style="width: 80px">3.</td>
+                                                    <td>NSSF</td>
+                                                    <td>
+                                                        <a href="assets/storage/files/nssf_document.pdf" target="_blank" class="btn btn-link">View NSSF</a>
                                                     </td>
+                                                    <td>NSSF12345</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
                                                 </tr>
-                                                <tr>
-                                                    <th>2014</th>
-                                                    <td><a href="application-details.html">Brian Muriuki</a></td>
-                                                    <td>4455667</td>
-                                                    <td>Permanent</td>
-                                                    <td>KES 97,000</td>
-                                                    <td>IT</td>
-                                                    <td>Systems Analyst</td>
-                                                    <td>1st Feb 2025</td>
-                                                    <td>Kevin Otieno</td>
-                                                    <td>Salary expectations too high</td>
-                                                    <td class="text-right">
-                                                        <a href="employee-approvals-rejected-details.html" class="btn btn-sm btn-secondary mx-2">Review</a>
+                                                <!-- KRA PIN -->
+                                                <tr data-id="4">
+                                                    <td style="width: 80px">4.</td>
+                                                    <td>KRA PIN</td>
+                                                    <td>
+                                                        <a href="assets/storage/files/kra_pin_document.pdf" target="_blank" class="btn btn-link">View KRA PIN</a>
+                                                    </td>
+                                                    <td>A123456789X</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-- Deployment Letter -->
+                                                <tr data-id="5">
+                                                    <td style="width: 80px">5.</td>
+                                                    <td>Deployment Letter</td>
+                                                    <td>
+                                                        <a href="assets/storage/files/deployment_letter.pdf" target="_blank" class="btn btn-link">View Deployment Letter</a>
+                                                    </td>
+                                                    <td>DL12345</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-- Appointment Letter -->
+                                                <tr data-id="6">
+                                                    <td style="width: 80px">6.</td>
+                                                    <td>Appointment Letter</td>
+                                                    <td>
+                                                        <a href="assets/storage/files/appointment_letter.pdf" target="_blank" class="btn btn-link">View Appointment Letter</a>
+                                                    </td>
+                                                    <td>AL12345</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-- Birth Certificate -->
+                                                <tr data-id="7">
+                                                    <td style="width: 80px">7.</td>
+                                                    <td>Birth Certificate</td>
+                                                    <td>
+                                                        <a href="assets/storage/files/birth_certificate.pdf" target="_blank" class="btn btn-link">View Birth Certificate</a>
+                                                    </td>
+                                                    <td>BC12345</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-- Transfer Letter -->
+                                                <tr data-id="8">
+                                                    <td style="width: 80px">8.</td>
+                                                    <td>Transfer Letter</td>
+                                                    <td>
+                                                        <a href="assets/storage/files/transfer_letter.pdf" target="_blank" class="btn btn-link">View Transfer Letter</a>
+                                                    </td>
+                                                    <td>TL12345</td>
+                                                    <td>2025-12-31</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-- Clone Row (Hidden) -->
+                                                <tr class="cloneCharges d-none">
+                                                    <td style="width: 80px" class="categoryIndex">#</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="Document Name" spellcheck="false">
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" target="_blank" class="btn btn-link">View Document</a>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="Document Number" spellcheck="false">
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="date">
+                                                    </td>
+                                                    <td class="text-right cell-change d-flex align-items-center justify-content-end">
+                                                        <a class="btn btn-light btn-rounded waves-effect btn-circle btn-transparent cancel-new-category-2" title="Cancel">
+                                                            <i class="bx bx-x"></i>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             </tbody>
+                                           
                                         </table>
-                                        
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
+                                            <p class="fw-semibold mb-0 pb-0 text-uppercase">Data Creation Details</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="table-responsive table-hover">
+                                            <table class="table table-striped table-bordered table-hover table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Initiated By</th>
+                                                        <td>Chris Otieno (Recruitment Officer)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Date Initiated</th>
+                                                        <td>10 Mar 2025 12:45 AM</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th>Approved By</th>
+                                                        <td>Chris Otieno (Human Resource Director)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Date Approved</th>
+                                                        <td>12 Mar 2025 02:45 PM</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th>Last Edited By</th>
+                                                        <td>Chris Otieno (Human Resource Director)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Last Edit Date</th>
+                                                        <td>12 Mar 2025 02:45 PM</td>
+                                                    </tr>
+                                                    
+                                                   
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
