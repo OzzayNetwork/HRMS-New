@@ -407,8 +407,30 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0 font-size-18">Meetings</h4>
-
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <h4 class="mb-sm-0 font-size-18">Terminations</h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="ms-3">
+                                            <select class="form-select" aria-label="Select Month">
+                                                <option selected>Select Month</option>
+                                                <option value="1">January</option>
+                                                <option value="2">February</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">June</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -416,28 +438,27 @@
                                         <li class="breadcrumb-item active">Meetings</li>
                                     </ol>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                     <!-- end page title -->
 
                     <!-- stats cards -->
-                  <!-- stats cards --> 
+<!-- stats cards --> 
 <div class="row">
     
-    <!-- Total Meetings -->
+    <!-- Total Terminations -->
     <div class="col-lg-3 col-md-6">
         <div class="card mini-stats-wid">
             <div class="card-body">
                 <div class="d-flex flex-wrap">
                     <div class="me-3">
-                        <p class="text-muted mb-2">Total Meetings</p>
+                        <p class="text-muted mb-2">Total Terminations</p>
                         <h5 class="mb-0">1,250</h5>
                     </div>
                     <div class="avatar-sm ms-auto">
                         <div class="avatar-title bg-info rounded-circle text-white font-size-20">
-                            <i class="mdi mdi-calendar-multiple"></i> 
+                            <i class="mdi mdi-account-remove"></i> 
                         </div>
                     </div>
                 </div>
@@ -445,18 +466,18 @@
         </div>
     </div>
 
-    <!-- Completed Meetings -->
+    <!-- Voluntary Terminations -->
     <div class="col-lg-3 col-md-6">
         <div class="card mini-stats-wid">
             <div class="card-body">
                 <div class="d-flex flex-wrap">
                     <div class="me-3">
-                        <p class="text-muted mb-2">Completed Meetings</p>
+                        <p class="text-muted mb-2">Voluntary Terminations</p>
                         <h5 class="mb-0">900</h5>
                     </div>
                     <div class="avatar-sm ms-auto">
                         <div class="avatar-title bg-success rounded-circle text-white font-size-20">
-                            <i class="mdi mdi-check-circle"></i>
+                            <i class="mdi mdi-account-check"></i>
                         </div>
                     </div>
                 </div>
@@ -464,17 +485,36 @@
         </div>
     </div>
 
-    <!-- Pending Meetings -->
+    <!-- Involuntary Terminations -->
     <div class="col-lg-3 col-md-6">
         <div class="card mini-stats-wid">
             <div class="card-body">
                 <div class="d-flex flex-wrap">
                     <div class="me-3">
-                        <p class="text-muted mb-2">Pending Meetings</p>
+                        <p class="text-muted mb-2">Involuntary Terminations</p>
                         <h5 class="mb-0">250</h5>
                     </div>
                     <div class="avatar-sm ms-auto">
                         <div class="avatar-title bg-warning rounded-circle text-white font-size-20">
+                            <i class="mdi mdi-account-cancel"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pending Terminations -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex flex-wrap">
+                    <div class="me-3">
+                        <p class="text-muted mb-2">Pending Terminations</p>
+                        <h5 class="mb-0">100</h5>
+                    </div>
+                    <div class="avatar-sm ms-auto">
+                        <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
                             <i class="mdi mdi-clock-outline"></i>
                         </div>
                     </div>
@@ -483,26 +523,8 @@
         </div>
     </div>
 
-    <!-- Cancelled Meetings -->
-    <div class="col-lg-3 col-md-6">
-        <div class="card mini-stats-wid">
-            <div class="card-body">
-                <div class="d-flex flex-wrap">
-                    <div class="me-3">
-                        <p class="text-muted mb-2">Cancelled Meetings</p>
-                        <h5 class="mb-0">100</h5>
-                    </div>
-                    <div class="avatar-sm ms-auto">
-                        <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
-                            <i class="mdi mdi-close-circle"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
+
 
                     
                     
@@ -557,10 +579,11 @@
                                                 <i class="bx bxs-download "></i> <span class="pl-1 d-md-inline">Download Report</span>
                                             </button>
 
-                                           <!-- Add Asset Button -->
-                                        <button data-bs-toggle="modal" data-bs-target="#modal-add-meeting" type="button" class="btn btn-success dropdown-toggle option-selector me-3 text-capitalize">
-                                            <i class="bx bx-plus"></i> <span class="pl-1 d-md-inline">Add New Metting</span>
-                                        </button>
+                                      <!-- Create Termination Button -->
+<button data-bs-toggle="modal" data-bs-target="#modal-add-termination" type="button" class="btn btn-success dropdown-toggle option-selector me-3 text-capitalize">
+    <i class="bx bx-plus"></i> <span class="pl-1 d-md-inline">Create Termination</span>
+</button>
+
 
 
 
@@ -586,10 +609,10 @@
                                                     <th scope="col">Last Working Day</th>
                                                     <th scope="col">Description</th>
                                                     <th scope="col">Documents</th>
-                                                    <th scope="col">Action</th>
+                                                  
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody> 
                                                 <tr>
                                                     <th>Odhiambo Onyango</th>
                                                     <td>Voluntary</td>
@@ -597,23 +620,7 @@
                                                     <td>10 Feb 2025</td>
                                                     <td>Resigned for personal reasons</td>
                                                     <td>
-                                                        <a href="#">View Uploaded Documents</a>
-                                                        <br>
-                                                        <input type="file" class="form-control-file" id="uploadDocument1">
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editSeparationModal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Odhiambo Onyango">
-                                                            <div>Delete Details</div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewSeparationModal">
-                                                            View Details
-                                                        </button>
+                                                        <a href="assets/storage/files/transfer_letter.pdf" target="_blank">View Uploaded Documents</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -623,23 +630,7 @@
                                                     <td>20 Apr 2023</td>
                                                     <td>Terminated due to performance issues</td>
                                                     <td>
-                                                        <a href="#">View Uploaded Documents</a>
-                                                        <br>
-                                                        <input type="file" class="form-control-file" id="uploadDocument2">
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editSeparationModal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Akoth Achieng">
-                                                            <div>Delete Details</div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewSeparationModal">
-                                                            View Details
-                                                        </button>
+                                                        <a href="assets/storage/files/transfer_letter.pdf" target="_blank">View Uploaded Documents</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -649,23 +640,7 @@
                                                     <td>10 Jun 2021</td>
                                                     <td>Resigned to pursue further education</td>
                                                     <td>
-                                                        <a href="#">View Uploaded Documents</a>
-                                                        <br>
-                                                        <input type="file" class="form-control-file" id="uploadDocument3">
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editSeparationModal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Omondi Ochieng">
-                                                            <div>Delete Details</div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewSeparationModal">
-                                                            View Details
-                                                        </button>
+                                                        <a href="assets/storage/files/transfer_letter.pdf" target="_blank">View Uploaded Documents</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -675,23 +650,7 @@
                                                     <td>5 Sep 2022</td>
                                                     <td>Terminated due to restructuring</td>
                                                     <td>
-                                                        <a href="#">View Uploaded Documents</a>
-                                                        <br>
-                                                        <input type="file" class="form-control-file" id="uploadDocument4">
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editSeparationModal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Atieno Awino">
-                                                            <div>Delete Details</div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewSeparationModal">
-                                                            View Details
-                                                        </button>
+                                                        <a href="assets/storage/files/transfer_letter.pdf" target="_blank">View Uploaded Documents</a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -701,26 +660,13 @@
                                                     <td>1 Dec 2023</td>
                                                     <td>Resigned for a better opportunity</td>
                                                     <td>
-                                                        <a href="#">View Uploaded Documents</a>
-                                                        <br>
-                                                        <input type="file" class="form-control-file" id="uploadDocument5">
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editSeparationModal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Otieno Owuor">
-                                                            <div>Delete Details</div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewSeparationModal">
-                                                            View Details
-                                                        </button>
+                                                        <a href="assets/storage/files/transfer_letter.pdf" target="_blank">View Uploaded Documents</a>
                                                     </td>
                                                 </tr>
                                             </tbody>
+                                            
+                                            
+                                            
                                             
                                         </table>
                                     </div>
@@ -1949,85 +1895,68 @@
 
 
 
-         <!-- Add New Meeting  Modal -->
-         <div class="modal fade" id="modal-add-meeting" tabindex="-1" aria-labelledby="addMeetingModalLabel" aria-hidden="true"> 
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addMeetingModalLabel">Add New Meeting</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <!-- Create Termination Modal -->
+<div class="modal fade" id="modal-add-termination" tabindex="-1" aria-labelledby="addTerminationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addTerminationModalLabel">Create Termination</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addTerminationForm">
+                    <div class="row">
+                        <!-- Select Employee -->
+                        <div class="col-md-6 mb-3">
+                            <label for="selectEmployee" class="form-label">Select Employee</label>
+                            <select class="form-control" id="selectEmployee" required>
+                                <option value="">Select Employee</option>
+                                <option value="employee1">Employee 1</option>
+                                <option value="employee2">Employee 2</option>
+                                <!-- Add more employee options as needed -->
+                            </select>
+                        </div>
+                        <!-- Separation Type -->
+                        <div class="col-md-6 mb-3">
+                            <label for="separationType" class="form-label">Separation Type</label>
+                            <select class="form-control" id="separationType" required>
+                                <option value="">Select separation type</option>
+                                <option value="voluntary">Voluntary</option>
+                                <option value="involuntary">Involuntary</option>
+                            </select>
+                        </div>
+                        <!-- Separation Date -->
+                        <div class="col-md-6 mb-3">
+                            <label for="separationDate" class="form-label">Separation Date</label>
+                            <input type="date" class="form-control" id="separationDate" value="2025-03-03" required>
+                        </div>
+                        <!-- Last Working Day -->
+                        <div class="col-md-6 mb-3">
+                            <label for="lastWorkingDay" class="form-label">Last Working Day</label>
+                            <input type="date" class="form-control" id="lastWorkingDay" value="2025-03-03" required>
+                        </div>
+                        <!-- Description -->
+                        <div class="col-md-12 mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" rows="3" placeholder="Enter Description"></textarea>
+                        </div>
+                        <!-- Documents -->
+                        <div class="col-md-12 mb-3">
+                            <label for="uploadDocuments" class="form-label">Upload Documents</label>
+                            <input type="file" class="form-control" id="uploadDocuments" multiple>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <form id="addMeetingForm">
-                            <div class="row">
-                                <!-- Department -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="section_id" class="form-label"> Select Department</label><span class="text-danger pl-1"></span>
-                                    <div class="form-icon-user">
-                                        <select class="form-control section_id" required="required" id="section_id" name="section_id">
-                                            <option selected="selected" value="">Department</option>
-                                            <option value="65">65 - Finance & Economic Planning</option>
-                                            <option value="67">67 - Governance, Administration, Communication & Devolution</option>
-                                            <option value="73">73 - Education, Human Capital Development & Vocational Training</option>
-                                            <option value="62">62 - Blue Economy, Fisheries, Mining & Digital Economy</option>
-                                            <option value="66">66 - Roads, Public Works, Transport & Infrastructure</option>
-                                            <option value="61">61 - Youth, Sports, Talent Development, Gender Inclusivity, Cultural Heritage & Social Services</option>
-                                            <option value="63">63 - Water, Irrigation, Sanitation, Environment, Energy, Forestry & Climate Change</option>
-                                            <option value="68">68 - Public Health & Medical Services</option>
-                                            <option value="64">64 - Lands, Physical Planning, Housing & Urban Development</option>
-                                            <option value="69">69 - Trade, Industry, Tourism, Co-Operative Development and Marketing</option>
-                                            <option value="70">70 - Agriculture and Livestock Production</option>
-                                            <option value="72">72 - Office of the County Secretary and Head of Public Service</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <!-- Select Employee -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="selectEmployee" class="form-label">Select Employee</label>
-                                    <select class="form-control" id="selectEmployee" required>
-                                        <option value="">Select Employee</option>
-                                        <option value="employee1">Employee 1</option>
-                                        <option value="employee2">Employee 2</option>
-                                        <!-- Add more employee options as needed -->
-                                    </select>
-                                </div>
-                                <!-- Meeting Title -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="meetingTitle" class="form-label">Meeting Title</label>
-                                    <input type="text" class="form-control" id="meetingTitle" placeholder="Enter Meeting Title" required>
-                                </div>
-                                <!-- Meeting Date -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="meetingDate" class="form-label">Meeting Date</label>
-                                    <input type="date" class="form-control" id="meetingDate" required>
-                                </div>
-                                <!-- Venue -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="venue" class="form-label">Venue</label>
-                                    <input type="text" class="form-control" id="venue" placeholder="Enter Venue" required>
-                                </div>
-                                <!-- Meeting Time -->
-                                <div class="col-md-6 mb-3">
-                                    <label for="meetingTime" class="form-label">Meeting Time</label>
-                                    <input type="time" class="form-control" id="meetingTime" required>
-                                </div>
-                                <!-- Meeting Note -->
-                                <div class="col-md-12 mb-3">
-                                    <label for="meetingNote" class="form-label">Meeting Note</label>
-                                    <textarea class="form-control" id="meetingNote" rows="3" placeholder="Enter Meeting Note"></textarea>
-                                </div>
-                            </div>
-                               <!-- Modal Footer -->
+                    <!-- Modal Footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Save Meeting</button>
+                        <button type="submit" class="btn btn-primary">Save Termination</button>
                     </div>
-                        </form>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
+    </div>
+</div>
+
         
     <!-- END layout-wrapper -->
 
