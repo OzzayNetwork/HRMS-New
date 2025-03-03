@@ -467,109 +467,561 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive ">
+                                        <!-- Table -->
                                         <table class="table align-middle table-hover contacts-table table-striped text-nowrap" id="datatable-buttons">
                                             <thead class="table-light">
                                                 <tr class="table-dark">
                                                     <th scope="col">Date</th>
-                                                    <th scope="col">Day</th>
-                                                    <th scope="col">Clock In</th>
-                                                    <th scope="col">Clock Out</th>
-                                                    <th scope="col">Early Out</th>
-                                                    <th scope="col">Late Coming</th>
-                                                    <th scope="col">Status</th>
-                                                    <th>Total Hours</th>
+                                                    <th scope="col">Field(s) Edited</th>
+                                                    <th scope="col">Edited By</th>
+                                                    <th scope="col">Edited Date</th>
+                                                    <th scope="col">Approved By</th>
+                                                    <th scope="col">Approved Date</th>
+                                                    <th scope="col">Reason for Edit</th>
+                                                    <th scope="col">Net Salary After Edit</th>
+                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <!-- February 2025 Attendance Data -->
+                                                <!-- Row 1 -->
                                                 <tr>
-                                                    <th>1 Feb 2025</th><td>Sat</td><td>--</td><td>--</td><td>--</td><td>--</td><td>Off</td><td>--</td>
+                                                    <td>15 Mar 2025</td>
+                                                    <td>First Name, Last Name, Email, Phone, National ID</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>15 Mar 2025 10:00 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>15 Mar 2025 02:00 PM</td>
+                                                    <td>Updated personal details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 2 -->
                                                 <tr>
-                                                    <th>2 Feb 2025</th><td>Sun</td><td>--</td><td>--</td><td>--</td><td>--</td><td>Off</td><td>--</td>
+                                                    <td>16 Mar 2025</td>
+                                                    <td>Gender, Postal Code, Physical Address</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>16 Mar 2025 09:30 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>16 Mar 2025 01:30 PM</td>
+                                                    <td>Updated address and gender</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 3 -->
                                                 <tr>
-                                                    <th>3 Feb 2025</th><td>Mon</td><td>8:02 AM</td><td>5:45 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.7 Hrs</td>
+                                                    <td>17 Mar 2025</td>
+                                                    <td>Marital Status, Spouse Name, Driving License</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>17 Mar 2025 11:00 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>17 Mar 2025 03:00 PM</td>
+                                                    <td>Updated marital status and license</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 4 -->
                                                 <tr>
-                                                    <th>4 Feb 2025</th><td>Tue</td><td>7:58 AM</td><td>5:50 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.9 Hrs</td>
+                                                    <td>18 Mar 2025</td>
+                                                    <td>Job Title, Department</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>18 Mar 2025 10:15 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>18 Mar 2025 02:15 PM</td>
+                                                    <td>Updated job title and department</td>
+                                                    <td>KES 160,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 5 -->
                                                 <tr>
-                                                    <th>5 Feb 2025</th><td>Wed</td><td>8:10 AM</td><td>5:40 PM</td><td>NO</td><td>YES</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.5 Hrs</td>
+                                                    <td>19 Mar 2025</td>
+                                                    <td>Bank Account, Tax PIN</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>19 Mar 2025 09:45 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>19 Mar 2025 01:45 PM</td>
+                                                    <td>Updated bank details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 6 -->
                                                 <tr>
-                                                    <th>6 Feb 2025</th><td>Thu</td><td>8:05 AM</td><td>5:55 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.8 Hrs</td>
+                                                    <td>20 Mar 2025</td>
+                                                    <td>Emergency Contact, Next of Kin</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>20 Mar 2025 11:30 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>20 Mar 2025 03:30 PM</td>
+                                                    <td>Updated emergency contacts</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 7 -->
                                                 <tr>
-                                                    <th>7 Feb 2025</th><td>Fri</td><td>8:00 AM</td><td>5:50 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.8 Hrs</td>
+                                                    <td>21 Mar 2025</td>
+                                                    <td>Education Level, Certifications</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>21 Mar 2025 10:20 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>21 Mar 2025 02:20 PM</td>
+                                                    <td>Updated education details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 8 -->
                                                 <tr>
-                                                    <th>8 Feb 2025</th><td>Sat</td><td>--</td><td>--</td><td>--</td><td>--</td><td>Off</td><td>--</td>
+                                                    <td>22 Mar 2025</td>
+                                                    <td>Work Experience, References</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>22 Mar 2025 09:00 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>22 Mar 2025 01:00 PM</td>
+                                                    <td>Updated work experience</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 9 -->
                                                 <tr>
-                                                    <th>9 Feb 2025</th><td>Sun</td><td>--</td><td>--</td><td>--</td><td>--</td><td>Off</td><td>--</td>
+                                                    <td>23 Mar 2025</td>
+                                                    <td>Salary, Allowances</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>23 Mar 2025 11:45 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>23 Mar 2025 03:45 PM</td>
+                                                    <td>Updated salary details</td>
+                                                    <td>KES 170,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 10 -->
                                                 <tr>
-                                                    <th>10 Feb 2025</th><td>Mon</td><td>--</td><td>--</td><td>--</td><td>--</td><td><span class="badge rounded-pill bg-danger float-end">Absent</span></td><td>--</td>
+                                                    <td>24 Mar 2025</td>
+                                                    <td>Leave Balance, Sick Days</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>24 Mar 2025 10:10 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>24 Mar 2025 02:10 PM</td>
+                                                    <td>Updated leave balance</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 11 -->
                                                 <tr>
-                                                    <th>11 Feb 2025</th><td>Tue</td><td>8:00 AM</td><td>5:50 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.8 Hrs</td>
+                                                    <td>25 Mar 2025</td>
+                                                    <td>Benefits, Deductions</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>25 Mar 2025 09:15 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>25 Mar 2025 01:15 PM</td>
+                                                    <td>Updated benefits and deductions</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 12 -->
                                                 <tr>
-                                                    <th>12 Feb 2025</th><td>Wed</td><td>8:05 AM</td><td>5:55 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.8 Hrs</td>
+                                                    <td>26 Mar 2025</td>
+                                                    <td>Pension Details, NHIF Number</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>26 Mar 2025 11:20 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>26 Mar 2025 03:20 PM</td>
+                                                    <td>Updated pension details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 13 -->
                                                 <tr>
-                                                    <th>13 Feb 2025</th><td>Thu</td><td>--</td><td>--</td><td>--</td><td>--</td><td><span class="badge rounded-pill bg-warning float-end">Leave</span></td><td>--</td>
+                                                    <td>27 Mar 2025</td>
+                                                    <td>NSSF Number, Insurance</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>27 Mar 2025 10:05 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>27 Mar 2025 02:05 PM</td>
+                                                    <td>Updated insurance details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 14 -->
                                                 <tr>
-                                                    <th>14 Feb 2025</th><td>Fri</td><td>8:00 AM</td><td>5:50 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.8 Hrs</td>
+                                                    <td>28 Mar 2025</td>
+                                                    <td>Performance Review, KPIs</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>28 Mar 2025 09:50 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>28 Mar 2025 01:50 PM</td>
+                                                    <td>Updated performance review</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 15 -->
                                                 <tr>
-                                                    <th>15 Feb 2025</th><td>Sat</td><td>--</td><td>--</td><td>--</td><td>--</td><td>Off</td><td>--</td>
+                                                    <td>29 Mar 2025</td>
+                                                    <td>Training, Skills Development</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>29 Mar 2025 11:10 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>29 Mar 2025 03:10 PM</td>
+                                                    <td>Updated training records</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 16 -->
                                                 <tr>
-                                                    <th>16 Feb 2025</th><td>Sun</td><td>--</td><td>--</td><td>--</td><td>--</td><td>Off</td><td>--</td>
+                                                    <td>30 Mar 2025</td>
+                                                    <td>Disciplinary Actions, Warnings</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>30 Mar 2025 10:30 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>30 Mar 2025 02:30 PM</td>
+                                                    <td>Updated disciplinary records</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 17 -->
                                                 <tr>
-                                                    <th>17 Feb 2025</th><td>Mon</td><td>8:00 AM</td><td>5:50 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.8 Hrs</td>
+                                                    <td>31 Mar 2025</td>
+                                                    <td>Promotion, Job Grade</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>31 Mar 2025 09:25 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>31 Mar 2025 01:25 PM</td>
+                                                    <td>Updated promotion details</td>
+                                                    <td>KES 180,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 18 -->
                                                 <tr>
-                                                    <th>18 Feb 2025</th><td>Tue</td><td>8:10 AM</td><td>5:40 PM</td><td>NO</td><td>YES</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.5 Hrs</td>
+                                                    <td>01 Apr 2025</td>
+                                                    <td>Resignation, Exit Interview</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>01 Apr 2025 11:35 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>01 Apr 2025 03:35 PM</td>
+                                                    <td>Updated resignation details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 19 -->
                                                 <tr>
-                                                    <th>19 Feb 2025</th><td>Wed</td><td>--</td><td>--</td><td>--</td><td>--</td><td><span class="badge rounded-pill bg-danger float-end">Absent</span></td><td>--</td>
+                                                    <td>02 Apr 2025</td>
+                                                    <td>Termination, Severance Pay</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>02 Apr 2025 10:40 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>02 Apr 2025 02:40 PM</td>
+                                                    <td>Updated termination details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 20 -->
                                                 <tr>
-                                                    <th>20 Feb 2025</th><td>Thu</td><td>8:00 AM</td><td>5:50 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.8 Hrs</td>
+                                                    <td>03 Apr 2025</td>
+                                                    <td>Retirement, Pension Plan</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>03 Apr 2025 09:55 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>03 Apr 2025 01:55 PM</td>
+                                                    <td>Updated retirement details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 21 -->
                                                 <tr>
-                                                    <th>21 Feb 2025</th><td>Fri</td><td>8:05 AM</td><td>5:55 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.8 Hrs</td>
+                                                    <td>04 Apr 2025</td>
+                                                    <td>Contract Renewal, Terms</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>04 Apr 2025 11:05 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>04 Apr 2025 03:05 PM</td>
+                                                    <td>Updated contract details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 22 -->
                                                 <tr>
-                                                    <th>22 Feb 2025</th><td>Sat</td><td>--</td><td>--</td><td>--</td><td>--</td><td>Off</td><td>--</td>
+                                                    <td>05 Apr 2025</td>
+                                                    <td>Probation, Evaluation</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>05 Apr 2025 10:15 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>05 Apr 2025 02:15 PM</td>
+                                                    <td>Updated probation details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 23 -->
                                                 <tr>
-                                                    <th>23 Feb 2025</th><td>Sun</td><td>--</td><td>--</td><td>--</td><td>--</td><td>Off</td><td>--</td>
+                                                    <td>06 Apr 2025</td>
+                                                    <td>Transfer, New Department</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>06 Apr 2025 09:35 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>06 Apr 2025 01:35 PM</td>
+                                                    <td>Updated transfer details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 24 -->
                                                 <tr>
-                                                    <th>24 Feb 2025</th><td>Mon</td><td>8:00 AM</td><td>5:50 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.8 Hrs</td>
+                                                    <td>07 Apr 2025</td>
+                                                    <td>Secondment, External Assignment</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>07 Apr 2025 11:25 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>07 Apr 2025 03:25 PM</td>
+                                                    <td>Updated secondment details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 25 -->
                                                 <tr>
-                                                    <th>25 Feb 2025</th><td>Tue</td><td>--</td><td>--</td><td>--</td><td>--</td><td><span class="badge rounded-pill bg-warning float-end">Leave</span></td><td>--</td>
+                                                    <td>08 Apr 2025</td>
+                                                    <td>Reinstatement, Previous Role</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>08 Apr 2025 10:45 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>08 Apr 2025 02:45 PM</td>
+                                                    <td>Updated reinstatement details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 26 -->
                                                 <tr>
-                                                    <th>26 Feb 2025</th><td>Wed</td><td>8:00 AM</td><td>5:50 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.8 Hrs</td>
+                                                    <td>09 Apr 2025</td>
+                                                    <td>Reassignment, New Role</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>09 Apr 2025 09:40 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>09 Apr 2025 01:40 PM</td>
+                                                    <td>Updated reassignment details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 27 -->
                                                 <tr>
-                                                    <th>27 Feb 2025</th><td>Thu</td><td>8:05 AM</td><td>5:55 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.8 Hrs</td>
+                                                    <td>10 Apr 2025</td>
+                                                    <td>Re-employment, Previous Employee</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>10 Apr 2025 11:15 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>10 Apr 2025 03:15 PM</td>
+                                                    <td>Updated re-employment details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
+                                                <!-- Row 28 -->
                                                 <tr>
-                                                    <th>28 Feb 2025</th><td>Fri</td><td>8:00 AM</td><td>5:50 PM</td><td>NO</td><td>NO</td><td><span class="badge rounded-pill bg-success float-end">Present</span></td><td>9.8 Hrs</td>
+                                                    <td>11 Apr 2025</td>
+                                                    <td>Rehire, Previous Position</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>11 Apr 2025 10:25 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>11 Apr 2025 02:25 PM</td>
+                                                    <td>Updated rehire details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <!-- Row 29 -->
+                                                <tr>
+                                                    <td>12 Apr 2025</td>
+                                                    <td>Reclassification, Job Grade</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>12 Apr 2025 09:20 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>12 Apr 2025 01:20 PM</td>
+                                                    <td>Updated reclassification details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <!-- Row 30 -->
+                                                <tr>
+                                                    <td>13 Apr 2025</td>
+                                                    <td>Reorganization, Department</td>
+                                                    <td>Chris Otieno (HR Director)</td>
+                                                    <td>13 Apr 2025 11:50 AM</td>
+                                                    <td>Jane Smith (HR Manager)</td>
+                                                    <td>13 Apr 2025 03:50 PM</td>
+                                                    <td>Updated reorganization details</td>
+                                                    <td>KES 150,000</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editLogModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        
-                                        
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="editLogModal" tabindex="-1" aria-labelledby="editLogModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="editLogModalLabel">Edit Log Details</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p><strong>Edited By:</strong> Chris Otieno (HR Director)</p>
+                                                    <p><strong>Edited Date:</strong> 15 Mar 2025 10:00 AM</p>
+                                                    <p><strong>Approved By:</strong> Jane Smith (HR Manager)</p>
+                                                    <p><strong>Approved Date:</strong> 15 Mar 2025 02:00 PM</p>
+                                                    <p><strong>Reason for Edit:</strong> Updated personal details</p>
+                                                    <p><strong>Net Salary After Edit:</strong> KES 150,000</p>
+                                                    <hr>
+                                                    <h6>Changes:</h6>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item"><strong>First Name:</strong> Changed from <span class="text-danger">John</span> to <span class="text-success">Jonathan</span></li>
+                                                        <li class="list-group-item"><strong>Last Name:</strong> Changed from <span class="text-danger">Doe</span> to <span class="text-success">Smith</span></li>
+                                                        <li class="list-group-item"><strong>Email:</strong> Changed from <span class="text-danger">john.doe@example.com</span> to <span class="text-success">jonathan.smith@example.com</span></li>
+                                                        <li class="list-group-item"><strong>Phone:</strong> Changed from <span class="text-danger">0712345678</span> to <span class="text-success">0723456789</span></li>
+                                                        <li class="list-group-item"><strong>National ID:</strong> Changed from <span class="text-danger">12345678</span> to <span class="text-success">87654321</span></li>
+                                                        <li class="list-group-item"><strong>Gender:</strong> Changed from <span class="text-danger">Male</span> to <span class="text-success">Female</span></li>
+                                                        <li class="list-group-item"><strong>Postal Code:</strong> Changed from <span class="text-danger">00100</span> to <span class="text-success">00200</span></li>
+                                                        <li class="list-group-item"><strong>Physical Address:</strong> Changed from <span class="text-danger">123 Main Street, Nairobi</span> to <span class="text-success">456 Park Avenue, Nairobi</span></li>
+                                                        <li class="list-group-item"><strong>Marital Status:</strong> Changed from <span class="text-danger">Single</span> to <span class="text-success">Married</span></li>
+                                                        <li class="list-group-item"><strong>Driving License:</strong> Changed from <span class="text-danger">DL123456</span> to <span class="text-success">DL654321</span></li>
+                                                        <li class="list-group-item"><strong>Blood Group:</strong> Changed from <span class="text-danger">A+</span> to <span class="text-success">B+</span></li>
+                                                        <li class="list-group-item"><strong>Spouse Name:</strong> Changed from <span class="text-danger">-</span> to <span class="text-success">Jane Smith</span></li>
+                                                        <li class="list-group-item"><strong>Department:</strong> Changed from <span class="text-danger">Finance & Economic Planning</span> to <span class="text-success">Human Resources</span></li>
+                                                        <li class="list-group-item"><strong>Section/Sub-vote:</strong> Changed from <span class="text-danger">Medical Services</span> to <span class="text-success">Recruitment</span></li>
+                                                        <li class="list-group-item"><strong>Unit/Directorate:</strong> Changed from <span class="text-danger">Accounts</span> to <span class="text-success">HR Operations</span></li>
+                                                        <li class="list-group-item"><strong>Sub Unit:</strong> Changed from <span class="text-danger">Emergency and Referral Services</span> to <span class="text-success">Employee Relations</span></li>
+                                                        <li class="list-group-item"><strong>Designation:</strong> Changed from <span class="text-danger">Director</span> to <span class="text-success">Senior Director</span></li>
+                                                        <li class="list-group-item"><strong>Employment Date:</strong> Changed from <span class="text-danger">2018-06-01</span> to <span class="text-success">2018-06-15</span></li>
+                                                        <li class="list-group-item"><strong>Reporting To:</strong> Changed from <span class="text-danger">Chief Officer</span> to <span class="text-success">Deputy CEO</span></li>
+                                                        <li class="list-group-item"><strong>Account Holder Name:</strong> Changed from <span class="text-danger">John Doe</span> to <span class="text-success">Jonathan Smith</span></li>
+                                                        <li class="list-group-item"><strong>Account Number:</strong> Changed from <span class="text-danger">1234567890</span> to <span class="text-success">0987654321</span></li>
+                                                        <li class="list-group-item"><strong>Bank Country:</strong> Changed from <span class="text-danger">Kenya</span> to <span class="text-success">Kenya</span></li>
+                                                        <li class="list-group-item"><strong>Bank Name:</strong> Changed from <span class="text-danger">Equity Bank</span> to <span class="text-success">KCB Bank</span></li>
+                                                        <li class="list-group-item"><strong>Branch Location:</strong> Changed from <span class="text-danger">Nairobi CBD</span> to <span class="text-success">Westlands</span></li>
+                                                        <li class="list-group-item"><strong>SHIF Number:</strong> Changed from <span class="text-danger">SHIF12345</span> to <span class="text-success">SHIF54321</span></li>
+                                                        <li class="list-group-item"><strong>NSSF Number:</strong> Changed from <span class="text-danger">NSSF12345</span> to <span class="text-success">NSSF54321</span></li>
+                                                        <li class="list-group-item"><strong>Emergency Contact Name:</strong> Changed from <span class="text-danger">Jane Doe</span> to <span class="text-success">Jane Smith</span></li>
+                                                        <li class="list-group-item"><strong>Emergency Contact Email:</strong> Changed from <span class="text-danger">jane.doe@example.com</span> to <span class="text-success">jane.smith@example.com</span></li>
+                                                        <li class="list-group-item"><strong>Emergency Contact Phone:</strong> Changed from <span class="text-danger">0712345678</span> to <span class="text-success">0723456789</span></li>
+                                                        <li class="list-group-item"><strong>Next of Kin Name:</strong> Changed from <span class="text-danger">Mary Doe</span> to <span class="text-success">Mary Smith</span></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
