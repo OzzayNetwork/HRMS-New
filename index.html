@@ -409,8 +409,128 @@
                         </div>
                     </div>
 
+                    <!-- some stats -->
+                    <div class="row">
+                        <!-- Total Employees -->
+                        <div class="col-md-3">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium">Total Employees</p>
+                                            <h4 class="mb-0">7,720</h4>
+                                        </div>
+                                        <div class="flex-shrink-0 align-self-center">
+                                            <div class="avatar-sm rounded-circle bg-success mini-stat-icon">
+                                                <span class="avatar-title rounded-circle bg-success">
+                                                    <i class="bx bx-group font-size-24"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Employees Added This Month -->
+                        <div class="col-md-3">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium">Employees Added (This Month)</p>
+                                            <h4 class="mb-0">152</h4>
+                                        </div>
+                                        <div class="flex-shrink-0 align-self-center">
+                                            <div class="avatar-sm rounded-circle bg-info mini-stat-icon">
+                                                <span class="avatar-title rounded-circle bg-info">
+                                                    <i class="bx bx-user-plus font-size-24"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Wage Bill Percentage -->
+                        <div class="col-md-3">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium">Wage Bill Percentage</p>
+                                            <h4 class="mb-0">65% <span class="text-muted font-size-14">(Annual)</span> | 68% <span class="text-muted font-size-14">(This Month)</span></h4>
+                                        </div>
+                                        <div class="flex-shrink-0 align-self-center">
+                                            <div class="avatar-sm rounded-circle bg-warning mini-stat-icon">
+                                                <span class="avatar-title rounded-circle bg-warning">
+                                                    <i class="bx bx-money font-size-24"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Employees Absent Without Permission -->
+                        <div class="col-md-3">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1">
+                                            <p class="text-muted fw-medium">Absent Without Permission</p>
+                                            <h4 class="mb-0">34</h4>
+                                        </div>
+                                        <div class="flex-shrink-0 align-self-center">
+                                            <div class="avatar-sm rounded-circle bg-danger mini-stat-icon">
+                                                <span class="avatar-title rounded-circle bg-danger">
+                                                    <i class="bx bx-user-x font-size-24"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <!-- end of stats -->
+
+
+
                     <!-- quick stats -->
                     <div class="row">
+
+                        <div class="col-sm-12 col-md-7 col-lg-8">
+                            <div class="card">
+                                <div class="card-header bg-transparent border-bottom border-succes">
+                                    <div class="d-sm-flex flex-wrap">
+                                        <h4 class="card-title text-black text-uppercase">Average Turnaround Time</h4>
+                                        <div class="ms-auto">
+                                            <ul class="nav nav-pills text-uppercase">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" href="javascript:void(0);">Week</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="javascript:void(0);">Month</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="javascript:void(0);">Year</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card-body">
+                                    <div id="AttendanceContainer"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="col-xl-4 px-sm-30px">
                             <div class="card  member-wedges-card">
                                 <div class="card-body">
@@ -1458,12 +1578,878 @@
 
   <script src="assets/js/dataMap.js "></script>
 
+  <!-- highcharts cdn -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+
 
 
 
     <!-- App js -->
     <script src="assets/js/app.js "></script>
     <script src="assets/js/custom.js "></script>
+
+    <!-- end of CDNs -->
+<script>
+    Highcharts.chart('AttendanceContainer', {
+     chart: {
+         type: 'column'
+     },
+     title: {
+         text: null
+     },
+     xAxis: {
+         type: 'category',
+         labels: {
+             rotation: -90, // Rotate labels vertically
+             align: 'right',
+             style: {
+                 fontSize: '10px',
+                 fontFamily: 'Verdana, sans-serif'
+             }
+         }
+     },
+     yAxis: {
+         min: 0,
+         title: {
+             text: 'Total Days'
+         },
+         stackLabels: {
+             enabled: true,
+             style: {
+                 fontWeight: 'bold',
+                 color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+             }
+         }
+     },
+     legend: {
+         align: 'center',
+         
+         verticalAlign: 'bottom',
+         floating: false,
+         backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || 'white',
+         borderColor: '#CCC',
+         borderWidth: 1,
+         shadow: false
+     },
+     tooltip: {
+         headerFormat: '<b>Attendance Report For {point.key}</b><br/> ',
+         pointFormatter: function () {
+             const present = this.series.chart.series[0].data[this.index].y;
+             const absent = this.series.chart.series[1].data[this.index].y;
+             const total = present + absent;
+             return '<span style="font-weight: 600; color: #0caf60;">Present:</span> ' + present +
+                 '<br/>' +
+                 '<span style="font-weight: 600; color: #ff3a6e;">Absent:</span> ' + absent + '<br/>' +
+                 '<span style="font-weight: 600;">Total:</span> ' + total;
+         }
+     },
+     plotOptions: {
+         column: {
+             stacking: 'normal',
+             pointPadding: 0.2,
+            borderWidth: 0,
+             dataLabels: {
+                 enabled: true,
+                 rotation: -90, // Rotate data labels vertically
+                 align: 'right',
+                 verticalAlign: 'middle',
+                 y: 10, // Adjust vertical position
+                 style: {
+                     fontSize: '10px',
+                     fontFamily: 'Verdana, sans-serif'
+                 }
+             }
+         },
+        
+     },
+     series: [
+    {
+        name: 'Present',
+        color: '#0caf60',
+        data: [
+            { name: 'JAN', y: 6200, drilldown: 'January-Attendance' },
+            { name: 'FEB', y: 7480, drilldown: 'February-Attendance' },
+            { name: 'MAR', y: 7450, drilldown: 'March-Attendance' },
+            { name: 'APR', y: 7400, drilldown: 'April-Attendance' },
+            { name: 'MAY', y: 7350, drilldown: 'May-Attendance' },
+            { name: 'JUN', y: 7300, drilldown: 'June-Attendance' },
+            { name: 'JUL', y: 7200, drilldown: 'July-Attendance' },
+            { name: 'AUG', y: 7100, drilldown: 'August-Attendance' },
+            { name: 'SEP', y: 6950, drilldown: 'September-Attendance' },
+            { name: 'OCT', y: 6700, drilldown: 'October-Attendance' },
+            { name: 'NOV', y: 6400, drilldown: 'November-Attendance' },
+            { name: 'DEC', y: 6000, drilldown: 'December-Attendance' }
+        ]
+    },
+    {
+        name: 'Absent',
+        color: '#ff3a6e',
+        data: [
+            { name: 'JAN', y: 1820, drilldown: 'January-Absenteeism' },
+            { name: 'FEB', y: 240, drilldown: 'February-Absenteeism' },
+            { name: 'MAR', y: 270, drilldown: 'March-Absenteeism' },
+            { name: 'APR', y: 320, drilldown: 'April-Absenteeism' },
+            { name: 'MAY', y: 370, drilldown: 'May-Absenteeism' },
+            { name: 'JUN', y: 420, drilldown: 'June-Absenteeism' },
+            { name: 'JUL', y: 520, drilldown: 'July-Absenteeism' },
+            { name: 'AUG', y: 620, drilldown: 'August-Absenteeism' },
+            { name: 'SEP', y: 770, drilldown: 'September-Absenteeism' },
+            { name: 'OCT', y: 1020, drilldown: 'October-Absenteeism' },
+            { name: 'NOV', y: 1320, drilldown: 'November-Absenteeism' },
+            { name: 'DEC', y: 1720, drilldown: 'December-Absenteeism' }
+        ]
+    }
+],
+     drilldown: {
+         series: [
+             // January
+             {
+                 id: 'January-Attendance',
+                 name: 'Attendance Data for January',
+                 data: generateDailyData(31, 0.95) // 31 days in January
+             },
+             {
+                 id: 'January-Absenteeism',
+                 name: 'Absenteeism Data for January',
+                 data: generateDailyData(31, 0.05) // 31 days in January
+             },
+             // February
+             {
+                 id: 'February-Attendance',
+                 name: 'Attendance Data for February',
+                 data: generateDailyData(28, 0.65) // 28 days in February
+             },
+             {
+                 id: 'February-Absenteeism',
+                 name: 'Absenteeism Data for February',
+                 data: generateDailyData(28, 0.35) // 28 days in February
+             },
+             // March
+             {
+                 id: 'March-Attendance',
+                 name: 'Attendance Data for March',
+                 data: generateDailyData(31, 0.25) // 31 days in March
+             },
+             {
+                 id: 'March-Absenteeism',
+                 name: 'Absenteeism Data for March',
+                 data: generateDailyData(31, 0.75) // 31 days in March
+             },
+             // April
+             {
+                 id: 'April-Attendance',
+                 name: 'Attendance Data for April',
+                 data: generateDailyData(30, 0.85) // 30 days in April
+             },
+             {
+                 id: 'April-Absenteeism',
+                 name: 'Absenteeism Data for April',
+                 data: generateDailyData(30, 0.15) // 30 days in April
+             },
+             // May
+             {
+                 id: 'May-Attendance',
+                 name: 'Attendance Data for May',
+                 data: generateDailyData(31, 0.95) // 31 days in May
+             },
+             {
+                 id: 'May-Absenteeism',
+                 name: 'Absenteeism Data for May',
+                 data: generateDailyData(31, 0.05) // 31 days in May
+             },
+             // June
+             {
+                 id: 'June-Attendance',
+                 name: 'Attendance Data for June',
+                 data: generateDailyData(30, 0.5) // 30 days in June
+             },
+             {
+                 id: 'June-Absenteeism',
+                 name: 'Absenteeism Data for June',
+                 data: generateDailyData(30, 0.50) // 30 days in June
+             },
+             // July
+             {
+                 id: 'July-Attendance',
+                 name: 'Attendance Data for July',
+                 data: generateDailyData(31, 0.95) // 31 days in July
+             },
+             {
+                 id: 'July-Absenteeism',
+                 name: 'Absenteeism Data for July',
+                 data: generateDailyData(31, 0.05) // 31 days in July
+             },
+             // August
+             {
+                 id: 'August-Attendance',
+                 name: 'Attendance Data for August',
+                 data: generateDailyData(31, 0.95) // 31 days in August
+             },
+             {
+                 id: 'August-Absenteeism',
+                 name: 'Absenteeism Data for August',
+                 data: generateDailyData(31, 0.05) // 31 days in August
+             },
+             // September
+             {
+                 id: 'September-Attendance',
+                 name: 'Attendance Data for September',
+                 data: generateDailyData(30, 0.95) // 30 days in September
+             },
+             {
+                 id: 'September-Absenteeism',
+                 name: 'Absenteeism Data for September',
+                 data: generateDailyData(30, 0.05) // 30 days in September
+             },
+             // October
+             {
+                 id: 'October-Attendance',
+                 name: 'Attendance Data for October',
+                 data: generateDailyData(31, 0.95) // 31 days in October
+             },
+             {
+                 id: 'October-Absenteeism',
+                 name: 'Absenteeism Data for October',
+                 data: generateDailyData(31, 0.05) // 31 days in October
+             },
+             // November
+             {
+                 id: 'November-Attendance',
+                 name: 'Attendance Data for November',
+                 data: generateDailyData(30, 0.95) // 30 days in November
+             },
+             {
+                 id: 'November-Absenteeism',
+                 name: 'Absenteeism Data for November',
+                 data: generateDailyData(30, 0.05) // 30 days in November
+             },
+             // December
+             {
+                 id: 'December-Attendance',
+                 name: 'Attendance Data for December',
+                 data: generateDailyData(31, 0.95) // 31 days in December
+             },
+             {
+                 id: 'December-Absenteeism',
+                 name: 'Absenteeism Data for December',
+                 data: generateDailyData(31, 0.05) // 31 days in December
+             }
+         ]
+     }
+ });
+ 
+ // Helper function to generate daily data
+ function generateDailyData(daysInMonth, ratio) {
+     const data = [];
+     for (let day = 1; day <= daysInMonth; day++) {
+         data.push([`${day}`, Math.round(7720 * ratio)]);
+     }
+     return data;
+ }
+ </script>
+
+ <script>
+    
+ </script>
+
+<!-- gender comparrisons -->
+ <script>
+  Highcharts.chart('GenderContainer', {
+    chart: {
+        type: 'pie'
+    },
+    title: {
+        text: null
+    },
+    subtitle: {
+        text: 'Click the slices to view department distribution.'
+    },
+
+    accessibility: {
+        announceNewData: {
+            enabled: true
+        },
+        point: {
+        }
+    },
+
+    plotOptions: {
+        series: {
+            borderRadius: 5,
+            dataLabels: [
+                {
+                    enabled: true,
+                    distance: 15,
+                    format: '{point.name}: {point.y}',
+                },
+                {
+                    enabled: true,
+                    distance: '-30%',
+                    filter: {
+                        property: 'percentage',
+                        operator: '>',
+                        value: 5
+                    },
+                    format: '{point.y}',
+                    style: {
+                        fontSize: '0.9em',
+                        textOutline: 'none'
+                    }
+                }
+            ]
+        }
+    },
+
+    tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: ' +
+            '<b>{point.y} of {point.total}</b><br/>'
+    },
+
+    series: [
+        {
+            name: 'Gender',
+            colorByPoint: true,
+            data: [
+                {
+                    name: 'Male',
+                    y: 4620,
+                    drilldown: 'Male',
+                    total: 4620
+                },
+                {
+                    name: 'Female',
+                    y: 3100,
+                    drilldown: 'Female',
+                    total: 3100
+                }
+            ]
+        }
+    ],
+    
+    drilldown: {
+        series: [
+            {
+                name: 'Male Employees',
+                id: 'Male',
+                data: [
+                    ['Health Services', 1500],
+                    ['Education & ICT', 1200],
+                    ['Finance & Economic Planning', 650],
+                    ['Agriculture, Livestock & Fisheries', 500],
+                    ['Transport & Infrastructure', 420],
+                    ['Trade, Industry & Cooperatives', 250],
+                    ['Other', 100]
+                ]
+            },
+            {
+                name: 'Female Employees',
+                id: 'Female',
+                data: [
+                    ['Health Services', 1250],
+                    ['Education & ICT', 950],
+                    ['Finance & Economic Planning', 500],
+                    ['Agriculture, Livestock & Fisheries', 200],
+                    ['Transport & Infrastructure', 150],
+                    ['Trade, Industry & Cooperatives', 50],
+                    ['Other', 100]
+                ]
+            }
+        ]
+    }
+});
+
+ </script>
+<!-- end of gender comparissons -->
+
+<!-- todays attendance chart -->
+ <script>
+    Highcharts.chart('TodayAttendanceContainer', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: null
+    },
+    subtitle: {
+        text: 'Click the columns to view department-wise attendance.'
+    },
+
+    accessibility: {
+        announceNewData: {
+            enabled: true
+        },
+        point: {
+            valueSuffix: '%'
+        }
+    },
+
+    xAxis: {
+        type: 'category',
+        title: {
+            text: 'Attendance Status'
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Number of Employees'
+        }
+    },
+
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true,
+                formatter: function() {
+                    let percentage = (this.y / 7689 * 100).toFixed(1);
+                    return `${this.y} (${percentage}%)`;
+                }
+            }
+        }
+    },
+
+    tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: ' +
+            '<b>{point.y} ({(point.y / 7689 * 100).toFixed(1)}%)</b> of total<br/>'
+    },
+
+    series: [
+        {
+            name: 'Attendance',
+            colorByPoint: true,
+            data: [
+                {
+                    name: 'Present',
+                    y: 6500,
+                    drilldown: 'Present'
+                },
+                {
+                    name: 'Absent',
+                    y: 1189,
+                    drilldown: 'Absent'
+                }
+            ]
+        }
+    ],
+    
+    drilldown: {
+        series: [
+            {
+                name: 'Present Employees',
+                id: 'Present',
+                type: 'column',
+                data: [
+                    ['Health Services', 2200],
+                    ['Education & ICT', 1500],
+                    ['Finance & Economic Planning', 900],
+                    ['Agriculture, Livestock & Fisheries', 600],
+                    ['Transport & Infrastructure', 300],
+                    ['Trade, Industry & Cooperatives', 800],
+                    ['Other', 200]
+                ]
+            },
+            {
+                name: 'Absent Employees',
+                id: 'Absent',
+                type: 'column',
+                data: [
+                    ['Health Services', 200],
+                    ['Education & ICT', 300],
+                    ['Finance & Economic Planning', 100],
+                    ['Agriculture, Livestock & Fisheries', 50],
+                    ['Transport & Infrastructure', 50],
+                    ['Trade, Industry & Cooperatives', 400],
+                    ['Other', 89]
+                ]
+            }
+        ]
+    }
+});
+
+ </script>
+ <!-- end of attendance -->
+
+ <!-- newley hired staff distribution bey department start -->
+ <script>
+    Highcharts.chart('NewContainer', {
+     chart: {
+         type: 'bar'
+     },
+     title: {
+         text: null
+     },
+     subtitle: {
+         text: 'Comparison of new hires and exits across departments'
+     },
+     xAxis: {
+         categories: [
+             'Health Services',
+             'Education & ICT',
+             'Finance & Economic Planning',
+             'Agriculture, Livestock & Fisheries',
+             'Transport & Infrastructure',
+             'Trade, Industry & Cooperatives',
+             'Other'
+         ],
+         title: {
+             text: 'Departments'
+         }
+     },
+     yAxis: {
+         min: 0,
+         title: {
+             text: 'Number of Employees'
+         }
+     },
+     legend: {
+         enabled: true
+     },
+     tooltip: {
+         shared: true,
+         pointFormat: '<b>{series.name}: {point.y}</b>'
+     },
+     plotOptions: {
+         bar: {
+             dataLabels: {
+                 enabled: true
+             },
+             stacking: 'normal'
+         }
+     },
+     series: [{
+         name: 'New Hires',
+         data: [12, 10, 8, 7, 6, 5, 5], // Adjusted new hires to sum up to 53
+         color: '#33FF57'
+     }, {
+         name: 'Exits',
+         data: [3, 2, 2, 2, 2, 1, 1], // Total exits remain 13
+         color: '#FF5733'
+     }],
+     
+     // Display total hires and exits at the bottom in bold, visible, and right-aligned
+     caption: {
+         text: '<div style="text-align: right; font-size: 16px; font-weight: bold; color: #000;">Total New Hires: 53 | Total Exits: 13</div>',
+         useHTML: true
+     }
+ });
+ </script>
+ 
+ 
+
+ <!-- newley hired staff distribution bey department End -->
+
+
+
+ <script>
+    Highcharts.chart('ExitChart', {
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: 'Nature of Exits'
+        },
+        subtitle: {
+            text: 'Click on a category to view department-wise breakdown'
+        },
+        accessibility: {
+            announceNewData: {
+                enabled: true
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.y}'
+                }
+            }
+        },
+        series: [{
+            name: 'Exits',
+            colorByPoint: true,
+            data: [
+                {
+                    name: 'Death',
+                    y: 1,
+                    drilldown: 'death'
+                },
+                {
+                    name: 'Dismissal',
+                    y: 4,
+                    drilldown: 'dismissal'
+                },
+                {
+                    name: 'Resignation',
+                    y: 5,
+                    drilldown: 'resignation'
+                },
+                {
+                    name: 'Transfers',
+                    y: 2,
+                    drilldown: 'transfers'
+                },
+                {
+                    name: 'Other',
+                    y: 1,
+                    drilldown: 'other'
+                }
+            ]
+        }],
+        drilldown: {
+            series: [
+                {
+                    id: 'death',
+                    name: 'Death - Department Breakdown',
+                    data: [
+                        ['Health Services', 1]
+                    ]
+                },
+                {
+                    id: 'dismissal',
+                    name: 'Dismissal - Department Breakdown',
+                    data: [
+                        ['Health Services', 1],
+                        ['Education & ICT', 1],
+                        ['Finance & Economic Planning', 1],
+                        ['Agriculture, Livestock & Fisheries', 1]
+                    ]
+                },
+                {
+                    id: 'resignation',
+                    name: 'Resignation - Department Breakdown',
+                    data: [
+                        ['Health Services', 2],
+                        ['Education & ICT', 1],
+                        ['Finance & Economic Planning', 1],
+                        ['Agriculture, Livestock & Fisheries', 1]
+                    ]
+                },
+                {
+                    id: 'transfers',
+                    name: 'Transfers - Department Breakdown',
+                    data: [
+                        ['Health Services', 1],
+                        ['Education & ICT', 1]
+                    ]
+                },
+                {
+                    id: 'other',
+                    name: 'Other - Department Breakdown',
+                    data: [
+                        ['Health Services', 1]
+                    ]
+                }
+            ]
+        }
+    });
+</script>
+
+<script>
+    Highcharts.chart('EntryChart', {
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: 'Nature of New Hires'
+        },
+        subtitle: {
+            text: 'Click on a category to view department-wise breakdown'
+        },
+        accessibility: {
+            announceNewData: {
+                enabled: true
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.y}'
+                }
+            }
+        },
+        series: [{
+            name: 'New Hires',
+            colorByPoint: true,
+            data: [
+                {
+                    name: 'Direct Recruitment',
+                    y: 30,
+                    drilldown: 'direct'
+                },
+                {
+                    name: 'Transfers In',
+                    y: 10,
+                    drilldown: 'transfers_in'
+                },
+                {
+                    name: 'Rehired',
+                    y: 8,
+                    drilldown: 'rehired'
+                },
+                {
+                    name: 'Other',
+                    y: 5,
+                    drilldown: 'other'
+                }
+            ]
+        }],
+        drilldown: {
+            series: [
+                {
+                    id: 'direct',
+                    name: 'Direct Recruitment - Department Breakdown',
+                    data: [
+                        ['Health Services', 10],
+                        ['Education & ICT', 8],
+                        ['Finance & Economic Planning', 5],
+                        ['Agriculture, Livestock & Fisheries', 3],
+                        ['Transport & Infrastructure', 2],
+                        ['Trade, Industry & Cooperatives', 1],
+                        ['Other', 1]
+                    ]
+                },
+                {
+                    id: 'transfers_in',
+                    name: 'Transfers In - Department Breakdown',
+                    data: [
+                        ['Health Services', 3],
+                        ['Education & ICT', 2],
+                        ['Finance & Economic Planning', 2],
+                        ['Agriculture, Livestock & Fisheries', 1],
+                        ['Transport & Infrastructure', 1],
+                        ['Trade, Industry & Cooperatives', 1]
+                    ]
+                },
+                {
+                    id: 'rehired',
+                    name: 'Rehired - Department Breakdown',
+                    data: [
+                        ['Health Services', 3],
+                        ['Education & ICT', 2],
+                        ['Finance & Economic Planning', 2],
+                        ['Agriculture, Livestock & Fisheries', 1]
+                    ]
+                },
+                {
+                    id: 'other',
+                    name: 'Other - Department Breakdown',
+                    data: [
+                        ['Health Services', 2],
+                        ['Education & ICT', 1],
+                        ['Finance & Economic Planning', 1],
+                        ['Agriculture, Livestock & Fisheries', 1]
+                    ]
+                }
+            ]
+        }
+    });
+</script>
+
+
+
+
+
+
+
+<script>
+    Highcharts.chart('disabilityChart', {
+        chart: {
+            type: 'pie',
+            backgroundColor: 'transparent',
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: null
+        },
+        subtitle: {
+            text: 'Click to see department-wise distribution'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: ''
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.y} ({point.percentage:.1f}%)' // Shows count + percentage
+                },
+                startAngle: -90,
+                endAngle: 90,
+                center: ['50%', '75%'],
+                size: '110%'
+            }
+        },
+        series: [{
+            name: 'Gender',
+            colorByPoint: true,
+            innerSize: '50%', // Donut effect
+            data: [
+                {
+                    name: 'Male',
+                    y: 35,
+                    drilldown: 'male'
+                },
+                {
+                    name: 'Female',
+                    y: 24,
+                    drilldown: 'female'
+                }
+            ]
+        }],
+        drilldown: {
+            series: [
+                {
+                    id: 'male',
+                    name: 'Male Employees with Disabilities - Department Breakdown',
+                    dataLabels: {
+                        format: '{point.name}: {point.y} ({point.percentage:.1f}%)' // Percentage for drilldown
+                    },
+                    data: [
+                        ['Health Services', 10],
+                        ['Education & ICT', 6],
+                        ['Finance & Economic Planning', 5],
+                        ['Agriculture, Livestock & Fisheries', 4],
+                        ['Transport & Infrastructure', 4],
+                        ['Trade, Industry & Cooperatives', 3],
+                        ['Other', 3]
+                    ]
+                },
+                {
+                    id: 'female',
+                    name: 'Female Employees with Disabilities - Department Breakdown',
+                    dataLabels: {
+                        format: '{point.name}: {point.y} ({point.percentage:.1f}%)'
+                    },
+                    data: [
+                        ['Health Services', 8],
+                        ['Education & ICT', 4],
+                        ['Finance & Economic Planning', 3],
+                        ['Agriculture, Livestock & Fisheries', 2],
+                        ['Transport & Infrastructure', 3],
+                        ['Trade, Industry & Cooperatives', 2],
+                        ['Other', 2]
+                    ]
+                }
+            ]
+        }
+    });
+</script>
+
+
+
+
 </body>
 
 
