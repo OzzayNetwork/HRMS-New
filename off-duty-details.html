@@ -246,12 +246,6 @@
                                 <i class="mdi mdi-account-group"></i><span>Employee Register</span>
                             </a>
                         </li>
-
-                        <li>
-                            <a href="projects.html" class="waves-effect">
-                                <i class="mdi mdi-briefcase-account"></i><span>Project Consultants</span>
-                            </a>
-                        </li>
                     
                        
                     
@@ -347,22 +341,24 @@
                             </a>
                         </li>
                         
-                      <li class="menu-title" key="t-pages">System Administration</li>
-                        <li class="">
+                        <li class="menu-title" key="t-pages">System Administration</li>
+                        <li>
                             <a href="javascript: void(0);" class="waves-effect has-arrow">
                                 <i class="mdi mdi-cogs"></i>
                                 <span>Setups</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="set-up-revenue.html"><i class="mdi mdi-office-building"></i> County Revenue</a></li>
-                                <li><a href="set-up-sdd.html"><i class="mdi mdi-currency-usd"></i> SDD Connections</a></li>
-                                <li><a href="https://homabaycountyland.fillout.com/t/5DRmYuEdUDus" target="new"><i class="mdi mdi-tools"></i> Appraisal Form</a></li>
-                                <li><a href="set-up-general.html"><i class="mdi mdi-bed"></i> General Set Up</a></li>
-                                
+                                <li><a href="set-up-departments.html"><i class="mdi mdi-office-building"></i> Departments</a></li>
+                                <li><a href="set-up-pricing.html"><i class="mdi mdi-currency-usd"></i> Pricing & Charges</a></li>
+                                <li><a href="set-up-equipments.html"><i class="mdi mdi-tools"></i> Equipments</a></li>
+                                <li><a href="set-up-wards.html"><i class="mdi mdi-bed"></i> Ward Setup</a></li>
+                                <li><a href="set-up-bed.html"><i class="mdi mdi-hotel"></i> Beds Setup</a></li>
+                                <li><a href="set-Pharmacy.html"><i class="mdi mdi-pill"></i> Pharmacy Inventory</a></li>
+                                <li><a href="lab-setup-new.html"><i class="mdi mdi-flask"></i> New Lab Test Setup</a></li>
                             </ul>
                         </li>
                     
-                        <li class="d-none">
+                        <li>
                             <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage Organizational Structure">
                                 <i class="mdi mdi-sitemap"></i>
                                 <span>Org Structure</span>
@@ -375,7 +371,7 @@
                             </ul>
                         </li>
                     
-                        <li class="d-none">
+                        <li>
                             <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage System Users">
                                 <i class="mdi mdi-account-multiple"></i>
                                 <span>Users</span>
@@ -411,13 +407,20 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0 font-size-18"> Transfers</h4>
+                                <h4 class="mb-sm-0 font-size-18">Employees Off Duty within 15 Days</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                        <li class="breadcrumb-item active">HR Actions</li>
-                                        <li class="breadcrumb-item active"> Transfers</li>
+                                        <li class="breadcrumb-item active">Reports
+                                          
+                                        </li>
+                                        
+                                        <li class="breadcrumb-item active"> <a href="report-monthly.html">
+                                            Manage Attendance
+                                        </a></li>
+                                        <li class="breadcrumb-item active"> Off Duty within 15 days in one Month
+                                            </li>
                                     </ol>
                                 </div>
 
@@ -426,9 +429,7 @@
                     </div>
                     <!-- end page title -->
 
-                    <!-- stats cards -->
-
-
+                  
                     
                     
                      <!-- end of stats -->
@@ -470,25 +471,24 @@
                                                                     <option value="72">Office of the County Secretary and Head of Public Service</option>
                                                             </select>
                                                         </div>
+
+                                                        <div class="input-group fw-semibold text-uppercase me-3">
+                                                            <label class="input-group-text text-uppercase">Select Month</label>
+                                                            <input type="month" class="form-control" style="width: 200px;">
+                                                        </div>
+                                                        
         
-                                                      
-                                                        
+                                                        <div class="input-group fw-semibold text-uppercase d-none">
+                                                            <label class="input-group-text text-uppercase">Application date</label>
+                                                            <input class="form-control form-control-sm" type="date" id="from-date">
+                                                        </div>
                                                        
-                                                        
                                                     </div>
                                                 </div>
                                             </div>
                                             <button data-bs-toggle="modal" data-bs-target=".download-modal" type="button" class="btn btn-primary dropdown-toggle option-selector me-3 text-capitalize">
-                                                <i class="bx bxs-download "></i> <span class="pl-1 d-md-inline">Download Report</span>
+                                                <i class="bx bxs-download  font-size-16"></i> <span class="pl-1 d-md-inline">Download Report</span>
                                             </button>
-
-                                           <!-- Add Asset Button -->
-                                        <button data-bs-toggle="modal" data-bs-target="#modal-add-transfer" type="button" class="btn btn-success dropdown-toggle option-selector me-3 text-capitalize">
-                                            <i class="bx bx-plus"></i> <span class="pl-1 d-md-inline">Create New Transfer</span>
-                                        </button>
-
-
-
 
                                           
                                         </div>
@@ -501,98 +501,507 @@
                                 </div>
                                 
                                 <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table align-middle table-hover contacts-table table-striped text-nowrap" id="datatable-buttons">
+                                    <div class="table-responsive ">
+                                        <table class="table align-middle contacts-table text-nowrap" id="datatable-buttons">
                                             <thead class="table-light">
                                                 <tr class="table-dark">
-                                                    <th scope="col">Employee Name</th>
-                                                    <th scope="col">Department</th>
-                                                    <th scope="col">Directorate</th>
-                                                    <th scope="col">Transfer Date</th>
-                                                    <th scope="col">Description</th>
-                                                    <th scope="col">Action</th>
+                                                    <th scope="col">Employee</th>
+                                                    <!-- Dynamic Date Headers with Day of the Week -->
+                                                    <th scope="col">01 Feb (Sat)</th>
+                                                    <th scope="col">02 Feb (Sun)</th>
+                                                    <th scope="col">03 Feb (Mon)</th>
+                                                    <th scope="col">04 Feb (Tue)</th>
+                                                    <th scope="col">05 Feb (Wed)</th>
+                                                    <th scope="col">06 Feb (Thu)</th>
+                                                    <th scope="col">07 Feb (Fri)</th>
+                                                    <th scope="col">08 Feb (Sat)</th>
+                                                    <th scope="col">09 Feb (Sun)</th>
+                                                    <th scope="col">10 Feb (Mon)</th>
+                                                    <th scope="col">11 Feb (Tue)</th>
+                                                    <th scope="col">12 Feb (Wed)</th>
+                                                    <th scope="col">13 Feb (Thu)</th>
+                                                    <th scope="col">14 Feb (Fri)</th>
+                                                    <th scope="col">15 Feb (Sat)</th>
+                                                    <th scope="col">16 Feb (Sun)</th>
+                                                    <th scope="col">17 Feb (Mon)</th>
+                                                    <th scope="col">18 Feb (Tue)</th>
+                                                    <th scope="col">19 Feb (Wed)</th>
+                                                    <th scope="col">20 Feb (Thu)</th>
+                                                    <th scope="col">21 Feb (Fri)</th>
+                                                    <th scope="col">22 Feb (Sat)</th>
+                                                    <th scope="col">23 Feb (Sun)</th>
+                                                    <th scope="col">24 Feb (Mon)</th>
+                                                    <th scope="col">25 Feb (Tue)</th>
+                                                    <th scope="col">26 Feb (Wed)</th>
+                                                    <th scope="col">27 Feb (Thu)</th>
+                                                    <th scope="col">28 Feb (Fri)</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <!-- Employee 1: At least 15 Absences -->
                                                 <tr>
-                                                    <th>Ochieng Otieno</th>
-                                                    <td>Finance</td>
-                                                    <td>Economic Planning</td>
-                                                    <td>12 Feb 2025</td>
-                                                    <td>Transfer to a new project</td>
-                                                    <td class=>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button>
-                                                    </td>
+                                                    <td>Anyango Odhiambo</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
                                                 </tr>
+                                                <!-- Employee 2: At least 15 Absences -->
                                                 <tr>
-                                                    <th>Akinyi Odongo</th>
-                                                    <td>Governance</td>
-                                                    <td>Administration</td>
-                                                    <td>25 Apr 2023</td>
-                                                    <td>New role in administration</td>
-                                                    <td class=>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button>
-                                                    </td>
+                                                    <td>Odongo Juma</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
                                                 </tr>
+                                                <!-- Employee 3: At least 15 Absences -->
                                                 <tr>
-                                                    <th>Owuor Okello</th>
-                                                    <td>Public Health</td>
-                                                    <td>Medical Services</td>
-                                                    <td>15 Jun 2021</td>
-                                                    <td>Relocation due to health policy change</td>
-                                                    <td class=>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button>
-                                                    </td>
+                                                    <td>Akinyi Otieno</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
                                                 </tr>
+                                                <!-- Employee 4: At least 15 Absences -->
                                                 <tr>
-                                                    <th>Atieno Odhiambo</th>
-                                                    <td>Water Management</td>
-                                                    <td>Environmental Services</td>
-                                                    <td>10 Sep 2022</td>
-                                                    <td>Promotion within department</td>
-                                                    <td class>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button>
-                                                    </td>
+                                                    <td>Ouma Abok</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
                                                 </tr>
+                                                <!-- Employee 5: At least 15 Absences -->
                                                 <tr>
-                                                    <th>Onyango Ouma</th>
-                                                    <td>Trade & Industry</td>
-                                                    <td>Cooperative Development</td>
-                                                    <td>5 Dec 2023</td>
-                                                    <td>New cooperative initiative</td>
-                                                    <td class=>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-target=".leave-details-modal" data-bs-toggle="modal">View Details</button>
-                                                    </td>
+                                                    <td>Ochieng Otieno</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                </tr>
+                                                <!-- Employee 6: At least 15 Absences -->
+                                                <tr>
+                                                    <td>Nyambura Achieng</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                </tr>
+                                                <!-- Employee 7: At least 15 Absences -->
+                                                <tr>
+                                                    <td>Omondi Okoth</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                </tr>
+                                                <!-- Employee 8: At least 15 Absences -->
+                                                <tr>
+                                                    <td>Wanjala Otieno</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                </tr>
+                                                <!-- Employee 9: At least 15 Absences -->
+                                                <tr>
+                                                    <td>Akoth Nyambura</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                </tr>
+                                                <!-- Employee 10: At least 15 Absences -->
+                                                <tr>
+                                                    <td>Ochieng Abok</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                </tr>
+                                                <!-- Employee 11: At least 15 Absences -->
+                                                <tr>
+                                                    <td>Atieno Adhiambo</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                </tr>
+                                                <!-- Employee 12: At least 15 Absences -->
+                                                <tr>
+                                                    <td>Onyango Otieno</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                </tr>
+                                                <!-- Employee 13: At least 15 Absences -->
+                                                <tr>
+                                                    <td>Adhiambo Anyango</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                </tr>
+                                                <!-- Employee 14: At least 15 Absences -->
+                                                <tr>
+                                                    <td>Otieno Ochieng</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                </tr>
+                                                <!-- Employee 15: At least 15 Absences -->
+                                                <tr>
+                                                    <td>Nyambura Otieno</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-warning text-center fw-bold">WO</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
+                                                    <td class="bg-danger text-center fw-bold">A</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -608,178 +1017,6 @@
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
-
-
-<!-- Modal for displaying employee transfer details -->
-<div class="modal fade leave-details-modal" tabindex="-1" role="dialog" aria-labelledby="leaveDetailsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="leaveDetailsModalLabel">Employee Transfer Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Employee details section -->
-                <div class="employee-details mb-4">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h6 class="text-uppercase fw-bold">Personal Information</h6>
-                            <table class="table table-bordered">
-                                <tr>
-                                    <th width="40%">Employee Name:</th>
-                                    <td id="modalEmployeeName">Ochieng Otieno</td>
-                                </tr>
-                                <tr>
-                                    <th>Department:</th>
-                                    <td id="modalDepartment">Human Resources</td>
-                                </tr>
-                                <tr>
-                                    <th>Directorate:</th>
-                                    <td id="modalDirectorate">Administration</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="col-md-6">
-                            <h6 class="text-uppercase fw-bold">Transfer Information</h6>
-                            <table class="table table-bordered">
-                                <tr>
-                                    <th width="40%">Transfer Date:</th>
-                                    <td id="modalTransferDate">10 Jan 2025</td>
-                                </tr>
-                                <tr>
-                                    <th>Description:</th>
-                                    <td id="modalDescription">Transfer to Nairobi Office</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Documents section -->
-                <div class="documents-section">
-                    <h6 class="text-uppercase fw-bold">Uploaded Documents</h6>
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>Document Name</th>
-                                    <th>Upload Date</th>
-                                    <th>Document Type</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="documentsList">
-                                <!-- Sample documents -->
-                                <tr>
-                                    <td>Transfer Request Form.pdf</td>
-                                    <td>10 Jan 2025</td>
-                                    <td><span class="badge bg-info">PDF</span></td>
-                                    <td>
-                                        <a href="assets/storage/files/transfer_letter.pdf" target="_blank" class="btn btn-sm btn-outline-primary">
-                                            <i class="bi bi-eye"></i> View
-                                        </a>
-                                        <button class="btn btn-sm btn-outline-success">
-                                            <i class="bi bi-download"></i> Download
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Department Clearance.docx</td>
-                                    <td>05 Feb 2025</td>
-                                    <td><span class="badge bg-info">DOCX</span></td>
-                                    <td>
-                                        <a href="assets/storage/files/transfer_letter.pdf" target="_blank" class="btn btn-sm btn-outline-primary">
-                                            <i class="bi bi-eye"></i> View
-                                        </a>
-                                        <button class="btn btn-sm btn-outline-success">
-                                            <i class="bi bi-download"></i> Download
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-  <!-- Modal for editing employee transfer details (including documents) -->
-<div class="modal fade" id="editEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="editEmployeeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editEmployeeModalLabel">Edit Employee Transfer Details</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Form for editing employee details -->
-          <form id="editEmployeeForm">
-            <div class="row">
-              <!-- Left Column: Personal Information -->
-              <div class="col-md-6">
-                <h6 class="text-uppercase fw-bold">Edit Personal Information</h6>
-                <div class="mb-3">
-                  <label for="editEmployeeName" class="form-label">Employee Name</label>
-                  <input type="text" class="form-control" id="editEmployeeName" placeholder="Enter Employee Name" value="Ann Akinyi">
-                </div>
-                <div class="mb-3">
-                  <label for="editDepartment" class="form-label">Department</label>
-                  <input type="text" class="form-control" id="editDepartment" placeholder="Enter Department" value="Finance">
-                </div>
-                <div class="mb-3">
-                  <label for="editDirectorate" class="form-label">Directorate</label>
-                  <input type="text" class="form-control" id="editDirectorate" placeholder="Enter Directorate" value="Economic Planning">
-                </div>
-              </div>
-  
-              <!-- Right Column: Transfer Information -->
-              <div class="col-md-6">
-                <h6 class="text-uppercase fw-bold">Edit Transfer Information</h6>
-                <div class="mb-3">
-                  <label for="editTransferDate" class="form-label">Transfer Date</label>
-                  <input type="date" class="form-control" id="editTransferDate" value="2025-04-25">
-                  
-                </div>
-                <div class="mb-3">
-                  <label for="editDescription" class="form-label">Description</label>
-                  <textarea class="form-control" id="editDescription" rows="3" value="">Relocation due to health policy change</textarea>
-                </div>
-  
-                <!-- File Upload Section -->
-                <div class="mb-3">
-                  <h6 class="text-uppercase fw-bold">Uploaded Documents</h6>
-                  <!-- Display existing uploaded documents -->
-                  <ul id="uploadedDocumentsList" class="list-group">
-                    <!-- Documents will be populated dynamically -->
-                  </ul>
-  
-                  <!-- File upload input for replacing or uploading new documents -->
-                  <label for="editDocuments" class="form-label mt-3">Upload New Document</label>
-                  <input type="file" class="form-control" id="editDocuments" accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg">
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="saveEditButton">Save Changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-
-
-
-
-
-
 
             <!-- receipting modal -->
             <div class="modal fade receipting-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -1887,217 +2124,141 @@
         </div>
         <!-- Patient registration -->
 
-        <!-- the modal -->
-        <!-- Add New Transfer Modal -->
-<div class="modal fade" id="modal-add-transfer" tabindex="-1" aria-labelledby="addTransferModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <!-- leave details modal -->
+       <!-- Leave Details Modal -->
+<div class="modal fade leave-details-modal" id="leaveDetails" tabindex="-1" aria-labelledby="leaveDetailsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addTransferModalLabel">Create New Transfer</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="leaveDetailsLabel">Leave Application Details</h5>
+                <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="addTransferForm">
-                    <div class="row">
-
-                           <!-- Select Employee -->
-                           <div class="col-md-6 mb-3">
-                            <label for="selectEmployee" class="form-label">Select Employee</label>
-                            <select class="form-control" id="selectEmployee" required>
-                                <option value="">Select Employee</option>
-                                <option value="employee1">Employee 1</option>
-                                <option value="employee2">Employee 2</option>
-                                <!-- Add more employee options as needed -->
-                            </select>
-                        </div>
-                        <!-- Select Department -->
-                        <div class="col-md-6 mb-3">
-                            <label for="selectDepartment" class="form-label">Select Department</label>
-                            <select class="form-control" id="selectDepartment" required>
-                                <option value="">Select Department</option>
-                                <option value="Finance">Finance & Economic Planning</option>
-                                <option value="Governance">Governance, Administration, Communication & Devolution</option>
-                                <option value="73">Education, Human Capital Development &amp; Vocational Training</option>
-                                <option value="62">Blue Economy, Fisheries, Mining &amp; Digital Economy</option>
-                                <option value="66">Roads, Public Works, Transport &amp; Infrastructure</option>
-                                <option value="61">Youth, Sports, Talent Development, Gender Inclusivity, Cultural Heritage &amp; Social Services</option>
-                                <option value="63">Water, Irrigation, Sanitation, Environment, Energy, Forestry &amp; Climate Change</option>
-                                <option value="68">Public Health &amp; Medical Services</option>
-                                <option value="64">Lands, Physical Planning, Housing &amp; Urban Development</option>
-                                <option value="69">Trade, Industry, Tourism, Co-Operative Development and Marketing</option>
-                                <option value="70">Agriculture and Livestock Production</option>
-                                <option value="72">Office of the County Secretary and Head of Public Service</option>
-                            </select>
-                        </div>
-                       <!-- Select Directorate -->
-                       <div class="col-md-6 mb-3">
-                        <label for="selectDirectorate" class="form-label">Select Directorate</label>
-                        <select class="form-control" id="selectDirectorate" required>
-                            <option value="">Select Directorate</option>
-                                <option value="651">651 - Accounts</option>
-                                <option value="652">652 - Audit</option>
-                                <option value="653">653 - Project Finance</option>
-                                <option value="654">654 - Revenue</option>
-                                <option value="655">655 - Procurement</option>
-                                <option value="656">656 - Economic Planning and Budgets</option>
-                                <option value="671">671 - Administration</option>
-                                <option value="672">672 - Inspectorate and Security Services</option>
-                                <option value="673">673 - Public Communication</option>
-                                <option value="674">674 - Stakeholder Management and Public Participation</option>
-                                <option value="675">675 - Special Projects and Disaster Management</option>
-                                <option value="731">731 - Early Years Education</option>
-                                <option value="732">732 - Vocational Training and Human Capital</option>
-                                <option value="621">621 - Blue Economy and Fisheries</option>
-                                <option value="622">622 - Mining and Excavation of Mineral Resources</option>
-                                <option value="623">623 - Digital Economy</option>
-                                <option value="661">661 - Roads</option>
-                                <option value="662">662 - Public Works</option>
-                                <option value="611">611 - Sports and Talent Development</option>
-                                <option value="612">612 - Youth</option>
-                                <option value="613">613 - Cultural Heritage</option>
-                                <option value="614">614 - Gender Inclusivity and Women Empowerment</option>
-                                <option value="615">615 - Social Services</option>
-                                <option value="631">631 - Water and Sanitation</option>
-                                <option value="632">632 - Environment and Forestry</option>
-                                <option value="633">633 - Energy</option>
-                                <option value="634">634 - Climate Change</option>
-                                <option value="635">635 - Irrigation Service</option>
-                                <option value="681">681 - Medical Services</option>
-                                <option value="682">682 - Public Health</option>
-                                <option value="641">641 - Lands and Physical Planning</option>
-                                <option value="642">642 - Housing and Urban Development</option>
-                                <option value="643">643 - Municipalities</option>
-                                <option value="691">691 - Trade, Industry and Tourism</option>
-                                <option value="692">692 - Cooperative and Marketing</option>
-                                <option value="701">701 - Agriculture</option>
-                                <option value="702">702 - Livestock Production</option>
-                                <option value="721">721 - Human Resource Management and Development</option>
-                                <option value="722">722 - Inter-Governmental Relations</option>
-                                <option value="723">723 - Cabinet Affairs</option>
-                                <option value="724">724 - Office of the Ombudsman</option>
-                                <option value="725">725 - Office of the County Secretary</option>
-                        </select>
-                    </div>
-
-                     
-
-                        <!-- Upload Transfer Documents -->
-                        <div class="col-md-6 mb-3">
-                            <label for="uploadDocuments" class="form-label">Upload Relevant Documents</label>
-                            <input type="file" class="form-control" id="uploadDocuments" required>
-                        </div>
-
-                        <!-- Transfer Date -->
-                        <div class="col-md-6 mb-3">
-                            <label for="transferDate" class="form-label">Transfer Date</label>
-                            <input type="date" class="form-control" id="transferDate" required>
-                        </div>
-
-                        <!-- Description -->
-                        <div class="col-md-12 mb-3">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea class="form-control" id="description" rows="3" placeholder="Enter description" required></textarea>
-                        </div>
-                    </div>
-                       <!-- Modal Footer -->
-                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Create</button>
-                    </div>
-                </form>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>Employee Name</th>
+                            <td>Odhiambo Juma</td>
+                        </tr>
+                        <tr>
+                            <th>Leave Type</th>
+                            <td>Annual Leave</td>
+                        </tr>
+                        <tr>
+                            <th>Application Date</th>
+                            <td>12th Feb 2025</td>
+                        </tr>
+                        <tr>
+                            <th>From Date</th>
+                            <td>1st March 2025</td>
+                        </tr>
+                        <tr>
+                            <th>To Date</th>
+                            <td>15th March 2025</td>
+                        </tr>
+                        <tr>
+                            <th>No. of Days</th>
+                            <td>15 Days</td>
+                        </tr>
+                        <tr>
+                            <th>Leave Reason</th>
+                            <td>Family Visit to Migori</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td><span class="badge bg-success">Approved</span></td>
+                        </tr>
+                        <tr>
+                            <th>Approval Date</th>
+                            <td>14th Feb 2025</td>
+                        </tr>
+                        <tr>
+                            <th>Approved By</th>
+                            <td>Atieno Onyango</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const uploadedDocumentsList = document.getElementById('uploadedDocumentsList');
-    const editDocumentsInput = document.getElementById('editDocuments');
-    const saveEditButton = document.getElementById('saveEditButton');
-  
-    // Example of existing uploaded documents (these would typically be fetched from the server)
-    let uploadedDocuments = [
-      { name: 'TransferPolicy.pdf', url: 'path/to/TransferPolicy.pdf' },
-      { name: 'ContractDetails.docx', url: 'path/to/ContractDetails.docx' }
-    ];
-  
-    // Function to display uploaded documents in the modal
-    function displayUploadedDocuments() {
-      uploadedDocumentsList.innerHTML = ''; // Clear the list first
-      uploadedDocuments.forEach((doc, index) => {
-        const li = document.createElement('li');
-        li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
-        li.innerHTML = `
-          <a href="${doc.url}" target="_blank">${doc.name}</a>
-          <div>
-            <button class="btn btn-sm btn-warning me-2" data-index="${index}">Replace</button>
-            <button class="btn btn-sm btn-danger" data-index="${index}">Delete</button>
-          </div>
-        `;
-        uploadedDocumentsList.appendChild(li);
-      });
-    }
-  
-    // Display existing uploaded documents when the modal opens
-    displayUploadedDocuments();
-  
-    // Handle document deletion
-    uploadedDocumentsList.addEventListener('click', function (event) {
-      if (event.target.classList.contains('btn-danger')) {
-        const index = event.target.getAttribute('data-index');
-        uploadedDocuments.splice(index, 1); // Remove the document from the array
-        displayUploadedDocuments(); // Refresh the document list
-      }
-    });
-  
-    // Handle document replacement
-    uploadedDocumentsList.addEventListener('click', function (event) {
-      if (event.target.classList.contains('btn-warning')) {
-        const index = event.target.getAttribute('data-index');
-        editDocumentsInput.click(); // Open the file input when "Replace" is clicked
-        editDocumentsInput.onchange = function () {
-          if (editDocumentsInput.files.length > 0) {
-            const newDocument = editDocumentsInput.files[0];
-            uploadedDocuments[index] = {
-              name: newDocument.name,
-              url: URL.createObjectURL(newDocument) // In real-world scenarios, you'd upload to the server
-            };
-            displayUploadedDocuments(); // Refresh the document list after replacement
-            editDocumentsInput.value = ''; // Clear the input after file selection
-          }
-        };
-      }
-    });
-  
-    // Save the uploaded document (when adding a new document)
-    saveEditButton.addEventListener('click', function () {
-      if (editDocumentsInput.files.length > 0) {
-        const newDocument = editDocumentsInput.files[0];
-        // Add new document to the uploadedDocuments array
-        uploadedDocuments.push({
-          name: newDocument.name,
-          url: URL.createObjectURL(newDocument) // In real-world scenarios, you'd upload to the server
-        });
-        displayUploadedDocuments(); // Refresh the document list
-        editDocumentsInput.value = ''; // Clear the file input after upload
-      }
-  
-      // Save other employee details (in real-world cases, you'd send this to the server)
-      const employeeData = {
-        name: document.getElementById('editEmployeeName').value,
-        department: document.getElementById('editDepartment').value,
-        directorate: document.getElementById('editDirectorate').value,
-        transferDate: document.getElementById('editTransferDate').value,
-        description: document.getElementById('editDescription').value,
-        documents: uploadedDocuments // Attach the uploaded documents
-      };
-  
-      console.log("Employee Data:", employeeData); // Log the data for demonstration
-  
-      // In a real application, here you'd send the `employeeData` object to the server via an AJAX call.
-    });
-  });
-</script>
+
+<!-- approved leave -->
+ <!-- Leave Approved Modal -->
+<!-- Leave Approved Modal -->
+<div class="modal fade" id="approved-leave" tabindex="-1" aria-labelledby="approvedLeaveLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="approvedLeaveLabel">Leave Approval</h5>
+                <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="mb-3">
+                    <i class="mdi mdi-check-circle-outline text-success" style="font-size: 3rem;"></i>
+                </div>
+                <h4 class="text-success">Leave Successfully Approved!</h4>
+                <p>The leave application has been approved successfully.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- declining modal -->
+ <!-- Leave Declined Modal -->
+<div class="modal fade" id="declined-leave" tabindex="-1" aria-labelledby="declinedLeaveLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="declinedLeaveLabel">Leave Declined</h5>
+                <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="mb-3">
+                    <i class="mdi mdi-close-circle-outline text-danger" style="font-size: 3rem;"></i>
+                </div>
+                <h4 class="text-danger">Leave Application Declined</h4>
+                <p>The leave application has been declined.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+        <!-- end of modal details -->
+
+            <footer class="footer ">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Hospital Management Information System
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="text-sm-end d-sm-block ">
+                                2024
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
     <!-- END layout-wrapper -->
 
     <!-- Right bar overlay-->
@@ -2157,6 +2318,64 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('from-date').value = today;
             document.getElementById('to-date').value = today;
     </script>
+
+    <script>
+        document.querySelectorAll(".approve-leave").forEach(button => {
+            button.addEventListener("click", function() {
+                let approveText = this.querySelector("div:first-child");
+                let spinner = this.querySelector(".spinner-border");
+                let btnLeave = this.closest("td").querySelector(".btn-leave"); // Find the sibling button
+                
+                // Hide "Approve" text and show spinner
+                approveText.classList.add("d-none");
+                spinner.classList.remove("d-none");
+
+                setTimeout(() => {
+                    // Restore "Approve" text, hide spinner, hide buttons
+                    approveText.classList.remove("d-none");
+                    spinner.classList.add("d-none");
+                    this.classList.add("d-none");
+                    if (btnLeave) btnLeave.classList.add("d-none");
+
+                    // Show approval modal
+                    let modal = new bootstrap.Modal(document.getElementById("approved-leave"));
+                    modal.show();
+                }, 3000);
+            });
+        });
+
+    </script>
+
+    <!-- declining modal -->
+     <script>
+        document.querySelectorAll(".btn-leave").forEach(button => {
+    button.addEventListener("click", function () {
+        let spinner = this.querySelector(".spinner-border");
+        let text = this.querySelector("div:first-child");
+        
+        // Hide text and show spinner
+        text.classList.add("d-none");
+        spinner.classList.remove("d-none");
+
+        setTimeout(() => {
+            // Show text again, hide spinner, and hide button
+            text.classList.remove("d-none");
+            spinner.classList.add("d-none");
+            this.classList.add("d-none");
+
+            // Hide the sibling approve button too
+            let approveBtn = this.parentElement.querySelector(".approve-leave");
+            if (approveBtn) {
+                approveBtn.classList.add("d-none");
+            }
+
+            // Show the Declined Leave modal
+            new bootstrap.Modal(document.getElementById("declined-leave")).show();
+        }, 3000);
+    });
+});
+
+     </script>
 </body>
 
 
