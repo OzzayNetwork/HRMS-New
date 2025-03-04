@@ -522,7 +522,7 @@
                                                     <td>Economic Planning</td>
                                                     <td>12 Feb 2025</td>
                                                     <td>Transfer to a new project</td>
-                                                    <td>
+                                                    <td class="text-right">
                                                         <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
@@ -538,7 +538,7 @@
                                                     <td>Administration</td>
                                                     <td>25 Apr 2023</td>
                                                     <td>New role in administration</td>
-                                                    <td>
+                                                    <td class="text-right">
                                                         <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
@@ -554,7 +554,7 @@
                                                     <td>Medical Services</td>
                                                     <td>15 Jun 2021</td>
                                                     <td>Relocation due to health policy change</td>
-                                                    <td>
+                                                    <td class="text-right">
                                                         <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
@@ -570,7 +570,7 @@
                                                     <td>Environmental Services</td>
                                                     <td>10 Sep 2022</td>
                                                     <td>Promotion within department</td>
-                                                    <td>
+                                                    <td class="text-right">
                                                         <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
@@ -586,7 +586,7 @@
                                                     <td>Cooperative Development</td>
                                                     <td>5 Dec 2023</td>
                                                     <td>New cooperative initiative</td>
-                                                    <td>
+                                                    <td class="text-right">
                                                         <button class="btn btn-sm btn-success approve-leave" data-bs-target="#editEmployeeModal" data-bs-toggle="modal">
                                                             <div>Edit Details</div>
                                                             <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
@@ -612,90 +612,103 @@
             <!-- End Page-content -->
 
 
-            <!-- Modal for displaying employee transfer details -->
+<!-- Modal for displaying employee transfer details -->
 <div class="modal fade leave-details-modal" tabindex="-1" role="dialog" aria-labelledby="leaveDetailsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="leaveDetailsModalLabel">Employee Transfer Details</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Employee details section -->
-          <div class="employee-details mb-4">
-            <div class="row">
-              <div class="col-md-6">
-                <h6 class="text-uppercase fw-bold">Personal Information</h6>
-                <table class="table table-bordered">
-                  <tr>
-                    <th width="40%">Employee Name:</th>
-                    <td id="modalEmployeeName"></td>
-                  </tr>
-                  <tr>
-                    <th>Department:</th>
-                    <td id="modalDepartment"></td>
-                  </tr>
-                  <tr>
-                    <th>Directorate:</th>
-                    <td id="modalDirectorate"></td>
-                  </tr>
-                </table>
-              </div>
-              <div class="col-md-6">
-                <h6 class="text-uppercase fw-bold">Transfer Information</h6>
-                <table class="table table-bordered">
-                  <tr>
-                    <th width="40%">Transfer Date:</th>
-                    <td id="modalTransferDate"></td>
-                  </tr>
-                  <tr>
-                    <th>Description:</th>
-                    <td id="modalDescription"></td>
-                  </tr>
-                </table>
-              </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="leaveDetailsModalLabel">Employee Transfer Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-          </div>
-  
-          <!-- Documents section -->
-          <div class="documents-section">
-            <h6 class="text-uppercase fw-bold">Uploaded Documents</h6>
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <thead class="table-light">
-                  <tr>
-                    <th>Document Name</th>
-                    <th>Upload Date</th>
-                    <th>Document Type</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="documentsList">
-                  <!-- Documents will be populated here dynamically -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-  
-          <!-- Document preview section -->
-          <div class="document-preview mt-4 d-none" id="documentPreviewSection">
-            <h6 class="text-uppercase fw-bold">Document Preview</h6>
-            <div class="card">
-              <div class="card-body">
-                <div id="documentPreview" class="p-3 border" style="min-height: 300px;">
-                  <!-- Document preview will be shown here -->
+            <div class="modal-body">
+                <!-- Employee details section -->
+                <div class="employee-details mb-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-uppercase fw-bold">Personal Information</h6>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th width="40%">Employee Name:</th>
+                                    <td id="modalEmployeeName">Ochieng Otieno</td>
+                                </tr>
+                                <tr>
+                                    <th>Department:</th>
+                                    <td id="modalDepartment">Human Resources</td>
+                                </tr>
+                                <tr>
+                                    <th>Directorate:</th>
+                                    <td id="modalDirectorate">Administration</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-uppercase fw-bold">Transfer Information</h6>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th width="40%">Transfer Date:</th>
+                                    <td id="modalTransferDate">10 Jan 2025</td>
+                                </tr>
+                                <tr>
+                                    <th>Description:</th>
+                                    <td id="modalDescription">Transfer to Nairobi Office</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
+                <!-- Documents section -->
+                <div class="documents-section">
+                    <h6 class="text-uppercase fw-bold">Uploaded Documents</h6>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Document Name</th>
+                                    <th>Upload Date</th>
+                                    <th>Document Type</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="documentsList">
+                                <!-- Sample documents -->
+                                <tr>
+                                    <td>Transfer Request Form.pdf</td>
+                                    <td>10 Jan 2025</td>
+                                    <td><span class="badge bg-info">PDF</span></td>
+                                    <td>
+                                        <a href="assets/storage/files/transfer_letter.pdf" target="_blank" class="btn btn-sm btn-outline-primary">
+                                            <i class="bi bi-eye"></i> View
+                                        </a>
+                                        <button class="btn btn-sm btn-outline-success">
+                                            <i class="bi bi-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Department Clearance.docx</td>
+                                    <td>05 Feb 2025</td>
+                                    <td><span class="badge bg-info">DOCX</span></td>
+                                    <td>
+                                        <a href="assets/storage/files/transfer_letter.pdf" target="_blank" class="btn btn-sm btn-outline-primary">
+                                            <i class="bi bi-eye"></i> View
+                                        </a>
+                                        <button class="btn btn-sm btn-outline-success">
+                                            <i class="bi bi-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
   <!-- Modal for editing employee transfer details (including documents) -->
 <div class="modal fade" id="editEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="editEmployeeModalLabel" aria-hidden="true">
@@ -765,110 +778,9 @@
   
 
 
-<!-- JavaScript for handling the modal functionality  for  view details -->
 
-    
-<script>
-        
-    // JavaScript for handling the modal functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      // Sample data for documents with Luo names
-      const employeeDocuments = {
-        'Ochieng Otieno': [
-          { name: 'Transfer Request Form.pdf', date: '10 Jan 2025', type: 'PDF', content: 'Transfer Request Form Content' },
-          { name: 'Department Clearance.docx', date: '05 Feb 2025', type: 'DOCX', content: 'Department Clearance Document Content' }
-        ],
-        'Akinyi Odongo': [
-          { name: 'Position Description.pdf', date: '15 Mar 2023', type: 'PDF', content: 'Position Description Content' },
-          { name: 'Manager Approval.pdf', date: '20 Apr 2023', type: 'PDF', content: 'Manager Approval Content' }
-        ],
-        'Owuor Okello': [
-          { name: 'Medical Certificate.pdf', date: '01 Jun 2021', type: 'PDF', content: 'Medical Certificate Content' }
-        ],
-        'Atieno Odhiambo': [
-          { name: 'Promotion Letter.pdf', date: '28 Aug 2022', type: 'PDF', content: 'Promotion Letter Content' },
-          { name: 'Skills Assessment.xlsx', date: '02 Sep 2022', type: 'XLSX', content: 'Skills Assessment Content' }
-        ],
-        'Onyango Ouma': [
-          { name: 'Project Proposal.pdf', date: '15 Nov 2023', type: 'PDF', content: 'Project Proposal Content' },
-          { name: 'Budget Allocation.xlsx', date: '25 Nov 2023', type: 'XLSX', content: 'Budget Allocation Content' }
-        ]
-      };
-    
-      // Add click event listeners to all "View Details" buttons
-      const viewDetailsButtons = document.querySelectorAll('[data-bs-target=".leave-details-modal"]');
-      viewDetailsButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          // Get the row data
-          const row = this.closest('tr');
-          const employeeName = row.querySelector('th').textContent;
-          const department = row.cells[0].textContent;
-          const directorate = row.cells[1].textContent;
-          const description = row.cells[2].textContent;  // Correct index for description
-          const transferDate = row.cells[3].textContent; // Correct index for transfer date
-    
-          // Populate the modal with employee data
-          document.getElementById('modalEmployeeName').textContent = employeeName;
-          document.getElementById('modalDepartment').textContent = department;
-          document.getElementById('modalDirectorate').textContent = directorate;
-          document.getElementById('modalTransferDate').textContent = transferDate;
-          document.getElementById('modalDescription').textContent = description;
-    
-          // Get documents for this employee
-          const documents = employeeDocuments[employeeName] || [];
-          const documentsList = document.getElementById('documentsList');
-          
-          // Clear previous documents
-          documentsList.innerHTML = '';
-          
-          // Hide document preview section initially
-          document.getElementById('documentPreviewSection').classList.add('d-none');
-    
-          if (documents.length === 0) {
-            // If no documents, show a message
-            const row = document.createElement('tr');
-            row.innerHTML = '<td colspan="4" class="text-center">No documents available</td>';
-            documentsList.appendChild(row);
-          } else {
-            // Populate the documents table
-            documents.forEach(doc => {
-              const row = document.createElement('tr');
-              row.innerHTML = `
-                <td>${doc.name}</td>
-                <td>${doc.date}</td>
-                <td><span class="badge bg-info">${doc.type}</span></td>
-                <td>
-                  <button class="btn btn-sm btn-outline-primary view-document" data-document-content="${doc.content}">
-                    <i class="bi bi-eye"></i> View
-                  </button>
-                  <button class="btn btn-sm btn-outline-success">
-                    <i class="bi bi-download"></i> Download
-                  </button>
-                </td>
-              `;
-              documentsList.appendChild(row);
-            });
-    
-            // Add event listeners to document view buttons
-            const viewDocumentButtons = documentsList.querySelectorAll('.view-document');
-            viewDocumentButtons.forEach(button => {
-              button.addEventListener('click', function() {
-                const content = this.getAttribute('data-document-content');
-                const previewSection = document.getElementById('documentPreviewSection');
-                const documentPreview = document.getElementById('documentPreview');
-                
-                // Show the preview section
-                previewSection.classList.remove('d-none');
-                
-                // Display document content (in a real app, this would be an iframe or PDF viewer)
-                documentPreview.innerHTML = `<div class="p-4 bg-light">${content}</div>`;
-              });
-            });
-          }
-        });
-      });
-    });
-</script>
+
+
 
 
             <!-- receipting modal -->
