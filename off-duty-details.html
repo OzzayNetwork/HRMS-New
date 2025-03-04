@@ -285,15 +285,17 @@
                     
                         <li>
                             <a href="javascript: void(0);" class="waves-effect has-arrow">
-                                <i class="mdi mdi-chart-bar"></i>
+                                <i class="mdi mdi-file-chart"></i>
                                 <span>Reports</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="report-monthly.html"><i class="mdi mdi-calendar-check"></i> Monthly Attendance</a></li>      
-                                <li><a href="report-leave.html"><i class="mdi mdi-airplane"></i> Leave</a></li> 
-                                <li><a href="report-timesheet.html"><i class="mdi mdi-clock-outline"></i> Timesheet</a></li> 
-                                <li><a href="report-awol.html" title="Absence Without Leave"><i class="mdi mdi-account-cancel"></i> AWOL Report</a></li> 
-                                <li><a href="off-duty-details.html"><i class="mdi mdi-account-clock"></i> Unapproved Leave (15+ Days)</a></li> 
+                                <li><a href="report-daily.html"><i class="mdi mdi-calendar-today"></i> Daily Attendance</a></li>
+                                <li><a href="report-monthly.html" title="Monthly attendance summary"><i class="mdi mdi-calendar-month"></i> Monthly Attendance</a></li>
+                                <li><a href="report-hr-report.html" title="Employee Count, Department Stats & Exits Overview"><i class="mdi mdi-account-group"></i> Dept. HR Report</a></li>      
+                                <li><a href="report-leave.html"><i class="mdi mdi-airplane-departure"></i> Leave</a></li> 
+                                <li><a href="report-timesheet.html"><i class="mdi mdi-clock-time-eight-outline"></i> Timesheet</a></li> 
+                                <li><a href="report-awol.html" title="Absence Without Leave"><i class="mdi mdi-account-off"></i> AWOL Report</a></li> 
+                                <li><a href="off-duty-details.html" title="Employees absent for 15+ days without approval"><i class="mdi mdi-account-alert"></i> Unapproved Leave (15+ Days)</a></li> 
                             </ul>
                         </li>
 
@@ -504,7 +506,7 @@
                                     <div class="table-responsive ">
                                         <table class="table align-middle contacts-table text-nowrap" id="datatable-buttons">
                                             <thead class="table-light">
-                                                <tr class="table-dark">
+                                                <tr class="table-dark text-uppercase">
                                                     <th scope="col">Employee</th>
                                                     <!-- Dynamic Date Headers with Day of the Week -->
                                                     <th scope="col">01 Feb (Sat)</th>
@@ -534,7 +536,6 @@
                                                     <th scope="col">25 Feb (Tue)</th>
                                                     <th scope="col">26 Feb (Wed)</th>
                                                     <th scope="col">27 Feb (Thu)</th>
-                                                    <th scope="col">28 Feb (Fri)</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
