@@ -612,113 +612,44 @@
                                 
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table align-middle table-hover contacts-table table-striped text-nowrap" id="datatable-buttons">
-                                            <thead class="table-light">
-                                                <tr class="table-dark">
-                                                    <th scope="col">Meeting Title</th>
-                                                    <th scope="col">Meeting Date</th>
-                                                    <th scope="col">Meeting Time</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th>Project Kickoff</th>
-                                                    <td>12 Feb 2025</td>
-                                                    <td>10:00 AM</td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editMeetingModal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Project Kickoff">
-                                                            <div>Delete Details</div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMeetingModal">
-                                                            View Details
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Team Sync</th>
-                                                    <td>25 Apr 2023</td>
-                                                    <td>2:00 PM</td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editMeetingModal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Team Sync">
-                                                            <div>Delete Details</div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMeetingModal">
-                                                            View Details
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Client Meeting</th>
-                                                    <td>15 Jun 2021</td>
-                                                    <td>11:00 AM</td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editMeetingModal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Client Meeting">
-                                                            <div>Delete Details</div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMeetingModal">
-                                                            View Details
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Strategy Session</th>
-                                                    <td>10 Sep 2022</td>
-                                                    <td>4:00 PM</td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editMeetingModal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Strategy Session">
-                                                            <div>Delete Details</div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMeetingModal">
-                                                            View Details
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Marketing Review</th>
-                                                    <td>5 Dec 2023</td>
-                                                    <td>9:30 AM</td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-success approve-leave" data-bs-toggle="modal" data-bs-target="#editMeetingModal">
-                                                            <div>Edit Details</div>
-                                                            <div class="spinner-border text-white ms-2 d-none" style="height: 19px; width: 19px;" role="status">
-                                                                <span class="sr-only">Loading...</span>
-                                                            </div>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger btn-delete" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal" data-event-title="Marketing Review">
-                                                            <div>Delete Details</div>
-                                                        </button>
-                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewMeetingModal">
-                                                            View Details
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+
+
+                                    <table class="table align-middle table-hover table-striped text-nowrap text-uppercase" id="datatable-buttons">
+                                        <thead class="table-light">
+                                            <tr class="table-dark">
+                                                <th scope="col">Department</th>
+                                                <th class="" scope="col">Staff (Previous Month)</th>
+                                                <th class="" scope="col">Wage Bill (Previous Month)</th>
+                                                <th class="" scope="col">Staff (Current Month)</th>
+                                                <th class="" scope="col">Wage Bill (Current Month)</th>
+                                                <th scope="col">Exits</th>
+                                                <th scope="col">New Hires</th>
+                                                <th scope="col">Net Change</th>
+                                                <th scope="col">Wage Diff</th>
+                                                <th scope="col">Avg Salary</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>Finance & Economic Planning</td><td class="table-primary">650</td><td class="table-primary">KES 100M</td><td class="table-secondary">640</td><td class="table-secondary">KES 98M</td><td>12</td><td>2</td><td>-10</td><td>-2M</td><td>KES 153,125</td><td><button class="btn btn-sm btn-primary">View</button></td></tr>
+                                            <tr><td>Governance, Administration, Communication & Devolution</td><td class="table-primary">700</td><td class="table-primary">KES 105M</td><td class="table-secondary">695</td><td class="table-secondary">KES 104M</td><td>8</td><td>3</td><td>-5</td><td>-1M</td><td>KES 149,640</td><td><button class="btn btn-sm btn-primary">View</button></td></tr>
+                                            <tr><td>Education, Human Capital Development & Vocational Training</td><td class="table-primary">1,200</td><td class="table-primary">KES 180M</td><td class="table-secondary">1,210</td><td class="table-secondary">KES 182M</td><td>5</td><td>15</td><td>+10</td><td>+2M</td><td>KES 150,413</td><td><button class="btn btn-sm btn-primary">View</button></td></tr>
+                                            <tr><td>Blue Economy, Fisheries, Mining & Digital Economy</td><td class="table-primary">500</td><td class="table-primary">KES 75M</td><td class="table-secondary">505</td><td class="table-secondary">KES 76M</td><td>2</td><td>7</td><td>+5</td><td>+1M</td><td>KES 150,495</td><td><button class="btn btn-sm btn-primary">View</button></td></tr>
+                                            <tr><td>Roads, Public Works, Transport & Infrastructure</td><td class="table-primary">600</td><td class="table-primary">KES 90M</td><td class="table-secondary">590</td><td class="table-secondary">KES 88M</td><td>12</td><td>2</td><td>-10</td><td>-2M</td><td>KES 149,152</td><td><button class="btn btn-sm btn-primary">View</button></td></tr>
+                                            <tr><td>Youth, Sports, Talent Development, Gender Inclusivity, Cultural Heritage & Social Services</td><td class="table-primary">500</td><td class="table-primary">KES 70M</td><td class="table-secondary">505</td><td class="table-secondary">KES 71M</td><td>3</td><td>8</td><td>+5</td><td>+1M</td><td>KES 140,792</td><td><button class="btn btn-sm btn-primary">View</button></td></tr>
+                                            <tr><td>Water, Irrigation, Sanitation, Environment, Energy, Forestry & Climate Change</td><td class="table-primary">450</td><td class="table-primary">KES 67M</td><td class="table-secondary">455</td><td class="table-secondary">KES 68M</td><td>2</td><td>7</td><td>+5</td><td>+1M</td><td>KES 149,451</td><td><button class="btn btn-sm btn-primary">View</button></td></tr>
+                                            <tr><td>Public Health & Medical Services</td><td class="table-primary">1,900</td><td class="table-primary">KES 285M</td><td class="table-secondary">1,880</td><td class="table-secondary">KES 280M</td><td>30</td><td>10</td><td>-20</td><td>-5M</td><td>KES 148,936</td><td><button class="btn btn-sm btn-primary">View</button></td></tr>
+                                            <tr><td>Lands, Physical Planning, Housing & Urban Development</td><td class="table-primary">400</td><td class="table-primary">KES 60M</td><td class="table-secondary">405</td><td class="table-secondary">KES 61M</td><td>2</td><td>7</td><td>+5</td><td>+1M</td><td>KES 150,617</td><td><button class="btn btn-sm btn-primary">View</button></td></tr>
+                                            <tr><td>Trade, Industry, Tourism, Co-Operative Development and Marketing</td><td class="table-primary">420</td><td class="table-primary">KES 63M</td><td class="table-secondary">425</td><td class="table-secondary">KES 64M</td><td>3</td><td>8</td><td>+5</td><td>+1M</td><td>KES 150,588</td><td><button class="btn btn-sm btn-primary">View</button></td></tr>
+                                            <tr><td>Agriculture and Livestock Production</td><td class="table-primary">800</td><td class="table-primary">KES 115M</td><td class="table-secondary">810</td><td class="table-secondary">KES 117M</td><td>5</td><td>15</td><td>+10</td><td>+2M</td><td>KES 144,444</td><td><button class="btn btn-sm btn-primary">View</button></td></tr>
+                                        </tbody>
+                                        <tfoot class="table-dark">
+                                            <tr class="fw-bold"><td>Total Workforce</td><td class="table-primary">7,720</td><td class="table-primary">KES 1.1B</td><td class="table-secondary">7,710</td><td class="table-secondary">KES 1.09B</td><td>92</td><td>82</td><td>-10</td><td>-10M</td><td>KES 141,265</td><td></td></tr>
+
+                                        </tfoot>
+                                    </table>
+
+                                        
                                     </div>
                                 </div>
                                 
