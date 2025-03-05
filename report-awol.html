@@ -585,10 +585,6 @@
                                                 <i class="bx bxs-download "></i> <span class="pl-1 d-md-inline">Download Report</span>
                                             </button>
 
-                                           <!-- Add Asset Button -->
-                                        <button data-bs-toggle="modal" data-bs-target="#modal-add-event" type="button" class="btn btn-success dropdown-toggle option-selector me-3 text-capitalize">
-                                            <i class="bx bx-plus"></i> <span class="pl-1 d-md-inline">Add New Event</span>
-                                        </button>
 
 
 
@@ -603,59 +599,90 @@
                                     </div>
                                 </div>
                                 
-                           <!-- Table for Events -->
-                           <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table align-middle table-hover contacts-table table-striped text-nowrap" id="datatable-buttons">
-                                    <thead class="table-light">
-                                        <tr class="table-dark">
-                                            <th scope="col">Employee ID</th>
-                                            <th scope="col">Employee Name</th>
-                                            <th scope="col">Department</th>
-                                            <th scope="col">Salary</th>
-                                            <th scope="col">Last Seen</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>001</th>
-                                            <td>Omondi Otieno</td>
-                                            <td>IT</td>
-                                            <td>Ksh 75,000</td>
-                                            <td>12 Feb 2025 10:00 AM</td>
-                                        </tr>
-                                        <tr>
-                                            <th>002</th>
-                                            <td>Achieng Adhiambo</td>
-                                            <td>Marketing</td>
-                                            <td>Ksh 65,000</td>
-                                            <td>25 Apr 2023 2:00 PM</td>
-                                        </tr>
-                                        <tr>
-                                            <th>003</th>
-                                            <td>Okoth Owino</td>
-                                            <td>HR</td>
-                                            <td>Ksh 55,000</td>
-                                            <td>15 Jun 2021 11:00 AM</td>
-                                        </tr>
-                                        <tr>
-                                            <th>004</th>
-                                            <td>Atieno Auma</td>
-                                            <td>Finance</td>
-                                            <td>Ksh 80,000</td>
-                                            <td>10 Sep 2022 4:00 PM</td>
-                                        </tr>
-                                        <tr>
-                                            <th>005</th>
-                                            <td>Onyango Odhiambo</td>
-                                            <td>Operations</td>
-                                            <td>Ksh 70,000</td>
-                                            <td>5 Dec 2023 9:30 AM</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table align-middle table-hover contacts-table table-striped text-nowrap " id="datatable-buttons">
+                                            <thead class="table-light">
+                                                <tr class="table-dark">
+                                                    <th scope="col">Employee ID</th>
+                                                    <th scope="col">Employee Name</th>
+                                                    <th scope="col">Department</th>
+                                                    <th scope="col">Salary</th>
+                                                    <th scope="col">Days Off Without Permission</th>
+                                                    <th scope="col">Last Seen</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>EMP001</td>
+                                                    <td>Onyango Ochieng</td>
+                                                    <td>Finance &amp; Economic Planning</td>
+                                                    <td>Ksh 65,000</td>
+                                                    <td>15</td>
+                                                    <td>12 Feb 2025 10:00 AM</td>
+                                                    <td>
+                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewDetailsModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>EMP002</td>
+                                                    <td>Adhiambo Akoth</td>
+                                                    <td>Governance, Administration, Communication &amp; Devolution</td>
+                                                    <td>Ksh 72,000</td>
+                                                    <td>22</td>
+                                                    <td>12 Feb 2025 11:30 AM</td>
+                                                    <td>
+                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewDetailsModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>EMP003</td>
+                                                    <td>Okello Otieno</td>
+                                                    <td>Blue Economy, Fisheries, Mining &amp; Digital Economy</td>
+                                                    <td>Ksh 85,000</td>
+                                                    <td>18</td>
+                                                    <td>12 Feb 2025 09:45 AM</td>
+                                                    <td>
+                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewDetailsModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>EMP004</td>
+                                                    <td>Akinyi Odhiambo</td>
+                                                    <td>Education, Human Capital Development &amp; Vocational Training</td>
+                                                    <td>Ksh 78,000</td>
+                                                    <td>27</td>
+                                                    <td>12 Feb 2025 02:15 PM</td>
+                                                    <td>
+                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewDetailsModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>EMP005</td>
+                                                    <td>Ouma Ogada</td>
+                                                    <td>Public Health &amp; Medical Services</td>
+                                                    <td>Ksh 69,500</td>
+                                                    <td>12</td>
+                                                    <td>12 Feb 2025 12:45 PM</td>
+                                                    <td>
+                                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#viewDetailsModal">
+                                                            View Details
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- end col -->
@@ -712,29 +739,89 @@
     </div>
 </div>
 
-<!-- View Details Modal -->
-<div class="modal fade" id="viewDetailsModal" tabindex="-1" aria-labelledby="viewDetailsModalLabel" aria-hidden="true">
+   <!-- View Details Modal -->
+   <div class="modal fade" id="viewDetailsModal" tabindex="-1" aria-labelledby="viewDetailsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="viewDetailsModalLabel">View Details</h5>
+        <div class="modal-content shadow-lg">
+            <div class="modal-header bg-light">
+                <h5 class="modal-title" id="viewDetailsModalLabel">
+                    <i class="bi bi-calendar-check me-2"></i>Days Off Without Permission
+                </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <p><strong>Department:</strong> <span id="viewDepartment">IT</span></p>
-                <p><strong>Event Title:</strong> <span id="viewEventTitle">Project Kickoff</span></p>
-                <p><strong>Event Date:</strong> <span id="viewEventDate">12 Feb 2025</span></p>
-                <p><strong>Venue:</strong> <span id="viewVenue">Conference Room A</span></p>
-                <p><strong>Event Time:</strong> <span id="viewEventTime">10:00 AM</span></p>
-                <p><strong>Event Note:</strong> <span id="viewEventNote">Initial project discussion.</span></p>
+            <div class="modal-body p-4">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover table-sm">
+                        <thead class="table-light">
+                            <tr>
+                                <th>No.</th>
+                                <th>Date</th>
+                                <th>Day of the Week</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>12 Feb 2025</td>
+                                <td>Wednesday</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>16 Feb 2025</td>
+                                <td>Monday</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>17 March 2025</td>
+                                <td>Monday</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>20 March 2025</td>
+                                <td>Monday</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>25 March 2025</td>
+                                <td>Tuesday</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>01 April 2025</td>
+                                <td>Monday</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>05 April 2025</td>
+                                <td>Friday</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>12 April 2025</td>
+                                <td>Saturday</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>18 April 2025</td>
+                                <td>Friday</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>22 April 2025</td>
+                                <td>Tuesday</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="bi bi-x-circle me-2"></i>Close
+                </button>
             </div>
         </div>
     </div>
 </div>
-
 
 <!-- Add this modal for delete confirmation, centered in the middle of the screen -->
 <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
