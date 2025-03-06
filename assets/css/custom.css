@@ -1544,3 +1544,12 @@ padding: 0px;
     .logo-lg img {
         margin-right: 12px;
     }
+    .border-solid {
+        border-style: solid !important;
+    }
+    .initial-placeholder-receipting img {
+        height: 50px;
+    }
+    .initial-placeholder-receipting {
+        min-height: 70vh;
+    }
