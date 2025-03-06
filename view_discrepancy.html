@@ -442,15 +442,14 @@
 
                     <!-- stats cards -->
                     <div class="row">
-                        <!-- Total Employees -->
+                        <!-- Total Employees (Registered) -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card mini-stats-wid">
                                 <div class="card-body">
                                     <div class="d-flex flex-wrap">
                                         <div class="me-3">
-                                            <p class="text-muted mb-2">Total Employees</p>
+                                            <p class="text-muted mb-2">Total Employees (Registered)</p>
                                             <h5 id="totalEmployees" class="mb-0">7,720</h5>
-                                       
                                         </div>
                                         <div class="avatar-sm ms-auto">
                                             <div class="avatar-title bg-info rounded-circle text-white font-size-20">
@@ -462,15 +461,33 @@
                             </div>
                         </div>
                     
-                        <!-- Total Amount Paid -->
+                        <!-- Total Employees (Uploaded Payroll) -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card mini-stats-wid">
                                 <div class="card-body">
                                     <div class="d-flex flex-wrap">
                                         <div class="me-3">
-                                            <p class="text-muted mb-2">Total Amount Paid</p>
-                                            <h5 id="totalAmountPaid" class="mb-0">Ksh 386,000,000</h5>
-                                       
+                                            <p class="text-muted mb-2">Total Employees (Uploaded Payroll)</p>
+                                            <h5 id="totalEmployeesUploaded" class="mb-0">7,920</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-secondary rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-account-multiple"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Wage Bill (Uploaded Payroll) -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Wage Bill (Uploaded Payroll)</p>
+                                            <h5 id="totalAmountPaid" class="mb-0">Ksh 15,000,000</h5>
                                         </div>
                                         <div class="avatar-sm ms-auto">
                                             <div class="avatar-title bg-primary rounded-circle text-white font-size-20">
@@ -482,15 +499,14 @@
                             </div>
                         </div>
                     
-                        <!-- Total Amount to be Paid -->
+                        <!-- Wage Bill (Employee Register) -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card mini-stats-wid">
                                 <div class="card-body">
                                     <div class="d-flex flex-wrap">
                                         <div class="me-3">
-                                            <p class="text-muted mb-2">Total Amount to be Paid</p>
-                                            <h5 id="totalAmountToBePaid" class="mb-0">Ksh 50,000,000</h5>
-                                         
+                                            <p class="text-muted mb-2">Wage Bill (Employee Register)</p>
+                                            <h5 id="totalAmountToBePaid" class="mb-0">Ksh 14,500,000</h5>
                                         </div>
                                         <div class="avatar-sm ms-auto">
                                             <div class="avatar-title bg-warning rounded-circle text-white font-size-20">
@@ -502,15 +518,14 @@
                             </div>
                         </div>
                     
-                        <!-- Total Discrepancy Amount -->
+                        <!-- Wage Bill Discrepancy -->
                         <div class="col-lg-3 col-md-6">
                             <div class="card mini-stats-wid">
                                 <div class="card-body">
                                     <div class="d-flex flex-wrap">
                                         <div class="me-3">
-                                            <p class="text-muted mb-2">Total Discrepancy Amount</p>
-                                            <h5 id="totalDiscrepancyAmount" class="mb-0">Ksh 336,000,000 </h5>
-                                        
+                                            <p class="text-muted mb-2">Wage Bill Discrepancy</p>
+                                            <h5 id="totalDiscrepancyAmount" class="mb-0">Ksh 500,000</h5>
                                         </div>
                                         <div class="avatar-sm ms-auto">
                                             <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
@@ -521,7 +536,65 @@
                                 </div>
                             </div>
                         </div>
+                    
+                        <!-- Discrepancy in Employee Records -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Discrepancy in Employee Records</p>
+                                            <h5 id="totalEmployeeDiscrepancy" class="mb-0">200</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-alert-circle"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Total Revenue (February 2025) -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Total Revenue (February 2025)</p>
+                                            <h5 id="totalRevenue" class="mb-0">Ksh 45,000,000</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-success rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-chart-line"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Wage Bill as Percentage of Revenue -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Wage Bill % of Revenue (Feb 2025)</p>
+                                            <h5 id="wagePercentage" class="mb-0">33.33%</h5>
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-purple rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-percent"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
                 
                 
                 
@@ -622,25 +695,29 @@
                                                     <th scope="col">ID Number</th>
                                                     <th scope="col">Amount Paid</th>
                                                     <th scope="col">Amount to be Paid</th>
-                                                    <th scope="col">Discrepancy Amount</th> <!-- New Column -->
+                                                    <th scope="col">Discrepancy Amount</th>
+                                                    <th scope="col">Department</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <!-- Rows 1 to 50 -->
                                                 <tr>
-                                                    <td>001</td> <!-- Employee ID -->
-                                                    <td>Ochieng Otieno</td> <!-- Employee Name -->
-                                                    <td>12345678</td> <!-- ID Number -->
-                                                    <td>Ksh 48,000</td> <!-- Amount Paid -->
-                                                    <td>Ksh 50,000</td> <!-- Amount to be Paid -->
-                                                    <td>Ksh 2,000</td> <!-- Discrepancy Amount -->
+                                                    <td>001</td>
+                                                    <td>Ochieng Otieno</td>
+                                                    <td>12345678</td>
+                                                    <td>Ksh 48,000</td>
+                                                    <td>Ksh 50,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 2,000</td>
+                                                    <td>Finance &amp; Economic Planning</td>
                                                 </tr>
                                                 <tr>
                                                     <td>002</td>
                                                     <td>Achieng Adhiambo</td>
                                                     <td>87654321</td>
-                                                    <td>Ksh 40,000</td> 
-                                                    <td>-</td> 
-                                                    <td>Ksh 40,000</td> 
+                                                    <td>Ksh 40,000</td>
+                                                    <td>-</td>
+                                                    <td class="text-danger fw-bold">Ksh 40,000</td>
+                                                    <td>Governance, Administration, Communication &amp; Devolution</td>
                                                 </tr>
                                                 <tr>
                                                     <td>003</td>
@@ -648,15 +725,17 @@
                                                     <td>11223344</td>
                                                     <td>Ksh 53,000</td>
                                                     <td>-</td>
-                                                    <td>Ksh 53,000</td> 
+                                                    <td class="text-danger fw-bold">Ksh 53,000</td>
+                                                    <td>Education, Human Capital Development &amp; Vocational Training</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>004</td> <!-- Employee ID -->
-                                                    <td>Atieno Auma</td> <!-- Employee Name -->
-                                                    <td>55667788</td> <!-- ID Number -->
-                                                    <td>Ksh 68,000</td> <!-- Amount Paid -->
-                                                    <td>Ksh 70,000</td> <!-- Amount to be Paid -->
-                                                    <td>Ksh 2,000</td> <!-- Discrepancy Amount -->
+                                                    <td>004</td>
+                                                    <td>Atieno Auma</td>
+                                                    <td>55667788</td>
+                                                    <td>Ksh 68,000</td>
+                                                    <td>Ksh 70,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 2,000</td>
+                                                    <td>Blue Economy, Fisheries, Mining &amp; Digital Economy</td>
                                                 </tr>
                                                 <tr>
                                                     <td>005</td>
@@ -664,7 +743,413 @@
                                                     <td>99887766</td>
                                                     <td>Ksh 80,000</td>
                                                     <td>Ksh 100,000</td>
-                                                    <td>Ksh 20,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 20,000</td>
+                                                    <td>Roads, Public Works, Transport &amp; Infrastructure</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>006</td>
+                                                    <td>Akinyi Owiti</td>
+                                                    <td>33445566</td>
+                                                    <td>Ksh 45,000</td>
+                                                    <td>Ksh 50,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Youth, Sports, Talent Development, Gender Inclusivity, Cultural Heritage &amp; Social Services</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>007</td>
+                                                    <td>Onyango Odhiambo</td>
+                                                    <td>77889900</td>
+                                                    <td>Ksh 60,000</td>
+                                                    <td>Ksh 65,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Water, Irrigation, Sanitation, Environment, Energy, Forestry &amp; Climate Change</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>008</td>
+                                                    <td>Adhiambo Aoko</td>
+                                                    <td>44556677</td>
+                                                    <td>Ksh 55,000</td>
+                                                    <td>Ksh 60,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Public Health &amp; Medical Services</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>009</td>
+                                                    <td>Otieno Okoth</td>
+                                                    <td>66778899</td>
+                                                    <td>Ksh 70,000</td>
+                                                    <td>Ksh 75,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Lands, Physical Planning, Housing &amp; Urban Development</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>010</td>
+                                                    <td>Awino Atieno</td>
+                                                    <td>99001122</td>
+                                                    <td>Ksh 80,000</td>
+                                                    <td>Ksh 85,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Trade, Industry, Tourism, Co-Operative Development and Marketing</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>011</td>
+                                                    <td>Opiyo Otieno</td>
+                                                    <td>11223355</td>
+                                                    <td>Ksh 90,000</td>
+                                                    <td>Ksh 95,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Agriculture and Livestock Production</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>012</td>
+                                                    <td>Anyango Adhiambo</td>
+                                                    <td>22334455</td>
+                                                    <td>Ksh 100,000</td>
+                                                    <td>Ksh 105,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Office of the County Secretary and Head of Public Service</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>013</td>
+                                                    <td>Omondi Owino</td>
+                                                    <td>33445566</td>
+                                                    <td>Ksh 110,000</td>
+                                                    <td>Ksh 115,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Finance &amp; Economic Planning</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>014</td>
+                                                    <td>Atieno Ochieng</td>
+                                                    <td>44556677</td>
+                                                    <td>Ksh 120,000</td>
+                                                    <td>Ksh 125,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Governance, Administration, Communication &amp; Devolution</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>015</td>
+                                                    <td>Onyango Auma</td>
+                                                    <td>55667788</td>
+                                                    <td>Ksh 130,000</td>
+                                                    <td>Ksh 135,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Education, Human Capital Development &amp; Vocational Training</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>016</td>
+                                                    <td>Adhiambo Otieno</td>
+                                                    <td>66778899</td>
+                                                    <td>Ksh 140,000</td>
+                                                    <td>Ksh 145,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Blue Economy, Fisheries, Mining &amp; Digital Economy</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>017</td>
+                                                    <td>Okoth Achieng</td>
+                                                    <td>77889900</td>
+                                                    <td>Ksh 150,000</td>
+                                                    <td>Ksh 155,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Roads, Public Works, Transport &amp; Infrastructure</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>018</td>
+                                                    <td>Owino Anyango</td>
+                                                    <td>88990011</td>
+                                                    <td>Ksh 160,000</td>
+                                                    <td>Ksh 165,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Youth, Sports, Talent Development, Gender Inclusivity, Cultural Heritage &amp; Social Services</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>019</td>
+                                                    <td>Ochieng Aoko</td>
+                                                    <td>99001122</td>
+                                                    <td>Ksh 170,000</td>
+                                                    <td>Ksh 175,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Water, Irrigation, Sanitation, Environment, Energy, Forestry &amp; Climate Change</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>020</td>
+                                                    <td>Otieno Adhiambo</td>
+                                                    <td>11223344</td>
+                                                    <td>Ksh 180,000</td>
+                                                    <td>Ksh 185,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Public Health &amp; Medical Services</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>021</td>
+                                                    <td>Opiyo Auma</td>
+                                                    <td>22334455</td>
+                                                    <td>Ksh 190,000</td>
+                                                    <td>Ksh 195,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Lands, Physical Planning, Housing &amp; Urban Development</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>022</td>
+                                                    <td>Anyango Otieno</td>
+                                                    <td>33445566</td>
+                                                    <td>Ksh 200,000</td>
+                                                    <td>Ksh 205,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Trade, Industry, Tourism, Co-Operative Development and Marketing</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>023</td>
+                                                    <td>Omondi Achieng</td>
+                                                    <td>44556677</td>
+                                                    <td>Ksh 210,000</td>
+                                                    <td>Ksh 215,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Agriculture and Livestock Production</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>024</td>
+                                                    <td>Atieno Owino</td>
+                                                    <td>55667788</td>
+                                                    <td>Ksh 220,000</td>
+                                                    <td>Ksh 225,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Office of the County Secretary and Head of Public Service</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>025</td>
+                                                    <td>Onyango Otieno</td>
+                                                    <td>66778899</td>
+                                                    <td>Ksh 230,000</td>
+                                                    <td>Ksh 235,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Finance &amp; Economic Planning</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>026</td>
+                                                    <td>Adhiambo Auma</td>
+                                                    <td>77889900</td>
+                                                    <td>Ksh 240,000</td>
+                                                    <td>Ksh 245,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Governance, Administration, Communication &amp; Devolution</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>027</td>
+                                                    <td>Okoth Ochieng</td>
+                                                    <td>88990011</td>
+                                                    <td>Ksh 250,000</td>
+                                                    <td>Ksh 255,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Education, Human Capital Development &amp; Vocational Training</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>028</td>
+                                                    <td>Owino Adhiambo</td>
+                                                    <td>99001122</td>
+                                                    <td>Ksh 260,000</td>
+                                                    <td>Ksh 265,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Blue Economy, Fisheries, Mining &amp; Digital Economy</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>029</td>
+                                                    <td>Ochieng Auma</td>
+                                                    <td>11223344</td>
+                                                    <td>Ksh 270,000</td>
+                                                    <td>Ksh 275,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Roads, Public Works, Transport &amp; Infrastructure</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>030</td>
+                                                    <td>Otieno Owino</td>
+                                                    <td>22334455</td>
+                                                    <td>Ksh 280,000</td>
+                                                    <td>Ksh 285,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Youth, Sports, Talent Development, Gender Inclusivity, Cultural Heritage &amp; Social Services</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>031</td>
+                                                    <td>Opiyo Adhiambo</td>
+                                                    <td>33445566</td>
+                                                    <td>Ksh 290,000</td>
+                                                    <td>Ksh 295,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Water, Irrigation, Sanitation, Environment, Energy, Forestry &amp; Climate Change</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>032</td>
+                                                    <td>Anyango Ochieng</td>
+                                                    <td>44556677</td>
+                                                    <td>Ksh 300,000</td>
+                                                    <td>Ksh 305,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Public Health &amp; Medical Services</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>033</td>
+                                                    <td>Omondi Otieno</td>
+                                                    <td>55667788</td>
+                                                    <td>Ksh 310,000</td>
+                                                    <td>Ksh 315,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Lands, Physical Planning, Housing &amp; Urban Development</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>034</td>
+                                                    <td>Atieno Owino</td>
+                                                    <td>66778899</td>
+                                                    <td>Ksh 320,000</td>
+                                                    <td>Ksh 325,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Trade, Industry, Tourism, Co-Operative Development and Marketing</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>035</td>
+                                                    <td>Onyango Achieng</td>
+                                                    <td>77889900</td>
+                                                    <td>Ksh 330,000</td>
+                                                    <td>Ksh 335,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Agriculture and Livestock Production</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>036</td>
+                                                    <td>Adhiambo Ochieng</td>
+                                                    <td>88990011</td>
+                                                    <td>Ksh 340,000</td>
+                                                    <td>Ksh 345,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Office of the County Secretary and Head of Public Service</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>037</td>
+                                                    <td>Okoth Auma</td>
+                                                    <td>99001122</td>
+                                                    <td>Ksh 350,000</td>
+                                                    <td>Ksh 355,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Finance &amp; Economic Planning</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>038</td>
+                                                    <td>Owino Otieno</td>
+                                                    <td>11223344</td>
+                                                    <td>Ksh 360,000</td>
+                                                    <td>Ksh 365,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Governance, Administration, Communication &amp; Devolution</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>039</td>
+                                                    <td>Ochieng Adhiambo</td>
+                                                    <td>22334455</td>
+                                                    <td>Ksh 370,000</td>
+                                                    <td>Ksh 375,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Education, Human Capital Development &amp; Vocational Training</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>040</td>
+                                                    <td>Otieno Auma</td>
+                                                    <td>33445566</td>
+                                                    <td>Ksh 380,000</td>
+                                                    <td>Ksh 385,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Blue Economy, Fisheries, Mining &amp; Digital Economy</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>041</td>
+                                                    <td>Opiyo Owino</td>
+                                                    <td>44556677</td>
+                                                    <td>Ksh 390,000</td>
+                                                    <td>Ksh 395,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Roads, Public Works, Transport &amp; Infrastructure</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>042</td>
+                                                    <td>Anyango Achieng</td>
+                                                    <td>55667788</td>
+                                                    <td>Ksh 400,000</td>
+                                                    <td>Ksh 405,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Youth, Sports, Talent Development, Gender Inclusivity, Cultural Heritage &amp; Social Services</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>043</td>
+                                                    <td>Omondi Otieno</td>
+                                                    <td>66778899</td>
+                                                    <td>Ksh 410,000</td>
+                                                    <td>Ksh 415,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Water, Irrigation, Sanitation, Environment, Energy, Forestry &amp; Climate Change</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>044</td>
+                                                    <td>Atieno Adhiambo</td>
+                                                    <td>77889900</td>
+                                                    <td>Ksh 420,000</td>
+                                                    <td>Ksh 425,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Public Health &amp; Medical Services</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>045</td>
+                                                    <td>Onyango Ochieng</td>
+                                                    <td>88990011</td>
+                                                    <td>Ksh 430,000</td>
+                                                    <td>Ksh 435,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Lands, Physical Planning, Housing &amp; Urban Development</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>046</td>
+                                                    <td>Adhiambo Owino</td>
+                                                    <td>99001122</td>
+                                                    <td>Ksh 440,000</td>
+                                                    <td>Ksh 445,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Trade, Industry, Tourism, Co-Operative Development and Marketing</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>047</td>
+                                                    <td>Okoth Otieno</td>
+                                                    <td>11223344</td>
+                                                    <td>Ksh 450,000</td>
+                                                    <td>Ksh 455,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Agriculture and Livestock Production</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>048</td>
+                                                    <td>Owino Auma</td>
+                                                    <td>22334455</td>
+                                                    <td>Ksh 460,000</td>
+                                                    <td>Ksh 465,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Office of the County Secretary and Head of Public Service</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>049</td>
+                                                    <td>Ochieng Otieno</td>
+                                                    <td>33445566</td>
+                                                    <td>Ksh 470,000</td>
+                                                    <td>Ksh 475,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Finance &amp; Economic Planning</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>050</td>
+                                                    <td>Otieno Achieng</td>
+                                                    <td>44556677</td>
+                                                    <td>Ksh 480,000</td>
+                                                    <td>Ksh 485,000</td>
+                                                    <td class="text-danger fw-bold">Ksh 5,000</td>
+                                                    <td>Governance, Administration, Communication &amp; Devolution</td>
                                                 </tr>
                                             </tbody>
                                         </table>

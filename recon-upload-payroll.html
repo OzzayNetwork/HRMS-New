@@ -492,7 +492,7 @@
           <h5 class="modal-title" id="payrollInfoModalLabel">Payroll Information</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body inputs-cont">
           <form id="payrollInfoForm">
             <div class="mb-3">
               <label for="revenueCollected" class="form-label">Revenue Collected</label>
@@ -524,11 +524,64 @@
               <input type="file" class="form-control" id="payrollFileInput" accept=".xlsx, .xls" required>
             </div>
           </form>
+
+          <div class="col-12">
+                <button class="btn btn-primary btn-100 w-100 submit-payrol">Submit</button>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary" id="confirmUploadBtn">Upload</button>
+
+        <div class="modal-body d-none loader">
+            <div class="modal-loader">
+                <div class="d-flex justify-content-center align-items-center p-5">
+                    <div class="img mb-4 pt-3">
+                        <img src="assets/AnimatedIcons/icons8-search-in-list.gif" class="img" alt="Success">
+                    </div>
+
+                    <div class="spinner-border text-primary m-1 d-none" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="modal-body text-center d-none results">
+            <div class="p-4 border-radius border-solid border-primary border-2">
+                <div class="img mb-4 pt-3">
+                    <img src="assets/AnimatedIcons/icons8-paid-search-50.png" class="img" alt="Success">
+                </div>
+                <div>
+                    <h4 class="card-title text-uppercase text-dark">Payroll Upload Successful</h4>
+                    <p>The payroll report has been uploaded successfully. Below is a summary of the key findings from the reconciliation process.</p>
+                    
+                    <div class="alert alert-warning text-start">
+                        <h5 class="text-uppercase fw-bold mb-1">Discrepancies Detected</h5>
+                        <p class="mb-1">⚠️ <strong>15 discrepancies</strong> were identified compared to current employee register</p>
+                        <p class="mb-0">Last Month: <span class="fw-semibold">10 discrepancies</span></p>
+                    </div>
+        
+                    <div class="alert alert-info text-start">
+                        <h5 class="text-uppercase fw-bold mb-1">Employee Count</h5>
+                        <p class="mb-1">👥 <strong class="text-danger">7,920 employees</strong> detected in this upload.</p>
+                        <p class="mb-0">Employee Register <span class="fw-semibold">7,720 employees</span></p>
+                    </div>
+        
+                    <div class="alert alert-primary text-start">
+                        <h5 class="text-uppercase fw-bold mb-1">Wage Bill Comparison</h5>
+                        <p class="mb-1">💰 Payroll Wage Bill: <strong>Ksh 15,000,000</strong></p>
+                        <p class="mb-0">Employee Register Wage Bill: <span class="fw-semibold">Ksh 14,500,000</span></p>
+                    </div>
+        
+                    <!-- Button to Review Detailed Discrepancies -->
+                    <a href="view_discrepancy.html" type="button" class="btn  btn-primary btn-block w-100 mt-5 mb-3">
+                        <i class="bx bx-search-alt-2 font-size-28 align-middle me-2"></i>
+                        Review Detailed Discrepancies
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+
+      
       </div>
     </div>
   </div>
@@ -1935,6 +1988,40 @@
             document.getElementById('from-date').value = today;
             document.getElementById('to-date').value = today;
     </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector(".submit-payrol").addEventListener("click", function () {
+            let modal = document.getElementById("payrollInfoModal");
+            let loader = modal.querySelector(".loader");
+            let inputsCont = modal.querySelector(".inputs-cont");
+            let results = modal.querySelector(".results");
+            
+            // Hide inputs container and show loader
+            inputsCont.classList.add("d-none");
+            loader.classList.remove("d-none");
+            
+            // Show results after 5 seconds and hide loader
+            setTimeout(() => {
+                loader.classList.add("d-none");
+                results.classList.remove("d-none");
+            }, 5000);
+        });
+        
+        // When modal is closed, reset view
+        document.getElementById("payrollInfoModal").addEventListener("hidden.bs.modal", function () {
+            let modal = this;
+            let inputsCont = modal.querySelector(".inputs-cont");
+            let loader = modal.querySelector(".loader");
+            let results = modal.querySelector(".results");
+            
+            inputsCont.classList.remove("d-none");
+            loader.classList.add("d-none");
+            results.classList.add("d-none");
+        });
+    });
+</script>
+
 </body>
 
 
