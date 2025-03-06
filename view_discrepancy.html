@@ -430,8 +430,8 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                        <li class="breadcrumb-item active">Payroll Reconciliation
-                                        <li class="breadcrumb-item active">Recon History </li>
+                                        <li class="breadcrumb-item active">Reports</li>
+                                        <li class="breadcrumb-item active">Departmental HR Monthly Report</li>
                                     </ol>
                                 </div>
 
@@ -441,111 +441,87 @@
                     <!-- end page title -->
 
                     <!-- stats cards -->
-                  <!-- stats cards --> 
-                  <div class="row">
-
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="input-group fw-semibold text-uppercase me-3">
-                                    <label class="input-group-text text-uppercase fw-bold bg-primary text-white">Select Month</label>
-                                    <select id="month-select" class="form-select" style="width: 200px;">
-                                        <option selected="selected" value="">Select Month</option>
-                                        <option value="01">January</option>
-                                        <option value="02">February</option>
-                                        <option value="03">March</option>
-                                        <option value="04">April</option>
-                                        <option value="05">May</option>
-                                        <option value="06">June</option>
-                                        <option value="07">July</option>
-                                        <option value="08">August</option>
-                                        <option value="09">September</option>
-                                        <option value="10">October</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
-                                    </select>
+                    <div class="row">
+                        <!-- Total Employees -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Total Employees</p>
+                                            <h5 id="totalEmployees" class="mb-0">7,720</h5>
+                                       
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-info rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-account-group"></i>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap">
-                                    <div class="me-3">
-                                        <p class="text-muted mb-2">Last Month Uploaded</p>
-                                        <h5 id="lastMonthUploaded" class="mb-0 text-danger">No</h5>
-                                        <p class="text-muted small">Disclaimer: Data may be incomplete</p>
+                    
+                        <!-- Total Amount Paid -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Total Amount Paid</p>
+                                            <h5 id="totalAmountPaid" class="mb-0">Ksh 386,000,000</h5>
+                                       
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-primary rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-cash-multiple"></i>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="avatar-sm ms-auto">
-                                        <div class="avatar-title bg-warning rounded-circle text-white font-size-20">
-                                            <i class="mdi mdi-alert-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Total Amount to be Paid -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Total Amount to be Paid</p>
+                                            <h5 id="totalAmountToBePaid" class="mb-0">Ksh 50,000,000</h5>
+                                         
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-warning rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-cash-clock"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Total Discrepancy Amount -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mini-stats-wid">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="me-3">
+                                            <p class="text-muted mb-2">Total Discrepancy Amount</p>
+                                            <h5 id="totalDiscrepancyAmount" class="mb-0">Ksh 336,000,000 </h5>
+                                        
+                                        </div>
+                                        <div class="avatar-sm ms-auto">
+                                            <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
+                                                <i class="mdi mdi-alert"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap">
-                                    <div class="me-3">
-                                        <p class="text-muted mb-2">Discrepancies Detected</p>
-                                        <h5 id="discrepancies" class="mb-0">15</h5>
-                                        <p class="text-muted small">Last Month: <span id="lastDiscrepancies">10</span></p>
-                                    </div>
-                                    <div class="avatar-sm ms-auto">
-                                        <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
-                                            <i class="mdi mdi-alert"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap">
-                                    <div class="me-3">
-                                        <p class="text-muted mb-2">Employee Count</p>
-                                        <h5 id="employeeCount" class="mb-0 text-danger">7,720</h5>
-                                        <p class="text-muted small">Last Upload: <span id="lastEmployeeCount">500</span></p>
-                                    </div>
-                                    <div class="avatar-sm ms-auto">
-                                        <div class="avatar-title bg-info rounded-circle text-white font-size-20">
-                                            <i class="mdi mdi-account-group"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap">
-                                    <div class="me-3">
-                                        <p class="text-muted mb-2">Wage Bill</p>
-                                        <h5 id="wageBill" class="mb-0 text-danger">Ksh   15,000,000</h5>
-                                        <p class="text-muted small">Last Month: <span id="lastWageBill">Ksh   14,500,000</span></p>
-                                    </div>
-                                    <div class="avatar-sm ms-auto">
-                                        <div class="avatar-title bg-primary rounded-circle text-white font-size-20">
-                                            <i class="mdi mdi-cash-multiple"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
                 
                 
                 
@@ -623,9 +599,7 @@
                                             </button>
 
                                            <!-- Add Asset Button -->
-                                      
-
-
+                                    
 
 
                                           
@@ -637,97 +611,60 @@
                                         <button type="button" data-bs-toggle="modal" data-bs-target=".download-modal" class="btn btn-primary waves-effect btn-label waves-light me-3"><i class="mdi mdi-printer label-icon"></i> Print Selected Invoices</button>
                                     </div>
                                 </div>
+                                
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table class="table align-middle table-hover contacts-table table-striped text-nowrap" id="datatable-buttons">
                                             <thead class="table-light">
                                                 <tr class="table-dark">
-                                                    <th scope="col">Date Uploaded</th>
-                                                    <th scope="col">Month For</th>
-                                                    <th scope="col">Total Payroll Records</th>
-                                                    <th scope="col">Payroll Wage Bill</th>
-                                                    <th scope="col">Employee Records</th>
-                                                    <th scope="col">Employee Wage Bill</th>
-                                                    <th scope="col">Employee Discrepancy Records</th>
-                                                    <th scope="col">Wage Bill Discrepancies</th>
-                                                    <th scope="col">Action</th>
+                                                    <th scope="col">Employee ID</th>
+                                                    <th scope="col">Employee Name</th>
+                                                    <th scope="col">ID Number</th>
+                                                    <th scope="col">Amount Paid</th>
+                                                    <th scope="col">Amount to be Paid</th>
+                                                    <th scope="col">Discrepancy Amount</th> <!-- New Column -->
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>12 Feb 2025</td> <!-- Date Uploaded -->
-                                                    <td>February 2025</td> <!-- Month For -->
-                                                    <td>7,750</td> <!-- Total Payroll Records (Adjusted) -->
-                                                    <td>Ksh 50,000 (104.17%)</td> <!-- Payroll Wage Bill with Percentage -->
-                                                    <td>7,720</td> <!-- Employee Records -->
-                                                    <td>Ksh 48,000</td> <!-- Employee Wage Bill -->
-                                                    <td>10</td> <!-- Employee Discrepancy Records -->
-                                                    <td>Ksh 2,000</td> <!-- Wage Bill Discrepancies -->
-                                                    <td>
-                                                        <button class="btn btn-primary btn-sm" onclick="window.location.href='view_discrepancy.html'">
-                                                            View Discrepancy
-                                                        </button>
-                                                    </td>
+                                                    <td>001</td> <!-- Employee ID -->
+                                                    <td>Ochieng Otieno</td> <!-- Employee Name -->
+                                                    <td>12345678</td> <!-- ID Number -->
+                                                    <td>Ksh 48,000</td> <!-- Amount Paid -->
+                                                    <td>Ksh 50,000</td> <!-- Amount to be Paid -->
+                                                    <td>Ksh 2,000</td> <!-- Discrepancy Amount -->
                                                 </tr>
                                                 <tr>
-                                                    <td>25 Apr 2023</td> <!-- Date Uploaded -->
-                                                    <td>April 2023</td> <!-- Month For -->
-                                                    <td>7,760</td> <!-- Total Payroll Records (Adjusted) -->
-                                                    <td>Ksh 60,000 (103.45%)</td> <!-- Payroll Wage Bill with Percentage -->
-                                                    <td>7,720</td> <!-- Employee Records -->
-                                                    <td>Ksh 58,000</td> <!-- Employee Wage Bill -->
-                                                    <td>10</td> <!-- Employee Discrepancy Records -->
-                                                    <td>Ksh 2,000</td> <!-- Wage Bill Discrepancies -->
-                                                    <td>
-                                                        <button class="btn btn-primary btn-sm" onclick="window.location.href='view_discrepancy.html'">
-                                                            View Discrepancy
-                                                        </button>
-                                                    </td>
+                                                    <td>002</td>
+                                                    <td>Achieng Adhiambo</td>
+                                                    <td>87654321</td>
+                                                    <td>Ksh 40,000</td> 
+                                                    <td>-</td> 
+                                                    <td>Ksh 40,000</td> 
                                                 </tr>
                                                 <tr>
-                                                    <td>15 Jun 2021</td> <!-- Date Uploaded -->
-                                                    <td>June 2021</td> <!-- Month For -->
-                                                    <td>7,740</td> <!-- Total Payroll Records (Adjusted) -->
-                                                    <td>Ksh 55,000 (103.77%)</td> <!-- Payroll Wage Bill with Percentage -->
-                                                    <td>7,720</td> <!-- Employee Records -->
-                                                    <td>Ksh 53,000</td> <!-- Employee Wage Bill -->
-                                                    <td>10</td> <!-- Employee Discrepancy Records -->
-                                                    <td>Ksh 2,000</td> <!-- Wage Bill Discrepancies -->
-                                                    <td>
-                                                        <button class="btn btn-primary btn-sm" onclick="window.location.href='view_discrepancy.html'">
-                                                            View Discrepancy
-                                                        </button>
-                                                    </td>
+                                                    <td>003</td>
+                                                    <td>Okoth Owino</td>
+                                                    <td>11223344</td>
+                                                    <td>Ksh 53,000</td>
+                                                    <td>-</td>
+                                                    <td>Ksh 53,000</td> 
                                                 </tr>
                                                 <tr>
-                                                    <td>10 Sep 2022</td> <!-- Date Uploaded -->
-                                                    <td>September 2022</td> <!-- Month For -->
-                                                    <td>7,780</td> <!-- Total Payroll Records (Adjusted) -->
-                                                    <td>Ksh 70,000 (102.94%)</td> <!-- Payroll Wage Bill with Percentage -->
-                                                    <td>7,720</td> <!-- Employee Records -->
-                                                    <td>Ksh 68,000</td> <!-- Employee Wage Bill -->
-                                                    <td>10</td> <!-- Employee Discrepancy Records -->
-                                                    <td>Ksh 2,000</td> <!-- Wage Bill Discrepancies -->
-                                                    <td>
-                                                        <button class="btn btn-primary btn-sm" onclick="window.location.href='view_discrepancy.html'">
-                                                            View Discrepancy
-                                                        </button>
-                                                    </td>
+                                                    <td>004</td> <!-- Employee ID -->
+                                                    <td>Atieno Auma</td> <!-- Employee Name -->
+                                                    <td>55667788</td> <!-- ID Number -->
+                                                    <td>Ksh 68,000</td> <!-- Amount Paid -->
+                                                    <td>Ksh 70,000</td> <!-- Amount to be Paid -->
+                                                    <td>Ksh 2,000</td> <!-- Discrepancy Amount -->
                                                 </tr>
                                                 <tr>
-                                                    <td>5 Dec 2023</td> <!-- Date Uploaded -->
-                                                    <td>December 2023</td> <!-- Month For -->
-                                                    <td>7,790</td> <!-- Total Payroll Records (Adjusted) -->
-                                                    <td>Ksh 80,000 (102.56%)</td> <!-- Payroll Wage Bill with Percentage -->
-                                                    <td>7,720</td> <!-- Employee Records -->
-                                                    <td>Ksh 78,000</td> <!-- Employee Wage Bill -->
-                                                    <td>10</td> <!-- Employee Discrepancy Records -->
-                                                    <td>Ksh 2,000</td> <!-- Wage Bill Discrepancies -->
-                                                    <td>
-                                                        <button class="btn btn-primary btn-sm" onclick="window.location.href='view_discrepancy.html'">
-                                                            View Discrepancy
-                                                        </button>
-                                                    </td>
+                                                    <td>005</td>
+                                                    <td>Omondi Onyango</td>
+                                                    <td>99887766</td>
+                                                    <td>Ksh 80,000</td>
+                                                    <td>Ksh 100,000</td>
+                                                    <td>Ksh 20,000</td>
                                                 </tr>
                                             </tbody>
                                         </table>
