@@ -3,360 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vacancy Registration - Recruitment Management System</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Job Applicants View</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
+        :root {
+            --primary: #3b5de7;
+            --secondary: #7460ee;
+            --success: #45cb85;
+            --warning: #fec85f;
+            --info: #50a5f1;
+        }
+        
         body {
             background-color: #f8f9fa;
             padding: 20px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        .card {
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            border: none;
-        }
-        
-        .card-header {
-            background-color: white;
-            padding: 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        .card-title {
-            font-weight: 600;
-            color: #2d3748;
-            font-size: 1.25rem;
-            padding: 16px 20px;
-            margin: 0;
-        }
-        
-        .bg-soft {
-            background-color: rgba(66, 153, 225, 0.1) !important;
-            border-left: 4px solid #4299e1;
-        }
-        
-        .form-label {
-            font-weight: 500;
-            color: #4a5568;
-            font-size: 0.875rem;
-            margin-bottom: 0.4rem;
-        }
-        
-        .form-control, .form-select {
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
-            padding: 8px 12px;
-            font-size: 0.875rem;
-            height: calc(1.5em + 0.75rem + 2px);
-        }
-        
-        .form-control:focus, .form-select:focus {
-            border-color: #4299e1;
-            box-shadow: 0 0 0 0.2rem rgba(66, 153, 225, 0.25);
-        }
-        
-        .btn-primary {
-            background-color: #4299e1;
-            border-color: #4299e1;
-            padding: 8px 20px;
-            font-size: 0.875rem;
-        }
-        
-        .btn-outline-secondary {
-            border-color: #e2e8f0;
-            color: #718096;
-            padding: 8px 20px;
-            font-size: 0.875rem;
-        }
-        
-        .table th {
-            font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
+        .header-card {
+            background: linear-gradient(135deg, #3b5de7, #7460ee);
             color: white;
-            background-color: #2d3748;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
-        .table td {
-            vertical-align: middle;
+        .applicant-card {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         
-        .text-danger {
-            color: #e53e3e;
+        .applicant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
-        .cursor-pointer {
-            cursor: pointer;
+        .id-highlight {
+            background-color: rgba(59, 93, 231, 0.1);
+            border-left: 3px solid var(--primary);
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .qualification-badge {
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        
+        .progress-bar-custom {
+            height: 10px;
+            border-radius: 5px;
+        }
+        
+        .match-percentage {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--primary);
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .vacancy-filter {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .action-btn {
+            border-radius: 8px;
+            padding: 8px 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .status-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .skill-item {
+            background-color: #f1f3f9;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header bg-white pt-0 pr-0 p-0 d-flex justify-content-between align-items-center w-100 border-bottom">
-                        <div class="btn-toolbar p-3 d-flex justify-content-between align-items-center w-100" role="toolbar">
-                            <h4 class="card-title text-uppercase mb-0">
-                                VACANCY REGISTRATION
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <!-- Job Details Section -->
-                            <div class="col-12">
-                                <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                    <p class="fw-semibold mb-0 pb-0 text-uppercase">Job Details</p>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="job-title-input" class="form-label">Job Title <strong class="text-danger fw-bold">*</strong></label>
-                                <input type="text" class="form-control" id="job-title-input" placeholder="Enter Job Title" required>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="job-location-input" class="form-label">Job Location <strong class="text-danger fw-bold">*</strong></label>
-                                <input type="text" class="form-control" id="job-location-input" placeholder="Enter Job Location" required>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="department-input" class="form-label">Department <strong class="text-danger fw-bold">*</strong></label>
-                                <select id="department-input" class="form-select" required>
-                                    <option value="">Select Department</option>
-                                    <option value="65">65 - Finance & Economic Planning</option>
-                                    <option value="67">67 - Governance, Administration, Communication & Devolution</option>
-                                    <option value="73">73 - Education, Human Capital Development & Vocational Training</option>
-                                    <option value="62">62 - Blue Economy, Fisheries, Mining & Digital Economy</option>
-                                    <option value="66">66 - Roads, Public Works, Transport & Infrastructure</option>
-                                    <option value="61">61 - Youth, Sports, Talent Development, Gender Inclusivity, Cultural Heritage & Social Services</option>
-                                    <option value="63">63 - Water, Irrigation, Sanitation, Environment, Energy, Forestry & Climate Change</option>
-                                    <option value="68">68 - Public Health & Medical Services</option>
-                                    <option value="64">64 - Lands, Physical Planning, Housing & Urban Development</option>
-                                    <option value="69">69 - Trade, Industry, Tourism, Co-Operative Development and Marketing</option>
-                                    <option value="70">70 - Agriculture and Livestock Production</option>
-                                    <option value="72">72 - Office of the County Secretary and Head of Public Service</option>
-                                </select>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="unit-input" class="form-label">Unit/Directorate <strong class="text-danger fw-bold">*</strong></label>
-                                <select id="unit-input" class="form-select" required>
-                                    <option value="">Select Unit/Directorate</option>
-                                    <option value="651">651 - Accounts</option>
-                                    <option value="652">652 - Audit</option>
-                                    <option value="653">653 - Project Finance</option>
-                                    <option value="654">654 - Revenue</option>
-                                    <option value="655">655 - Procurement</option>
-                                    <option value="656">656 - Economic Planning and Budgets</option>
-                                    <option value="671">671 - Administration</option>
-                                    <option value="672">672 - Inspectorate and Security Services</option>
-                                    <option value="673">673 - Public Communication</option>
-                                    <option value="674">674 - Stakeholder Management and Public Participation</option>
-                                    <option value="675">675 - Special Projects and Disaster Management</option>
-                                    <option value="731">731 - Early Years Education</option>
-                                    <option value="732">732 - Vocational Training and Human Capital</option>
-                                    <option value="621">621 - Blue Economy and Fisheries</option>
-                                    <option value="622">622 - Mining and Excavation of Mineral Resources</option>
-                                    <option value="623">623 - Digital Economy</option>
-                                    <option value="661">661 - Roads</option>
-                                    <option value="662">662 - Public Works</option>
-                                    <option value="611">611 - Sports and Talent Development</option>
-                                    <option value="612">612 - Youth</option>
-                                    <option value="613">613 - Cultural Heritage</option>
-                                    <option value="614">614 - Gender Inclusivity and Women Empowerment</option>
-                                    <option value="615">615 - Social Services</option>
-                                    <option value="631">631 - Water and Sanitation</option>
-                                    <option value="632">632 - Environment and Forestry</option>
-                                    <option value="633">633 - Energy</option>
-                                    <option value="634">634 - Climate Change</option>
-                                    <option value="635">635 - Irrigation Service</option>
-                                    <option value="681">681 - Medical Services</option>
-                                    <option value="682">682 - Public Health</option>
-                                    <option value="641">641 - Lands and Physical Planning</option>
-                                    <option value="642">642 - Housing and Urban Development</option>
-                                    <option value="643">643 - Municipalities</option>
-                                    <option value="691">691 - Trade, Industry and Tourism</option>
-                                    <option value="692">692 - Cooperative and Marketing</option>
-                                    <option value="701">701 - Agriculture</option>
-                                    <option value="702">702 - Livestock Production</option>
-                                    <option value="721">721 - Human Resource Management and Development</option>
-                                    <option value="722">722 - Inter-Governmental Relations</option>
-                                    <option value="723">723 - Cabinet Affairs</option>
-                                    <option value="724">724 - Office of the Ombudsman</option>
-                                    <option value="725">725 - Office of the County Secretary</option>
-                                </select>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="vacancy-ref-input" class="form-label">Vacancy Reference Number <strong class="text-danger fw-bold">*</strong></label>
-                                <input type="text" class="form-control" id="vacancy-ref-input" placeholder="Enter Reference Number" required>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="advert-date-input" class="form-label">Advert Date <strong class="text-danger fw-bold">*</strong></label>
-                                <input class="form-control" type="date" id="advert-date-input" required>
-                            </div>
-                            
-                            <div class="col-12 mb-3">
-                                <label for="job-description-input" class="form-label">Job Description <strong class="text-danger fw-bold">*</strong></label>
-                                <textarea class="form-control" id="job-description-input" rows="4" placeholder="Enter detailed job description" required></textarea>
-                            </div>
-                            
-                            <!-- Requirements Section -->
-                            <div class="col-12 mt-4">
-                                <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                    <p class="fw-semibold mb-0 pb-0 text-uppercase">Requirements</p>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="education-input" class="form-label">Minimum Education Requirements <strong class="text-danger fw-bold">*</strong></label>
-                                <select id="education-input" class="form-select" required>
-                                    <option value="">Select Education Level</option>
-                                    <option value="Primary">Primary</option>
-                                    <option value="Secondary">Secondary</option>
-                                    <option value="Certificate">Certificate</option>
-                                    <option value="Diploma">Diploma</option>
-                                    <option value="Undergraduate">Undergraduate</option>
-                                    <option value="Postgraduate">Postgraduate</option>
-                                    <option value="Doctorate">Doctorate</option>
-                                </select>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="experience-input" class="form-label">Years of Experience <strong class="text-danger fw-bold">*</strong></label>
-                                <select id="experience-input" class="form-select" required>
-                                    <option value="">Select Experience</option>
-                                    <option value="0-1">0-1 year</option>
-                                    <option value="1-2">1-2 years</option>
-                                    <option value="2-3">2-3 years</option>
-                                    <option value="3-5">3-5 years</option>
-                                    <option value="5-7">5-7 years</option>
-                                    <option value="7-10">7-10 years</option>
-                                    <option value="10+">10+ years</option>
-                                </select>
-                            </div>
-                            
-                            <div class="col-12 mb-3">
-                                <label for="certificates-input" class="form-label">Professional Certificates Required</label>
-                                <textarea class="form-control" id="certificates-input" rows="2" placeholder="List required certificates (comma separated)"></textarea>
-                                <small class="form-text text-muted">Example: CPA, HRM, PMP, etc.</small>
-                            </div>
-                            
-                            <div class="col-12 mb-3">
-                                <label for="skills-input" class="form-label">Specific Skills Required</label>
-                                <textarea class="form-control" id="skills-input" rows="2" placeholder="List required skills (comma separated)"></textarea>
-                                <small class="form-text text-muted">Example: Proficiency in Excel, Project Management, etc.</small>
-                            </div>
-                            
-                            <!-- Vacancy Details Section -->
-                            <div class="col-12 mt-4">
-                                <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                    <p class="fw-semibold mb-0 pb-0 text-uppercase">Vacancy Details</p>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="positions-input" class="form-label">Number of Positions <strong class="text-danger fw-bold">*</strong></label>
-                                <input type="number" class="form-control" id="positions-input" min="1" value="1" required>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="deadline-input" class="form-label">Application Deadline <strong class="text-danger fw-bold">*</strong></label>
-                                <input class="form-control" type="date" id="deadline-input" required>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="salary-scale-input" class="form-label">Salary Scale <strong class="text-danger fw-bold">*</strong></label>
-                                <select id="salary-scale-input" class="form-select" required>
-                                    <option value="">Select Salary Scale</option>
-                                    <option value="JG A">JG A (Ksh 14,000 - 20,000)</option>
-                                    <option value="JG B">JG B (Ksh 20,000 - 30,000)</option>
-                                    <option value="JG C">JG C (Ksh 30,000 - 45,000)</option>
-                                    <option value="JG D">JG D (Ksh 45,000 - 65,000)</option>
-                                    <option value="JG E">JG E (Ksh 65,000 - 90,000)</option>
-                                    <option value="JG F">JG F (Ksh 90,000 - 120,000)</option>
-                                    <option value="JG G">JG G (Ksh 120,000 - 180,000)</option>
-                                    <option value="JG H">JG H (Ksh 180,000 - 250,000)</option>
-                                    <option value="JG I">JG I (Ksh 250,000 - 350,000)</option>
-                                    <option value="JG J">JG J (Ksh 350,000 - 500,000)</option>
-                                    <option value="JG K">JG K (Ksh 500,000 - 750,000)</option>
-                                    <option value="JG L">JG L (Ksh 750,000 - 1,000,000)</option>
-                                </select>
-                            </div>
-                            
-                            <!-- Approval Section -->
-                            <div class="col-12 mt-4">
-                                <div class="bg-info border-2 bg-soft p-3 mb-4 d-flex align-items-center">
-                                    <p class="fw-semibold mb-0 pb-0 text-uppercase">Approval</p>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="approving-authority-input" class="form-label">Approving Authority <strong class="text-danger fw-bold">*</strong></label>
-                                <select id="approving-authority-input" class="form-select" required>
-                                    <option value="">Select Approving Authority</option>
-                                    <option value="CAO">Chief Administrative Officer</option>
-                                    <option value="HOD">Head of Department</option>
-                                    <option value="HRM">Human Resource Manager</option>
-                                    <option value="CEC">County Executive Committee</option>
-                                    <option value="Governor">Governor</option>
-                                </select>
-                            </div>
-                            
-                            <div class="col-md-6 mb-3">
-                                <label for="approval-date-input" class="form-label">Approval Date <strong class="text-danger fw-bold">*</strong></label>
-                                <input class="form-control" type="date" id="approval-date-input" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-white border-top py-3">
-                        <div class="col-12">
-                            <button type="button" class="btn btn-primary waves-effect waves-light text-uppercase">
-                                <i class="fas fa-save me-2"></i>
-                                Save Vacancy
-                            </button>
-                            <button type="button" class="btn btn-outline-secondary waves-effect text-uppercase mx-3">
-                                <i class="fas fa-times me-2"></i> Clear Form
-                            </button>
-                        </div>
+    <div class="container">
+        <div class="header-card">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h2 class="mb-3">Job Applicants Dashboard</h2>
+                    <p class="mb-0">Review and manage applicants for open positions in your organization</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <button class="btn btn-light btn-lg rounded-pill px-4">View Open Vacancies</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h3>Software Engineer Applicants</h3>
+                <p class="text-muted">Showing 12 candidates for Senior Developer position</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <div class="btn-group">
+                    <button class="btn btn-outline-primary">Shortlisted (5)</button>
+                    <button class="btn btn-outline-secondary">New (7)</button>
+                    <button class="btn btn-outline-success">Hired (3)</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vacancy Filter -->
+        <div class="vacancy-filter">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label class="form-label">Select Position</label>
+                    <select class="form-select">
+                        <option selected>Senior Software Engineer</option>
+                        <option>Frontend Developer</option>
+                        <option>DevOps Engineer</option>
+                        <option>Product Manager</option>
+                        <option>UX Designer</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label">Experience Level</label>
+                    <select class="form-select">
+                        <option>All Levels</option>
+                        <option>Entry Level (0-2 years)</option>
+                        <option>Mid-Level (3-5 years)</option>
+                        <option selected>Senior (5+ years)</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label">Search Applicants</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search by name or skills">
+                        <button class="btn btn-primary" type="button">
+                            <i class="bi bi-search"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Job Applicants Modal -->
+        <div class="modal fade" id="viewApplicants" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="modal-title">Applicants for Senior Software Engineer</h5>
+                            <p class="modal-subtitle pb-0">Review qualifications and experience of candidates</p>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="btn-toolbar d-flex justify-content-between align-items-center w-100" role="toolbar">
+                            <div class="flex-grow-1">
+                                <div class="search-box mb-0 me-3">
+                                    <div class="position-relative">
+                                        <input type="text" id="searchInput" class="form-control bg-light rounded" placeholder="Search applicants by name or skills" spellcheck="false">
+                                        <i class="bi bi-search search-icon" style="position: absolute; right: 15px; top: 12px;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-outline-primary">Export to CSV</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <!-- Applicant 1 -->
+                            <div class="col-12 mb-3">
+                                <div class="p-4 applicant-card">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h5>Michael Johnson</h5>
+                                            <div class="id-highlight mt-2 mb-3">
+                                                <i class="bi bi-person-badge"></i> National ID: 987654321
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="status-badge bg-success">Shortlisted</span>
+                                            <div class="match-percentage mt-2">92% Match</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-3">
+                                        <div class="section-title">Qualifications</div>
+                                        <div class="row">
+                                            <div class="col-md-3 mb-2">
+                                                <div class="qualification-badge bg-primary bg-opacity-10 text-primary">
+                                                    <i class="bi bi-mortarboard"></i> MSc Computer Science
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 mb-2">
+                                                <div class="qualification-badge bg-info bg-opacity-10 text-info">
+                                                    <i class="bi bi-briefcase"></i> 7 Years Experience
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 mb-2">
+                                                <div class="qualification-badge bg-warning bg-opacity-10 text-warning">
+                                                    <i class="bi bi-award"></i> AWS Certified
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 mb-2">
+                                                <div class="qualification-badge bg-success bg-opacity-10 text-success">
+                                                    <i class="bi bi-patch-check"></i> Scrum Master
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="section-title mt-4">Technical Skills</div>
+                                        <div class="skills-container">
+                                            <span class="skill-item">Java</span>
+                                            <span class="skill-item">Spring Boot</span>
+                                            <span class="skill-item">React</span>
+                                            <span class="skill-item">Node.js</span>
+                                            <span class="skill-item">Docker</span>
+                                            <span class="skill-item">Kubernetes</span>
+                                            <span class="skill-item">SQL</span>
+                                            <span class="skill-item">REST APIs</span>
+                                        </div>
+                                        
+                                        <div class="section-title mt-4">Experience Match</div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-grow-1 me-3">
+                                                <div class="progress progress-bar-custom">
+                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="fw-bold">92%</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-end mt-4">
+                                        <button class="btn btn-outline-secondary action-btn me-2">
+                                            <i class="bi bi-file-earmark-text"></i> View CV
+                                        </button>
+                                        <button class="btn btn-primary action-btn">
+                                            <i class="bi bi-calendar-check"></i> Schedule Interview
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Applicant 2 -->
+                            <div class="col-12 mb-3">
+                                <div class="p-4 applicant-card">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h5>Sarah Williams</h5>
+                                            <div class="id-highlight mt-2 mb-3">
+                                                <i class="bi bi-passport"></i> Passport: AB1234567
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="status-badge bg-info">New</span>
+                                            <div class="match-percentage mt-2">85% Match</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-3">
+                                        <div class="section-title">Qualifications</div>
+                                        <div class="row">
+                                            <div class="col-md-3 mb-2">
+                                                <div class="qualification-badge bg-primary bg-opacity-10 text-primary">
+                                                    <i class="bi bi-mortarboard"></i> BSc Software Engineering
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 mb-2">
+                                                <div class="qualification-badge bg-info bg-opacity-10 text-info">
+                                                    <i class="bi bi-briefcase"></i> 5 Years Experience
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 mb-2">
+                                                <div class="qualification-badge bg-warning bg-opacity-10 text-warning">
+                                                    <i class="bi bi-award"></i> Google Cloud Certified
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 mb-2">
+                                                <div class="qualification-badge bg-success bg-opacity-10 text-success">
+                                                    <i class="bi bi-patch-check"></i> Agile Practitioner
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="section-title mt-4">Technical Skills</div>
+                                        <div class="skills-container">
+                                            <span class="skill-item">Python</span>
+                                            <span class="skill-item">Django</span>
+                                            <span class="skill-item">JavaScript</span>
+                                            <span class="skill-item">Vue.js</span>
+                                            <span class="skill-item">PostgreSQL</span>
+                                            <span class="skill-item">CI/CD</span>
+                                            <span class="skill-item">Microservices</span>
+                                            <span class="skill-item">GraphQL</span>
+                                        </div>
+                                        
+                                        <div class="section-title mt-4">Experience Match</div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-grow-1 me-3">
+                                                <div class="progress progress-bar-custom">
+                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="fw-bold">85%</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-end mt-4">
+                                        <button class="btn btn-outline-secondary action-btn me-2">
+                                            <i class="bi bi-file-earmark-text"></i> View CV
+                                        </button>
+                                        <button class="btn btn-primary action-btn">
+                                            <i class="bi bi-calendar-check"></i> Schedule Interview
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Applicant 3 -->
+                            <div class="col-12 mb-3">
+                                <div class="p-4 applicant-card">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h5>David Chen</h5>
+                                            <div class="id-highlight mt-2 mb-3">
+                                                <i class="bi bi-person-badge"></i> National ID: 543216789
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="status-badge bg-warning">Under Review</span>
+                                            <div class="match-percentage mt-2">78% Match</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-3">
+                                        <div class="section-title">Qualifications</div>
+                                        <div class="row">
+                                            <div class="col-md-3 mb-2">
+                                                <div class="qualification-badge bg-primary bg-opacity-10 text-primary">
+                                                    <i class="bi bi-mortarboard"></i> PhD Computer Science
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 mb-2">
+                                                <div class="qualification-badge bg-info bg-opacity-10 text-info">
+                                                    <i class="bi bi-briefcase"></i> 10 Years Experience
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 mb-2">
+                                                <div class="qualification-badge bg-warning bg-opacity-10 text-warning">
+                                                    <i class="bi bi-award"></i> Azure Solutions Architect
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 mb-2">
+                                                <div class="qualification-badge bg-success bg-opacity-10 text-success">
+                                                    <i class="bi bi-patch-check"></i> TOGAF Certified
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="section-title mt-4">Technical Skills</div>
+                                        <div class="skills-container">
+                                            <span class="skill-item">C#</span>
+                                            <span class="skill-item">.NET Core</span>
+                                            <span class="skill-item">Angular</span>
+                                            <span class="skill-item">Azure</span>
+                                            <span class="skill-item">DevOps</span>
+                                            <span class="skill-item">Machine Learning</span>
+                                            <span class="skill-item">System Architecture</span>
+                                            <span class="skill-item">Security</span>
+                                        </div>
+                                        
+                                        <div class="section-title mt-4">Experience Match</div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-grow-1 me-3">
+                                                <div class="progress progress-bar-custom">
+                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="fw-bold">78%</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-end mt-4">
+                                        <button class="btn btn-outline-secondary action-btn me-2">
+                                            <i class="bi bi-file-earmark-text"></i> View CV
+                                        </button>
+                                        <button class="btn btn-primary action-btn">
+                                            <i class="bi bi-calendar-check"></i> Schedule Interview
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="mt-4 text-center text-muted">
+                                <p class="mb-0">Applicant Tracking System</p>
+                                <p>Showing 3 of 12 candidates for Senior Software Engineer position</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer justify-content-between p-3">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save Selection</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#viewApplicants">
+                View Applicants Modal
+            </button>
+            <p class="text-muted mt-3">Click the button above to open the applicants modal</p>
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Set default dates
-        document.addEventListener('DOMContentLoaded', function() {
-            const today = new Date();
-            const nextWeek = new Date();
-            nextWeek.setDate(today.getDate() + 7);
-            
-            // Format dates to YYYY-MM-DD
-            const formatDate = (date) => {
-                const year = date.getFullYear();
-                const month = String(date.getMonth() + 1).padStart(2, '0');
-                const day = String(date.getDate()).padStart(2, '0');
-                return `${year}-${month}-${day}`;
-            };
-            
-            // Set default dates
-            document.getElementById('advert-date-input').value = formatDate(today);
-            document.getElementById('deadline-input').value = formatDate(nextWeek);
-            document.getElementById('approval-date-input').value = formatDate(today);
-            
-            // Generate a reference number
-            const refNumber = `VAC-${today.getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
-            document.getElementById('vacancy-ref-input').value = refNumber;
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
