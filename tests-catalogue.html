@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Applicants View</title>
+    <title>Applicant Statistics Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #3b5de7;
-            --secondary: #7460ee;
+            --secondary: #6c757d;
             --success: #45cb85;
-            --warning: #fec85f;
-            --info: #50a5f1;
+            --info: #3bc7e7;
+            --warning: #ffc107;
+            --danger: #ff715b;
+            --light: #f8f9fa;
+            --dark: #343a40;
         }
         
         body {
@@ -21,444 +24,565 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        .header-card {
-            background: linear-gradient(135deg, #3b5de7, #7460ee);
+        .dashboard-header {
+            background: linear-gradient(135deg, #3b5de7 0%, #1e3c8f 100%);
             color: white;
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 25px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
-        .applicant-card {
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .stat-card {
             border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
             background-color: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         
-        .applicant-card:hover {
+        .stat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
         
-        .id-highlight {
-            background-color: rgba(59, 93, 231, 0.1);
-            border-left: 3px solid var(--primary);
-            padding: 8px 15px;
-            border-radius: 4px;
-            font-weight: 600;
+        .card-total {
+            border-top: 4px solid var(--primary);
         }
         
-        .qualification-badge {
-            border-radius: 20px;
-            padding: 5px 12px;
+        .card-review {
+            border-top: 4px solid var(--info);
+        }
+        
+        .card-shortlisted {
+            border-top: 4px solid var(--success);
+        }
+        
+        .card-rejected {
+            border-top: 4px solid var(--danger);
+        }
+        
+        .trend-indicator {
             font-size: 13px;
-            font-weight: 500;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            display: inline-block;
+            margin-top: 5px;
         }
         
-        .progress-bar-custom {
+        .trend-up {
+            color: var(--success);
+        }
+        
+        .trend-down {
+            color: var(--danger);
+        }
+        
+        .stat-description {
+            font-size: 13px;
+            margin-top: 8px;
+            color: #6c757d;
+        }
+        
+        .avatar-title {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .dashboard-title {
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0;
+        }
+        
+        .stat-value {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .section-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .qualification-item {
+            margin-bottom: 25px;
+        }
+        
+        .qualification-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .position-item {
+            margin-bottom: 15px;
+        }
+        
+        .position-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .applicant-count {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .progress-container {
+            margin-top: 20px;
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .progress {
             height: 10px;
             border-radius: 5px;
         }
         
-        .match-percentage {
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--primary);
-        }
-        
-        .section-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: #495057;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #e9ecef;
-        }
-        
-        .vacancy-filter {
-            background-color: white;
+        .applicant-table {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
         }
         
-        .action-btn {
-            border-radius: 8px;
-            padding: 8px 20px;
+        .criteria-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: 600;
-            transition: all 0.3s ease;
+        }
+        
+        .criteria-good {
+            background-color: #e3f5ef;
+            color: #45cb85;
+        }
+        
+        .criteria-average {
+            background-color: #e9f3ff;
+            color: #3b5de7;
+        }
+        
+        .criteria-poor {
+            background-color: #fceeea;
+            color: #ff715b;
         }
         
         .status-badge {
-            padding: 6px 14px;
+            padding: 6px 10px;
             border-radius: 20px;
+            font-size: 12px;
             font-weight: 600;
-            font-size: 13px;
-        }
-        
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        
-        .skill-item {
-            background-color: #f1f3f9;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 13px;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header-card">
+        <div class="dashboard-header">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <h2 class="mb-3">Job Applicants Dashboard</h2>
-                    <p class="mb-0">Review and manage applicants for open positions in your organization</p>
+                    <h2 class="dashboard-title">Applicant Statistics Dashboard</h2>
+                    <p class="mb-0">Summary of current applicants and their qualifications</p>
                 </div>
                 <div class="col-md-4 text-md-end">
-                    <button class="btn btn-light btn-lg rounded-pill px-4">View Open Vacancies</button>
+                    <span class="badge bg-light text-dark p-2">
+                        <i class="fas fa-calendar me-2"></i>Last updated: Today, 10:45 AM
+                    </span>
                 </div>
             </div>
         </div>
         
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <h3>Software Engineer Applicants</h3>
-                <p class="text-muted">Showing 12 candidates for Senior Developer position</p>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <div class="btn-group">
-                    <button class="btn btn-outline-primary">Shortlisted (5)</button>
-                    <button class="btn btn-outline-secondary">New (7)</button>
-                    <button class="btn btn-outline-success">Hired (3)</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Vacancy Filter -->
-        <div class="vacancy-filter">
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <label class="form-label">Select Position</label>
-                    <select class="form-select">
-                        <option selected>Senior Software Engineer</option>
-                        <option>Frontend Developer</option>
-                        <option>DevOps Engineer</option>
-                        <option>Product Manager</option>
-                        <option>UX Designer</option>
-                    </select>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label class="form-label">Experience Level</label>
-                    <select class="form-select">
-                        <option>All Levels</option>
-                        <option>Entry Level (0-2 years)</option>
-                        <option>Mid-Level (3-5 years)</option>
-                        <option selected>Senior (5+ years)</option>
-                    </select>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label class="form-label">Search Applicants</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search by name or skills">
-                        <button class="btn btn-primary" type="button">
-                            <i class="bi bi-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Job Applicants Modal -->
-        <div class="modal fade" id="viewApplicants" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div>
-                            <h5 class="modal-title">Applicants for Senior Software Engineer</h5>
-                            <p class="modal-subtitle pb-0">Review qualifications and experience of candidates</p>
-                        </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-                    <div class="modal-body">
-                        <div class="btn-toolbar d-flex justify-content-between align-items-center w-100" role="toolbar">
-                            <div class="flex-grow-1">
-                                <div class="search-box mb-0 me-3">
-                                    <div class="position-relative">
-                                        <input type="text" id="searchInput" class="form-control bg-light rounded" placeholder="Search applicants by name or skills" spellcheck="false">
-                                        <i class="bi bi-search search-icon" style="position: absolute; right: 15px; top: 12px;"></i>
-                                    </div>
+        <div class="row">
+            <!-- Total Applicants -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card stat-card card-total">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap">
+                            <div class="me-3">
+                                <p class="text-muted mb-2">Total Applicants</p>
+                                <h5 class="stat-value">6</h5>
+                                <div class="trend-indicator trend-up">
+                                    <i class="fas fa-arrow-up me-1"></i>2 new since yesterday
                                 </div>
+                                <div class="progress mt-3">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="stat-description mt-2">All current applications</div>
                             </div>
-                            <div>
-                                <button class="btn btn-outline-primary">Export to CSV</button>
+                            <div class="avatar-sm ms-auto">
+                                <div class="avatar-title bg-primary rounded-circle text-white font-size-20">
+                                    <i class="fas fa-users"></i> 
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="modal-body">
-                        <div class="row">
-                            <!-- Applicant 1 -->
-                            <div class="col-12 mb-3">
-                                <div class="p-4 applicant-card">
-                                    <div class="d-flex justify-content-between align-items-start">
-                                        <div>
-                                            <h5>Michael Johnson</h5>
-                                            <div class="id-highlight mt-2 mb-3">
-                                                <i class="bi bi-person-badge"></i> National ID: 987654321
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <span class="status-badge bg-success">Shortlisted</span>
-                                            <div class="match-percentage mt-2">92% Match</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="mt-3">
-                                        <div class="section-title">Qualifications</div>
-                                        <div class="row">
-                                            <div class="col-md-3 mb-2">
-                                                <div class="qualification-badge bg-primary bg-opacity-10 text-primary">
-                                                    <i class="bi bi-mortarboard"></i> MSc Computer Science
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 mb-2">
-                                                <div class="qualification-badge bg-info bg-opacity-10 text-info">
-                                                    <i class="bi bi-briefcase"></i> 7 Years Experience
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 mb-2">
-                                                <div class="qualification-badge bg-warning bg-opacity-10 text-warning">
-                                                    <i class="bi bi-award"></i> AWS Certified
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 mb-2">
-                                                <div class="qualification-badge bg-success bg-opacity-10 text-success">
-                                                    <i class="bi bi-patch-check"></i> Scrum Master
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="section-title mt-4">Technical Skills</div>
-                                        <div class="skills-container">
-                                            <span class="skill-item">Java</span>
-                                            <span class="skill-item">Spring Boot</span>
-                                            <span class="skill-item">React</span>
-                                            <span class="skill-item">Node.js</span>
-                                            <span class="skill-item">Docker</span>
-                                            <span class="skill-item">Kubernetes</span>
-                                            <span class="skill-item">SQL</span>
-                                            <span class="skill-item">REST APIs</span>
-                                        </div>
-                                        
-                                        <div class="section-title mt-4">Experience Match</div>
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-grow-1 me-3">
-                                                <div class="progress progress-bar-custom">
-                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <div class="fw-bold">92%</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="d-flex justify-content-end mt-4">
-                                        <button class="btn btn-outline-secondary action-btn me-2">
-                                            <i class="bi bi-file-earmark-text"></i> View CV
-                                        </button>
-                                        <button class="btn btn-primary action-btn">
-                                            <i class="bi bi-calendar-check"></i> Schedule Interview
-                                        </button>
-                                    </div>
+                </div>
+            </div>
+            
+            <!-- In Review -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card stat-card card-review">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap">
+                            <div class="me-3">
+                                <p class="text-muted mb-2">In Review</p>
+                                <h5 class="stat-value">4</h5>
+                                <div class="trend-indicator trend-up">
+                                    <i class="fas fa-arrow-up me-1"></i>67% of applicants
+                                </div>
+                                <div class="progress mt-3">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="stat-description mt-2">Pending review decision</div>
+                            </div>
+                            <div class="avatar-sm ms-auto">
+                                <div class="avatar-title bg-info rounded-circle text-white font-size-20">
+                                    <i class="fas fa-search"></i>
                                 </div>
                             </div>
-
-                            <!-- Applicant 2 -->
-                            <div class="col-12 mb-3">
-                                <div class="p-4 applicant-card">
-                                    <div class="d-flex justify-content-between align-items-start">
-                                        <div>
-                                            <h5>Sarah Williams</h5>
-                                            <div class="id-highlight mt-2 mb-3">
-                                                <i class="bi bi-passport"></i> Passport: AB1234567
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <span class="status-badge bg-info">New</span>
-                                            <div class="match-percentage mt-2">85% Match</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="mt-3">
-                                        <div class="section-title">Qualifications</div>
-                                        <div class="row">
-                                            <div class="col-md-3 mb-2">
-                                                <div class="qualification-badge bg-primary bg-opacity-10 text-primary">
-                                                    <i class="bi bi-mortarboard"></i> BSc Software Engineering
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 mb-2">
-                                                <div class="qualification-badge bg-info bg-opacity-10 text-info">
-                                                    <i class="bi bi-briefcase"></i> 5 Years Experience
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 mb-2">
-                                                <div class="qualification-badge bg-warning bg-opacity-10 text-warning">
-                                                    <i class="bi bi-award"></i> Google Cloud Certified
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 mb-2">
-                                                <div class="qualification-badge bg-success bg-opacity-10 text-success">
-                                                    <i class="bi bi-patch-check"></i> Agile Practitioner
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="section-title mt-4">Technical Skills</div>
-                                        <div class="skills-container">
-                                            <span class="skill-item">Python</span>
-                                            <span class="skill-item">Django</span>
-                                            <span class="skill-item">JavaScript</span>
-                                            <span class="skill-item">Vue.js</span>
-                                            <span class="skill-item">PostgreSQL</span>
-                                            <span class="skill-item">CI/CD</span>
-                                            <span class="skill-item">Microservices</span>
-                                            <span class="skill-item">GraphQL</span>
-                                        </div>
-                                        
-                                        <div class="section-title mt-4">Experience Match</div>
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-grow-1 me-3">
-                                                <div class="progress progress-bar-custom">
-                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <div class="fw-bold">85%</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="d-flex justify-content-end mt-4">
-                                        <button class="btn btn-outline-secondary action-btn me-2">
-                                            <i class="bi bi-file-earmark-text"></i> View CV
-                                        </button>
-                                        <button class="btn btn-primary action-btn">
-                                            <i class="bi bi-calendar-check"></i> Schedule Interview
-                                        </button>
-                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Shortlisted -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card stat-card card-shortlisted">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap">
+                            <div class="me-3">
+                                <p class="text-muted mb-2">Shortlisted</p>
+                                <h5 class="stat-value">1</h5>
+                                <div class="trend-indicator trend-down">
+                                    <i class="fas fa-minus me-1"></i>17% of applicants
+                                </div>
+                                <div class="progress mt-3">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 17%" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="stat-description mt-2">Selected for next round</div>
+                            </div>
+                            <div class="avatar-sm ms-auto">
+                                <div class="avatar-title bg-success rounded-circle text-white font-size-20">
+                                    <i class="fas fa-check-circle"></i>
                                 </div>
                             </div>
-
-                            <!-- Applicant 3 -->
-                            <div class="col-12 mb-3">
-                                <div class="p-4 applicant-card">
-                                    <div class="d-flex justify-content-between align-items-start">
-                                        <div>
-                                            <h5>David Chen</h5>
-                                            <div class="id-highlight mt-2 mb-3">
-                                                <i class="bi bi-person-badge"></i> National ID: 543216789
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <span class="status-badge bg-warning">Under Review</span>
-                                            <div class="match-percentage mt-2">78% Match</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="mt-3">
-                                        <div class="section-title">Qualifications</div>
-                                        <div class="row">
-                                            <div class="col-md-3 mb-2">
-                                                <div class="qualification-badge bg-primary bg-opacity-10 text-primary">
-                                                    <i class="bi bi-mortarboard"></i> PhD Computer Science
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 mb-2">
-                                                <div class="qualification-badge bg-info bg-opacity-10 text-info">
-                                                    <i class="bi bi-briefcase"></i> 10 Years Experience
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 mb-2">
-                                                <div class="qualification-badge bg-warning bg-opacity-10 text-warning">
-                                                    <i class="bi bi-award"></i> Azure Solutions Architect
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 mb-2">
-                                                <div class="qualification-badge bg-success bg-opacity-10 text-success">
-                                                    <i class="bi bi-patch-check"></i> TOGAF Certified
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="section-title mt-4">Technical Skills</div>
-                                        <div class="skills-container">
-                                            <span class="skill-item">C#</span>
-                                            <span class="skill-item">.NET Core</span>
-                                            <span class="skill-item">Angular</span>
-                                            <span class="skill-item">Azure</span>
-                                            <span class="skill-item">DevOps</span>
-                                            <span class="skill-item">Machine Learning</span>
-                                            <span class="skill-item">System Architecture</span>
-                                            <span class="skill-item">Security</span>
-                                        </div>
-                                        
-                                        <div class="section-title mt-4">Experience Match</div>
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-grow-1 me-3">
-                                                <div class="progress progress-bar-custom">
-                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                            <div class="fw-bold">78%</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="d-flex justify-content-end mt-4">
-                                        <button class="btn btn-outline-secondary action-btn me-2">
-                                            <i class="bi bi-file-earmark-text"></i> View CV
-                                        </button>
-                                        <button class="btn btn-primary action-btn">
-                                            <i class="bi bi-calendar-check"></i> Schedule Interview
-                                        </button>
-                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Rejected -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card stat-card card-rejected">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap">
+                            <div class="me-3">
+                                <p class="text-muted mb-2">Rejected</p>
+                                <h5 class="stat-value">1</h5>
+                                <div class="trend-indicator trend-down">
+                                    <i class="fas fa-minus me-1"></i>17% of applicants
                                 </div>
+                                <div class="progress mt-3">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 17%" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="stat-description mt-2">Not selected for position</div>
+                            </div>
+                            <div class="avatar-sm ms-auto">
+                                <div class="avatar-title bg-danger rounded-circle text-white font-size-20">
+                                    <i class="fas fa-times-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card stat-card">
+                    <div class="card-body">
+                        <h5 class="section-title">Qualifications Summary</h5>
+                        
+                        <div class="qualification-item">
+                            <div class="qualification-label">
+                                <span>Education</span>
+                                <span class="text-success">100%</span>
+                            </div>
+                            <div class="progress mb-4">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         
-                        <div class="row">
-                            <div class="mt-4 text-center text-muted">
-                                <p class="mb-0">Applicant Tracking System</p>
-                                <p>Showing 3 of 12 candidates for Senior Software Engineer position</p>
+                        <div class="qualification-item">
+                            <div class="qualification-label">
+                                <span>Experience</span>
+                                <span class="text-success">83%</span>
+                            </div>
+                            <div class="progress mb-4">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 83%" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
+                        
+                        <div class="qualification-item">
+                            <div class="qualification-label">
+                                <span>Certifications</span>
+                                <span class="text-warning">50%</span>
+                            </div>
+                            <div class="progress mb-4">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="qualification-item">
+                            <div class="qualification-label">
+                                <span>Skills</span>
+                                <span class="text-info">67%</span>
+                            </div>
+                            <div class="progress mb-4">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between align-items-center mt-4 pt-2 border-top">
+                            <div class="fw-bold">Average Criteria Met</div>
+                            <div class="display-6 text-primary">3.1/4</div>
+                        </div>
                     </div>
-
-                    <div class="modal-footer justify-content-between p-3">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save Selection</button>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="card stat-card">
+                    <div class="card-body">
+                        <h5 class="section-title">Position Distribution</h5>
+                        
+                        <div class="position-item">
+                            <div class="position-name">Senior Accountant</div>
+                            <div class="d-flex justify-content-between">
+                                <span class="applicant-count">2 Applicants</span>
+                                <span>33%</span>
+                            </div>
+                            <div class="progress mt-2">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="position-item">
+                            <div class="position-name">IT Specialist</div>
+                            <div class="d-flex justify-content-between">
+                                <span class="applicant-count">2 Applicants</span>
+                                <span>33%</span>
+                            </div>
+                            <div class="progress mt-2">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="position-item">
+                            <div class="position-name">Agricultural Officer</div>
+                            <div class="d-flex justify-content-between">
+                                <span class="applicant-count">1 Applicant</span>
+                                <span>17%</span>
+                            </div>
+                            <div class="progress mt-2">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 17%" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="position-item">
+                            <div class="position-name">Youth Development Coordinator</div>
+                            <div class="d-flex justify-content-between">
+                                <span class="applicant-count">1 Applicant</span>
+                                <span>17%</span>
+                            </div>
+                            <div class="progress mt-2">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 17%" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center mt-4 pt-2 border-top">
+                            <div class="text-center">
+                                <div class="fw-bold">4 Distinct Positions</div>
+                                <div class="text-muted">Showing all current openings</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="text-center mt-5">
-            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#viewApplicants">
-                View Applicants Modal
-            </button>
-            <p class="text-muted mt-3">Click the button above to open the applicants modal</p>
+        <div class="row">
+            <div class="col-12">
+                <div class="card stat-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="section-title mb-0">Applicant Overview</h5>
+                            <button class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-download me-1"></i> Export Report
+                            </button>
+                        </div>
+                        
+                        <div class="table-responsive applicant-table">
+                            <table class="table align-middle table-hover">
+                                <thead class="table-light">
+                                    <tr class="table-primary text-uppercase">
+                                        <th scope="col">Applicant</th>
+                                        <th scope="col">ID Number</th>
+                                        <th scope="col">Position Applied</th>
+                                        <th scope="col" class="text-center">Education</th>
+                                        <th scope="col" class="text-center">Experience</th>
+                                        <th scope="col" class="text-center">Certifications</th>
+                                        <th scope="col" class="text-center">Skills</th>
+                                        <th scope="col">Criteria Met</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col" class="text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; margin-right: 12px;">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="fw-bold">John Mwangi</div>
+                                                    <div class="text-muted small">Applied: 2023-10-18</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>ID-287654</td>
+                                        <td>Senior Accountant</td>
+                                        <td class="qualification-check text-center"><i class="fas fa-check-circle text-success"></i></td>
+                                        <td class="qualification-check text-center"><i class="fas fa-check-circle text-success"></i></td>
+                                        <td class="qualification-check text-center"><i class="fas fa-check-circle text-success"></i></td>
+                                        <td class="qualification-check text-center"><i class="fas fa-check-circle text-success"></i></td>
+                                        <td><span class="criteria-badge criteria-good">4/4</span></td>
+                                       <td><span class="status-badge bg-info">REVIEW</span></td>
+                                        <td class="text-right action-buttons">
+                                            <button class="btn btn-outline-primary btn-sm">
+                                                <i class="fas fa-eye me-1"></i> Details
+                                            </button>
+                                            <button class="btn btn-success btn-sm">
+                                                <i class="fas fa-list-check me-1"></i> Shortlist
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; margin-right: 12px;">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="fw-bold">Sarah Johnson</div>
+                                                    <div class="text-muted small">Applied: 2023-10-17</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>ID-345219</td>
+                                        <td>IT Specialist</td>
+                                        <td class="qualification-check text-center"><i class="fas fa-check-circle text-success"></i></td>
+                                        <td class="qualification-check text-center"><i class="fas fa-check-circle text-success"></i></td>
+                                        <td class="qualification-missing text-center"><i class="fas fa-times-circle text-warning"></i></td>
+                                        <td class="qualification-check text-center"><i class="fas fa-check-circle text-success"></i></td>
+                                        <td><span class="criteria-badge criteria-average">3/4</span></td>
+                                       <td><span class="status-badge bg-info">REVIEW</span></td>
+                                        <td class="text-right action-buttons">
+                                            <button class="btn btn-outline-primary btn-sm">
+                                                <i class="fas fa-eye me-1"></i> Details
+                                            </button>
+                                            <button class="btn btn-success btn-sm">
+                                                <i class="fas fa-list-check me-1"></i> Shortlist
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; margin-right: 12px;">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="fw-bold">David Omondi</div>
+                                                    <div class="text-muted small">Applied: 2023-10-20</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>ID-198735</td>
+                                        <td>Agricultural Officer</td>
+                                        <td class="qualification-check text-center"><i class="fas fa-check-circle text-success"></i></td>
+                                        <td class="qualification-missing text-center"><i class="fas fa-times-circle text-warning"></i></td>
+                                        <td class="qualification-check text-center"><i class="fas fa-check-circle text-success"></i></td>
+                                        <td class="qualification-check text-center"><i class="fas fa-check-circle text-success"></i></td>
+                                        <td><span class="criteria-badge criteria-average">3/4</span></td>
+                                       <td><span class="status-badge bg-info">REVIEW</span></td>
+                                        <td class="text-right action-buttons">
+                                            <button class="btn btn-outline-primary btn-sm">
+                                                <i class="fas fa-eye me-1"></i> Details
+                                            </button>
+                                            <button class="btn btn-danger btn-sm">
+                                                <i class="fas fa-times-circle me-1"></i> Reject
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; margin-right: 12px;">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="fw-bold">Grace Wangari</div>
+                                                    <div class="text-muted small">Applied: 2023-10-16</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>ID-476812</td>
+                                        <td>Youth Development Coordinator</td>
+                                        <td class="qualification-check text-center"><i class="fas fa-check-circle text-success"></i></td>
+                                        <td class="qualification-check text-center"><i class="fas fa-check-circle text-success"></i></td>
+                                        <td class="qualification-missing text-center"><i class="fas fa-times-circle text-warning"></i></td>
+                                        <td class="qualification-missing text-center"><i class="fas fa-times-circle text-warning"></i></td>
+                                        <td><span class="criteria-badge criteria-poor">2/4</span></td>
+                                        <td><span class="status-badge bg-success">Shortlisted</span></td>
+                                        <td class="text-right action-buttons">
+                                            <button class="btn btn-outline-primary btn-sm">
+                                                <i class="fas fa-eye me-1"></i> Details
+                                            </button>
+                                            <button class="btn btn-danger btn-sm">
+                                                <i class="fas fa-times-circle me-1"></i> Reject
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="text-uppercase">
+                                    <tr>
+                                        <th colspan="3">4 Applicants Shown</th>
+                                        <th colspan="4">Avg Criteria Met: 3.0/4</th>
+                                        <th colspan="3" class="text-right">Showing candidates for 4 positions</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
