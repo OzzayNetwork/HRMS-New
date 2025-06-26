@@ -143,6 +143,9 @@
             margin: 3px;
             font-size: 0.85rem;
         }
+        table img{
+            display: none;
+        }
         
        
     </style>
@@ -661,7 +664,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0 font-size-18">Shortlisted Candidates</h4>
+                                <h4 class="mb-sm-0 font-size-18">Backgtound Check</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
@@ -892,312 +895,169 @@
                                 <div class="card-body">
                                     <div class="table-responsive text-nowrap">
 
-                                      <table class="table align-middle table-hover">
-                                            <thead class="table-light">
-                                                <tr class="text-uppercase">
-                                                    <th scope="col">Candidate</th>
-                                                    <th scope="col">Position</th>
-                                                    <th scope="col">Interview Date</th>
-                                                    <th scope="col">Time</th>
-                                                    <th scope="col">Interviewers</th>
-                                                    <th scope="col">Status</th>
-                                                    <th scope="col">Evaluation</th>
-                                                    <th scope="col" class="text-center">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
-                                                                style="width: 36px; height: 36px; margin-right: 12px;">
-                                                                <i class="fas fa-user"></i>
-                                                            </div>
-                                                            <div>
-                                                                <div class="fw-bold">John Mwangi</div>
-                                                                <div class="text-muted small">ID: ID-287654</div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>Senior Accountant</td>
-                                                    <td>
-                                                        <div class="fw-bold">2023-11-05</div>
-                                                        <div class="text-muted small">Monday</div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="fw-bold">10:00 AM</div>
-                                                        <div class="text-muted small">Duration: 45 min</div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-wrap">
-                                                            <span class="panelist-tag">H. Rodriguez</span>
-                                                            <span class="panelist-tag">A. Johnson</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="interview-badge badge-scheduled">Scheduled</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rating-stars">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                        <div class="text-muted small">Pending</div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#evaluationModal">
-                                                            <i class="fas fa-edit me-1"></i>Evaluate
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center"
-                                                                style="width: 36px; height: 36px; margin-right: 12px;">
-                                                                <i class="fas fa-user"></i>
-                                                            </div>
-                                                            <div>
-                                                                <div class="fw-bold">Grace Wangari</div>
-                                                                <div class="text-muted small">ID: ID-476812</div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>Youth Development Coordinator</td>
-                                                    <td>
-                                                        <div class="fw-bold">2023-11-05</div>
-                                                        <div class="text-muted small">Monday</div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="fw-bold">02:30 PM</div>
-                                                        <div class="text-muted small">Duration: 60 min</div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-wrap">
-                                                            <span class="panelist-tag">H. Rodriguez</span>
-                                                            <span class="panelist-tag">S. Chen</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="interview-badge badge-completed">Completed</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rating-stars">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star-half-alt"></i>
-                                                            <span class="ms-2">4.5</span>
-                                                        </div>
-                                                        <div class="text-muted small">Evaluated</div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#evaluationModal">
-                                                            <i class="fas fa-eye me-1"></i>View
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center"
-                                                                style="width: 36px; height: 36px; margin-right: 12px;">
-                                                                <i class="fas fa-user"></i>
-                                                            </div>
-                                                            <div>
-                                                                <div class="fw-bold">Sarah Johnson</div>
-                                                                <div class="text-muted small">ID: ID-345219</div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>IT Specialist</td>
-                                                    <td>
-                                                        <div class="fw-bold">2023-11-06</div>
-                                                        <div class="text-muted small">Tuesday</div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="fw-bold">11:00 AM</div>
-                                                        <div class="text-muted small">Duration: 60 min</div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-wrap">
-                                                            <span class="panelist-tag">M. Williams</span>
-                                                            <span class="panelist-tag">A. Johnson</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="interview-badge badge-scheduled">Scheduled</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rating-stars">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                        <div class="text-muted small">Pending</div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#evaluationModal">
-                                                            <i class="fas fa-edit me-1"></i>Evaluate
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center"
-                                                                style="width: 36px; height: 36px; margin-right: 12px;">
-                                                                <i class="fas fa-user"></i>
-                                                            </div>
-                                                            <div>
-                                                                <div class="fw-bold">David Omondi</div>
-                                                                <div class="text-muted small">ID: ID-198735</div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>Agricultural Officer</td>
-                                                    <td>
-                                                        <div class="fw-bold">2023-11-07</div>
-                                                        <div class="text-muted small">Wednesday</div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="fw-bold">09:30 AM</div>
-                                                        <div class="text-muted small">Duration: 45 min</div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-wrap">
-                                                            <span class="panelist-tag">H. Rodriguez</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="interview-badge badge-scheduled">Scheduled</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rating-stars">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                        <div class="text-muted small">Pending</div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#evaluationModal">
-                                                            <i class="fas fa-edit me-1"></i>Evaluate
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center"
-                                                                style="width: 36px; height: 36px; margin-right: 12px;">
-                                                                <i class="fas fa-user"></i>
-                                                            </div>
-                                                            <div>
-                                                                <div class="fw-bold">Michael Otieno</div>
-                                                                <div class="text-muted small">ID: ID-563289</div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>Senior Accountant</td>
-                                                    <td>
-                                                        <div class="fw-bold">2023-11-08</div>
-                                                        <div class="text-muted small">Thursday</div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="fw-bold">03:00 PM</div>
-                                                        <div class="text-muted small">Duration: 60 min</div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-wrap">
-                                                            <span class="panelist-tag">A. Johnson</span>
-                                                            <span class="panelist-tag">S. Chen</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="interview-badge badge-completed">Completed</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rating-stars">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <span class="ms-2">5.0</span>
-                                                        </div>
-                                                        <div class="text-muted small">Evaluated</div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#evaluationModal">
-                                                            <i class="fas fa-eye me-1"></i>View
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center"
-                                                                style="width: 36px; height: 36px; margin-right: 12px;">
-                                                                <i class="fas fa-user"></i>
-                                                            </div>
-                                                            <div>
-                                                                <div class="fw-bold">Elizabeth Chen</div>
-                                                                <div class="text-muted small">ID: ID-654321</div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>IT Specialist</td>
-                                                    <td>
-                                                        <div class="fw-bold">2023-11-09</div>
-                                                        <div class="text-muted small">Friday</div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="fw-bold">01:15 PM</div>
-                                                        <div class="text-muted small">Duration: 45 min</div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex flex-wrap">
-                                                            <span class="panelist-tag">M. Williams</span>
-                                                            <span class="panelist-tag">S. Chen</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="interview-badge badge-scheduled">Scheduled</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rating-stars">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                            <i class="far fa-star"></i>
-                                                        </div>
-                                                        <div class="text-muted small">Pending</div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#evaluationModal">
-                                                            <i class="fas fa-edit me-1"></i>Evaluate
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                            <tfoot class="text-uppercase">
-                                                <tr>
-                                                    <th colspan="8" class="text-center">
-                                                        Showing 6 scheduled interviews - Next interview: John Mwangi on 2023-11-05 at 10:00 AM
-                                                    </th>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
+                                                     <table class="table align-middle table-hover">
+                    <thead>
+                        <tr class="text-uppercase">
+                            <th scope="col">Candidate</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col" class="text-center">ID Verification</th>
+                            <th scope="col" class="text-center">Education</th>
+                            <th scope="col" class="text-center">KRA</th>
+                            <th scope="col" class="text-center">HELB</th>
+                            <th scope="col" class="text-center">CRB</th>
+                            <th scope="col" class="text-center">EACC</th>
+                            <th scope="col" class="text-center">Good Conduct</th>
+                            <th scope="col" class="text-center">Overall Status</th>
+                            <th scope="col" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-3" width="40" height="40">
+                                    <div>
+                                        <div class="fw-bold">John Mwangi</div>
+                                        <div class="text-muted small">ID: ID-287654</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Senior Accountant</td>
+                            <td>
+                                <div>john.mwangi@email.com</div>
+                                <div class="text-muted small">+254 712 345 678</div>
+                            </td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center">
+                                <span class="status-badge badge-verified">Clear</span>
+                                <div class="progress progress-sm mt-1">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#verificationModal">
+                                    <i class="fas fa-edit me-1"></i>Verify
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-3" width="40" height="40">
+                                    <div>
+                                        <div class="fw-bold">Sarah Johnson</div>
+                                        <div class="text-muted small">ID: ID-345219</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>IT Specialist</td>
+                            <td>
+                                <div>sarah.j@email.com</div>
+                                <div class="text-muted small">+254 723 456 789</div>
+                            </td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-pending">Pending</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-pending">Pending</span></td>
+                            <td class="text-center">
+                                <span class="status-badge badge-pending">Pending</span>
+                                <div class="progress progress-sm mt-1">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 71%"></div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#verificationModal">
+                                    <i class="fas fa-edit me-1"></i>Verify
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://randomuser.me/api/portraits/men/67.jpg" class="rounded-circle me-3" width="40" height="40">
+                                    <div>
+                                        <div class="fw-bold">David Omondi</div>
+                                        <div class="text-muted small">ID: ID-198735</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Agricultural Officer</td>
+                            <td>
+                                <div>d.omondi@email.com</div>
+                                <div class="text-muted small">+254 734 567 890</div>
+                            </td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-issue">Issue</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-issue">Issue</span></td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-pending">Pending</span></td>
+                            <td class="text-center">
+                                <span class="status-badge badge-issue">Issues</span>
+                                <div class="progress progress-sm mt-1">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 57%"></div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#verificationModal">
+                                    <i class="fas fa-edit me-1"></i>Verify
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-3" width="40" height="40">
+                                    <div>
+                                        <div class="fw-bold">Grace Wangari</div>
+                                        <div class="text-muted small">ID: ID-476812</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Youth Coordinator</td>
+                            <td>
+                                <div>grace.w@email.com</div>
+                                <div class="text-muted small">+254 745 678 901</div>
+                            </td>
+                            <td class="text-center"><span class="status-badge badge-verified">Verified</span></td>
+                            <td class="text-center"><span class="status-badge badge-pending">Pending</span></td>
+                            <td class="text-center"><span class="status-badge badge-pending">Pending</span></td>
+                            <td class="text-center"><span class="status-badge badge-not-started">Not Started</span></td>
+                            <td class="text-center"><span class="status-badge badge-not-started">Not Started</span></td>
+                            <td class="text-center"><span class="status-badge badge-pending">Pending</span></td>
+                            <td class="text-center"><span class="status-badge badge-not-started">Not Started</span></td>
+                            <td class="text-center">
+                                <span class="status-badge badge-pending">Pending</span>
+                                <div class="progress progress-sm mt-1">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 29%"></div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#verificationModal">
+                                    <i class="fas fa-edit me-1"></i>Verify
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="text-uppercase">
+                        <tr>
+                            <th colspan="12" class="text-center">
+                                Showing 4 candidates - Last updated: 2023-11-03 14:28
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
                                     </div>
                                 </div>
                             </div>
@@ -2766,6 +2626,268 @@
                 });
             </script>
             <!-- end of adding applicant -->
+
+            <div class="modal fade verification-modal" id="verificationModal" tabindex="-1" aria-labelledby="verificationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="verificationModalLabel">Background Verification</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-3 d-none" width="60" height="60">
+                            <div>
+                                <h3 class="mb-0">John Mwangi</h3>
+                                <p class="mb-0">Senior Accountant - ID: ID-287654</p>
+                                <p class="mb-0">john.mwangi@email.com | +254 712 345 678</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="verification-grid mb-4">
+                        <div class="verification-item">
+                            <h6 class="section-title">ID Verification</h6>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select">
+                                    <option value="verified" selected>Verified</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="issue">Issue Found</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Date Completed</label>
+                                <input type="date" class="form-control" value="2023-10-25">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Comments</label>
+                                <textarea class="form-control" rows="2">National ID verified through government portal</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="verification-item">
+                            <h6 class="section-title">Education</h6>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select">
+                                    <option value="verified" selected>Verified</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="issue">Issue Found</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Date Completed</label>
+                                <input type="date" class="form-control" value="2023-10-26">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Comments</label>
+                                <textarea class="form-control" rows="2">Degrees confirmed with University of Nairobi</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="verification-item">
+                            <h6 class="section-title">KRA</h6>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select">
+                                    <option value="verified" selected>Verified</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="issue">Issue Found</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Date Completed</label>
+                                <input type="date" class="form-control" value="2023-10-27">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Comments</label>
+                                <textarea class="form-control" rows="2">Tax compliance certificate obtained</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="verification-item">
+                            <h6 class="section-title">HELB</h6>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select">
+                                    <option value="verified" selected>Verified</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="issue">Issue Found</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Date Completed</label>
+                                <input type="date" class="form-control" value="2023-10-28">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Comments</label>
+                                <textarea class="form-control" rows="2">Loan fully cleared as of 2022</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="verification-grid mb-4">
+                        <div class="verification-item">
+                            <h6 class="section-title">CRB</h6>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select">
+                                    <option value="verified" selected>Verified</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="issue">Issue Found</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Date Completed</label>
+                                <input type="date" class="form-control" value="2023-10-29">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Comments</label>
+                                <textarea class="form-control" rows="2">Clean credit report</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="verification-item">
+                            <h6 class="section-title">EACC</h6>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select">
+                                    <option value="verified" selected>Verified</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="issue">Issue Found</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Date Completed</label>
+                                <input type="date" class="form-control" value="2023-10-30">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Comments</label>
+                                <textarea class="form-control" rows="2">No integrity issues found</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="verification-item">
+                            <h6 class="section-title">Good Conduct</h6>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-select">
+                                    <option value="verified" selected>Verified</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="issue">Issue Found</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Date Completed</label>
+                                <input type="date" class="form-control" value="2023-10-31">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Comments</label>
+                                <textarea class="form-control" rows="2">Certificate obtained, no criminal record</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="verification-section">
+                                <h5 class="section-title">Referee 1</h5>
+                                <div class="mb-3">
+                                    <label class="form-label">Contact Name</label>
+                                    <input type="text" class="form-control" value="Dr. Samuel Kariuki">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Title/Position</label>
+                                    <input type="text" class="form-control" value="Senior Lecturer, University of Nairobi">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Feedback</label>
+                                    <textarea class="form-control" rows="3">John was an excellent student with strong analytical skills. He demonstrated integrity and professionalism during his internship.</textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Verification Status</label>
+                                    <select class="form-select">
+                                        <option value="verified" selected>Verified</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="issue">Issue Found</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="verification-section">
+                                <h5 class="section-title">Referee 2</h5>
+                                <div class="mb-3">
+                                    <label class="form-label">Contact Name</label>
+                                    <input type="text" class="form-control" value="Jane Akinyi">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Title/Position</label>
+                                    <input type="text" class="form-control" value="Finance Manager, ABC Company">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Feedback</label>
+                                    <textarea class="form-control" rows="3">John worked with us for 3 years. He is reliable, trustworthy, and has excellent accounting skills. Highly recommend.</textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Verification Status</label>
+                                    <select class="form-select">
+                                        <option value="verified" selected>Verified</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="issue">Issue Found</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="section-title">Additional Documentation</h5>
+                        <div class="file-upload-box" onclick="document.getElementById('fileUpload').click()">
+                            <i class="fas fa-cloud-upload-alt fa-2x text-muted mb-2"></i>
+                            <p class="mb-1">Click to upload supporting documents</p>
+                            <p class="small text-muted mb-0">Supports PDF, JPG, PNG, DOC (Max 10MB each)</p>
+                            <input type="file" id="fileUpload" hidden multiple>
+                        </div>
+                        <div class="mt-3">
+                            <div class="d-flex flex-wrap">
+                                <div class="me-3 mb-2">
+                                    <div class="d-flex align-items-center bg-light p-2 rounded">
+                                        <i class="fas fa-file-pdf text-danger me-2"></i>
+                                        <div>
+                                            <div>id_verification.pdf</div>
+                                            <small class="text-muted">256 KB</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="me-3 mb-2">
+                                    <div class="d-flex align-items-center bg-light p-2 rounded">
+                                        <i class="fas fa-file-image text-success me-2"></i>
+                                        <div>
+                                            <div>degree_certificate.jpg</div>
+                                            <small class="text-muted">1.2 MB</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="overallComments" class="form-label">Overall Comments</label>
+                        <textarea class="form-control" id="overallComments" rows="4" placeholder="Enter overall verification comments...">Candidate has passed all background checks with no issues. All documents verified and references checked. Recommended for hiring.</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save Verification</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
             <footer class="footer ">
                 <div class="container-fluid ">
