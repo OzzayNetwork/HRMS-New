@@ -1,0 +1,2946 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- By Kelvin Njuguna   13:53:02 GMT -->
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>HRMS - Human Resource Management System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Keep your finances and membership up to date" name="description" />
+    <meta content="Kelvin Njuguna Ndungu" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.svg">
+
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap select styling -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.css" id="app-style" rel="stylesheet" type="text/css" />
+
+    <style>
+        .stat-description {
+            display: none;
+        }
+    </style>
+
+    <style>
+       
+       
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e9ecef;
+        }
+        
+        
+        
+        .avatar-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            font-size: 1.5rem;
+            border-radius: 50%;
+        }
+        
+       
+       
+        .table-hover tbody tr:hover {
+            background-color: rgba(44, 123, 229, 0.05);
+        }
+        
+        .action-buttons .btn {
+            margin-left: 8px;
+        }
+        
+      
+        
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .interview-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        
+        .badge-scheduled { background-color: rgba(44, 123, 229, 0.15); color: var(--primary); }
+        .badge-completed { background-color: rgba(0, 217, 126, 0.15); color: #008a50; }
+        .badge-pending { background-color: rgba(246, 195, 67, 0.15); color: #b88c2a; }
+        
+        .rating-stars {
+            color: #f6c343;
+            font-size: 1.2rem;
+        }
+        
+        .evaluation-modal .modal-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0061e0 100%);
+            color: white;
+        }
+        
+        .skill-meter {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-meter-fill {
+            height: 100%;
+            background-color: var(--primary);
+        }
+        
+        .file-upload-box {
+            border: 2px dashed #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .file-upload-box:hover {
+            border-color: var(--primary);
+            background-color: rgba(44, 123, 229, 0.05);
+        }
+        
+        .recommendation-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .recommended { background-color: rgba(0, 217, 126, 0.15); color: #008a50; }
+        .not-recommended { background-color: rgba(230, 55, 87, 0.15); color: #c82346; }
+        
+        .panelist-tag {
+            display: inline-flex;
+            align-items: center;
+            background-color: #e9ecef;
+            border-radius: 20px;
+            padding: 4px 12px;
+            margin: 3px;
+            font-size: 0.85rem;
+        }
+        
+       
+    </style>
+
+
+</head>
+
+<body data-sidebar="dark">
+
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-chase">
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Begin page -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a class="logo logo-dark"><span class="logo-sm"><img alt="" height="22"
+                                    src="./assets/images/logo.svg"></span><span class="logo-lg"></span></a><a
+                            class="logo logo-light d-flex"><span class="logo-sm"><img alt="" height="50"
+                                    src="https://api.craftcollect.africa/homabay/logo/county_logo.png"></span><span
+                                class="logo-lg"><img alt="" height="45"
+                                    src="https://api.craftcollect.africa/homabay/logo/county_logo.png"></span>
+                            <div class="portal-title">
+                                <h4 class="text-white">HRMS</h4>
+                                <h6 class="text-muted mb-0 text-white opacity-75">Homa Bay County</h6>
+                            </div>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect"
+                        id="vertical-menu-btn">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <!-- logo small -->
+                    <div class="phone-logo d-md-none d-sm-flex"> <img src="assets/images/color-log0.svg" alt=""
+                            class="img"></div>
+
+
+
+                    <!-- App Search-->
+                    <form class="app-search d-none d-lg-block">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="bx bx-search-alt"></span>
+                        </div>
+                    </form>
+
+
+                </div>
+                <div class="d-flex">
+                    <!-- small search -->
+                    <div class="dropdown d-inline-block d-lg-none ms-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="mdi mdi-magnify"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-search-dropdown">
+
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..."
+                                            aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i
+                                                    class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="dropdown d-none d-lg-inline-block ms-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            data-bs-toggle="fullscreen">
+                            <i class="bx bx-fullscreen"></i>
+                        </button>
+                    </div>
+
+                    <div class="dropdown d-inline-block d-none">
+
+                        <!-- notifications, i will come to this later -->
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="bx bx-bell bx-tada"></i>
+                            <span class="badge bg-danger rounded-pill">3</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0" key="t-notifications"> Notifications </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small" key="t-view-all"> View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                <i class="bx bx-cart"></i>
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-your-order">Your order is placed</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the
+                                                    grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
+                                                        key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-3.jpg"
+                                            class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">James Lemire</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-simplified">It will seem like simplified English.
+                                                </p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
+                                                        key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <div class="avatar-xs me-3">
+                                            <span class="avatar-title bg-success rounded-circle font-size-16">
+                                                <i class="bx bx-badge-check"></i>
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1" key="t-shipped">Your item is shipped</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-grammer">If several languages coalesce the
+                                                    grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
+                                                        key="t-min-ago">3 min ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="javascript: void(0);" class="text-reset notification-item">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-4.jpg"
+                                            class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Salena Layfield</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1" key="t-occidental">As a skeptical Cambridge friend of
+                                                    mine occidental.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span
+                                                        key="t-hours-ago">1 hours ago</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top d-grid">
+                                <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                    <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">View
+                                        More..</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
+                                alt="Header Avatar">
+                            <span class="d-none d-xl-inline-block ms-1" key="t-henry">Adroa Balinda</span>
+                            <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item" href="myprofile.html"><i
+                                    class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">My
+                                    Profile</span></a>
+                            <a class="dropdown-item" href="my-logs.html"><i
+                                    class="bx bx-time font-size-16 align-middle me-1"></i> <span key="t-profile">My
+                                    Logs</span></a>
+                            <a class="dropdown-item" href="auth-lock-screen.html"><i
+                                    class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span
+                                    key="t-lock-screen">Lock screen</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="auth-login.html"><i
+                                    class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
+                                    key="t-logout">Logout</span></a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled text-capitalize" id="side-menu">
+                        <li class="menu-title" key="t-pages">Public County Service Board</li>
+                        <li>
+                            <a href="PCSB-candidate-analytics.html" class="waves-effect">
+                                <i class="bx bx-bar-chart-alt-2"></i><span>Candidate Analytics</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="PCSB-vacancies.html" class="waves-effect">
+                                <i class="bx bx-briefcase"></i><span>Vacancies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="PCSB-applications.html" class="waves-effect">
+                                <i class="bx bx-file"></i><span>Applications</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="PCSB-shortlist.html" class="waves-effect">
+                                <i class="bx bx-list-check"></i><span>Shortlist</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="PCSB-interview-schedules.html" class="waves-effect">
+                                <i class="bx bx-calendar"></i><span>Interview Schedules</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="PCSB-background-check.html" class="waves-effect">
+                                <i class="bx bx-shield"></i><span>Background Check</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="PCSB-candidate-selection.html" class="waves-effect">
+                                <i class="bx bx-user-check"></i><span>Candidate Selection</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="PCSB-candidate-appointment.html" class="waves-effect">
+                                <i class="bx bx-id-card"></i><span>Candidate Appointment</span>
+                            </a>
+                        </li>
+
+                        <hr>
+
+                        <li>
+                            <a href="index.html" class="waves-effect">
+                                <i class="bx bx-home"></i><span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="employee-register.html" class="waves-effect">
+                                <i class="mdi mdi-account-group"></i><span>Employee Register</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="projects.html" class="waves-effect">
+                                <i class="mdi mdi-briefcase-account"></i><span>Project Consultants</span>
+                            </a>
+                        </li>
+
+
+
+
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-logout-variant"></i>
+                                <span>Separation</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="separation-termination.html"><i class="mdi mdi-close-circle"></i>
+                                        Termination</a></li>
+                                <li><a href="separation-fnf.html"><i class="mdi mdi-cash"></i> FNF</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-file-document"></i>
+                                <span>Documents</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="documents-general.html"><i class="mdi mdi-file"></i> General Documents</a>
+                                </li>
+                                <li><a href="documents-policy.html"><i class="mdi mdi-book"></i> Company Policy</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-check-decagram"></i>
+                                <span>Employee Approvals</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="employee-approvals-new.html"><i class="mdi mdi-account-check"></i> Pending
+                                        Approvals - New Employees</a></li>
+                                <li><a href="employee-approvals-edit-approvals.html"><i class="mdi mdi-pencil"></i>
+                                        Pending Approvals - Data Edits</a></li>
+                                <li><a href="employee-approvals-rejected.html"><i class="mdi mdi-close-circle"></i>
+                                        Rejected</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-file-chart"></i>
+                                <span>Reports</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="report-daily.html"><i class="mdi mdi-calendar-today"></i> Daily
+                                        Attendance</a></li>
+                                <li><a href="report-monthly.html" title="Monthly attendance summary"><i
+                                            class="mdi mdi-calendar-month"></i> Monthly Attendance</a></li>
+                                <li><a href="report-hr-report.html"
+                                        title="Employee Count, Department Stats & Exits Overview"><i
+                                            class="mdi mdi-account-group"></i> Dept. HR Report</a></li>
+                                <li><a href="report-leave.html"><i class="mdi mdi-airplane-departure"></i> Leave</a>
+                                </li>
+                                <li><a href="report-timesheet.html"><i class="mdi mdi-clock-time-eight-outline"></i>
+                                        Timesheet</a></li>
+                                <li><a href="report-awol.html" title="Absence Without Leave"><i
+                                            class="mdi mdi-account-off"></i> AWOL Report</a></li>
+                                <li><a href="off-duty-details.html"
+                                        title="Employees absent for 15+ days without approval"><i
+                                            class="mdi mdi-account-alert"></i> Unapproved Leave (15+ Days)</a></li>
+                            </ul>
+                        </li>
+
+
+
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-account-cog"></i>
+                                <span>HR Actions</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="hr-transfers.html"><i class="mdi mdi-transfer"></i> Transfers</a></li>
+                                <li><a href="hr-events.html"><i class="mdi mdi-calendar"></i> Events</a></li>
+                                <li><a href="hr-meetings.html"><i class="mdi mdi-account-voice"></i> Meetings</a></li>
+                                <li><a href="hr-assets.html"><i class="mdi mdi-archive"></i> Assets</a></li>
+                                <li><a href="hr-promotions.html"><i class="mdi mdi-arrow-up-bold"></i> Promotions</a>
+                                </li>
+                                <li><a href="hr-warnings.html"><i class="mdi mdi-alert"></i> Warnings</a></li>
+                                <li><a href="hr-announcements.html"><i class="mdi mdi-bullhorn"></i> Announcements</a>
+                                </li>
+                                <li><a href="hr-holidays.html"><i class="mdi mdi-beach"></i> Holidays</a></li>
+                                <li><a href="hr-trainings.html"><i class="mdi mdi-school"></i> Trainings</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-calendar-check"></i> <!-- Represents leave & attendance -->
+                                <span>Leave & Attendance</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="attendance-timesheet.html"><i class="mdi mdi-clock-time-four"></i>
+                                        Timesheet</a></li>
+                                <li><a href="attendance-leave.html"><i class="mdi mdi-calendar-remove"></i> Manage
+                                        Leave</a></li>
+                                <li><a href="attendance-manage.html"><i class="mdi mdi-account-check"></i> Manage
+                                        Attendance</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-folder-open"></i> <!-- General assets icon -->
+                                <span>Asset</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="assets-all.html"><i class="mdi mdi-barcode-scan"></i> Asset Tracking</a>
+                                </li>
+                                <li><a href="assets-new.html"><i class="mdi mdi-plus-box"></i> Register New Asset</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-file-compare"></i>
+                                <span>Payroll Reconciliation</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="recon-upload-payroll.html"><i class="mdi mdi-upload"></i> Upload
+                                        Payroll</a></li>
+                                <li><a href="recon-history.html"><i class="mdi mdi-history"></i> Recon History</a></li>
+                                <li><a href="recon-history-matrix.html"><i class="mdi mdi-history"></i> HR Matrix
+                                        Report</a></li>
+                            </ul>
+                        </li>
+
+
+
+                        <li>
+                            <a href="perfomance-emp.html" class="waves-effect">
+                                <i class="mdi mdi-chart-line"></i><span>Employee Perfomance</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-title" key="t-pages">System Administration</li>
+                        <li class="">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow">
+                                <i class="mdi mdi-cogs"></i>
+                                <span>Setups</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="set-up-revenue.html"><i class="mdi mdi-cash-multiple"></i> County
+                                        Revenue</a></li>
+                                <li><a href="set-up-sdd.html"><i class="mdi mdi-lan"></i> SDD Connections</a></li>
+                                <li><a href="https://homabaycountyland.fillout.com/t/5DRmYuEdUDus" target="new"><i
+                                            class="mdi mdi-file-document-edit"></i> Appraisal Form</a></li>
+                                <li><a href="set-up-general.html"><i class="mdi mdi-tune"></i> General Set Up</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="d-none">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow"
+                                title="Manage Organizational Structure">
+                                <i class="mdi mdi-sitemap"></i>
+                                <span>Org Structure</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="org-designations.html"><i class="mdi mdi-account-tie"></i> Designations</a>
+                                </li>
+                                <li><a href="org-departments.html"><i class="mdi mdi-domain"></i> Departments</a></li>
+                                <li><a href="org-employment-types.html"><i class="mdi mdi-briefcase"></i> Employment
+                                        Types</a></li>
+                                <li><a href="org-affiliated-institution.html"><i class="mdi mdi-school"></i> Affiliated
+                                        Institution</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="d-none">
+                            <a href="javascript: void(0);" class="waves-effect has-arrow" title="Manage System Users">
+                                <i class="mdi mdi-account-multiple"></i>
+                                <span>Users</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="user-registration.html"><i class="mdi mdi-account-plus"></i> Add User</a>
+                                </li>
+                                <li><a href="user-userlist.html"><i class="mdi mdi-account-group"></i> Manage Users</a>
+                                </li>
+                                <li><a href="users-deactivated.html"><i class="mdi mdi-account-off"></i> Deactivated
+                                        Users</a></li>
+                                <li><a href="use-logs.html"><i class="mdi mdi-file-chart"></i> System Logs</a></li>
+                                <li><a href="users-roles.html"><i class="mdi mdi-shield-account"></i> System Roles</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Shortlisted Candidates</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                        <li class="breadcrumb-item active">Applicants</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <!-- stats cards -->
+                    <div class="row">
+            <!-- Total Interviews -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card stat-card card-total">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap">
+                            <div class="me-3">
+                                <p class="text-muted mb-2">Scheduled Interviews</p>
+                                <h5 class="stat-value">6</h5>
+                                <div class="trend-indicator trend-up">
+                                    <i class="fas fa-arrow-up me-1"></i>2 this week
+                                </div>
+                                <div class="progress mt-3">
+                                    <div class="progress-bar bg-primary" role="progressbar"
+                                        style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                                        aria-valuemax="100"></div>
+                                </div>
+                                <div class="stat-description mt-2">Interviews scheduled</div>
+                            </div>
+                            <div class="avatar-sm ms-auto">
+                                <div class="avatar-title bg-primary rounded-circle text-white font-size-20">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Interviews -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card stat-card card-interview">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap">
+                            <div class="me-3">
+                                <p class="text-muted mb-2">Upcoming Interviews</p>
+                                <h5 class="stat-value">4</h5>
+                                <div class="trend-indicator trend-neutral">
+                                    <i class="fas fa-clock me-1"></i>Within 7 days
+                                </div>
+                                <div class="progress mt-3">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 67%"
+                                        aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="stat-description mt-2">Interviews to be conducted</div>
+                            </div>
+                            <div class="avatar-sm ms-auto">
+                                <div class="avatar-title bg-info rounded-circle text-white font-size-20">
+                                    <i class="fas fa-hourglass-half"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completed Interviews -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card stat-card card-pending">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap">
+                            <div class="me-3">
+                                <p class="text-muted mb-2">Completed Interviews</p>
+                                <h5 class="stat-value">2</h5>
+                                <div class="trend-indicator trend-up">
+                                    <i class="fas fa-check-circle me-1"></i>33% completion
+                                </div>
+                                <div class="progress mt-3">
+                                    <div class="progress-bar bg-warning" role="progressbar"
+                                        style="width: 33%" aria-valuenow="33" aria-valuemin="0"
+                                        aria-valuemax="100"></div>
+                                </div>
+                                <div class="stat-description mt-2">Evaluations pending: 1</div>
+                            </div>
+                            <div class="avatar-sm ms-auto">
+                                <div class="avatar-title bg-warning rounded-circle text-white font-size-20">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avg Rating -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card stat-card card-avg">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap">
+                            <div class="me-3">
+                                <p class="text-muted mb-2">Average Rating</p>
+                                <h5 class="stat-value">4.2/5</h5>
+                                <div class="trend-indicator trend-up">
+                                    <i class="fas fa-star me-1"></i>84% positive
+                                </div>
+                                <div class="progress mt-3">
+                                    <div class="progress-bar bg-success" role="progressbar"
+                                        style="width: 84%" aria-valuenow="84" aria-valuemin="0"
+                                        aria-valuemax="100"></div>
+                                </div>
+                                <div class="stat-description mt-2">Based on 5 evaluations</div>
+                            </div>
+                            <div class="avatar-sm ms-auto">
+                                <div class="avatar-title bg-success rounded-circle text-white font-size-20">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                    <!-- end of stats -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+
+                                <div
+                                    class="card-header bg-white pt-0 pr-0 p-0 d-flex justify-content-between align-items-center w-100 border-bottom">
+
+                                    <div class="btn-toolbar p-3 d-flex justify-content-between align-items-center w-100"
+                                        role="toolbar">
+                                        <div class="flex-grow-1">
+                                            <div class="search-box mb-0 me-3">
+                                                <div class="position-relative">
+                                                    <input type="text"
+                                                        class="form-control bg-light border-light rounded"
+                                                        placeholder="Search..." fdprocessedid="husj3l"
+                                                        spellcheck="false" data-ms-editor="true">
+                                                    <i class="bx bx-search-alt search-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex">
+                                            <div class="d-flex align-items-center me-3 pe-3">
+                                                <div>
+                                                    <div class="float-end d-flex ">
+                                                        <div class="input-group fw-semibold text-uppercase me-3">
+                                                            <label
+                                                                class="input-group-text text-uppercase">Department</label>
+                                                            <select class="form-select " style="width: 200px;">
+                                                                <option selected="selected" value="">All Departments
+                                                                </option>
+                                                                <option value="65">Finance &amp; Economic Planning
+                                                                </option>
+                                                                <option value="67">Governance, Administration,
+                                                                    Communication &amp; Devolution</option>
+                                                                <option value="73">Education, Human Capital Development
+                                                                    &amp; Vocational Training</option>
+                                                                <option value="62">Blue Economy, Fisheries, Mining &amp;
+                                                                    Digital Economy</option>
+                                                                <option value="66">Roads, Public Works, Transport &amp;
+                                                                    Infrastructure</option>
+                                                                <option value="61">Youth, Sports, Talent Development,
+                                                                    Gender Inclusivity, Cultural Heritage &amp; Social
+                                                                    Services</option>
+                                                                <option value="63">Water, Irrigation, Sanitation,
+                                                                    Environment, Energy, Forestry &amp; Climate Change
+                                                                </option>
+                                                                <option value="68">Public Health &amp; Medical Services
+                                                                </option>
+                                                                <option value="64">Lands, Physical Planning, Housing
+                                                                    &amp; Urban Development</option>
+                                                                <option value="69">Trade, Industry, Tourism,
+                                                                    Co-Operative Development and Marketing</option>
+                                                                <option value="70">Agriculture and Livestock Production
+                                                                </option>
+                                                                <option value="72">Office of the County Secretary and
+                                                                    Head of Public Service</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="input-group fw-semibold text-uppercase">
+                                                            <label class="input-group-text text-uppercase">FROM:</label>
+                                                            <input class="form-control form-control-sm" type="date"
+                                                                value="2019-08-19" id="example-date-input">
+                                                        </div>
+
+                                                        <div class="input-group fw-semibold text-uppercase">
+                                                            <label class="input-group-text text-uppercase">TO:</label>
+                                                            <input class="form-control form-control-sm" type="date"
+                                                                value="2019-08-19" id="example-date-input">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button data-bs-toggle="modal" data-bs-target=".download-modal"
+                                                type="button"
+                                                class="btn btn-primary dropdown-toggle option-selector me-3 text-capitalize">
+                                                <i class="bx bxs-download  font-size-16"></i> <span
+                                                    class="pl-1 d-md-inline">Download Report</span>
+                                            </button>
+
+                                            <a href="PCSB-vacancies-create.html" type="button"
+                                                class="btn btn-success dropdown-toggle option-selector me-3 text-uppercase">
+                                                <i class="mdi mdi-plus-circle-outline  font-size-16"></i> <span
+                                                    class="pl-1 d-md-inline">Add Vacancy</span>
+                                            </a>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="btn-toolbar p-3 align-items-center d-none animated delete-tool-bar"
+                                        role="toolbar">
+                                        <button type="button" data-bs-toggle="modal" data-bs-target=".download-modal"
+                                            class="btn btn-primary waves-effect btn-label waves-light me-3"><i
+                                                class="mdi mdi-printer label-icon"></i> Print Selected Invoices</button>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="table-responsive text-nowrap">
+
+                                      <table class="table align-middle table-hover">
+                                            <thead class="table-light">
+                                                <tr class="text-uppercase">
+                                                    <th scope="col">Candidate</th>
+                                                    <th scope="col">Position</th>
+                                                    <th scope="col">Interview Date</th>
+                                                    <th scope="col">Time</th>
+                                                    <th scope="col">Interviewers</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Evaluation</th>
+                                                    <th scope="col" class="text-center">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
+                                                                style="width: 36px; height: 36px; margin-right: 12px;">
+                                                                <i class="fas fa-user"></i>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bold">John Mwangi</div>
+                                                                <div class="text-muted small">ID: ID-287654</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Senior Accountant</td>
+                                                    <td>
+                                                        <div class="fw-bold">2023-11-05</div>
+                                                        <div class="text-muted small">Monday</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="fw-bold">10:00 AM</div>
+                                                        <div class="text-muted small">Duration: 45 min</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-wrap">
+                                                            <span class="panelist-tag">H. Rodriguez</span>
+                                                            <span class="panelist-tag">A. Johnson</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="interview-badge badge-scheduled">Scheduled</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="rating-stars">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <div class="text-muted small">Pending</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#evaluationModal">
+                                                            <i class="fas fa-edit me-1"></i>Evaluate
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center"
+                                                                style="width: 36px; height: 36px; margin-right: 12px;">
+                                                                <i class="fas fa-user"></i>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bold">Grace Wangari</div>
+                                                                <div class="text-muted small">ID: ID-476812</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Youth Development Coordinator</td>
+                                                    <td>
+                                                        <div class="fw-bold">2023-11-05</div>
+                                                        <div class="text-muted small">Monday</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="fw-bold">02:30 PM</div>
+                                                        <div class="text-muted small">Duration: 60 min</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-wrap">
+                                                            <span class="panelist-tag">H. Rodriguez</span>
+                                                            <span class="panelist-tag">S. Chen</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="interview-badge badge-completed">Completed</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="rating-stars">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                            <span class="ms-2">4.5</span>
+                                                        </div>
+                                                        <div class="text-muted small">Evaluated</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#evaluationModal">
+                                                            <i class="fas fa-eye me-1"></i>View
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center"
+                                                                style="width: 36px; height: 36px; margin-right: 12px;">
+                                                                <i class="fas fa-user"></i>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bold">Sarah Johnson</div>
+                                                                <div class="text-muted small">ID: ID-345219</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>IT Specialist</td>
+                                                    <td>
+                                                        <div class="fw-bold">2023-11-06</div>
+                                                        <div class="text-muted small">Tuesday</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="fw-bold">11:00 AM</div>
+                                                        <div class="text-muted small">Duration: 60 min</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-wrap">
+                                                            <span class="panelist-tag">M. Williams</span>
+                                                            <span class="panelist-tag">A. Johnson</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="interview-badge badge-scheduled">Scheduled</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="rating-stars">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <div class="text-muted small">Pending</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#evaluationModal">
+                                                            <i class="fas fa-edit me-1"></i>Evaluate
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center"
+                                                                style="width: 36px; height: 36px; margin-right: 12px;">
+                                                                <i class="fas fa-user"></i>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bold">David Omondi</div>
+                                                                <div class="text-muted small">ID: ID-198735</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Agricultural Officer</td>
+                                                    <td>
+                                                        <div class="fw-bold">2023-11-07</div>
+                                                        <div class="text-muted small">Wednesday</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="fw-bold">09:30 AM</div>
+                                                        <div class="text-muted small">Duration: 45 min</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-wrap">
+                                                            <span class="panelist-tag">H. Rodriguez</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="interview-badge badge-scheduled">Scheduled</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="rating-stars">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <div class="text-muted small">Pending</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#evaluationModal">
+                                                            <i class="fas fa-edit me-1"></i>Evaluate
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center"
+                                                                style="width: 36px; height: 36px; margin-right: 12px;">
+                                                                <i class="fas fa-user"></i>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bold">Michael Otieno</div>
+                                                                <div class="text-muted small">ID: ID-563289</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Senior Accountant</td>
+                                                    <td>
+                                                        <div class="fw-bold">2023-11-08</div>
+                                                        <div class="text-muted small">Thursday</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="fw-bold">03:00 PM</div>
+                                                        <div class="text-muted small">Duration: 60 min</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-wrap">
+                                                            <span class="panelist-tag">A. Johnson</span>
+                                                            <span class="panelist-tag">S. Chen</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="interview-badge badge-completed">Completed</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="rating-stars">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <span class="ms-2">5.0</span>
+                                                        </div>
+                                                        <div class="text-muted small">Evaluated</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#evaluationModal">
+                                                            <i class="fas fa-eye me-1"></i>View
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center"
+                                                                style="width: 36px; height: 36px; margin-right: 12px;">
+                                                                <i class="fas fa-user"></i>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fw-bold">Elizabeth Chen</div>
+                                                                <div class="text-muted small">ID: ID-654321</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>IT Specialist</td>
+                                                    <td>
+                                                        <div class="fw-bold">2023-11-09</div>
+                                                        <div class="text-muted small">Friday</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="fw-bold">01:15 PM</div>
+                                                        <div class="text-muted small">Duration: 45 min</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-wrap">
+                                                            <span class="panelist-tag">M. Williams</span>
+                                                            <span class="panelist-tag">S. Chen</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="interview-badge badge-scheduled">Scheduled</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="rating-stars">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </div>
+                                                        <div class="text-muted small">Pending</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#evaluationModal">
+                                                            <i class="fas fa-edit me-1"></i>Evaluate
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot class="text-uppercase">
+                                                <tr>
+                                                    <th colspan="8" class="text-center">
+                                                        Showing 6 scheduled interviews - Next interview: John Mwangi on 2023-11-05 at 10:00 AM
+                                                    </th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+
+                    <!-- end row -->
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <!-- Evaluation Modal -->
+    <div class="modal fade evaluation-modal" id="evaluationModal" tabindex="-1" aria-labelledby="evaluationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="evaluationModalLabel">Candidate Evaluation</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
+                                style="width: 48px; height: 48px; margin-right: 15px;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">John Mwangi</h4>
+                                <p class="mb-0">Senior Accountant - ID: ID-287654</p>
+                                <p class="mb-0">Interview Date: 2023-11-05 at 10:00 AM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h5>Interview Panel</h5>
+                            <div class="d-flex flex-wrap mb-3">
+                                <span class="panelist-tag">H. Rodriguez</span>
+                                <span class="panelist-tag">A. Johnson</span>
+                                <button class="btn btn-sm btn-outline-primary ms-2">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h5>Interview Minutes</h5>
+                                <div class="file-upload-box" onclick="document.getElementById('fileUpload').click()">
+                                    <i class="fas fa-cloud-upload-alt fa-2x text-muted mb-2"></i>
+                                    <p class="mb-1">Click to upload interview minutes</p>
+                                    <p class="small text-muted mb-0">Supports PDF, DOC, DOCX (Max 10MB)</p>
+                                    <input type="file" id="fileUpload" hidden>
+                                </div>
+                                <div class="mt-2">
+                                    <div class="d-flex justify-content-between align-items-center bg-light p-2 rounded">
+                                        <div>
+                                            <i class="fas fa-file-pdf text-danger me-2"></i>
+                                            <span>interview_minutes_john_mwangi.pdf</span>
+                                        </div>
+                                        <button class="btn btn-sm btn-link text-danger">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <h5>Recommendation</h5>
+                            <div class="mb-4">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="recommendation" id="recommendYes" value="yes" checked>
+                                    <label class="form-check-label" for="recommendYes">
+                                        <span class="recommendation-badge recommended">Recommended</span>
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="recommendation" id="recommendNo" value="no">
+                                    <label class="form-check-label" for="recommendNo">
+                                        <span class="recommendation-badge not-recommended">Not Recommended</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h5>Overall Rating</h5>
+                                <div class="rating-stars" style="font-size: 2rem;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h5 class="mb-3">Evaluation Criteria</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Communication Skills</label>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Poor</span>
+                                <span>Excellent</span>
+                            </div>
+                            <div class="skill-meter mb-2">
+                                <div class="skill-meter-fill" style="width: 80%"></div>
+                            </div>
+                            <select class="form-select">
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Good</option>
+                                <option value="4" selected>4 - Very Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Technical Expertise</label>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Poor</span>
+                                <span>Excellent</span>
+                            </div>
+                            <div class="skill-meter mb-2">
+                                <div class="skill-meter-fill" style="width: 70%"></div>
+                            </div>
+                            <select class="form-select">
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Good</option>
+                                <option value="4" selected>4 - Very Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Problem Solving Skills</label>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Poor</span>
+                                <span>Excellent</span>
+                            </div>
+                            <div class="skill-meter mb-2">
+                                <div class="skill-meter-fill" style="width: 90%"></div>
+                            </div>
+                            <select class="form-select">
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Good</option>
+                                <option value="4">4 - Very Good</option>
+                                <option value="5" selected>5 - Excellent</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Overall Impression</label>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Poor</span>
+                                <span>Excellent</span>
+                            </div>
+                            <div class="skill-meter mb-2">
+                                <div class="skill-meter-fill" style="width: 85%"></div>
+                            </div>
+                            <select class="form-select">
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Good</option>
+                                <option value="4" selected>4 - Very Good</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="evaluationNotes" class="form-label">Evaluation Notes</label>
+                        <textarea class="form-control" id="evaluationNotes" rows="4" placeholder="Enter detailed evaluation notes...">John demonstrated strong accounting knowledge and problem-solving abilities. He showed good communication skills but seemed slightly nervous during the interview. His technical skills are excellent, particularly in financial reporting and tax regulations.</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Evaluation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!-- invoice details -->
+            <div class="modal fade invoice-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Invoice Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-12">
+                                <address>
+                                    <strong>Billed To:</strong><br>
+                                    Kelvin Njuguna<br>
+                                    email@mail.com, 0704 549 859<br>
+                                    Hse No. 410, 90 Degrees By Tsavo
+                                    <br><br>
+                                    1 Mar 2022, 10:20 AM
+                                </address>
+                            </div>
+                            <div class="col-12">
+                                <div class="py-2 mt-3">
+                                    <h3 class="font-size-15 fw-bold">Invoice Details ( <span
+                                            class="text-primary fw-medium">No. 1237</span> )</h3>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 70px;">No.</th>
+                                                <th>Item</th>
+                                                <th class="text-end">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>Rent Deposit</td>
+                                                <td class="text-end">KES 24,500</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>02</td>
+                                                <td>Monthly Rent</td>
+                                                <td class="text-end">KES 12,000</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>03</td>
+                                                <td>TAX (18%)</td>
+                                                <td class="text-end">KES 250</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="text-end">Total</td>
+                                                <td class="text-end fw-bold">KES 36,750</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="text-end">Paid</td>
+                                                <td class="text-end  fw-bold">KES 0.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td colspan="2" class="border-0 text-end">
+                                                    <strong>Balance</strong></td>
+                                                <td class="border-0 text-end">
+                                                    <h5 class="m-0 text-uppercase fw-bold">KES 36,750</h5>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="col-12 d-none">
+                                <div class="table-resposive p-4 px-2 pt-2 overflow-visible">
+                                    <table class="w-100">
+                                        <tbody>
+                                            <tr data-id="1">
+                                                <td>
+                                                    <label for="" class="">Payment Method</label>
+                                                    <select class="form-control selectpicker w-100 payment-method"
+                                                        data-style="btn-secondary w-100" data-live-search="true"
+                                                        title="Select payment Method">
+                                                        <option value="Mpesa">MPESA</option>
+                                                        <option value="Cash">CASH</option>
+                                                    </select>
+                                                </td>
+                                                <td class="px-3 ">
+                                                    <div class="phone-num d-none">
+                                                        <label for="">Phone No.</label>
+                                                        <input type="text " class="form-control w-100 d-flex "
+                                                            placeholder="Phone No." spellcheck="false"
+                                                            data-ms-editor="true">
+                                                    </div>
+
+                                                </td>
+                                                <td class="px-3">
+                                                    <label for="">Amount To Be Paid</label>
+                                                    <input type="text " class="form-control w-100 d-flex"
+                                                        placeholder="KES" spellcheck="false" data-ms-editor="true">
+
+                                                </td>
+                                                <td class="text-right float-right">
+                                                    <div class="d-flex flex-column">
+                                                        <label class="opacity-0">Something</label>
+                                                        <a href="#"
+                                                            class="btn btn-primary w-md waves-effect waves-light">Submit</a>
+                                                    </div>
+                                                </td>
+
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                            <div class="float-end">
+                                <a href="javascript:window.print()"
+                                    class="btn btn-success waves-effect waves-light me-1"><i
+                                        class="mdi mdi-printer font-16px"></i></a>
+                                <a href="javascript: void(0);"
+                                    class="btn btn-primary w-md waves-effect waves-light">Receive Payment</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- invoice details -->
+
+            <!-- patients details modal -->
+            <div class="modal fade patient-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">More Details On Jane</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <address>
+                                        <strong class="text-capitalize">Patient Details</strong><br>
+                                        Mrs Jane Doe<br>
+                                        <a href="mailto:email@mail.com">email@mail.com</a>, <a
+                                            href="tel:+254704549859">0704 549 859</a><br>
+
+                                        <br>
+                                        Registered on 1 Mar 2022, 10:20 AM <br>At Sipital Kuu Medical Center
+                                        <br>
+                                        <br>
+                                        <span class="pr-2">Last Seen: 10 Mar 20233. 03:46 PM</span>
+                                        <span
+                                            class="badge rounded-pill bg-success text-uppercase me-3 d-none">Active</span>
+
+                                    </address>
+                                </div>
+
+                                <div class="col-6 text-right">
+                                    <address>
+                                        <strong class="text-capitalize">Location Details</strong><br>
+                                        County: Busia, Sub County: Funyula, Ward: Marachi West,
+                                        <br>
+                                        Physical Address: Near Karachi West Primary School
+
+
+                                    </address>
+                                </div>
+
+                                <div class="col-sm-6 text-sm-end d-none">
+                                    <address class="mt-2 mt-sm-0">
+                                        <strong>Payment Method</strong><br>
+                                        <span class="fw-medium">MPESA</span><br>
+                                        Phone No. 0704 549 859<br> <br>
+                                        On 1 Mar 2022, 10:20 AM
+                                    </address>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="py-2 mt-3">
+                                    <h3 class="font-size-15 fw-bold">ND12368</h3>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-nowrap vertical-align-middle">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th>More Details</th>
+                                                <th class="text-end"></th>
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr
+                                                title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Patient ID</p>
+                                                </td>
+                                                <td class="">MPI/1234</td>
+
+                                            </tr>
+
+                                            <tr
+                                                title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Blood Group</p>
+                                                </td>
+                                                <td class="">A+</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Age</p>
+
+                                                </td>
+                                                <td class="">22 Years</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Marital Status</p>
+
+                                                </td>
+                                                <td class="">Single</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Occupation</p>
+
+                                                </td>
+                                                <td class="">Software Developer</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Gender</p>
+
+                                                </td>
+                                                <td class="">Male</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Height</p>
+
+                                                </td>
+                                                <td class="">156 CM</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Weight</p>
+
+                                                </td>
+                                                <td class="">78 KGs</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Unpaid Bills
+                                                        Amount</p>
+
+                                                </td>
+                                                <td class="">KES 400</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Last Updated</p>
+
+                                                </td>
+                                                <td class="">12 Jul 2023, 11:45 AM By Kennedy Livondo at Costa Rick
+                                                    Hospital</td>
+
+                                            </tr>
+
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <a href="PrintDocs/Food-handler/health-permit.html" target="_blank" type="button"
+                                class="btn btn-primary waves-effect waves-light">
+                                <i class="mdi mdi-printer font-size-16 align-middle me-2"></i> Print Certificate
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- end of patieonts details modal -->
+
+            <!-- kin details modal -->
+            <div class="modal fade kin-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myLargeModalLabel">Jane's Kin Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-nowrap vertical-align-middle">
+
+
+                                        <tbody>
+
+                                            <tr
+                                                title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Relationship with
+                                                        patient</p>
+                                                </td>
+                                                <td class="">Brother</td>
+
+                                            </tr>
+
+                                            <tr
+                                                title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Full Names</p>
+                                                </td>
+                                                <td class="">Alex Kinoti Livondo</td>
+
+                                            </tr>
+
+                                            <tr
+                                                title="Driving Without identification plates affixed or plates not fixed in the prescribed manner">
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Phone Number</p>
+                                                </td>
+                                                <td class="">
+                                                    <a href="tel:+254712345678">0712 345 678</a>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Email Address</p>
+
+                                                </td>
+                                                <td class=""><a href="mailto:Alex@kinoti.com">Alex@kinoti.com</a></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="the-bill-item mb-0 p-0 m-0 fw-semibold">Physical Address
+                                                    </p>
+
+                                                </td>
+                                                <td class="">Near Mount Kilimanjaro Joint</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-none">
+
+                            <a href="PrintDocs/Food-handler/health-permit.html" target="_blank" type="button"
+                                class="btn btn-primary waves-effect waves-light">
+                                <i class="mdi mdi-printer font-size-16 align-middle me-2"></i> Print Certificate
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- end of kin details modal -->
+
+            <!-- Patient registration -->
+            <div class="modal fade " id="registerCustomer" data-backdrop="static" data-keyboard="false" tabindex="-1 "
+                role="dialog " aria-labelledby="staticBackdropLabel " aria-hidden="true ">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content ">
+
+
+                        <div class="modal-header">
+                            <h5 class="modal-title text-capitalize" id="exampleModalLongTitle">New Patient Registration
+                            </h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body steps-container">
+                            <div class="mb-4 the-step patient-info active">
+                                <div class="avatar-md mx-auto mb-4 d-none">
+                                    <div class="avatar-title bg-light rounded-circle text-primary h1 ">
+                                        <i class="mdi mdi-account-multiple-plus "></i>
+                                    </div>
+                                </div>
+
+                                <div class="row  text-left">
+                                    <div class="col-12">
+                                        <h4 class="text-primary text-capitalize">Patient's Details</h4>
+                                        <form>
+                                            <div class="row ">
+                                                <div class="col-12 ">
+                                                    <div class="">
+                                                        <label for="digit1-input " class="">Patient's Full Name</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 mb-3">
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <input type="text " class="form-control two-step "
+                                                                placeholder="First Name">
+                                                        </div>
+
+                                                        <div class="col-4">
+                                                            <input type="text " class="form-control two-step "
+                                                                placeholder="Middle Name">
+                                                        </div>
+
+                                                        <div class="col-4">
+                                                            <input type="text " class="form-control two-step "
+                                                                placeholder="Last Name">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-4 mb-3">
+                                                    <div class="">
+                                                        <label for="digit1-input " class="">Date Of Birth</label>
+                                                        <input class="form-control" type="date" value="2019-08-19"
+                                                            id="example-date-input">
+                                                    </div>
+                                                </div>
+                                                <div class="col-4 mb-3">
+                                                    <div class="">
+                                                        <label for="digit1-input " class="">Nationality</label>
+                                                        <select
+                                                            class="form-control selectpicker bg-white select-revenue"
+                                                            title="Select Nationality" data-live-search="true"
+                                                            title="Select a tenant">
+                                                            <option value="">-- select one --</option>
+                                                            <option value="afghan">Afghan</option>
+                                                            <option value="albanian">Albanian</option>
+                                                            <option value="algerian">Algerian</option>
+                                                            <option value="american">American</option>
+                                                            <option value="andorran">Andorran</option>
+                                                            <option value="angolan">Angolan</option>
+                                                            <option value="antiguans">Antiguans</option>
+                                                            <option value="argentinean">Argentinean</option>
+                                                            <option value="armenian">Armenian</option>
+                                                            <option value="australian">Australian</option>
+                                                            <option value="austrian">Austrian</option>
+                                                            <option value="azerbaijani">Azerbaijani</option>
+                                                            <option value="bahamian">Bahamian</option>
+                                                            <option value="bahraini">Bahraini</option>
+                                                            <option value="bangladeshi">Bangladeshi</option>
+                                                            <option value="barbadian">Barbadian</option>
+                                                            <option value="barbudans">Barbudans</option>
+                                                            <option value="batswana">Batswana</option>
+                                                            <option value="belarusian">Belarusian</option>
+                                                            <option value="belgian">Belgian</option>
+                                                            <option value="belizean">Belizean</option>
+                                                            <option value="beninese">Beninese</option>
+                                                            <option value="bhutanese">Bhutanese</option>
+                                                            <option value="bolivian">Bolivian</option>
+                                                            <option value="bosnian">Bosnian</option>
+                                                            <option value="brazilian">Brazilian</option>
+                                                            <option value="british">British</option>
+                                                            <option value="bruneian">Bruneian</option>
+                                                            <option value="bulgarian">Bulgarian</option>
+                                                            <option value="burkinabe">Burkinabe</option>
+                                                            <option value="burmese">Burmese</option>
+                                                            <option value="burundian">Burundian</option>
+                                                            <option value="cambodian">Cambodian</option>
+                                                            <option value="cameroonian">Cameroonian</option>
+                                                            <option value="canadian">Canadian</option>
+                                                            <option value="cape verdean">Cape Verdean</option>
+                                                            <option value="central african">Central African</option>
+                                                            <option value="chadian">Chadian</option>
+                                                            <option value="chilean">Chilean</option>
+                                                            <option value="chinese">Chinese</option>
+                                                            <option value="colombian">Colombian</option>
+                                                            <option value="comoran">Comoran</option>
+                                                            <option value="congolese">Congolese</option>
+                                                            <option value="costa rican">Costa Rican</option>
+                                                            <option value="croatian">Croatian</option>
+                                                            <option value="cuban">Cuban</option>
+                                                            <option value="cypriot">Cypriot</option>
+                                                            <option value="czech">Czech</option>
+                                                            <option value="danish">Danish</option>
+                                                            <option value="djibouti">Djibouti</option>
+                                                            <option value="dominican">Dominican</option>
+                                                            <option value="dutch">Dutch</option>
+                                                            <option value="east timorese">East Timorese</option>
+                                                            <option value="ecuadorean">Ecuadorean</option>
+                                                            <option value="egyptian">Egyptian</option>
+                                                            <option value="emirian">Emirian</option>
+                                                            <option value="equatorial guinean">Equatorial Guinean
+                                                            </option>
+                                                            <option value="eritrean">Eritrean</option>
+                                                            <option value="estonian">Estonian</option>
+                                                            <option value="ethiopian">Ethiopian</option>
+                                                            <option value="fijian">Fijian</option>
+                                                            <option value="filipino">Filipino</option>
+                                                            <option value="finnish">Finnish</option>
+                                                            <option value="french">French</option>
+                                                            <option value="gabonese">Gabonese</option>
+                                                            <option value="gambian">Gambian</option>
+                                                            <option value="georgian">Georgian</option>
+                                                            <option value="german">German</option>
+                                                            <option value="ghanaian">Ghanaian</option>
+                                                            <option value="greek">Greek</option>
+                                                            <option value="grenadian">Grenadian</option>
+                                                            <option value="guatemalan">Guatemalan</option>
+                                                            <option value="guinea-bissauan">Guinea-Bissauan</option>
+                                                            <option value="guinean">Guinean</option>
+                                                            <option value="guyanese">Guyanese</option>
+                                                            <option value="haitian">Haitian</option>
+                                                            <option value="herzegovinian">Herzegovinian</option>
+                                                            <option value="honduran">Honduran</option>
+                                                            <option value="hungarian">Hungarian</option>
+                                                            <option value="icelander">Icelander</option>
+                                                            <option value="indian">Indian</option>
+                                                            <option value="indonesian">Indonesian</option>
+                                                            <option value="iranian">Iranian</option>
+                                                            <option value="iraqi">Iraqi</option>
+                                                            <option value="irish">Irish</option>
+                                                            <option value="israeli">Israeli</option>
+                                                            <option value="italian">Italian</option>
+                                                            <option value="ivorian">Ivorian</option>
+                                                            <option value="jamaican">Jamaican</option>
+                                                            <option value="japanese">Japanese</option>
+                                                            <option value="jordanian">Jordanian</option>
+                                                            <option value="kazakhstani">Kazakhstani</option>
+                                                            <option value="kenyan" selected>Kenyan</option>
+                                                            <option value="kittian and nevisian">Kittian and Nevisian
+                                                            </option>
+                                                            <option value="kuwaiti">Kuwaiti</option>
+                                                            <option value="kyrgyz">Kyrgyz</option>
+                                                            <option value="laotian">Laotian</option>
+                                                            <option value="latvian">Latvian</option>
+                                                            <option value="lebanese">Lebanese</option>
+                                                            <option value="liberian">Liberian</option>
+                                                            <option value="libyan">Libyan</option>
+                                                            <option value="liechtensteiner">Liechtensteiner</option>
+                                                            <option value="lithuanian">Lithuanian</option>
+                                                            <option value="luxembourger">Luxembourger</option>
+                                                            <option value="macedonian">Macedonian</option>
+                                                            <option value="malagasy">Malagasy</option>
+                                                            <option value="malawian">Malawian</option>
+                                                            <option value="malaysian">Malaysian</option>
+                                                            <option value="maldivan">Maldivan</option>
+                                                            <option value="malian">Malian</option>
+                                                            <option value="maltese">Maltese</option>
+                                                            <option value="marshallese">Marshallese</option>
+                                                            <option value="mauritanian">Mauritanian</option>
+                                                            <option value="mauritian">Mauritian</option>
+                                                            <option value="mexican">Mexican</option>
+                                                            <option value="micronesian">Micronesian</option>
+                                                            <option value="moldovan">Moldovan</option>
+                                                            <option value="monacan">Monacan</option>
+                                                            <option value="mongolian">Mongolian</option>
+                                                            <option value="moroccan">Moroccan</option>
+                                                            <option value="mosotho">Mosotho</option>
+                                                            <option value="motswana">Motswana</option>
+                                                            <option value="mozambican">Mozambican</option>
+                                                            <option value="namibian">Namibian</option>
+                                                            <option value="nauruan">Nauruan</option>
+                                                            <option value="nepalese">Nepalese</option>
+                                                            <option value="new zealander">New Zealander</option>
+                                                            <option value="ni-vanuatu">Ni-Vanuatu</option>
+                                                            <option value="nicaraguan">Nicaraguan</option>
+                                                            <option value="nigerien">Nigerien</option>
+                                                            <option value="north korean">North Korean</option>
+                                                            <option value="northern irish">Northern Irish</option>
+                                                            <option value="norwegian">Norwegian</option>
+                                                            <option value="omani">Omani</option>
+                                                            <option value="pakistani">Pakistani</option>
+                                                            <option value="palauan">Palauan</option>
+                                                            <option value="panamanian">Panamanian</option>
+                                                            <option value="papua new guinean">Papua New Guinean</option>
+                                                            <option value="paraguayan">Paraguayan</option>
+                                                            <option value="peruvian">Peruvian</option>
+                                                            <option value="polish">Polish</option>
+                                                            <option value="portuguese">Portuguese</option>
+                                                            <option value="qatari">Qatari</option>
+                                                            <option value="romanian">Romanian</option>
+                                                            <option value="russian">Russian</option>
+                                                            <option value="rwandan">Rwandan</option>
+                                                            <option value="saint lucian">Saint Lucian</option>
+                                                            <option value="salvadoran">Salvadoran</option>
+                                                            <option value="samoan">Samoan</option>
+                                                            <option value="san marinese">San Marinese</option>
+                                                            <option value="sao tomean">Sao Tomean</option>
+                                                            <option value="saudi">Saudi</option>
+                                                            <option value="scottish">Scottish</option>
+                                                            <option value="senegalese">Senegalese</option>
+                                                            <option value="serbian">Serbian</option>
+                                                            <option value="seychellois">Seychellois</option>
+                                                            <option value="sierra leonean">Sierra Leonean</option>
+                                                            <option value="singaporean">Singaporean</option>
+                                                            <option value="slovakian">Slovakian</option>
+                                                            <option value="slovenian">Slovenian</option>
+                                                            <option value="solomon islander">Solomon Islander</option>
+                                                            <option value="somali">Somali</option>
+                                                            <option value="south african">South African</option>
+                                                            <option value="south korean">South Korean</option>
+                                                            <option value="spanish">Spanish</option>
+                                                            <option value="sri lankan">Sri Lankan</option>
+                                                            <option value="sudanese">Sudanese</option>
+                                                            <option value="surinamer">Surinamer</option>
+                                                            <option value="swazi">Swazi</option>
+                                                            <option value="swedish">Swedish</option>
+                                                            <option value="swiss">Swiss</option>
+                                                            <option value="syrian">Syrian</option>
+                                                            <option value="taiwanese">Taiwanese</option>
+                                                            <option value="tajik">Tajik</option>
+                                                            <option value="tanzanian">Tanzanian</option>
+                                                            <option value="thai">Thai</option>
+                                                            <option value="togolese">Togolese</option>
+                                                            <option value="tongan">Tongan</option>
+                                                            <option value="trinidadian or tobagonian">Trinidadian or
+                                                                Tobagonian</option>
+                                                            <option value="tunisian">Tunisian</option>
+                                                            <option value="turkish">Turkish</option>
+                                                            <option value="tuvaluan">Tuvaluan</option>
+                                                            <option value="ugandan">Ugandan</option>
+                                                            <option value="ukrainian">Ukrainian</option>
+                                                            <option value="uruguayan">Uruguayan</option>
+                                                            <option value="uzbekistani">Uzbekistani</option>
+                                                            <option value="venezuelan">Venezuelan</option>
+                                                            <option value="vietnamese">Vietnamese</option>
+                                                            <option value="welsh">Welsh</option>
+                                                            <option value="yemenite">Yemenite</option>
+                                                            <option value="zambian">Zambian</option>
+                                                            <option value="zimbabwean">Zimbabwean</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-4 mb-3">
+                                                    <div class="">
+                                                        <label for="digit1-input " class="">Gender</label>
+                                                        <div class="row">
+                                                            <div class="col-auto">
+                                                                <div class="form-check mb-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="gender" id="radioFemale">
+                                                                    <label class="form-check-label" for="radioFemale">
+                                                                        Female
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-auto">
+                                                                <div class="form-check mb-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="gender" id="radioMale">
+                                                                    <label class="form-check-label" for="radioMale">
+                                                                        Male
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-4 mb-3">
+                                                    <div class="">
+                                                        <label for="digit1-input " class="">Marital Status</label>
+                                                        <select
+                                                            class="form-control selectpicker bg-white select-revenue"
+                                                            title="Select Marital Status" data-live-search="true"
+                                                            title="Select a tenant">
+                                                            <option value="Single">Single</option>
+                                                            <option value="Married">Married</option>
+                                                            <option value="Widowed">Widowed</option>
+                                                            <option value="Separated">Separated</option>
+                                                            <option value="Divorced">Divorced</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-4 mb-3">
+                                                    <div class="">
+                                                        <label for="digit1-input " class="">Religion</label>
+                                                        <select
+                                                            class="form-control selectpicker bg-white select-revenue"
+                                                            title="Select Religion" data-live-search="true">
+                                                            <option value="African Traditional & Diasporic">African
+                                                                Traditional & Diasporic</option>
+                                                            <option value="Agnostic">Agnostic</option>
+                                                            <option value="Atheist">Atheist</option>
+                                                            <option value="Baha'i">Baha'i</option>
+                                                            <option value="Buddhism">Buddhism</option>
+                                                            <option value="Cao Dai">Cao Dai</option>
+                                                            <option value="Chinese traditional religion">Chinese
+                                                                traditional religion</option>
+                                                            <option value="Christianity">Christianity</option>
+                                                            <option value="Hinduism">Hinduism</option>
+                                                            <option value="Islam">Islam</option>
+                                                            <option value="Jainism">Jainism</option>
+                                                            <option value="Juche">Juche</option>
+                                                            <option value="Judaism">Judaism</option>
+                                                            <option value="Neo-Paganism">Neo-Paganism</option>
+                                                            <option value="Nonreligious">Nonreligious</option>
+                                                            <option value="Rastafarianism">Rastafarianism</option>
+                                                            <option value="Secular">Secular</option>
+                                                            <option value="Shinto">Shinto</option>
+                                                            <option value="Sikhism">Sikhism</option>
+                                                            <option value="Spiritism">Spiritism</option>
+                                                            <option value="Tenrikyo">Tenrikyo</option>
+                                                            <option value="Unitarian-Universalism">
+                                                                Unitarian-Universalism</option>
+                                                            <option value="Zoroastrianism">Zoroastrianism</option>
+                                                            <option value="primal-indigenous">primal-indigenous</option>
+                                                            <option value="Other">Other</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-4 mb-3">
+                                                    <div class="">
+                                                        <label for="digit1-input " class="">Patient's Blood
+                                                            group</label>
+                                                        <select
+                                                            class="form-control selectpicker bg-white select-revenue"
+                                                            title="Select Blood Group" data-live-search="true">
+                                                            <option value="A+">A+</option>
+                                                            <option value="A-">A-</option>
+                                                            <option value="B+">B+</option>
+                                                            <option value="B-">B-</option>
+                                                            <option value="O+">O+</option>
+                                                            <option value="O-">O-</option>
+                                                            <option value="AB+">AB+</option>
+                                                            <option value="AB-">AB-</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 mb-3">
+                                                    <div class="">
+                                                        <label for="digit1-input " class="">Occupation</label>
+                                                        <input type="text " class="form-control two-step "
+                                                            placeholder="Patient's Occupation">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 ">
+                                                    <div class="">
+                                                        <label for="digit1-input " class="">Contact Information</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 mb-3">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <input type="text " class="form-control two-step "
+                                                                placeholder="Phone No">
+                                                        </div>
+
+                                                        <div class="col-6">
+                                                            <input type="email" class="form-control two-step "
+                                                                placeholder="Email Address">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12 ">
+                                                    <div class="">
+                                                        <label for="digit1-input " class="">Patient's Residence</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 mb-3">
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <select
+                                                                class="form-control selectpicker bg-white select-revenue"
+                                                                title="Select County" data-live-search="true">
+                                                                <option value="">Busia</option>
+                                                                <option value="">Nairobi</option>
+                                                                <option value="">Homabay</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-4">
+                                                            <select
+                                                                class="form-control selectpicker bg-white select-revenue"
+                                                                title="Select Sub County" data-live-search="true">
+                                                                <option value="">Teso North</option>
+                                                                <option value="">Teso South</option>
+                                                                <option value="">Nambale</option>
+
+                                                                <option value="">Matayos</option>
+                                                                <option value="">Butula</option>
+                                                                <option value="">Funyula</option>
+                                                                <option value="">Budalangi</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-4">
+                                                            <select
+                                                                class="form-control selectpicker bg-white select-revenue"
+                                                                title="Select Ward" data-live-search="true">
+                                                                <option value="">Marachi West</option>
+                                                                <option value="">Marachi North</option>
+                                                                <option value="">Marachi Central</option>
+                                                                <option value="">Kingandole</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 mb-3">
+                                                    <div class="">
+                                                        <label for="digit1-input " class="">Physical Address</label>
+                                                        <textarea name="" id="" class="form-control"
+                                                            placeholder="Enter Address"></textarea>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4 the-step next-of-kin-modal d-none">
+                                <h4 class="text-primary text-capitalize">Next Of Kin Details</h4>
+                                <div class="row">
+
+                                    <div class="col-12 mb-4">
+                                        <label for="" class="text-capitalize">Relationship with Patient Being
+                                            registerd</label>
+                                        <select class="form-control selectpicker bg-white select-revenue"
+                                            title="Select Next Of Kin's Relationship with the patient being registered"
+                                            data-live-search="true">
+                                            <option value="">Mother</option>
+                                            <option value="">Father</option>
+                                            <option value="">Daughter</option>
+
+                                            <option value="">Son</option>
+                                            <option value="">Sister</option>
+                                            <option value="">Brother</option>
+
+                                            <option value="">Friend</option>
+                                            <option value="">Uncle</option>
+                                            <option value="">Aunt</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 ">
+                                        <div class="">
+                                            <label for="digit1-input " class="">Next Of Kin Full Names</label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12 mb-3">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <input type="text " class="form-control two-step "
+                                                    placeholder="First Name">
+                                            </div>
+
+                                            <div class="col-4">
+                                                <input type="text " class="form-control two-step "
+                                                    placeholder="Middle Name">
+                                            </div>
+
+                                            <div class="col-4">
+                                                <input type="text " class="form-control two-step "
+                                                    placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 ">
+                                        <div class="">
+                                            <label for="digit1-input " class="">Next Of Kin Contact information</label>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12 mb-3">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="text" class="form-control two-step "
+                                                    placeholder="Phone Number">
+                                            </div>
+
+                                            <div class="col-6">
+                                                <input type="email" class="form-control two-step "
+                                                    placeholder="Email address">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 mb-3">
+                                        <div class="">
+                                            <label for="digit1-input " class="">Physical Address</label>
+                                            <textarea name="" id="" class="form-control"
+                                                placeholder="Enter Address"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer d-flex">
+                            <div class="d-none">
+                                <button data-toggle="modal" data-target="#subscribeModal" data-dismiss="modal"
+                                    type="button" class="btn btn-link waves-effect">Back To Patient Search</button>
+                            </div>
+                            <div class="d-flex modal-next-prev-container">
+                                <button type="button"
+                                    class="btn btn-outline-secondary btn-prev waves-effect waves-effect waves-light me-3">
+                                    <i class="bx bx-left-arrow-alt font-size-16 align-middle me-2"></i> Previouse
+                                </button>
+
+                                <button type="button"
+                                    class="btn btn-primary waves-effect waves-effect waves-light btn-next">
+                                    Next <i class="bx bx-right-arrow-alt font-size-16 align-middle me-2"></i>
+                                </button>
+
+                                <button type="button"
+                                    class="btn btn-submit btn-success d-none ml-3 ms-3 waves-effect waves-effect waves-light btn-next">
+                                    <i class="bx bx-check-double font-size-16 align-middle me-2"></i> Submit Application
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Patient registration -->
+
+            <!-- Adding applicant -->
+            <!-- Application Modal -->
+            <div class="modal fade" id="applicationModal" tabindex="-1" aria-labelledby="applicationModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="applicationModalLabel"><i class="fas fa-file-alt me-2"></i>Add
+                                Applicant</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-4">
+                                <h5>Senior Accountant (REF-2023-001)</h5>
+                                <p class="mb-1"><strong>Department:</strong> Finance & Economic Planning</p>
+                                <p><strong>Deadline:</strong> November 15, 2023</p>
+                            </div>
+
+                            <form>
+                                <!-- Personal Information Section -->
+                                <div class="mb-4">
+                                    <h6 class="border-bottom pb-2">Personal Information</h6>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">Full Name</label>
+                                            <input type="text" class="form-control"
+                                                placeholder="Enter applicant's full name" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">ID/Passport Number</label>
+                                            <input type="text" class="form-control"
+                                                placeholder="Enter ID/Passport number" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">Phone Number</label>
+                                            <input type="tel" class="form-control" placeholder="Enter phone number"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">Email Address</label>
+                                            <input type="email" class="form-control" placeholder="Enter email address"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">Date of Birth</label>
+                                            <input type="date" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">Gender</label>
+                                            <select class="form-select" required>
+                                                <option value="">Select gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="pwdCheck">
+                                                <label class="form-check-label" for="pwdCheck">Person Living with
+                                                    Disability (PWD)</label>
+                                            </div>
+                                            <input type="text" class="form-control mt-2"
+                                                placeholder="PWD Identification Number" id="pwdId" disabled>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label class="form-label required">Address</label>
+                                            <textarea class="form-control" rows="2" placeholder="Full physical address"
+                                                required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Academic Background Section -->
+                                <div class="mb-4">
+                                    <h6 class="border-bottom pb-2">Academic Background</h6>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">Highest Education Level</label>
+                                            <select class="form-select" required>
+                                                <option value="">Select education level</option>
+                                                <option value="High School">High School</option>
+                                                <option value="Diploma">Diploma</option>
+                                                <option value="Undergraduate">Undergraduate</option>
+                                                <option value="Postgraduate">Postgraduate</option>
+                                                <option value="Doctorate">Doctorate</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">Institution Name</label>
+                                            <input type="text" class="form-control" placeholder="Institution name"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">Year of Graduation</label>
+                                            <input type="number" class="form-control" placeholder="YYYY" min="1900"
+                                                max="2099" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">GPA Score (Optional)</label>
+                                            <input type="text" class="form-control" placeholder="Enter GPA score">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Professional Background Section -->
+                                <div class="mb-4">
+                                    <h6 class="border-bottom pb-2">Professional Background</h6>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">Current/Previous Employer</label>
+                                            <input type="text" class="form-control" placeholder="Company name" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">Employment Duration</label>
+                                            <div class="row g-2">
+                                                <div class="col-6">
+                                                    <input type="month" class="form-control" placeholder="Start date"
+                                                        required>
+                                                </div>
+                                                <div class="col-6">
+                                                    <input type="month" class="form-control" placeholder="End date">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label class="form-label">Roles & Responsibilities (Optional)</label>
+                                            <textarea class="form-control" rows="3"
+                                                placeholder="Describe roles and responsibilities"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- References Section -->
+                                <div class="mb-4">
+                                    <h6 class="border-bottom pb-2">References (At least two)</h6>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label required">Reference 1 Name</label>
+                                            <input type="text" class="form-control" placeholder="Full name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label required">Reference 1 Contact</label>
+                                            <input type="text" class="form-control" placeholder="Phone/Email" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">Reference 2 Name</label>
+                                            <input type="text" class="form-control" placeholder="Full name" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">Reference 2 Contact</label>
+                                            <input type="text" class="form-control" placeholder="Phone/Email" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Documents Upload Section -->
+                                <div class="mb-4">
+                                    <h6 class="border-bottom pb-2">Document Uploads</h6>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label required">CV/Resume</label>
+                                            <input type="file" class="form-control" required>
+                                            <small class="form-text text-muted">PDF or DOCX, max 5MB</small>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Cover Letter</label>
+                                            <input type="file" class="form-control">
+                                            <small class="form-text text-muted">PDF or DOCX, max 5MB</small>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Academic Certificates</label>
+                                            <input type="file" class="form-control" multiple>
+                                            <small class="form-text text-muted">PDF or DOCX, max 10MB total</small>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Professional Certificates</label>
+                                            <input type="file" class="form-control" multiple>
+                                            <small class="form-text text-muted">PDF or DOCX, max 10MB total</small>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Clearance Certificates (KRA, HELB, CRB)</label>
+                                            <input type="file" class="form-control" multiple>
+                                            <small class="form-text text-muted">PDF, max 5MB each</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-success">
+                                <i class="fas fa-paper-plane me-1"></i> Submit Application
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- viewing applicants modal -->
+            <div class="modal fade" id="selectPatient" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+
+
+                            <div>
+                                <h5 class="modal-title"> Select Patient</h5>
+                                <p class="modal-subtitle pb-0">Browse our patient
+                                    registry or
+                                    register a new patient to begin the consultation
+                                    process</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="btn-toolbar d-flex justify-content-between align-items-center w-100"
+                                role="toolbar">
+                                <div class="flex-grow-1">
+                                    <div class="search-box mb-0 me-3">
+                                        <div class="position-relative">
+                                            <input type="text" id="searchInput" class="form-control bg-light  rounded"
+                                                placeholder="Search Medical services" spellcheck="false">
+                                            <i class="bx bx-search-alt search-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="row">
+                                <!-- Patient 1 -->
+                                <div class="col-12 col-md-12 mb-3">
+                                    <div class="p-3 invoice-service-cell rounded">
+                                        <div class="d-flex justify-content-between">
+                                            <h5>Abebe Kebede</h5>
+                                        </div>
+                                        <p class="text-muted">
+                                            <i class="bx bxs-phone"></i> +251911234567,
+                                            <i class="bx bxs-id-card"></i> ID No.: 1234567,
+                                            <i class="bx bxs-envelope"></i>
+                                            abebe.k@example.com
+                                        </p>
+                                        <p class="location-highlight"><i class="bx bxs-map"></i> <i>Amhara, Bahir
+                                                Dar</i></p>
+                                        <h6>Possible Payment Options For Patient</h6>
+                                        <h4>
+                                            <span
+                                                class="badge rounded-pill bg-primary text-uppercase badge-custom">CBHI</span>
+                                            <span
+                                                class="badge rounded-pill bg-secondary text-uppercase badge-custom">Cash</span>
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <!-- Patient 2 -->
+                                <div class="col-12 col-md-12 mb-3">
+                                    <div class="p-3 invoice-service-cell rounded">
+                                        <div class="d-flex justify-content-between">
+                                            <h5>Mekdes Assefa</h5>
+                                        </div>
+                                        <p class="text-muted">
+                                            <i class="bx bxs-phone"></i> +251922345678,
+                                            <i class="bx bxs-id-card"></i> ID No.: 2345678,
+                                            <i class="bx bxs-envelope"></i>
+                                            mekdes.a@example.com
+                                        </p>
+                                        <p class="location-highlight"><i class="bx bxs-map"></i> <i>Amhara,
+                                                Gondar</i></p>
+                                        <h6>Possible Payment Options For Patient</h6>
+                                        <h4>
+                                            <span
+                                                class="badge rounded-pill bg-success text-uppercase badge-custom">Mobile
+                                                Wallet</span>
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <!-- Patient 3 -->
+                                <div class="col-12 col-md-12 mb-3">
+                                    <div class="p-3 invoice-service-cell rounded">
+                                        <div class="d-flex justify-content-between">
+                                            <h5>Getachew Tesfaye</h5>
+                                        </div>
+                                        <p class="text-muted">
+                                            <i class="bx bxs-phone"></i> +251933456789,
+                                            <i class="bx bxs-id-card"></i> ID No.: 3456789,
+                                            <i class="bx bxs-envelope"></i>
+                                            getachew.t@example.com
+                                        </p>
+                                        <p class="location-highlight"><i class="bx bxs-map"></i> <i>Amhara, Debre
+                                                Markos</i></p>
+                                        <h6>Possible Payment Options For Patient</h6>
+                                        <h4>
+                                            <span
+                                                class="badge rounded-pill bg-primary text-uppercase badge-custom">CBHI</span>
+                                            <span
+                                                class="badge rounded-pill bg-warning text-dark text-uppercase badge-custom">Employer
+                                                Credit</span>
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <!-- Patient 4 -->
+                                <div class="col-12 col-md-12 mb-3">
+                                    <div class="p-3 invoice-service-cell rounded">
+                                        <div class="d-flex justify-content-between">
+                                            <h5>Selamawit Gebre</h5>
+                                        </div>
+                                        <p class="text-muted">
+                                            <i class="bx bxs-phone"></i> +251944567890,
+                                            <i class="bx bxs-id-card"></i> ID No.: 4567890,
+                                            <i class="bx bxs-envelope"></i>
+                                            selam.g@example.com
+                                        </p>
+                                        <p class="location-highlight"><i class="bx bxs-map"></i> <i>Amhara,
+                                                Kombolcha</i></p>
+                                        <h6>Possible Payment Options For Patient</h6>
+                                        <h4>
+                                            <span
+                                                class="badge rounded-pill bg-danger text-uppercase badge-custom">Traffic
+                                                Incident</span>
+                                            <span
+                                                class="badge rounded-pill bg-info text-uppercase badge-custom">Insurance</span>
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <!-- Patient 5 -->
+                                <div class="col-12 col-md-12 mb-3">
+                                    <div class="p-3 invoice-service-cell rounded">
+                                        <div class="d-flex justify-content-between">
+                                            <h5>Almaz Bekele</h5>
+                                        </div>
+                                        <p class="text-muted">
+                                            <i class="bx bxs-phone"></i> +251955678901,
+                                            <i class="bx bxs-id-card"></i> ID No.: 5678901,
+                                            <i class="bx bxs-envelope"></i>
+                                            almaz.b@example.com
+                                        </p>
+                                        <p class="location-highlight"><i class="bx bxs-map"></i> <i>Amhara,
+                                                Dessie</i></p>
+                                        <h6>Possible Payment Options For Patient</h6>
+                                        <h4>
+                                            <span class="badge rounded-pill bg-dark text-uppercase badge-custom">Patient
+                                                Exemption</span>
+                                            <span
+                                                class="badge rounded-pill bg-primary text-uppercase badge-custom">CBHI</span>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mt-4 text-center text-muted">
+                                    <p class="mb-0">Patient Registry
+                                    </p>
+                                    <p>Showing 5 of 24 active patients in Amhara Region</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="modal-footer justify-content-between p-3 d-none">
+                            <div class="w-100">
+                                <div class="qty-cont p-3 row alert alert-info m-0 border-info border-2">
+                                    <div class="col-12">
+                                        <h5 class="modal-title mb-3">Selected Patient
+                                            Details</h5>
+                                    </div>
+                                    <div class="col-12">
+                                        <p>Full Names: <span class="fw-bold">Mekdes Asefa
+                                                Toti</span></p>
+                                        <p>CBHI Number: <span class="fw-bold">Not A
+                                                memeber</span></p>
+                                        <p>Employer Credit: <span class="fw-bold">Not
+                                                Legible</span></p>
+                                    </div>
+
+                                    <div class="col-12 mt-2">
+                                        <div class="text-uppercase">
+                                            <button type="button"
+                                                class="btn btn-outline-secondary waves-effect text-uppercase"
+                                                data-bs-dismiss="modal">Cancel</button>
+                                            <button type="button"
+                                                class="btn btn-success waves-effect waves-light text-uppercase addInvoiceItemBtn"
+                                                data-bs-dismiss="modal">Select
+                                                patient</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of viewing applicants -->
+
+            <script>
+                // Simple JavaScript to toggle PWD ID field
+                document.getElementById('pwdCheck').addEventListener('change', function () {
+                    document.getElementById('pwdId').disabled = !this.checked;
+                });
+            </script>
+            <!-- end of adding applicant -->
+
+            <footer class="footer ">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-sm-6 ">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Hospital Management Information System
+                        </div>
+                        <div class="col-sm-6 ">
+                            <div class="text-sm-end d-sm-block ">
+                                2024
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+    <script src="assets/libs/jquery/jquery.min.js "></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js "
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 " crossorigin="anonymous ">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js "
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous ">
+    </script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="assets/libs/metismenu/metisMenu.min.js "></script>
+    <script src="assets/libs/simplebar/simplebar.min.js "></script>
+    <script src="assets/libs/node-waves/waves.min.js "></script>
+
+
+
+    <!-- Required datatable js -->
+    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js "></script>
+    <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js "></script>
+    <!-- Buttons examples -->
+    <script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js "></script>
+    <script src="assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js "></script>
+    <script src="assets/libs/jszip/jszip.min.js "></script>
+    <script src="assets/libs/pdfmake/build/pdfmake.min.js "></script>
+    <script src="assets/libs/pdfmake/build/vfs_fonts.js "></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.html5.min.js "></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.print.min.js "></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.colVis.min.js "></script>
+    <!-- numerals number formater -->
+    <script src="assets/libs/numeral/numeral.js "></script>
+
+    <!-- highchart cdns -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <!-- highchart drill down -->
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+
+    <!-- Responsive examples -->
+    <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js "></script>
+    <script src="assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js "></script>
+
+    <!-- Bootstrap select -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js "></script>
+    <!-- Plugins js -->
+    <script src="assets/libs/dropzone/min/dropzone.min.js "></script>
+    <!-- Datatable init js -->
+    <script src="assets/js/pages/datatables.init.js "></script>
+
+    <!-- owl.carousel js -->
+    <script src="assets/libs/owl.carousel/owl.carousel.min.js"></script>
+
+    <!-- timeline init js -->
+    <script src="assets/js/pages/timeline.init.js"></script>
+
+    <!-- Application statuses -->
+    <script src="assets/js/pages/applicationStatuses.js"></script>
+
+    <!-- revenue perfomance -->
+    <script src="assets/js/pages/revenuePwerfomance.js"></script>
+
+    <!-- active vs expired certificats -->
+    <script src="assets/js/pages/expiredVsActiveCerts.js"></script>
+
+    <!-- Table Editable plugin -->
+    <script src="assets/libs/table-edits/build/table-edits.min.js"></script>
+    <script src="assets/js/pages/table-editable.int.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js "></script>
+    <script src="assets/js/custom.js "></script>
+
+    <script src="assets/libs/slick/slick.min.js"></script>
+
+    <!-- //rentals vs other income sources for housing department -->
+
+    <!-- the otp scripts start here -->
+    <script>
+        $(document).ready(function () {
+            $('.otp-input').on('input', function () {
+                if ($(this).val().length >= 4) {
+                    $('.otp-btn').prop('disabled', false);
+                } else {
+                    $('.otp-btn').prop('disabled', true);
+                }
+            });
+
+            $('.otp-btn').on('click', function () {
+                let confirmDiv = $(this).find('div:first');
+                let spinnerDiv = $(this).find('.spinner-border');
+
+                confirmDiv.addClass('d-none');
+                spinnerDiv.removeClass('d-none');
+
+                setTimeout(function () {
+                    confirmDiv.removeClass('d-none');
+                    spinnerDiv.addClass('d-none');
+                    $('.waiver-inputers').addClass('d-none');
+                    $('.waiver-succesfull').removeClass('d-none');
+                }, 3000);
+            });
+        });
+
+        // closing the modal
+        $('#otpConfirmation').on('hidden.bs.modal', function () {
+            $('.waiver-inputers').removeClass('d-none');
+            $('.waiver-succesfull').addClass('d-none');
+        });
+    </script>
+
+      <script>
+        // Skill meter interaction
+        document.querySelectorAll('.form-select').forEach(select => {
+            select.addEventListener('change', function() {
+                const value = parseInt(this.value);
+                const fillPercentage = (value / 5) * 100;
+                const meter = this.previousElementSibling.querySelector('.skill-meter-fill');
+                meter.style.width = `${fillPercentage}%`;
+            });
+        });
+        
+        // File upload interaction
+        document.getElementById('fileUpload').addEventListener('change', function(e) {
+            if (this.files.length > 0) {
+                const fileName = this.files[0].name;
+                const fileDisplay = document.createElement('div');
+                fileDisplay.className = 'd-flex justify-content-between align-items-center bg-light p-2 rounded mt-2';
+                fileDisplay.innerHTML = `
+                    <div>
+                        <i class="fas fa-file-pdf text-danger me-2"></i>
+                        <span>${fileName}</span>
+                    </div>
+                    <button class="btn btn-sm btn-link text-danger">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                document.querySelector('.file-upload-box').parentNode.insertBefore(fileDisplay, document.querySelector('.file-upload-box').nextSibling);
+                
+                // Add remove functionality
+                fileDisplay.querySelector('button').addEventListener('click', function() {
+                    fileDisplay.remove();
+                });
+            }
+        });
+    </script>
+
+</body>
+
+
+<!-- By Kelvin Njuguna   13:55:49 GMT -->
+
+</html>
